@@ -7,19 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('admin/assets/img/favicon.png')}}">
 
     <title>Aplikasi Penelitian Balitra</title>
 
     <!-- vendor css -->
     <link href="{{asset('admin/lib/@fortawesome/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
     <link href="{{asset('admin/lib/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
-
+     <!-- Databale -->
+     <link href="{{asset('admin/lib/typicons.font/typicons.css')}}" rel="stylesheet">
+    <link href="{{asset('admin/lib/prismjs/themes/prism-vs.css')}}" rel="stylesheet">
+    <link  rel="stylesheet" href="{{asset('admin/lib/datatables.net-dt/css/jquery.dataTables.min.css')}}">
+    <link  rel="stylesheet" href="{{asset('admin/lib/datatables.net-responsive-dt/css/responsive.dataTables.min.css')}}">
+    
     <!-- DashForge CSS -->
     <link rel="stylesheet" href="{{asset('admin/assets/css/dashforge.css')}}">
     <link rel="stylesheet" href="{{asset('admin/assets/css/dashforge.dashboard.css')}}">
     <link id="dfMode" rel="stylesheet" href="{{asset('admin/assets/css/skin.cool.css')}}">
     <link id="dfSkin" rel="stylesheet" href="{{asset('admin/assets/css/skin.deepblue.css')}}">
+   
+
   </head>
   <body class="page-profile">
 
@@ -59,7 +66,7 @@
           <li class="nav-item with-sub">
             <a href="" class="nav-link"><i data-feather="user"></i> <span>Pegawai</span></a>
             <ul>
-              <li><a href="page-profile-view.html">Admin</a></li>
+              <li><a href="{{Route('userIndex')}}">Admin</a></li>
               <li><a href="page-connections.html">pembimbing</a></li>
               <li><a href="page-groups.html">Pejabat Struktural</a></li>
             </ul>
@@ -106,7 +113,13 @@
 
     <!-- append theme customizer -->
     <script src="{{asset('admin/lib/js-cookie/js.cookie.js')}}"></script>
-    
+    <!-- Databale -->
+    <script src="{{asset('admin/lib/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('admin/lib/datatables.net-dt/js/dataTables.dataTables.min.js')}}"></script>
+    <script src="{{asset('admin/lib/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
+    <script src="{{asset('admin/lib/datatables.net-responsive-dt/js/responsive.dataTables.min.js')}}"></script>
+
+    @yield('scripts')
     <script>
       $(function(){
 
