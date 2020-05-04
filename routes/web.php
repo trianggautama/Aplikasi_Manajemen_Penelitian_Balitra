@@ -21,5 +21,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/index', 'adminController@index')->name('index');
 Route::get('/user', 'adminController@userIndex')->name('userIndex');
+Route::get('/pembimbing', 'adminController@pembimbingIndex')->name('pembimbingIndex');
+Route::get('/pejabat', 'adminController@pejabatIndex')->name('pejabatIndex');
 

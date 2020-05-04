@@ -7,11 +7,11 @@
             <div>
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb breadcrumb-style1 mg-b-10">
-                  <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Sales Monitoring</li>
+                  <li class="breadcrumb-item"><a href="#">Pegawai</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Pejabat Struktural</li>
                 </ol>
               </nav>
-              <h4 class="mg-b-0 tx-spacing--1">Welcome to Dashboard</h4>
+              <h4 class="mg-b-0 tx-spacing--1">Pejabat Struktural</h4>
             </div>
             <div class="d-none d-md-block">
               <button class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5"><i data-feather="printer" class="wd-10 mg-r-5"></i> Print</button>
@@ -26,16 +26,20 @@
           <table id="dataTable" class="table text-center">
             <thead>
                 <tr>
-                    <th class="wd-20p">No</th>
-                    <th class="wd-25p">Nama</th>
-                    <th class="wd-20p">Username</th>
-                    <th class="wd-15p">Aksi</th>
+                    <th>No</th>
+                    <th>NIP</th>
+                    <th>Nama</th>
+                    <th>Jabatan</th>
+                    <th>Username</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>1</td>
+                    <td>121313121</td>
                     <td>Donna Snider</td>
+                    <td>Staff Pelaksana</td>
                     <td>Donna123</td>
                     <td>
                         <button type="button" class="btn btn-primary btn-icon">
@@ -66,14 +70,22 @@
             </button>
           </div>
           <div class="modal-body">
+            <input type="hidden" name="role" value="2">
               <div class="form-group">
-                <input type="hidden" name="role" value="0">
                 <label for="Nama">Nama</label>
                 <input type="text" class="form-control" placeholder="Nama">
               </div>
               <div class="form-group">
-                <label for="Nama">username</label>
-                <input type="text" class="form-control" placeholder="username">
+                <label for="Nama">NIP</label>
+                <input type="text" class="form-control" placeholder="NIP">
+              </div>
+              <div class="form-group">
+                <label for="Nama">Jabatan</label>
+                <input type="text" class="form-control" placeholder="jabatan">
+              </div>
+              <div class="form-group">
+                <label for="Nama">Username</label>
+                <input type="text" class="form-control" placeholder="jabatan">
               </div>
               <div class="form-group">
                 <label for="Nama">Password</label>

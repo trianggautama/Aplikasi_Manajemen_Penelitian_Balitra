@@ -67,8 +67,8 @@
             <a href="" class="nav-link"><i data-feather="user"></i> <span>Pegawai</span></a>
             <ul>
               <li><a href="{{Route('userIndex')}}">Admin</a></li>
-              <li><a href="page-connections.html">pembimbing</a></li>
-              <li><a href="page-groups.html">Pejabat Struktural</a></li>
+              <li><a href="{{Route('pembimbingIndex')}}">pembimbing</a></li>
+              <li><a href="{{Route('pejabatIndex')}}">Pejabat Struktural</a></li>
             </ul>
           </li>
           <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="users"></i> <span>Peneliti</span></a></li>
