@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class adminController extends Controller
 {   
+    public function permohonanInput()
+    {
+        return view('permohonanInput');
+    }
+
     public function index()
     {
         return view('admin.index');

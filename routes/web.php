@@ -20,6 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/permohonan/input', 'adminController@permohonanInput')->name('permohonanInput');
+
 
 Route::get('/index', 'adminController@index')->name('index');
 Route::get('/user', 'adminController@userIndex')->name('userIndex');
