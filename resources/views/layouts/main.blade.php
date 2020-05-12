@@ -49,6 +49,33 @@
                 data-feather="bell"></i></a>
             <a href="" data-toggle="tooltip" title="Sign out"><i data-feather="log-out"></i></a>
           </div>
+        </div><!-- aside-loggedin -->
+        <ul class="nav nav-aside">
+          <li class="nav-label mg-t-25">Master Data</li>
+          <li class="nav-item with-sub">
+            <a href="" class="nav-link"><i data-feather="user"></i> <span>Pegawai</span></a>
+            <ul>
+              <li><a href="{{Route('userIndex')}}">Admin</a></li>
+              <li><a href="{{Route('pembimbingIndex')}}">pembimbing</a></li>
+              <li><a href="{{Route('pejabatIndex')}}">Pejabat Struktural</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="{{Route('objekPenelitianIndex')}}" class="nav-link"><i data-feather="box"></i> <span>Objek Penelitian</span></a></li>
+          <li class="nav-item"><a href="{{Route('fasilitasIndex')}}" class="nav-link"><i data-feather="thermometer"></i> <span>Fasilitas Ballitra</span></a></li>
+          <li class="nav-label mg-t-25">Penelitian</li>
+          <li class="nav-item"><a href="{{Route('permohonanIndex')}}" class="nav-link"><i data-feather="file-text"></i> <span>Data Permohonan</span></a></li>
+          <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="users"></i> <span>Peneliti</span></a></li>
+          <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="sunrise"></i> <span>Data Penelitian</span></a></li>
+          <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="edit-3"></i> <span>Kegiatan Penelitian</span></a></li>
+          <li class="nav-label mg-t-25">Lain lain</li>
+          <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="book-open"></i> <span>Berita</span></a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <div class="content ht-100v pd-0">
+      <div class="content-header">
+        <div class="content-search">
         </div>
         <div class="aside-loggedin-user">
           <a href="#loggedinMenu" class="d-flex align-items-center justify-content-between mg-b-2"

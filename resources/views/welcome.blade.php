@@ -9,7 +9,7 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h2><span>Multi</span> is the best Onepage html template</h2>
+                                    <h2><span>Pelayanan</span> Kegiatan Penelitian</h2>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna incididunt ut labore aliqua. </p>
                                     <a class="btn btn-primary btn-lg" href="{{Route('permohonanInput')}}">Ajukan Permohonan</a>
                                 </div>
@@ -25,7 +25,7 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h2>Beautifully designed <span>free</span> one page template</h2>
+                                    <h2><span>Pelayanan</span> Kegiatan Penelitian</h2>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna incididunt ut labore aliqua. </p>
                                     <a class="btn btn-primary btn-lg" href="{{Route('permohonanInput')}}">Ajukan Permohonan</a>
                                 </div>
@@ -43,13 +43,12 @@
         <div class="container">
 
             <div class="section-header">
-                <h2 class="section-title text-center wow fadeInDown">About Us</h2>
-                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <h2 class="section-title text-center wow fadeInDown">Tentang Kami</h2>
             </div>
 
             <div class="row">
                 <div class="col-sm-6 wow fadeInLeft">
-                    <h3 class="column-title">Video Intro</h3>
+                    <h3 class="column-title">Kantor Balittra Banjarbaru</h3>
                     <!-- 16:9 aspect ratio -->
                     <div class="embed-responsive embed-responsive-16by9">
                         <iframe src="//player.vimeo.com/video/58093852?title=0&amp;byline=0&amp;portrait=0&amp;color=e79b39" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -57,27 +56,9 @@
                 </div>
 
                 <div class="col-sm-6 wow fadeInRight">
-                    <h3 class="column-title">Multi Capability</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-
-                    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <ul class="nostyle">
-                                <li><i class="fa fa-check-square"></i> Ipsum is simply dummy</li>
-                                <li><i class="fa fa-check-square"></i> When an unknown</li>
-                            </ul>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <ul class="nostyle">
-                                <li><i class="fa fa-check-square"></i> The printing and typesetting</li>
-                                <li><i class="fa fa-check-square"></i> Lorem Ipsum has been</li>
-                            </ul>
-                        </div>
-                    </div>
-
+                    <h3 class="column-title">Pengertian Umum</h3>
+                    <p class="text-justify"> Balai Penelitian Pertanian Lahan Rawa (BALLITRA) merupakan sebuah instansi pemerintah yang memiliki tugas pokok melaksanakan penelitian lahan rawa untuk pertanian, sebagai penyedia sarana penelitian pada pertanian dan lahan rawa ini kepada masyarakat umum yang ingin melakukan penelitian terhadap tanaman lahan rawa guna perkembangan teknologi agrikultural</p>
+                    <br>
                     <a class="btn btn-primary" href="#">Learn More</a>
 
                 </div>
@@ -88,65 +69,8 @@
     <section id="work-process">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title text-center wow fadeInDown">Our Process</h2>
-                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
-            </div>
-
-            <div class="row text-center">
-                <div class="col-md-2 col-md-4 col-xs-6">
-                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
-                        <div class="icon-circle">
-                            <span>1</span>
-                            <i class="fa fa-coffee fa-2x"></i>
-                        </div>
-                        <h3>MEET</h3>
-                    </div>
-                </div>
-                <div class="col-md-2 col-md-4 col-xs-6">
-                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="100ms">
-                        <div class="icon-circle">
-                            <span>2</span>
-                            <i class="fa fa-bullhorn fa-2x"></i>
-                        </div>
-                        <h3>PLAN</h3>
-                    </div>
-                </div>
-                <div class="col-md-2 col-md-4 col-xs-6">
-                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="200ms">
-                        <div class="icon-circle">
-                            <span>3</span>
-                            <i class="fa fa-image fa-2x"></i>
-                        </div>
-                        <h3>DESIGN</h3>
-                    </div>
-                </div>
-                <div class="col-md-2 col-md-4 col-xs-6">
-                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="300ms">
-                        <div class="icon-circle">
-                            <span>4</span>
-                            <i class="fa fa-heart fa-2x"></i>
-                        </div>
-                        <h3>DEVELOP</h3>
-                    </div>
-                </div>
-                <div class="col-md-2 col-md-4 col-xs-6">
-                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="400ms">
-                        <div class="icon-circle">
-                            <span>5</span>
-                            <i class="fa fa-shopping-cart fa-2x"></i>
-                        </div>
-                        <h3>TESTING</h3>
-                    </div>
-                </div>
-                <div class="col-md-2 col-md-4 col-xs-6">
-                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="500ms">
-                        <div class="icon-circle">
-                            <span>6</span>
-                            <i class="fa fa-space-shuttle fa-2x"></i>
-                        </div>
-                        <h3>LAUNCH</h3>
-                    </div>
-                </div>
+                <h2 class="section-title text-center wow fadeInDown">Aplikasi Pelayanan Kegiatan Penelitian</h2>
+                <p class="text-center wow fadeInDown">Aplikasi ini Digunakan untuk Memudahkan Masyarakat yang ingin melakukan penelitian di kantor Balitra Kota Banjarbaru.</p>
             </div>
         </div>
     </section>
@@ -154,21 +78,19 @@
     <section id="features">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title text-center wow fadeInDown">Awesome Features</h2>
-                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <h2 class="section-title text-center wow fadeInDown">Fungsi ballitra </h2>
+                <p class="text-center wow fadeInDown">Adapun fungsi Balittra Banjarbaru secara keseluruhan adalah</p>
             </div>
             <div class="row">
-                <div class="col-sm-6 wow fadeInLeft">
-                    <img class="img-responsive" src="{{asset('depan/images/main-feature.png')}}" alt="">
-                </div>
-                <div class="col-sm-6">
-                    <div class="media service-box wow fadeInRight">
+                <div class="col-sm-6 ">
+                
+                <div class="media service-box wow fadeInRight">
                         <div class="pull-left">
                             <i class="fa fa-line-chart"></i>
                         </div>
                         <div class="media-body">
                             <h4 class="media-heading">UX design</h4>
-                            <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                            <p>Penelitian eksplorasi, karakterisasi dan konservasi ekosistem lahan rawa untuk pertanian </p>
                         </div>
                     </div>
 
@@ -178,7 +100,7 @@
                         </div>
                         <div class="media-body">
                             <h4 class="media-heading">UI design</h4>
-                            <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                            <p>Penelitian teknologi pengelolaan sumberdaya lahan rawa </p>
                         </div>
                     </div>
 
@@ -188,7 +110,7 @@
                         </div>
                         <div class="media-body">
                             <h4 class="media-heading">SEO Services</h4>
-                            <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                            <p>Penelitian komponen teknologi sistem dan usaha agribisnis pertanian lahan rawa </p>
                         </div>
                     </div>
 
@@ -198,7 +120,49 @@
                         </div>
                         <div class="media-body">
                             <h4 class="media-heading">SEO Services</h4>
-                            <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                            <p>Pelayanan teknik kegiatan penelitian pertanian lahan rawa </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-6">
+                    <div class="media service-box wow fadeInRight">
+                        <div class="pull-left">
+                            <i class="fa fa-line-chart"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">UX design</h4>
+                            <p>Penyiapan kerjasama, informasi, dokumentasi, serta penyebarluasan </p>
+                        </div>
+                    </div>
+
+                    <div class="media service-box wow fadeInRight">
+                        <div class="pull-left">
+                            <i class="fa fa-cubes"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">UI design</h4>
+                            <p>pendayagunaan hasil penelitian pertanian lahan rawa  </p>
+                        </div>
+                    </div>
+
+                    <div class="media service-box wow fadeInRight">
+                        <div class="pull-left">
+                            <i class="fa fa-pie-chart"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">SEO Services</h4>
+                            <p>Pelaksanaan urusan tata usah dan rumah tangga Balai. </p>
+                        </div>
+                    </div>
+
+                    <div class="media service-box wow fadeInRight">
+                        <div class="pull-left">
+                            <i class="fa fa-pie-chart"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">SEO Services</h4>
+                            <p>Petani yang ingin melakukan permintaan analisa terhadap unsur yang ada  </p>
                         </div>
                     </div>
                 </div>
@@ -221,7 +185,7 @@
         <div class="container">
 
             <div class="section-header">
-                <h2 class="section-title text-center wow fadeInDown">Our Services</h2>
+                <h2 class="section-title text-center wow fadeInDown">Objek Penelitian</h2>
                 <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
             </div>
 

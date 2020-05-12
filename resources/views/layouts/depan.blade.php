@@ -40,7 +40,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="{{asset('depan/images/logo.png')}}" alt="logo"></a>
+                    <a class="navbar-brand" href="index.html"><img src="{{asset('depan/images/logo.png')}}" alt="logo" width="60px"> </a>
+                    <a class="navbar-brand" href="index.html" style="margin-top:18px !important;">BALITTRA BANJARBARU</a>
                 </div>
 
                 <div class="collapse navbar-collapse navbar-right">
