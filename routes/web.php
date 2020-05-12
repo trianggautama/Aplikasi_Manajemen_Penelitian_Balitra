@@ -29,6 +29,8 @@ Route::get('/objekPenelitian', 'adminController@objekPenelitianIndex')->name('ob
 Route::get('/fasilitas', 'adminController@fasilitasIndex')->name('fasilitasIndex');
 Route::get('/permohonan', 'adminController@permohonanIndex')->name('permohonanIndex');
 
+Route::group(['middleware' => ['auth']], function () {
+
 // user route
 Route::get('/user', 'UserController@index')->name('userIndex');
 Route::post('/user', 'UserController@store')->name('userStore');

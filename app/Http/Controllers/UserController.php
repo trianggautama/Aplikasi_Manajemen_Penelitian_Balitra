@@ -10,8 +10,10 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function index()
-    {   $data = User::cursor();
-        return view('admin.user.index',compact('data'));
+    {
+        $user = User::OrderBy('id', 'Desc')->get();
+
+        return view('admin.user.index', compact('data'));
     }
 
     public function store(Request $request)
