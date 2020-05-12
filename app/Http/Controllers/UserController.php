@@ -4,15 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Data_personal;
 use App\User;
-use Hash;
+use Hash; 
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
     public function index()
-    {
-        $user = User::OrderBy('id', 'Desc')->get();
-
+    {   
+        $data = User::OrderBy('id', 'Desc')->get();
         return view('admin.user.index', compact('data'));
     }
 
