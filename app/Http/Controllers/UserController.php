@@ -15,6 +15,12 @@ class UserController extends Controller
         return view('admin.user.index', compact('data'));
     }
 
+    public function profil()
+    {   
+        
+        return view('admin.user.profil');
+    }
+    
     public function store(Request $request)
     {
         $user = new User;

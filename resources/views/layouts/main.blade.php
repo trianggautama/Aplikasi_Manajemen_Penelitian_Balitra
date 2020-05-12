@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="{{asset('admin/assets/css/dashforge.dashboard.css')}}">
   <link id="dfMode" rel="stylesheet" href="{{asset('admin/assets/css/skin.cool.css')}}">
   <link id="dfSkin" rel="stylesheet" href="{{asset('admin/assets/css/skin.deepblue.css')}}">
-
+  @stack('styles')
 
 </head>
 
@@ -50,7 +50,10 @@
             <a href="" data-toggle="tooltip" title="Sign out"><i data-feather="log-out"></i></a>
           </div>
         </div><!-- aside-loggedin -->
-        <ul class="nav nav-aside">
+       <ul class="nav nav-aside">
+       <li class="nav-label mg-t-25">Akun</li>
+        <li class="nav-item"><a href="{{Route('userProfil')}}" class="nav-link"><i data-feather="user"></i> <span>Profil</span></a></li>
+        
           <li class="nav-label mg-t-25">Master Data</li>
           <li class="nav-item with-sub">
             <a href="" class="nav-link"><i data-feather="user"></i> <span>Pegawai</span></a>

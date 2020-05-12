@@ -59,9 +59,9 @@
         </div><!-- container -->
       </div>
 
-      <!-- modal -->
-      <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
+     <!-- modal -->
+     <div class="modal fade bd-example-modal-lg" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content tx-14">
           <div class="modal-header">
             <h6 class="modal-title" id="exampleModalLabel2">Modal Title</h6>
@@ -70,32 +70,62 @@
             </button>
           </div>
           <div class="modal-body">
-            <input type="hidden" name="role" value="2">
+          <form action="{{route('userStore')}}" method="post" enctype="multipart/form-data">
+          @csrf
+          <div class="form-group">
+            <label for="Nama">Nama</label>
+            <input type="text" name="nama" class="form-control" placeholder="Nama">
+          </div>
+          <div class="form-group">
+            <label for="Nama">NIP</label>
+            <input type="text" name="NIP" class="form-control" placeholder="NIP">
+          </div>
+          <div class="form-group">
+            <label for="Nama">Jabatan</label>
+            <input type="text" name="jabatan" class="form-control" placeholder="Jabatan">
+          </div>
+          <div class="form-group">
+            <label for="Nama">No Hp</label>
+            <input type="text" name="no_hp" class="form-control" placeholder="No Hp">
+          </div>
+          <div class="row">
+            <div class="col-md-6">
               <div class="form-group">
-                <label for="Nama">Nama</label>
-                <input type="text" class="form-control" placeholder="Nama">
-              </div>
+                <label for="Nama">Tempat Lahir</label>
+                <input type="text" name="tempat_lahir" class="form-control" placeholder="Tempat Lahir">
+            </div>
+            </div>
+            <div class="col-md-6">
               <div class="form-group">
-                <label for="Nama">NIP</label>
-                <input type="text" class="form-control" placeholder="NIP">
+                <label for="Nama">Tanggal Lahir</label>
+                <input type="date" name="tanggal_lahir" class="form-control" placeholder="Tanggal Lahir">
+            </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Nama">Alamat</label>
+            <input type="text" name="alamat" class="form-control" placeholder="ALamat">
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                  <label for="Nama">Username</label>
+                  <input type="text" name="username" class="form-control" placeholder="Username">
               </div>
-              <div class="form-group">
-                <label for="Nama">Jabatan</label>
-                <input type="text" class="form-control" placeholder="jabatan">
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                  <label for="Nama">Password</label>
+                  <input type="password" name="password" class="form-control" placeholder="username">
               </div>
-              <div class="form-group">
-                <label for="Nama">Username</label>
-                <input type="text" class="form-control" placeholder="jabatan">
-              </div>
-              <div class="form-group">
-                <label for="Nama">Password</label>
-                <input type="password" class="form-control" placeholder="username">
-              </div>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary tx-13" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary tx-13"><i data-feather="save" class="wd-10 mg-r-5"></i> Simpan</button>
+            <button type="submit" class="btn btn-primary tx-13"><i data-feather="save" class="wd-10 mg-r-5"></i>
+              Simpan</button>
           </div>
+        </form>
         </div>
       </div>
     </div>

@@ -22,17 +22,17 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/permohonan/input', 'adminController@permohonanInput')->name('permohonanInput');
 
+Route::group(['middleware' => ['auth']], function () {
+
 Route::get('/index', 'adminController@index')->name('index');
 Route::get('/pejabat', 'adminController@pejabatIndex')->name('pejabatIndex');
 Route::get('/permohonan', 'adminController@permohonanIndex')->name('permohonanIndex');
 
-Route::group(['middleware' => ['auth']], function () {
-
 // user route
 Route::get('/user', 'UserController@index')->name('userIndex');
+Route::get('/user/profil', 'UserController@profil')->name('userProfil');
 Route::post('/user', 'UserController@store')->name('userStore');
 Route::get('/user/edit/{uuid}', 'UserController@edit')->name('userEdit');
-});
 
 //pembimbing
 Route::get('/pembimbing', 'pembimbingController@index')->name('pembimbingIndex');
@@ -44,3 +44,6 @@ Route::get('/objekPenelitian/edit', 'objekPenelitianController@edit')->name('obj
 //fasilitas
 Route::get('/fasilitas', 'fasilitasController@index')->name('fasilitasIndex');
 Route::get('/fasilitas/edit', 'fasilitasController@edit')->name('fasilitasEdit');
+});
+
+
