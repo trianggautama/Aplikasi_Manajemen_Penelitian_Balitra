@@ -27,4 +27,7 @@ Route::get('/index', 'adminController@index')->name('index');
 Route::get('/user', 'adminController@userIndex')->name('userIndex');
 Route::get('/pembimbing', 'adminController@pembimbingIndex')->name('pembimbingIndex');
 Route::get('/pejabat', 'adminController@pejabatIndex')->name('pejabatIndex');
+Route::get('/objekPenelitian', 'adminController@objekPenelitianIndex')->name('objekPenelitianIndex');
+Route::get('/fasilitas', 'adminController@fasilitasIndex')->name('fasilitasIndex');
+Route::get('/permohonan', 'adminController@permohonanIndex')->name('permohonanIndex');
 
