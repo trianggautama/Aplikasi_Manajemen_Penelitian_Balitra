@@ -31,7 +31,7 @@ Route::get('/permohonan', 'adminController@permohonanIndex')->name('permohonanIn
 
 Route::group(['middleware' => ['auth']], function () {
 
-    // user route
+// user route
     Route::get('/user', 'UserController@index')->name('userIndex');
     Route::post('/user', 'UserController@store')->name('userStore');
 });

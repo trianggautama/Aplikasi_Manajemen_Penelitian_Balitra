@@ -11,7 +11,9 @@ class UserController extends Controller
 {
     public function index()
     {
-        return view('admin.user.index');
+        $user = User::OrderBy('id', 'Desc')->get();
+
+        return view('admin.user.index', compact('user'));
     }
 
     public function store(Request $request)
