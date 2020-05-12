@@ -73,53 +73,6 @@
       </div>
     </aside>
 
-    <div class="content ht-100v pd-0">
-      <div class="content-header">
-        <div class="content-search">
-        </div>
-        <div class="aside-loggedin-user">
-          <a href="#loggedinMenu" class="d-flex align-items-center justify-content-between mg-b-2"
-            data-toggle="collapse">
-            <h6 class="tx-semibold mg-b-0">Nama User</h6>
-            <i data-feather="chevron-down"></i>
-          </a>
-          <p class="tx-color-03 tx-12 mg-b-0">Jabatan</p>
-        </div>
-        <div class="collapse" id="loggedinMenu">
-          <ul class="nav nav-aside mg-b-0">
-            <li class="nav-item"><a href="" class="nav-link"><i data-feather="edit"></i> <span>Edit Profile</span></a>
-            </li>
-            <li class="nav-item"><a href="" class="nav-link"><i data-feather="user"></i> <span>View Profile</span></a>
-            </li>
-          </ul>
-        </div>
-      </div><!-- aside-loggedin -->
-      <ul class="nav nav-aside">
-        <li class="nav-label mg-t-25">Master Data</li>
-        <li class="nav-item with-sub">
-          <a href="" class="nav-link"><i data-feather="user"></i> <span>Pegawai</span></a>
-          <ul>
-            <li><a href="{{Route('userIndex')}}">Admin</a></li>
-            <li><a href="{{Route('pembimbingIndex')}}">pembimbing</a></li>
-            <li><a href="{{Route('pejabatIndex')}}">Pejabat Struktural</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="users"></i>
-            <span>Peneliti</span></a></li>
-        <li class="nav-label mg-t-25">Penelitian</li>
-        <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="file-text"></i> <span>Data
-              Permohonan</span></a></li>
-        <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="sunrise"></i> <span>Data
-              Penelitian</span></a></li>
-        <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="edit-3"></i> <span>Kegiatan
-              Penelitian</span></a></li>
-        <li class="nav-label mg-t-25">Lain lain</li>
-        <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="book-open"></i>
-            <span>Berita</span></a></li>
-      </ul>
-    </div>
-  </aside>
-
   <div class="content ht-100v pd-0">
     <div class="content-header">
       <div class="content-search">

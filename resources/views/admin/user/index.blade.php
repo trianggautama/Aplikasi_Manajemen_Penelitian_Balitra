@@ -35,19 +35,21 @@
                 </tr>
               </thead>
               <tbody>
+              @foreach($data as $d)
                 <tr>
-                  <td>1</td>
-                  <td>Donna Snider</td>
-                  <td>Donna123</td>
+                  <td>{{$d->loopiteration}}</td>
+                  <td>{{$d->nama}}</td>
+                  <td>{{$d->username}}</td>
                   <td>
-                    <button type="button" class="btn btn-primary btn-icon">
+                    <a href="{{Route('userEdit',['uuid'=>$d->uuid])}}" class="btn btn-primary btn-icon">
                       <i data-feather="edit"></i>
-                    </button>
+                    </a>
                     <button type="button" class="btn btn-danger btn-icon">
                       <i data-feather="delete"></i>
                     </button>
                   </td>
                 </tr>
+                @endforeach
               </tbody>
             </table>
           </div><!-- df-example -->
@@ -58,11 +60,11 @@
 </div>
 
 <!-- modal -->
-<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade bd-example-modal-lg" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content tx-14">
       <div class="modal-header">
-        <h6 class="modal-title" id="exampleModalLabel2">Modal Title</h6>
+        <h6 class="modal-title" id="exampleModalLabel2">Tambah Data</h6>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -86,25 +88,37 @@
             <label for="Nama">No Hp</label>
             <input type="text" name="no_hp" class="form-control" placeholder="No Hp">
           </div>
-          <div class="form-group">
-            <label for="Nama">Tempat Lahir</label>
-            <input type="text" name="tempat_lahir" class="form-control" placeholder="Tempat Lahir">
-          </div>
-          <div class="form-group">
-            <label for="Nama">Tanggal Lahir</label>
-            <input type="date" name="tanggal_lahir" class="form-control" placeholder="Tanggal Lahir">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="Nama">Tempat Lahir</label>
+                <input type="text" name="tempat_lahir" class="form-control" placeholder="Tempat Lahir">
+            </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="Nama">Tanggal Lahir</label>
+                <input type="date" name="tanggal_lahir" class="form-control" placeholder="Tanggal Lahir">
+            </div>
+            </div>
           </div>
           <div class="form-group">
             <label for="Nama">Alamat</label>
             <input type="text" name="alamat" class="form-control" placeholder="ALamat">
           </div>
-          <div class="form-group">
-            <label for="Nama">Username</label>
-            <input type="text" name="username" class="form-control" placeholder="Username">
-          </div>
-          <div class="form-group">
-            <label for="Nama">Password</label>
-            <input type="password" name="password" class="form-control" placeholder="username">
+          <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                  <label for="Nama">Username</label>
+                  <input type="text" name="username" class="form-control" placeholder="Username">
+              </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                  <label for="Nama">Password</label>
+                  <input type="password" name="password" class="form-control" placeholder="username">
+              </div>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary tx-13" data-dismiss="modal">Close</button>

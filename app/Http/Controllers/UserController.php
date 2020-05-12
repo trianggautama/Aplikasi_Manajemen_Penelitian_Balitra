@@ -10,8 +10,8 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function index()
-    {
-        return view('admin.user.index');
+    {   $data = User::cursor();
+        return view('admin.user.index',compact('data'));
     }
 
     public function store(Request $request)
@@ -43,5 +43,10 @@ class UserController extends Controller
         $personal->save();
 
         return redirect()->route('userIndex')->with('success', 'Berhasil menyimpan data');
+    }
+
+    public function edit($uuid){
+        $data = null;
+        return view('admin.user.edit',compact('data'));
     }
 }
