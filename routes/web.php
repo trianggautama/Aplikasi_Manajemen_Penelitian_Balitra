@@ -26,6 +26,9 @@ Route::get('/index', 'adminController@index')->name('index');
 Route::get('/pembimbing', 'adminController@pembimbingIndex')->name('pembimbingIndex');
 Route::get('/pejabat', 'adminController@pejabatIndex')->name('pejabatIndex');
 
-// user route
-Route::get('/user', 'UserController@index')->name('userIndex');
-Route::post('/user', 'UserController@store')->name('userStore');
+Route::group(['middleware' => ['auth']], function () {
+
+    // user route
+    Route::get('/user', 'UserController@index')->name('userIndex');
+    Route::post('/user', 'UserController@store')->name('userStore');
+});
