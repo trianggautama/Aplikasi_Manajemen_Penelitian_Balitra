@@ -32,6 +32,9 @@ Route::get('/permohonan', 'adminController@permohonanIndex')->name('permohonanIn
 Route::group(['middleware' => ['auth']], function () {
 
 // user route
-Route::get('/user', 'UserController@index')->name('userIndex');
-Route::post('/user', 'UserController@store')->name('userStore');
-Route::get('/user/edit/{uuid}', 'UserController@edit')->name('userEdit');
+    Route::get('/user', 'UserController@index')->name('userIndex');
+    Route::post('/user', 'UserController@store')->name('userStore');
+    Route::get('/user/edit/{uuid}', 'UserController@edit')->name('userEdit');
+    Route::put('/user/edit/{uuid}', 'UserController@update')->name('userUpdate');
+    Route::get('/user/delete/{uuid}', 'UserController@destroy')->name('userDestroy');
+});
