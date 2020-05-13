@@ -45,12 +45,12 @@
                   <td>{{$d->data_personal->jabatan}}</td>
                   <td>{{$d->username}}</td>
                   <td>
-                    <a href="{{Route('userEdit',['uuid'=>$d->uuid])}}" class="btn btn-primary btn-icon">
+                    <a href="{{Route('pembimbingEdit',['uuid'=>$d->uuid])}}" class="btn btn-primary btn-icon">
                       <i data-feather="edit"></i>
                     </a>
-                    <button type="button" class="btn btn-danger btn-icon">
+                    <a href="{{Route('pembimbingDestroy',['uuid'=>$d->uuid])}}" class="btn btn-danger btn-icon">
                       <i data-feather="delete"></i>
-                    </button>
+                    </a>
                   </td>
                 </tr>
                 @endforeach
