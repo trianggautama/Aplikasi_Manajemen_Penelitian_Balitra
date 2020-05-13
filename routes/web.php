@@ -38,6 +38,11 @@ Route::group(['middleware' => ['auth']], function () {
 
     //pembimbing
     Route::get('/pembimbing', 'pembimbingController@index')->name('pembimbingIndex');
+    Route::post('/pembimbing', 'PembimbingController@store')->name('pembimbingStore');
+    Route::get('/pembimbing/profil', 'PembimbingController@profil')->name('pembimbingProfil');
+    Route::get('/pembimbing/edit/{uuid}', 'PembimbingController@edit')->name('pembimbingEdit');
+    Route::put('/pembimbing/edit/{uuid}', 'PembimbingController@update')->name('pembimbingUpdate');
+    Route::get('/pembimbing/delete/{uuid}', 'PembimbingController@destroy')->name('pembimbingDestroy');
 
     //objekpenelitian
     Route::get('/objekPenelitian', 'objekPenelitianController@index')->name('objekPenelitianIndex');
