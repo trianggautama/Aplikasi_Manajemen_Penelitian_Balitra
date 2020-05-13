@@ -46,7 +46,10 @@ Route::group(['middleware' => ['auth']], function () {
 
     //objekpenelitian
     Route::get('/objekPenelitian', 'objekPenelitianController@index')->name('objekPenelitianIndex');
+    Route::post('/objekPenelitian', 'objekPenelitianController@store')->name('objekPenelitianStore');
     Route::get('/objekPenelitian/edit', 'objekPenelitianController@edit')->name('objekPenelitianEdit');
+    Route::put('/objekPenelitian/edit/{uuid}', 'objekPenelitianController@update')->name('objekPenelitianUpdate');
+    Route::get('/objekPenelitian/delete/{uuid}', 'objekPenelitianController@destroy')->name('objekPenelitianDestroy');
 
     //fasilitas
     Route::get('/fasilitas', 'fasilitasController@index')->name('fasilitasIndex');
