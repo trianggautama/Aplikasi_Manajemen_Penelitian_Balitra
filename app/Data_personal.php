@@ -10,4 +10,9 @@ class Data_personal extends Model
 {
     use Notifiable;
     use Uuid;
+
+    public function user()
+    {
+        return $this->BelongsTo(User::class);
+    }
 }
