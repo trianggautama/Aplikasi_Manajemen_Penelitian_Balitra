@@ -38,9 +38,9 @@
                     <td>Penelitian PH Tanah</td>
                     <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, tempore voluptate cupiditate est cum quae sed dignissimos beatae ipsam eveniet aperiam consectetur inventore quo facere at delectus saepe minus ad.</td>
                     <td>
-                        <button type="button" class="btn btn-primary btn-icon">
+                        <a href="{{Route('objekPenelitianEdit')}}" class="btn btn-primary btn-icon">
                             <i data-feather="edit"></i>
-                        </button>
+                        </a>
                         <button type="button" class="btn btn-danger btn-icon">
                             <i data-feather="delete"></i>
                         </button>

@@ -24,16 +24,6 @@ class adminController extends Controller
         return view('admin.pejabat.index');
     }
 
-    public function objekPenelitianIndex()
-    {
-        return view('admin.objekPenelitian.index');
-    }
-    
-    public function fasilitasIndex()
-    {
-        return view('admin.fasilitas.index');
-    }
-
     public function permohonanIndex()
     {
         return view('admin.permohonan.index');

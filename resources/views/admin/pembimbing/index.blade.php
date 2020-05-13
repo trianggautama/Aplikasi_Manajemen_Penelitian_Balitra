@@ -33,23 +33,25 @@
                     <th>Username</th>
                     <th>Aksi</th>
                 </tr>
-            </thead>
+            </thead> 
             <tbody>
+              @foreach($data as $d)
                 <tr>
-                    <td>1</td>
-                    <td>121313121</td>
-                    <td>Donna Snider</td>
-                    <td>Staff Pelaksana</td>
-                    <td>Donna123</td>
-                    <td>
-                        <button type="button" class="btn btn-primary btn-icon">
-                            <i data-feather="edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger btn-icon">
-                            <i data-feather="delete"></i>
-                        </button>
-                    </td>
+                  <td>{{$d->loopiteration}}</td>
+                  <td>{{$d->data_pribadi->nip}}</td>
+                  <td>{{$d->nama}}</td>
+                  <td>{{$d->data_pribadi->jabatan}}</td>
+                  <td>{{$d->username}}</td>
+                  <td>
+                    <a href="{{Route('userEdit',['uuid'=>$d->uuid])}}" class="btn btn-primary btn-icon">
+                      <i data-feather="edit"></i>
+                    </a>
+                    <button type="button" class="btn btn-danger btn-icon">
+                      <i data-feather="delete"></i>
+                    </button>
+                  </td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
         </div><!-- df-example -->
@@ -70,32 +72,62 @@
             </button>
           </div>
           <div class="modal-body">
-            <input type="hidden" name="role" value="1">
+          <form action="{{route('userStore')}}" method="post" enctype="multipart/form-data">
+          @csrf
+          <div class="form-group">
+            <label for="Nama">Nama</label>
+            <input type="text" name="nama" class="form-control" placeholder="Nama">
+          </div>
+          <div class="form-group">
+            <label for="Nama">NIP</label>
+            <input type="text" name="NIP" class="form-control" placeholder="NIP">
+          </div>
+          <div class="form-group">
+            <label for="Nama">Jabatan</label>
+            <input type="text" name="jabatan" class="form-control" placeholder="Jabatan">
+          </div>
+          <div class="form-group">
+            <label for="Nama">No Hp</label>
+            <input type="text" name="no_hp" class="form-control" placeholder="No Hp">
+          </div>
+          <div class="row">
+            <div class="col-md-6">
               <div class="form-group">
-                <label for="Nama">Nama</label>
-                <input type="text" class="form-control" placeholder="Nama">
-              </div>
+                <label for="Nama">Tempat Lahir</label>
+                <input type="text" name="tempat_lahir" class="form-control" placeholder="Tempat Lahir">
+            </div>
+            </div>
+            <div class="col-md-6">
               <div class="form-group">
-                <label for="Nama">NIP</label>
-                <input type="text" class="form-control" placeholder="NIP">
+                <label for="Nama">Tanggal Lahir</label>
+                <input type="date" name="tanggal_lahir" class="form-control" placeholder="Tanggal Lahir">
+            </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Nama">Alamat</label>
+            <input type="text" name="alamat" class="form-control" placeholder="ALamat">
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                  <label for="Nama">Username</label>
+                  <input type="text" name="username" class="form-control" placeholder="Username">
               </div>
-              <div class="form-group">
-                <label for="Nama">Jabatan</label>
-                <input type="text" class="form-control" placeholder="jabatan">
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                  <label for="Nama">Password</label>
+                  <input type="password" name="password" class="form-control" placeholder="username">
               </div>
-              <div class="form-group">
-                <label for="Nama">Username</label>
-                <input type="text" class="form-control" placeholder="jabatan">
-              </div>
-              <div class="form-group">
-                <label for="Nama">Password</label>
-                <input type="password" class="form-control" placeholder="username">
-              </div>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary tx-13" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary tx-13"><i data-feather="save" class="wd-10 mg-r-5"></i> Simpan</button>
+            <button type="submit" class="btn btn-primary tx-13"><i data-feather="save" class="wd-10 mg-r-5"></i>
+              Simpan</button>
           </div>
+        </form>
         </div>
       </div>
     </div>

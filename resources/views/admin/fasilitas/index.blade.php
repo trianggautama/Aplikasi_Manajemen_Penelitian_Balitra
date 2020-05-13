@@ -42,9 +42,9 @@
                     <td>10 Buah</td>
                     <td>-</td>
                     <td>
-                        <button type="button" class="btn btn-primary btn-icon">
+                        <a href="{{Route('fasilitasEdit')}}" class="btn btn-primary btn-icon">
                             <i data-feather="edit"></i>
-                        </button>
+                        </a>
                         <button type="button" class="btn btn-danger btn-icon">
                             <i data-feather="delete"></i>
                         </button>
