@@ -53,5 +53,9 @@ Route::group(['middleware' => ['auth']], function () {
 
     //fasilitas
     Route::get('/fasilitas', 'fasilitasController@index')->name('fasilitasIndex');
+    Route::post('/fasilitas', 'fasilitasController@store')->name('fasilitasStore');
     Route::get('/fasilitas/edit', 'fasilitasController@edit')->name('fasilitasEdit');
+    Route::put('/fasilitas/edit/{uuid}', 'fasilitasController@update')->name('fasilitasUpdate');
+    Route::get('/fasilitas/delete/{uuid}', 'fasilitasController@destroy')->name('fasilitasDestroy');
+
 });
