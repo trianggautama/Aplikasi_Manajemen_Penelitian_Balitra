@@ -35,18 +35,18 @@
                 </tr>
               </thead>
               <tbody>
-              @foreach($data as $d)
+                @foreach($data as $d)
                 <tr>
-                  <td>{{$d->loopiteration}}</td>
+                  <td>{{$loop->iteration}}</td>
                   <td>{{$d->nama}}</td>
                   <td>{{$d->username}}</td>
                   <td>
                     <a href="{{Route('userEdit',['uuid'=>$d->uuid])}}" class="btn btn-primary btn-icon">
                       <i data-feather="edit"></i>
                     </a>
-                    <button type="button" class="btn btn-danger btn-icon">
+                    <a href="{{Route('userDestroy',['uuid' => $d->uuid])}}" class="btn btn-danger btn-icon">
                       <i data-feather="delete"></i>
-                    </button>
+                    </a>
                   </td>
                 </tr>
                 @endforeach
@@ -60,7 +60,8 @@
 </div>
 
 <!-- modal -->
-<div class="modal fade bd-example-modal-lg" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+<div class="modal fade bd-example-modal-lg" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
+  aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content tx-14">
       <div class="modal-header">
@@ -93,13 +94,13 @@
               <div class="form-group">
                 <label for="Nama">Tempat Lahir</label>
                 <input type="text" name="tempat_lahir" class="form-control" placeholder="Tempat Lahir">
-            </div>
+              </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label for="Nama">Tanggal Lahir</label>
                 <input type="date" name="tanggal_lahir" class="form-control" placeholder="Tanggal Lahir">
-            </div>
+              </div>
             </div>
           </div>
           <div class="form-group">
@@ -108,15 +109,15 @@
           </div>
           <div class="row">
             <div class="col-md-6">
-                <div class="form-group">
-                  <label for="Nama">Username</label>
-                  <input type="text" name="username" class="form-control" placeholder="Username">
+              <div class="form-group">
+                <label for="Nama">Username</label>
+                <input type="text" name="username" class="form-control" placeholder="Username">
               </div>
             </div>
             <div class="col-md-6">
-                <div class="form-group">
-                  <label for="Nama">Password</label>
-                  <input type="password" name="password" class="form-control" placeholder="username">
+              <div class="form-group">
+                <label for="Nama">Password</label>
+                <input type="password" name="password" class="form-control" placeholder="username">
               </div>
             </div>
           </div>
