@@ -20,7 +20,6 @@
             data-feather="plus" class="wd-10 mg-r-5"></i> tambah Data</a>
       </div>
     </div>
-
     <div class="row row-xs">
       <div class="col-md-12 col-xl-12 mg-t-10">
         <div class="card card-body ">
@@ -35,21 +34,21 @@
                 </tr>
               </thead>
               <tbody>
+              @foreach($data as $d)
                 <tr>
-                  <td>1</td>
-                  <td>Penelitian PH Tanah</td>
-                  <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, tempore voluptate cupiditate est
-                    cum quae sed dignissimos beatae ipsam eveniet aperiam consectetur inventore quo facere at delectus
-                    saepe minus ad.</td>
+                  <td>{{$d->loop_itterration}}</td>
+                  <td>{{$d->nama}}</td>
+                  <td>{{$d->uraian}}</td>
                   <td>
-                    <a href="{{Route('objekPenelitianEdit')}}" class="btn btn-primary btn-icon">
+                    <a href="{{Route('objekPenelitianEdit',['uuid'=>$d->uuid])}}" class="btn btn-primary btn-icon">
                       <i data-feather="edit"></i>
                     </a>
-                    <button type="button" class="btn btn-danger btn-icon">
+                    <button type="button" class="btn btn-danger btn-icon"  onclick="Hapus('{{$d->uuid}}','{{$d->nama}}')">
                       <i data-feather="delete"></i>
                     </button>
                   </td>
                 </tr>
+              @endforeach
               </tbody>
             </table>
           </div><!-- df-example -->
@@ -84,7 +83,7 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary tx-13" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary tx-13"><i data-feather="save" class="wd-10 mg-r-5"></i>
-              Simpan</button>
+              Simpan</button> 
           </div>
         </form>
       </div>
@@ -105,5 +104,23 @@
           }
         });
       });
+
+      function Hapus(uuid, nama) {
+        Swal.fire({
+        title: 'Anda Yakin?',
+        text: " Menghapus data objek Penelitian '" + nama ,        
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Hapus',
+        cancelButtonText: 'Batal'
+      }).then((result) => {
+        if (result.value) {
+          url = '{{route("objekPenelitianDestroy",'')}}';
+          window.location.href =  url+'/'+uuid ;
+        }
+      })
+        }
 </script>
 @endsection

@@ -19,34 +19,38 @@
             <div class="col-md-12 col-xl-12 mg-t-10">
                 <div class="card">
                 <div class="card-body">
-                        <input type="hidden" name="role" value="2">
-                        <div class="form-group">
-                            <label for="Nama">Nama Alat</label>
-                            <input type="text" class="form-control" placeholder="Nama">
-                        </div>
-                        <div class="form-group">
-                            <label for="Nama">Kategori</label>
-                            <select name="" id="" class="form-control">
-                                <option value="">-- pilih Kategori --</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="Nama">Jumlah</label>
-                            <input type="number" class="form-control" placeholder="jabatan">
-                        </div>
-                        <div class="form-group">
-                            <label for="Nama">Satuan</label>
-                            <input type="text" class="form-control" placeholder="jabatan">
-                        </div>
-                        <div class="form-group">
-                            <label for="Nama">keterangan</label>
-                            <textarea name="keterangan" id="keterangan" name="keterangan" class="form-control"></textarea>
-                        </div>
+                <form action="" method="post">
+                    {{method_field('PUT') }}
+                    @csrf
+                    <div class="form-group">
+                      <label for="Nama">Nama Alat</label>
+                      <input type="text" name="nama" class="form-control" placeholder="Nama" value="{{$data->nama}}">
+                    </div>
+                    <div class="form-group">
+                      <label for="Nama">Kategori</label>
+                      <select name="kategori" id="" class="form-control">
+                        <option value="">-- pilih Kategori --</option>
+                        <option value="Alat Lab" {{  $data->kategori == "Alat Lab" ? 'selected' : ''}}>Alat Lab</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="Nama">Jumlah</label>
+                      <input type="number" name="jumlah" class="form-control" placeholder="Jumlah" value="{{$data->jumlah}}">
+                    </div>
+                    <div class="form-group">
+                      <label for="Nama">Satuan</label>
+                      <input type="text" name="satuan" class="form-control" placeholder="satuan" value="{{$data->satuan}}">
+                    </div>
+                    <div class="form-group">
+                      <label for="Nama">keterangan</label>
+                      <textarea name="keterangan" id="keterangan" name="keterangan" class="form-control">{{$data->keterangan}}</textarea>
+                    </div>
                     </div>
                     <div class="card-footer text-right">
                         <button type="button" class="btn btn-secondary tx-13" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary tx-13"><i data-feather="save" class="wd-10 mg-r-5"></i> Simpan</button>
+                        <button type="submit" class="btn btn-primary tx-13"><i data-feather="save" class="wd-10 mg-r-5"></i> Simpan</button>
                     </div>
+                    </form>
                 </div>
             </div>
           </div><!-- row -->

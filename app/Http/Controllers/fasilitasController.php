@@ -31,10 +31,10 @@ class fasilitasController extends Controller
     {
         $data = Fasilitas::where('uuid', $uuid)->first();
 
-        return view('admin.fasilitas.edit');
+        return view('admin.fasilitas.edit',compact('data'));
     }
 
-    public function update($uuid)
+    public function update(Request $request,$uuid)
     {
         $data = Fasilitas::where('uuid', $uuid)->first();
         $data->nama = $request->nama;

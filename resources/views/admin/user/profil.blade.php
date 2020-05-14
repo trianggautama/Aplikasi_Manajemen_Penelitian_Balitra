@@ -1,10 +1,10 @@
 @extends('layouts.main')
-
 @section('content')
 @push('styles')
     <link href="{{ asset('admin/assets/css/dashforge.profile.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('admin/assets/css/dashforge.demo.css')}}">
 @endpush
+<h3 class="mg-l-40">ini kena aja di gawi nunggu prossesnya tuntung brtaan</h3>
 <div class="content content-fixed content-profile mg-t-0">
       <div class="container pd-x-0 pd-lg-x- pd-xl-x-0">
         <div class="media d-block d-lg-flex">
@@ -41,10 +41,10 @@
         <div data-label="Example" class="df-example mg-b-20">
           <ul class="nav nav-line" id="myTab5" role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" id="home-tab5" data-toggle="tab" href="#home5" role="tab" aria-controls="home" aria-selected="true">Home</a>
+              <a class="nav-link active" id="home-tab5" data-toggle="tab" href="#home5" role="tab" aria-controls="home" aria-selected="true">Profil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="profile-tab5" data-toggle="tab" href="#profile5" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+              <a class="nav-link" id="profile-tab5" data-toggle="tab" href="#profile5" role="tab" aria-controls="profile" aria-selected="false">edit Data</a>
             </li>
           </ul>
 

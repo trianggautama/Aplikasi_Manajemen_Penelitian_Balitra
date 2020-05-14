@@ -37,21 +37,23 @@
                 </tr>
               </thead>
               <tbody>
+                @foreach($data as $d)
                 <tr>
-                  <td>1</td>
-                  <td>Termometer</td>
-                  <td>Alat Lab</td>
-                  <td>10 Buah</td>
-                  <td>-</td>
+                  <td>{{$loop->iteration}}</td>
+                  <td>{{$d->nama}}</td>
+                  <td>{{$d->kategori}}</td>
+                  <td>{{$d->jumlah}} {{$d->satuan}}</td>
+                  <td>{{$d->keterangan}}</td>
                   <td>
-                    <a href="{{Route('fasilitasEdit')}}" class="btn btn-primary btn-icon">
+                    <a href="{{Route('fasilitasEdit',['uuid'=>$d->uuid])}}" class="btn btn-primary btn-icon">
                       <i data-feather="edit"></i>
                     </a>
-                    <button type="button" class="btn btn-danger btn-icon">
+                    <button type="button" class="btn btn-danger btn-icon"  onclick="Hapus('{{$d->uuid}}','{{$d->nama}}')">
                       <i data-feather="delete"></i>
                     </button>
                   </td>
                 </tr>
+                @endforeach
               </tbody>
             </table>
           </div><!-- df-example -->
@@ -87,11 +89,11 @@
           </div>
           <div class="form-group">
             <label for="Nama">Jumlah</label>
-            <input type="number" name="jumlah" class="form-control" placeholder="jabatan">
+            <input type="number" name="jumlah" class="form-control" placeholder="Jumlah">
           </div>
           <div class="form-group">
             <label for="Nama">Satuan</label>
-            <input type="text" name="satuan" class="form-control" placeholder="jabatan">
+            <input type="text" name="satuan" class="form-control" placeholder="satuan">
           </div>
           <div class="form-group">
             <label for="Nama">keterangan</label>
@@ -121,5 +123,23 @@
           }
         });
       });
+
+      function Hapus(uuid, nama) {
+        Swal.fire({
+        title: 'Anda Yakin?',
+        text: " Menghapus data fasilitas " + nama ,        
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Hapus',
+        cancelButtonText: 'Batal'
+      }).then((result) => {
+        if (result.value) {
+          url = '{{route("fasilitasDestroy",'')}}';
+          window.location.href =  url+'/'+uuid ;
+        }
+      })
+        }
 </script>
 @endsection

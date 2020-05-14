@@ -93,6 +93,7 @@
     @yield('content')
   </div>
   @include('sweetalert::alert')
+  <script src="{{asset('vendor/sweetalert/sweetalert.all.js')}}"></script>
   <script src="{{asset('admin/lib/jquery/jquery.min.js')}}"></script>
   <script src="{{asset('admin/lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
   <script src="{{asset('admin/lib/feather-icons/feather.min.js')}}"></script>

@@ -47,14 +47,14 @@ Route::group(['middleware' => ['auth']], function () {
     //objekpenelitian
     Route::get('/objekPenelitian', 'objekPenelitianController@index')->name('objekPenelitianIndex');
     Route::post('/objekPenelitian', 'objekPenelitianController@store')->name('objekPenelitianStore');
-    Route::get('/objekPenelitian/edit', 'objekPenelitianController@edit')->name('objekPenelitianEdit');
+    Route::get('/objekPenelitian/edit/{uuid}', 'objekPenelitianController@edit')->name('objekPenelitianEdit');
     Route::put('/objekPenelitian/edit/{uuid}', 'objekPenelitianController@update')->name('objekPenelitianUpdate');
     Route::get('/objekPenelitian/delete/{uuid}', 'objekPenelitianController@destroy')->name('objekPenelitianDestroy');
 
     //fasilitas
     Route::get('/fasilitas', 'fasilitasController@index')->name('fasilitasIndex');
     Route::post('/fasilitas', 'fasilitasController@store')->name('fasilitasStore');
-    Route::get('/fasilitas/edit', 'fasilitasController@edit')->name('fasilitasEdit');
+    Route::get('/fasilitas/edit/{uuid}', 'fasilitasController@edit')->name('fasilitasEdit');
     Route::put('/fasilitas/edit/{uuid}', 'fasilitasController@update')->name('fasilitasUpdate');
     Route::get('/fasilitas/delete/{uuid}', 'fasilitasController@destroy')->name('fasilitasDestroy');
 

@@ -19,19 +19,23 @@
             <div class="col-md-12 col-xl-12 mg-t-10">
             <div class="card ">
                 <div class="card-body">
-                <input type="hidden" name="role" value="1">
-                <div class="form-group">
-                    <label for="Nama">Nama</label>
-                    <input type="text" class="form-control" placeholder="Nama">
-                </div>
-                <div class="form-group">
-                    <label for="Nama">uraian</label>
-                    <textarea name="uraian" id="" class="form-control"></textarea>
-                </div>
-                <div class="card-footer text-right">
-                    <button type="button" class="btn btn-secondary tx-13" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary tx-13"><i data-feather="save" class="wd-10 mg-r-5"></i> Simpan</button>
-                </div>
+                <form action="" method="post">
+                {{method_field('PUT') }}
+                @csrf
+                  <input type="hidden" name="role" value="1">
+                  <div class="form-group">
+                      <label for="Nama">Nama</label>
+                      <input type="text" name="nama" class="form-control" placeholder="Nama" value="{{$data->nama}}">
+                  </div>
+                  <div class="form-group">
+                      <label for="Nama">uraian</label>
+                      <textarea name="uraian" id="" class="form-control">{{$data->uraian}}</textarea>
+                  </div>
+                  <div class="card-footer text-right">
+                      <button type="button" class="btn btn-secondary tx-13" data-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary tx-13"><i data-feather="save" class="wd-10 mg-r-5"></i> Simpan</button>
+                  </div>
+                </form>
                 </div>
               </div>
             </div>
