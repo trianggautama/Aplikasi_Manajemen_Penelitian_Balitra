@@ -5,13 +5,15 @@ use App\Objek_penelitian;
 class adminController extends Controller
 {   
     public function depan()
-    {   $objekPenelitian = Objek_penelitian::all();
+    {   
+        $objekPenelitian = Objek_penelitian::all();
         return view('welcome',compact('objekPenelitian'));
     }
 
     public function permohonanInput()
-    {
-        return view('permohonanInput');
+    {   
+        $objekPenelitian = Objek_penelitian::all();
+        return view('permohonanInput',compact('objekPenelitian'));
     }
 
     public function index()

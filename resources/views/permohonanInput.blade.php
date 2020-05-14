@@ -46,6 +46,15 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label for="">Objek Penelitian</label>
+                    <select name="objekPenelitian_id" id="objekPenelitian_id" class="form-control">
+                        <option value="">-- pilih Objek Penelitian</option>
+                        @foreach($objekPenelitian as $o)
+                            <option value="{{$o->id}}">{{$o->nama}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="">Keperluan</label>
                     <textarea name="alamat" id="" class="form-control"></textarea>
                 </div>
