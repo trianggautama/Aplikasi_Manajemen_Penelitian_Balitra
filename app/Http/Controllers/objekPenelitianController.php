@@ -28,10 +28,10 @@ class objekPenelitianController extends Controller
     {
         $data = Objek_penelitian::where('uuid', $uuid)->first();
 
-        return view('admin.objekPenelitian.edit',compact('data'));
+        return view('admin.objekPenelitian.edit', compact('data'));
     }
 
-    public function update(Request $request,$uuid)
+    public function update(Request $request, $uuid)
     {
         $data = Objek_penelitian::where('uuid', $uuid)->first();
         $data->nama = $request->nama;
@@ -42,8 +42,7 @@ class objekPenelitianController extends Controller
     }
 
     public function destroy($uuid)
-    {   
-        
+    {
         $data = Objek_penelitian::where('uuid', $uuid)->first()->delete();
 
         return redirect()->route('objekPenelitianIndex')->with('success', 'Data Berhasil Dihapus');

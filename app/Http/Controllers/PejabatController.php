@@ -7,13 +7,13 @@ use App\User;
 use Hash;
 use Illuminate\Http\Request;
 
-class pembimbingController extends Controller
+class PejabatController extends Controller
 {
     public function index()
     {
-        $data = User::OrderBy('id', 'Desc')->where('role', 2)->get();
+        $data = User::OrderBy('id', 'Desc')->where('role', 3)->get();
 
-        return view('admin.pembimbing.index', compact('data'));
+        return view('admin.pejabat.index', compact('data'));
     }
 
     public function store(Request $request)
@@ -27,12 +27,12 @@ class pembimbingController extends Controller
             $FotoExt = $img->getClientOriginalExtension();
             $FotoName = $request->nama;
             $foto = $FotoName . '.' . $FotoExt;
-            $img->move('images/pembimbing', $foto);
+            $img->move('images/pejabat', $foto);
             $user->foto = $foto;
         } else {
             $user->foto = 'default.png';
         }
-        $user->role = 2;
+        $user->role = 3;
         $user->save();
 
         $personal = new Data_personal;
@@ -45,13 +45,13 @@ class pembimbingController extends Controller
         $personal->alamat = $request->alamat;
         $personal->save();
 
-        return redirect()->route('pembimbingIndex')->with('success', 'Berhasil menyimpan data');
+        return redirect()->route('pejabatIndex')->with('success', 'Berhasil menyimpan data');
     }
 
     public function edit($uuid)
     {
         $data = User::where('uuid', $uuid)->first();
-        return view('admin.pembimbing.edit', compact('data'));
+        return view('admin.pejabat.edit', compact('data'));
     }
 
     public function update(Request $request, $uuid)
@@ -70,7 +70,7 @@ class pembimbingController extends Controller
             $FotoExt = $img->getClientOriginalExtension();
             $FotoName = $request->nama;
             $foto = $FotoName . '.' . $FotoExt;
-            $img->move('images/pembimbing', $foto);
+            $img->move('images/pejabat', $foto);
             $user->foto = $foto;
         } else {
             $user->foto = $user->foto;
@@ -90,7 +90,7 @@ class pembimbingController extends Controller
 
         $personal->update();
 
-        return redirect()->route('pembimbingIndex')->with('success', 'Berhasil mengubah data');
+        return redirect()->route('pejabatIndex')->with('success', 'Berhasil mengubah data');
 
     }
 
@@ -98,7 +98,7 @@ class pembimbingController extends Controller
     {
         $user = User::where('uuid', $uuid)->first()->delete();
 
-        return redirect()->route('pembimbingIndex')->with('success', 'Berhasil menghapus data');
+        return redirect()->route('pejabatIndex')->with('success', 'Berhasil menghapus data');
 
     }
 }

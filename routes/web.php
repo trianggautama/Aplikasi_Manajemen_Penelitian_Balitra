@@ -43,6 +43,14 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/pembimbing/edit/{uuid}', 'PembimbingController@update')->name('pembimbingUpdate');
     Route::get('/pembimbing/delete/{uuid}', 'PembimbingController@destroy')->name('pembimbingDestroy');
 
+    //pejabat
+    Route::get('/pejabat', 'PejabatController@index')->name('pejabatIndex');
+    Route::post('/pejabat', 'PejabatController@store')->name('pejabatStore');
+    Route::get('/pejabat/profil', 'PejabatController@profil')->name('pejabatProfil');
+    Route::get('/pejabat/edit/{uuid}', 'PejabatController@edit')->name('pejabatEdit');
+    Route::put('/pejabat/edit/{uuid}', 'PejabatController@update')->name('pejabatUpdate');
+    Route::get('/pejabat/delete/{uuid}', 'PejabatController@destroy')->name('pejabatDestroy');
+
     //objekpenelitian
     Route::get('/objekPenelitian', 'objekPenelitianController@index')->name('objekPenelitianIndex');
     Route::post('/objekPenelitian', 'objekPenelitianController@store')->name('objekPenelitianStore');
