@@ -1,9 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Objek_penelitian;
 class adminController extends Controller
-{
+{   
+    public function depan()
+    {   $objekPenelitian = Objek_penelitian::all();
+        return view('welcome',compact('objekPenelitian'));
+    }
+
     public function permohonanInput()
     {
         return view('permohonanInput');
