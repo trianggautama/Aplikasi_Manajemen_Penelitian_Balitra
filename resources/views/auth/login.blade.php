@@ -24,7 +24,7 @@
   <header class="navbar navbar-header navbar-header-fixed">
     <a href="#" id="mainMenuOpen" class="burger-menu"><i data-feather="menu"></i></a>
     <div class="navbar-brand">
-      <a href="/" class="df-logo">dash<span>forge</span></a>
+      <a href="/" class="df-logo"><img src="{{asset('depan/images/logo.png')}}" alt="logo" width="40px"> <small class="mg-l-10">BALITTRA BANJARBARU</small> </a>
     </div><!-- navbar-brand -->
     <div id="navbarMenu" class="navbar-menu-wrapper">
       <div class="navbar-menu-header">
@@ -33,7 +33,7 @@
       </div><!-- navbar-menu-header -->
     </div><!-- navbar-menu-wrapper -->
     <div class="navbar-right">
-      <a href="#" class="btn btn-buy"><i data-feather="home"></i> <span>Halaman Depan</span></a>
+      <a href="/" class="btn btn-buy"><i data-feather="home"></i> <span>Halaman Depan</span></a>
     </div><!-- navbar-right -->
   </header><!-- navbar -->
 
@@ -47,8 +47,8 @@
         </div><!-- media-body -->
         <div class="sign-wrapper mg-lg-l-50 mg-xl-l-60">
           <div class="wd-100p">
-            <h3 class="tx-color-01 mg-b-5">Sign In</h3>
-            <p class="tx-color-03 tx-16 mg-b-40">Welcome back! Please signin to continue.</p>
+            <h3 class="tx-color-01 mg-b-5">Login</h3>
+            <p class="tx-color-03 tx-16 mg-b-40">Selamat Datang, Silahkan Login</p>
 
             <form method="POST" action="{{ route('login') }}">
               @csrf
@@ -97,11 +97,11 @@
                   {{ __('Login') }}
                 </button>
 
-                @if (Route::has('password.request'))
+                <!-- @if (Route::has('password.request'))
                 <a class="btn btn-link" href="{{ route('password.request') }}">
                   {{ __('Forgot Your Password?') }}
                 </a>
-                @endif
+                @endif -->
               </div>
             </form>
           </div>
