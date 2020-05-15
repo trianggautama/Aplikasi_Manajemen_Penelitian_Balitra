@@ -38,7 +38,9 @@
               @foreach($data as $d)
                 <tr>
                   <td>{{$loop->iteration}}</td>
+                  <td>{{$d->data_personal->NIP}}</td>
                   <td>{{$d->nama}}</td>
+                  <td>{{$d->data_personal->jabatan}}</td>
                   <td>{{$d->username}}</td>
                   <td>
                     <a href="{{Route('userEdit',['uuid'=>$d->uuid])}}" class="btn btn-primary btn-icon">
@@ -70,7 +72,7 @@
             </button>
           </div>
           <div class="modal-body">
-          <form action="{{route('userStore')}}" method="post" enctype="multipart/form-data">
+          <form action="{{route('pejabatStore')}}" method="post" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
             <label for="Nama">Nama</label>

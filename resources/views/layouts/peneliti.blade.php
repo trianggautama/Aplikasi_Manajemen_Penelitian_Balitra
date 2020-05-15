@@ -70,7 +70,6 @@
           <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="users"></i> <span>Peneliti</span></a></li>
           <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="sunrise"></i> <span>Data Penelitian</span></a></li>
           <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="edit-3"></i> <span>Kegiatan Penelitian</span></a></li>
-          <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="file"></i> <span>Laporan Akhir Penelitian</span></a></li>
           <li class="nav-label mg-t-25">Lain lain</li>
           <li class="nav-item"><a href="{{Route('beritaIndex')}}" class="nav-link"><i data-feather="book-open"></i> <span>Berita</span></a></li>
         </ul>
@@ -86,13 +85,7 @@
         @else
         <a href="" class="nav-link  " data-toggle="tooltip" title="You have 4 new notifications"><i
             data-feather="bell"></i></a>
-        <a class="nav-link" data-toggle="tooltip" title="Sign out" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i data-feather="log-out"></i>
-             {{ __('Logout') }}
-        </a>
-
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-          @csrf
-        </form>
+        <a href="" class="nav-link" data-toggle="tooltip" title="Sign out"><i data-feather="log-out"></i></a>
         @endguest
       </nav>
     </div><!-- content-header -->

@@ -123,7 +123,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="Nama">Password</label>
-                <input type="password" name="password" class="form-control" placeholder="username">
+                <input type="password" name="password" class="form-control" placeholder="Password">
               </div>
             </div>
           </div>

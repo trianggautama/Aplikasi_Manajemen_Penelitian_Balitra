@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Objek_penelitian;
+use Auth;
+
 class adminController extends Controller
 {   
     public function depan()
@@ -17,8 +19,22 @@ class adminController extends Controller
     }
 
     public function index()
-    {
-        return view('admin.index');
+    {   
+        if(Auth::user()->role == 1)
+        {
+            return view('admin.index');
+
+        }elseif(Auth::user()->role == 2)
+        {
+            return view('pembimbing.index');
+
+        }elseif(Auth::user()->role == 3)
+        {
+            return view('pejabat.index');
+        }else
+        {
+            return view('pejabat.index');
+        }
     }
 
     public function pembimbingIndex()
