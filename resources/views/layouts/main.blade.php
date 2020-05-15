@@ -34,7 +34,7 @@
 
   <aside class="aside aside-fixed">
     <div class="aside-header">
-      <a href="../../index.html" class="aside-logo">dash<span>forge</span></a>
+      <a href="{{Route('index')}}" class="aside-logo">Balittra </span></a>
       <a href="" class="aside-menu-link">
         <i data-feather="menu"></i>
         <i data-feather="x"></i>
@@ -71,15 +71,14 @@
           <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="sunrise"></i> <span>Data Penelitian</span></a></li>
           <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="edit-3"></i> <span>Kegiatan Penelitian</span></a></li>
           <li class="nav-label mg-t-25">Lain lain</li>
-          <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="book-open"></i> <span>Berita</span></a></li>
+          <li class="nav-item"><a href="{{Route('beritaIndex')}}" class="nav-link"><i data-feather="book-open"></i> <span>Berita</span></a></li>
         </ul>
       </div>
     </aside>
 
   <div class="content ht-100v pd-0">
     <div class="content-header">
-      <div class="content-search">
-      </div>
+        Aplikasi Pelayanan Kegiatan Penelitian pada BALITTRA Kota Banjarbaru
       <nav class="nav">
         @guest
         <a class="nav-link" href="{{ route('login') }}"><i data-feather="log-in"></i>{{ __('Login') }}</a>

@@ -33,23 +33,23 @@
                     <th>Username</th>
                     <th>Aksi</th>
                 </tr>
-            </thead>
+            </thead> 
             <tbody>
+              @foreach($data as $d)
                 <tr>
-                    <td>1</td>
-                    <td>121313121</td>
-                    <td>Donna Snider</td>
-                    <td>Staff Pelaksana</td>
-                    <td>Donna123</td>
-                    <td>
-                        <button type="button" class="btn btn-primary btn-icon">
-                            <i data-feather="edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger btn-icon">
-                            <i data-feather="delete"></i>
-                        </button>
-                    </td>
+                  <td>{{$loop->iteration}}</td>
+                  <td>{{$d->nama}}</td>
+                  <td>{{$d->username}}</td>
+                  <td>
+                    <a href="{{Route('userEdit',['uuid'=>$d->uuid])}}" class="btn btn-primary btn-icon">
+                      <i data-feather="edit"></i>
+                    </a>
+                    <button type="button" class="btn btn-danger btn-icon"  onclick="Hapus('{{$d->uuid}}','{{$d->nama}}')">
+                      <i data-feather="delete"></i>
+                    </button>
+                  </td>
                 </tr>
+              @endforeach
             </tbody>
         </table>
         </div><!-- df-example -->

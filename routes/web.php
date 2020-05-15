@@ -44,7 +44,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/pembimbing/delete/{uuid}', 'PembimbingController@destroy')->name('pembimbingDestroy');
 
     //pejabat
-    Route::get('/pejabat', 'PejabatController@index')->name('pejabatIndex');
+    Route::get('/pejabat', 'PejabatController@index')->name('pejabatIndex'); 
     Route::post('/pejabat', 'PejabatController@store')->name('pejabatStore');
     Route::get('/pejabat/profil', 'PejabatController@profil')->name('pejabatProfil');
     Route::get('/pejabat/edit/{uuid}', 'PejabatController@edit')->name('pejabatEdit');
@@ -65,4 +65,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/fasilitas/edit/{uuid}', 'fasilitasController@update')->name('fasilitasUpdate');
     Route::get('/fasilitas/delete/{uuid}', 'fasilitasController@destroy')->name('fasilitasDestroy');
 
+    //berita
+    Route::get('/berita', 'beritaController@index')->name('beritaIndex');
+    Route::post('/berita', 'beritaController@store')->name('beritaStore');
+    Route::get('/berita/edit/{uuid}', 'beritaController@edit')->name('beritaEdit');
+    Route::put('/berita/edit/{uuid}', 'beritaController@update')->name('beritaUpdate');
+    Route::get('/berita/delete/{uuid}', 'beritaController@destroy')->name('beritaDestroy');
+    
 });

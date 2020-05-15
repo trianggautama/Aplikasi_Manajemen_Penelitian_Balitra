@@ -7,11 +7,10 @@
       <div>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb breadcrumb-style1 mg-b-10">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Sales Monitoring</li>
+            <li class="breadcrumb-item"><a href="#">User Data</a></li>
           </ol>
         </nav>
-        <h4 class="mg-b-0 tx-spacing--1">Welcome to Dashboard</h4>
+        <h4 class="mg-b-0 tx-spacing--1">Data User</h4>
       </div>
       <div class="d-none d-md-block">
         <button class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5"><i data-feather="printer"
@@ -44,9 +43,9 @@
                     <a href="{{Route('userEdit',['uuid'=>$d->uuid])}}" class="btn btn-primary btn-icon">
                       <i data-feather="edit"></i>
                     </a>
-                    <a href="{{Route('userDestroy',['uuid' => $d->uuid])}}" class="btn btn-danger btn-icon">
+                    <button type="button" class="btn btn-danger btn-icon"  onclick="Hapus('{{$d->uuid}}','{{$d->nama}}')">
                       <i data-feather="delete"></i>
-                    </a>
+                    </button>
                   </td>
                 </tr>
                 @endforeach
@@ -145,5 +144,23 @@
           }
         });
       });
+
+      function Hapus(uuid, nama) {
+        Swal.fire({
+        title: 'Anda Yakin?',
+        text: " Menghapus data user '" + nama ,        
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Hapus',
+        cancelButtonText: 'Batal'
+      }).then((result) => {
+        if (result.value) {
+          url = '{{route("userDestroy",'')}}';
+          window.location.href =  url+'/'+uuid ;
+        }
+      })
+        }
 </script>
 @endsection
