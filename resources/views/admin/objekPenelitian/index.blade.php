@@ -36,7 +36,7 @@
               <tbody>
               @foreach($data as $d)
                 <tr>
-                  <td>{{$d->loop_itterration}}</td>
+                  <td>{{$loop->iteration}}</td>
                   <td>{{$d->nama}}</td>
                   <td>{{$d->uraian}}</td>
                   <td>
