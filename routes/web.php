@@ -64,5 +64,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/permohonan', 'permohonanController@index')->name('permohonanIndex');
     Route::get('/permohonan/detail', 'permohonanController@detail')->name('permohonanDetail');
 
+    //peneliti 
+    Route::get('/peneliti', 'penelitiController@index')->name('penelitiIndex');
+    Route::get('/peneliti/detail', 'penelitiController@detail')->name('penelitiDetail');
+
+
+
     
 });
