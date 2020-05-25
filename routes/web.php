@@ -69,7 +69,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/peneliti/detail', 'penelitiController@detail')->name('penelitiDetail');
     Route::get('/peneliti/edit', 'penelitiController@edit')->name('penelitiEdit');
 
-
+    //peneliti 
+    Route::get('/penelitian', 'penelitianController@index')->name('penelitianIndex');
+    Route::get('/penelitian/detail', 'penelitianController@detail')->name('penelitianDetail');
+    Route::get('/penelitian/edit', 'penelitianController@edit')->name('penelitianEdit');
 
 
     

@@ -68,7 +68,7 @@
           <li class="nav-label mg-t-25">Penelitian</li>
           <li class="nav-item"><a href="{{Route('permohonanIndex')}}" class="nav-link"><i data-feather="file-text"></i> <span>Data Permohonan</span></a></li>
           <li class="nav-item"><a href="{{Route('penelitiIndex')}}" class="nav-link"><i data-feather="users"></i> <span>Peneliti</span></a></li>
-          <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="sunrise"></i> <span>Data Penelitian</span></a></li>
+          <li class="nav-item"><a href="{{Route('penelitianIndex')}}" class="nav-link"><i data-feather="sunrise"></i> <span>Data Penelitian</span></a></li>
           <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="edit-3"></i> <span>Kegiatan Penelitian</span></a></li>
           <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="file"></i> <span>Laporan Akhir Penelitian</span></a></li>
           <li class="nav-label mg-t-25">Lain lain</li>
