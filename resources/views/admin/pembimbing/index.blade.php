@@ -88,8 +88,7 @@
             <input type="text" name="NIP" class="form-control" placeholder="NIP">
           </div>
           <div class="form-group">
-            <label for="Nama">Jabatan</label>
-            <input type="text" name="jabatan" class="form-control" placeholder="Jabatan">
+            <input type="hidden" name="jabatan" class="form-control" placeholder="Jabatan" value="Pembimbing Lapangan">
           </div>
           <div class="form-group">
             <label for="Nama">No Hp</label>

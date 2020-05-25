@@ -14,7 +14,7 @@
               <h4 class="mg-b-0 tx-spacing--1">Beranda Admin</h4>
             </div>
             <div class="d-none d-md-block">
-              <button class="btn btn-sm pd-x-15 btn-primary btn-uppercase mg-l-5"><i data-feather="file" class="wd-10 mg-r-5"></i> Generate Report</button>
+              <a href="/" class="btn btn-sm pd-x-15 btn-primary btn-uppercase mg-l-5"><i data-feather="home" class="wd-10 mg-r-5"></i> Halaman Depan</a>
             </div>
           </div>
 

@@ -14,7 +14,6 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/index', 'adminController@index')->name('index');
     Route::get('/pejabat', 'adminController@pejabatIndex')->name('pejabatIndex');
-    Route::get('/permohonan', 'adminController@permohonanIndex')->name('permohonanIndex');
 
 // user route
     Route::get('/user', 'UserController@index')->name('userIndex');
@@ -60,5 +59,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/berita/edit/{uuid}', 'beritaController@edit')->name('beritaEdit');
     Route::put('/berita/edit/{uuid}', 'beritaController@update')->name('beritaUpdate');
     Route::get('/berita/delete/{uuid}', 'beritaController@destroy')->name('beritaDestroy');
+
+    //permohonan
+    Route::get('/permohonan', 'permohonanController@index')->name('permohonanIndex');
+    Route::get('/permohonan/detail', 'permohonanController@detail')->name('permohonanDetail');
+
     
 });

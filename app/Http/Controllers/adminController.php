@@ -47,9 +47,5 @@ class adminController extends Controller
         return view('admin.pejabat.index');
     }
 
-    public function permohonanIndex()
-    {
-        return view('admin.permohonan.index');
-    }
 
 }

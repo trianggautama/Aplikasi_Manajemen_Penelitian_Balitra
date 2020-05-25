@@ -41,9 +41,9 @@
                     <td>Penelitian Konsentrasi pupuk</td>
                     <td>-</td>
                     <td>
-                        <button type="button" class="btn btn-default btn-secondary btn-sm p-2">
+                        <a href="{{Route('permohonanDetail')}}" class="btn btn-default btn-secondary btn-sm p-2">
                             <i data-feather="info"></i>
-                        </button>
+                        </a>
                         <button type="button" class="btn btn-primary btn-icon">
                             <i data-feather="edit"></i>
                         </button>
