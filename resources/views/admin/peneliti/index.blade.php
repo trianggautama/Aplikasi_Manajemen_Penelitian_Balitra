@@ -7,11 +7,10 @@
             <div>
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb breadcrumb-style1 mg-b-10">
-                  <li class="breadcrumb-item"><a href="#">Permohonan</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Permohonan Penelitian</li>
+                  <li class="breadcrumb-item"><a href="#">Peneliti</a></li>
                 </ol>
               </nav>
-              <h4 class="mg-b-0 tx-spacing--1">Permohonan Penelitian</h4>
+              <h4 class="mg-b-0 tx-spacing--1">Peneliti</h4>
             </div>
             <div class="d-none d-md-block">
             <a class="btn btn-sm pd-x-15 btn-dark btn-uppercase mg-l-5" href="#modal2" data-toggle="modal"><i
@@ -46,9 +45,9 @@
                         <a href="{{Route('penelitiDetail')}}" class="btn btn-default btn-secondary btn-sm p-2">
                             <i data-feather="info"></i>
                         </a>
-                        <button type="button" class="btn btn-primary btn-icon">
+                        <a href="{{Route('penelitiEdit')}}" class="btn btn-primary btn-icon">
                             <i data-feather="edit"></i>
-                        </button>
+                        </a>
                         <button type="button" class="btn btn-danger btn-icon">
                             <i data-feather="delete"></i>
                         </button>

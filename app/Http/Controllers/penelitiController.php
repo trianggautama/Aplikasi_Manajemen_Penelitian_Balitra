@@ -15,4 +15,9 @@ class penelitiController extends Controller
     {
         return view('admin.peneliti.detail');
     }
+
+    public function edit()
+    {
+        return view('admin.peneliti.edit');
+    }
 }
