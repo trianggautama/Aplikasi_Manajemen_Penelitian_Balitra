@@ -9,7 +9,7 @@ class permohonanController extends Controller
 {
     public function index()
     {
-        $data = Permohonan::orderBy('status', 'asc')->get();
+        $data = Permohonan::whereIn('status', [1, 3])->orderBy('status', 'asc')->get();
         return view('admin.permohonan.index', compact('data'));
     }
 
