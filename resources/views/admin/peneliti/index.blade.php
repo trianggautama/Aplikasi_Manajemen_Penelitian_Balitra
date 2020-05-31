@@ -48,7 +48,7 @@
                       class="btn btn-default btn-secondary btn-sm p-2">
                       <i data-feather="info"></i>
                     </a>
-                    <a href="{{Route('penelitiEdit')}}" class="btn btn-primary btn-icon">
+                    <a href="{{Route('penelitiEdit',['uuid' => $d->uuid])}}" class="btn btn-primary btn-icon">
                       <i data-feather="edit"></i>
                     </a>
                     <button type="button" class="btn btn-danger btn-icon">
