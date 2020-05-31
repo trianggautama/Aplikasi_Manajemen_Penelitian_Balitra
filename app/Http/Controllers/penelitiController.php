@@ -59,8 +59,37 @@ class penelitiController extends Controller
         return view('admin.peneliti.detail', compact('data'));
     }
 
-    public function edit()
+    public function edit($uuid)
     {
-        return view('admin.peneliti.edit');
+        $data = Peneliti::where('uuid', $uuid)->first();
+        return view('admin.peneliti.edit', compact('data'));
+    }
+
+    public function update(Request $request, $uuid)
+    {
+        $data = Peneliti::where('uuid', $uuid)->first();
+        $data->NIK = $request->NIK;
+        $data->alamat = $request->alamat;
+        $data->no_hp = $request->no_hp;
+        $data->tempat_lahir = $request->tempat_lahir;
+        $data->tanggal_lahir = $request->tanggal_lahir;
+        $data->pendidikan_terakhir = $request->pendidikan_terakhir;
+
+        $data->update();
+
+        if ($request->username != null || $request->password != null) {
+            $user = User::findOrFail($data->user_id);
+            if (isset($request->username)) {
+                $user->username = $request->username;
+            }
+
+            if (isset($request->password)) {
+                $user->password = Hash::make($request->password);
+            }
+
+            $user->update();
+        }
+
+        return redirect()->route('penelitiIndex')->with('success', 'Data berhasil diubah');
     }
 }
