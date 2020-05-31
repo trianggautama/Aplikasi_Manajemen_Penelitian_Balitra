@@ -62,7 +62,9 @@ Route::group(['middleware' => ['auth']], function () {
 
     //permohonan
     Route::get('/permohonan', 'permohonanController@index')->name('permohonanIndex');
-    Route::get('/permohonan/detail', 'permohonanController@detail')->name('permohonanDetail');
+    Route::get('/permohonan/detail/{uuid}', 'permohonanController@show')->name('permohonanShow');
+    Route::get('/permohonan/detail/lampiran/{uuid}', 'permohonanController@lampiranPreview')->name('lampiranPreview');
+    Route::put('/permohonan/detail/{uuid}', 'permohonanController@verifikasiPermohonan')->name('verifikasiPermohonan');
 
     //peneliti
     Route::get('/peneliti', 'penelitiController@index')->name('penelitiIndex');
