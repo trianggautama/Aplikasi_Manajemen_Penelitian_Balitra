@@ -15,7 +15,16 @@ class CreatePenelitiansTable extends Migration
     {
         Schema::create('penelitians', function (Blueprint $table) {
             $table->id();
+            $table->string('uuid', 36);
+            $table->unsignedBigInteger('peneliti_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('objek_penelitian_id');
+            $table->text('uraian');
+            $table->string('estimasi', 20);
             $table->timestamps();
+            $table->foreign('peneliti_id')->references('id')->on('penelitis')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('objek_penelitian_id')->references('id')->on('objek_penelitians')->onDelete('cascade');
         });
     }
 
