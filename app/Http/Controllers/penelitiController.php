@@ -12,7 +12,7 @@ class penelitiController extends Controller
 {
     public function index()
     {
-        $data = Peneliti::orderBy('id', 'desc');
+        $data = Peneliti::orderBy('id', 'desc')->get();
         $permohonan = Permohonan::where('status', 2)->orderBy('id', 'desc')->get();
         return view('admin.peneliti.index', compact('data', 'permohonan'));
     }
@@ -53,9 +53,10 @@ class penelitiController extends Controller
         return redirect()->back()->with('success', 'Data berhasil disimpan');
     }
 
-    public function detail()
+    public function show($uuid)
     {
-        return view('admin.peneliti.detail');
+        $data = Peneliti::where('uuid', $uuid)->first();
+        return view('admin.peneliti.detail', compact('data'));
     }
 
     public function edit()
