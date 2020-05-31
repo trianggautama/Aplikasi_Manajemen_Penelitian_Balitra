@@ -21,9 +21,12 @@
     <script src="js/respond.min.js"></script>
     <![endif]-->
     <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{asset('depan/images/ico/apple-touch-icon-144-precomposed.png')}}">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{asset('depan/images/ico/apple-touch-icon-114-precomposed.png')}}">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{asset('depan/images/ico/apple-touch-icon-72-precomposed.png')}}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+        href="{{asset('depan/images/ico/apple-touch-icon-144-precomposed.png')}}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+        href="{{asset('depan/images/ico/apple-touch-icon-114-precomposed.png')}}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+        href="{{asset('depan/images/ico/apple-touch-icon-72-precomposed.png')}}">
     <link rel="apple-touch-icon-precomposed" href="{{asset('depan/images/ico/apple-touch-icon-57-precomposed.png')}}">
 </head>
 <!--/head-->
@@ -40,7 +43,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/"><img src="{{asset('depan/images/logo.png')}}" alt="logo" width="60px"> </a>
+                    <a class="navbar-brand" href="/"><img src="{{asset('depan/images/logo.png')}}" alt="logo"
+                            width="60px"> </a>
                     <a class="navbar-brand" href="/" style="margin-top:18px !important;">BALITTRA BANJARBARU</a>
                 </div>
 
@@ -61,14 +65,15 @@
     </header>
     <!--/header-->
 
-   
+
     @yield('content')
 
     <footer id="footer">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2014 Your Company. Designed by <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>
+                    &copy; 2014 Your Company. Designed by <a target="_blank" href="http://shapebootstrap.net/"
+                        title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>
                 </div>
                 <div class="col-sm-6">
                     <ul class="social-icons">
@@ -88,7 +93,7 @@
         </div>
     </footer>
     <!--/#footer-->
-
+    @include('sweetalert::alert')
     <script src="{{asset('depan/js/jquery.js')}}"></script>
     <script src="{{asset('depan/js/bootstrap.min.js')}}"></script>
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
