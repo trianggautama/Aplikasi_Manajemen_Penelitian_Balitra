@@ -42,4 +42,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Data_personal::class);
     }
+
+    public function peneliti()
+    {
+        return $this->hasOne(Peneliti::class);
+    }
 }
