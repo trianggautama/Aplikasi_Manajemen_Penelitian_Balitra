@@ -29,9 +29,9 @@
                 <tr>
                   <th>No</th>
                   <th>Nama</th>
-                  <th>NIK</th>
-                  <th>Nomor Telepon</th>
                   <th>Alamat</th>
+                  <th>Nomor Telepon</th>
+                  <th>Tempat, Tanggal Lahir</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
@@ -40,11 +40,12 @@
                 <tr>
                   <td>{{$loop->iteration}}</td>
                   <td>{{$d->user->nama}}</td>
-                  <td>{{$d->NIK}}</td>
-                  <td>{{$d->no_hp}}</td>
                   <td>{{$d->alamat}}</td>
+                  <td>{{$d->no_hp}}</td>
+                  <td>{{$d->tempat_lahir}}, {{carbon\carbon::parse($d->tanggal_lahir)->translatedFormat('d F Y')}}</td>
                   <td>
-                    <a href="{{Route('penelitiDetail',['uuid'=>$d->uuid])}}" class="btn btn-default btn-secondary btn-sm p-2">
+                    <a href="{{Route('penelitiShow',['uuid' => $d->uuid])}}"
+                      class="btn btn-default btn-secondary btn-sm p-2">
                       <i data-feather="info"></i>
                     </a>
                     <a href="{{Route('penelitiEdit',['uuid'=>$d->uuid])}}" class="btn btn-primary btn-icon">
