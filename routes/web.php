@@ -72,6 +72,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/peneliti/detail/{uuid}', 'penelitiController@show')->name('penelitiShow');
     Route::get('/peneliti/edit/{uuid}', 'penelitiController@edit')->name('penelitiEdit');
     Route::put('/peneliti/edit/{uuid}', 'penelitiController@update')->name('penelitiUpdate');
+    Route::get('/peneliti/delete/{uuid}', 'penelitiController@destroy')->name('penelitiDestroy');
 
     //peneliti
     Route::get('/penelitian', 'penelitianController@index')->name('penelitianIndex');
