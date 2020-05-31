@@ -2,13 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 
-
 Route::get('/', 'adminController@depan')->name('depan');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/permohonan/input', 'adminController@permohonanInput')->name('permohonanInput');
+Route::post('/permohonan/input', 'adminController@permohonanStore')->name('permohonanStore');
 
 Route::group(['middleware' => ['auth']], function () {
 
@@ -32,7 +32,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/pembimbing/delete/{uuid}', 'PembimbingController@destroy')->name('pembimbingDestroy');
 
     //pejabat
-    Route::get('/pejabat', 'PejabatController@index')->name('pejabatIndex'); 
+    Route::get('/pejabat', 'PejabatController@index')->name('pejabatIndex');
     Route::post('/pejabat', 'PejabatController@store')->name('pejabatStore');
     Route::get('/pejabat/profil', 'PejabatController@profil')->name('pejabatProfil');
     Route::get('/pejabat/edit/{uuid}', 'PejabatController@edit')->name('pejabatEdit');
@@ -64,16 +64,14 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/permohonan', 'permohonanController@index')->name('permohonanIndex');
     Route::get('/permohonan/detail', 'permohonanController@detail')->name('permohonanDetail');
 
-    //peneliti 
+    //peneliti
     Route::get('/peneliti', 'penelitiController@index')->name('penelitiIndex');
     Route::get('/peneliti/detail', 'penelitiController@detail')->name('penelitiDetail');
     Route::get('/peneliti/edit', 'penelitiController@edit')->name('penelitiEdit');
 
-    //peneliti 
+    //peneliti
     Route::get('/penelitian', 'penelitianController@index')->name('penelitianIndex');
     Route::get('/penelitian/detail', 'penelitianController@detail')->name('penelitianDetail');
     Route::get('/penelitian/edit', 'penelitianController@edit')->name('penelitianEdit');
 
-
-    
 });
