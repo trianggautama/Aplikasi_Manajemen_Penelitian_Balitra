@@ -36,23 +36,27 @@
                 </tr>
               </thead>
               <tbody>
+                @foreach($data as $d)
                 <tr>
-                  <td>1</td>
-                  <td>Agus</td>
-                  <td>Iman</td>
-                  <td>40 Hari Kerja</td>
+                  <td>{{$loop->iteration}}</td>
+                  <td>{{$d->peneliti->user->nama}}</td>
+                  <td>{{$d->user->nama}}</td>
+                  <td>{{$d->estimasi}}</td>
                   <td>
-                    <a href="{{Route('penelitianDetail')}}" class="btn btn-default btn-secondary btn-sm p-2">
+                    <a href="{{Route('penelitianShow',['uuid' => $d->uuid])}}" class="btn btn-default btn-secondary btn-sm
+                    p-2">
                       <i data-feather="info"></i>
                     </a>
-                    <a href="{{Route('penelitianEdit')}}" class="btn btn-primary btn-icon">
+                    <a href="{{Route('penelitianEdit',['uuid' => $d->uuid])}}" class="btn btn-primary btn-icon">
                       <i data-feather="edit"></i>
                     </a>
-                    <button type="button" class="btn btn-danger btn-icon">
+                    <a href="{{Route('penelitianDestroy',['uuid' => $d->uuid])}}" class="btn btn-danger
+                    btn-icon">
                       <i data-feather="delete"></i>
-                    </button>
+                    </a>
                   </td>
                 </tr>
+                @endforeach
               </tbody>
             </table>
           </div><!-- df-example -->
@@ -74,27 +78,33 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="{{route('userStore')}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('penelitianStore')}}" method="post" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
             <label for="Nama">Peneliti</label>
-            <select name="" id="" class="form-control">
-              <option value="">-- pilihan ambil dari peneliti --</option>
-              <option value="">John Doe </option>
+            <select name="peneliti_id" id="" class="form-control">
+              <option value="">-- Pilih Nama Peneliti --</option>
+              @foreach($peneliti as $d)
+              <option value="{{$d->id}}">{{$d->user->nama}}</option>
+              @endforeach
             </select>
           </div>
           <div class="form-group">
             <label for="Nama">Pembimbing</label>
-            <select name="" id="" class="form-control">
-              <option value="">-- pilihan ambil dari pembimbing --</option>
-              <option value="">John Doe </option>
+            <select name="user_id" id="" class="form-control">
+              <option value="">-- Pilih Nama Pembimbing --</option>
+              @foreach($pembimbing as $d)
+              <option value="{{$d->id}}">{{$d->nama}}</option>
+              @endforeach
             </select>
           </div>
           <div class="form-group">
             <label for="Nama">Permohonan</label>
-            <select name="" id="" class="form-control">
-              <option value="">-- pilihan ambil dari permohonan yang disetujui --</option>
-              <option value="">Jagung </option>
+            <select name="objek_penelitian_id" id="" class="form-control">
+              <option value="">-- Pilih Objek Penelitian --</option>
+              @foreach($permohonan as $d)
+              <option value="{{$d->id}}">{{$d->objek_penelitian->nama}}</option>
+              @endforeach
             </select>
           </div>
           <div class="form-group">
@@ -103,7 +113,7 @@
           </div>
           <div class="form-group">
             <label for="Nama">Estimasi (Hari Kerja)</label>
-            <input type="number" name="password" class="form-control">
+            <input type="number" name="estimasi" class="form-control">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary tx-13" data-dismiss="modal">Close</button>
