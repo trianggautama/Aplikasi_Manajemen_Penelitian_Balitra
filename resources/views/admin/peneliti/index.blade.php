@@ -29,21 +29,23 @@
                 <tr>
                   <th>No</th>
                   <th>Nama</th>
+                  <th>Alamat</th>
                   <th>Nomor Telepon</th>
-                  <th>Objek Penelitian</th>
-                  <th>Keperluan</th>
+                  <th>Tempat, Tanggal Lahir</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
               <tbody>
+                @foreach($data as $d)
                 <tr>
-                  <td>1</td>
-                  <td>Agus</td>
-                  <td>085912121312</td>
-                  <td>Penelitian Konsentrasi pupuk</td>
-                  <td>-</td>
+                  <td>{{$loop->iteration}}</td>
+                  <td>{{$d->user->nama}}</td>
+                  <td>{{$d->alamat}}</td>
+                  <td>{{$d->no_hp}}</td>
+                  <td>{{$d->tempat_lahir}}, {{carbon\carbon::parse($d->tanggal_lahir)->translatedFormat('d F Y')}}</td>
                   <td>
-                    <a href="{{Route('penelitiDetail')}}" class="btn btn-default btn-secondary btn-sm p-2">
+                    <a href="{{Route('penelitiShow',['uuid' => $d->uuid])}}"
+                      class="btn btn-default btn-secondary btn-sm p-2">
                       <i data-feather="info"></i>
                     </a>
                     <a href="{{Route('penelitiEdit')}}" class="btn btn-primary btn-icon">
@@ -54,6 +56,7 @@
                     </button>
                   </td>
                 </tr>
+                @endforeach
               </tbody>
             </table>
           </div><!-- df-example -->
