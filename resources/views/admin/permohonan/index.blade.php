@@ -31,6 +31,7 @@
                   <th>Nomor Telepon</th>
                   <th>Objek Penelitian</th>
                   <th>Keperluan</th>
+                  <th>Status</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
@@ -43,16 +44,25 @@
                   <td>{{$d->objek_penelitian->nama}}</td>
                   <td>{{$d->keperluan}}</td>
                   <td>
+                    @if($d->status == 1)
+                    <span class="badge badge-warning">Pending</span>
+                    @elseif($d->status == 2)
+                    <span class="badge badge-success">Disetujui</span>
+                    @else
+                    <span class="badge badge-danger">Ditolak</span>
+                    @endif
+                  </td>
+                  <td>
                     <a href="{{Route('permohonanShow',['uuid' => $d->uuid])}}"
                       class="btn btn-default btn-secondary btn-sm p-2">
                       <i data-feather="info"></i>
                     </a>
-                    <button type="button" class="btn btn-primary btn-icon">
+                    <!-- <button type="button" class="btn btn-primary btn-icon">
                       <i data-feather="edit"></i>
                     </button>
                     <button type="button" class="btn btn-danger btn-icon">
                       <i data-feather="delete"></i>
-                    </button>
+                    </button> -->
                   </td>
                 </tr>
                 @endforeach

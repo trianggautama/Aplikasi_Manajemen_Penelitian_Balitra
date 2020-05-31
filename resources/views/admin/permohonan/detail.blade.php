@@ -62,6 +62,22 @@
                   <span class="tx-12 tx-color-03">{{$data->keperluan}}</span>
                 </div>
                 <div class="form-group">
+                  <p class="tx-medium mg-b-2"><a href="" class="link-01">Status</a></p>
+                  @if($data->status == 1)
+                    <span class="badge badge-warning">Pending</span>
+                    @elseif($data->status == 2)
+                    <span class="badge badge-success">Disetujui</span>
+                    @else
+                    <span class="badge badge-danger">Ditolak</span>
+                    @endif                
+                  </div>
+                  @if($data->tanggal_pemanggilan)
+                  <div class="form-group">
+                    <p class="tx-medium mg-b-2"><a href="" class="link-01">Tanggal Panggilan</a></p>
+                    <span class="tx-12 tx-color-03">{{$data->tanggal_pemanggilan}}</span>
+                </div>
+                @endif
+                <div class="form-group">
                   <p class="tx-medium mg-b-2"><a href="" class="link-01">File Lampiran</a></p>
                   <span class="tx-12 tx-color-03"><a href="{{Route('lampiranPreview',['uuid' => $data->uuid])}}"
                       class="btn btn-xs btn-secondary pd-y-5 pd-x-7" target="_blank"><i data-feather="paperclip"></i>

@@ -12,7 +12,7 @@ class penelitiController extends Controller
 {
     public function index()
     {
-        $data = Peneliti::orderBy('id', 'desc');
+        $data = Peneliti::orderBy('id', 'desc')->get();
         $permohonan = Permohonan::where('status', 2)->orderBy('id', 'desc')->get();
         return view('admin.peneliti.index', compact('data', 'permohonan'));
     }
