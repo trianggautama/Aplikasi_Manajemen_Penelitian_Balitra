@@ -58,6 +58,12 @@ class penelitiController extends Controller
         return view('admin.peneliti.detail');
     }
 
+    public function show($uuid)
+    {
+        $data = Peneliti::where('uuid', $uuid)->first();
+        return view('admin.peneliti.detail', compact('data'));
+    }
+
     public function edit($uuid)
     {
         $data = Peneliti::where('uuid', $uuid)->first();
