@@ -51,9 +51,10 @@
                     <a href="{{Route('penelitiEdit',['uuid' => $d->uuid])}}" class="btn btn-primary btn-icon">
                       <i data-feather="edit"></i>
                     </a>
-                    <button type="button" class="btn btn-danger btn-icon">
+                    <a href="{{Route('penelitiDestroy',['uuid' => $d->uuid])}}" type="button"
+                      class="btn btn-danger btn-icon">
                       <i data-feather="delete"></i>
-                    </button>
+                    </a>
                   </td>
                 </tr>
                 @endforeach
