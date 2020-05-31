@@ -53,10 +53,9 @@ class penelitiController extends Controller
         return redirect()->back()->with('success', 'Data berhasil disimpan');
     }
 
-    public function show($uuid)
+    public function detail()
     {
-        $data = Peneliti::where('uuid', $uuid)->first();
-        return view('admin.peneliti.detail', compact('data'));
+        return view('admin.peneliti.detail');
     }
 
     public function edit($uuid)
