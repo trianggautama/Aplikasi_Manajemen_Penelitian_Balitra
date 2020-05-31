@@ -97,4 +97,12 @@ class penelitiController extends Controller
 
         return redirect()->route('penelitiIndex')->with('success', 'Data berhasil diubah');
     }
+
+    public function destroy($uuid)
+    {
+        $data = Peneliti::where('uuid', $uuid)->first();
+        $user = User::findOrFail($data->user_id)->delete();
+
+        return redirect()->back()->with('success', 'Data berhasil dihapus');
+    }
 }
