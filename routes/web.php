@@ -65,6 +65,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/permohonan/detail/{uuid}', 'permohonanController@show')->name('permohonanShow');
     Route::get('/permohonan/detail/lampiran/{uuid}', 'permohonanController@lampiranPreview')->name('lampiranPreview');
     Route::put('/permohonan/detail/{uuid}', 'permohonanController@verifikasiPermohonan')->name('verifikasiPermohonan');
+    Route::get('/permohonan/filter', 'permohonanController@filter')->name('permohonanFilter');
 
     //peneliti
     Route::get('/peneliti', 'penelitiController@index')->name('penelitiIndex');
@@ -86,6 +87,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/objekPenelitian/cetak', 'reportController@objekPenelitianCetak')->name('objekPenelitianCetak');
     Route::get('/fasilitas/cetak', 'reportController@fasilitasCetak')->name('fasilitasCetak');
     Route::get('/permohonan/cetak', 'reportController@permohonanCetak')->name('permohonanCetak');
-
-
+    Route::post('/permohonan/filter', 'reportController@permohonanFilter')->name('permohonanFilterCetak');
 });

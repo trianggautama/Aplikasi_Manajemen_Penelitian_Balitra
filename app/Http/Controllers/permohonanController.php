@@ -38,4 +38,9 @@ class permohonanController extends Controller
 
         return redirect()->back()->with('success', 'Data berhasil diverifikasi');
     }
+
+    public function filter()
+    {
+        return view('admin.permohonan.filter');
+    }
 }

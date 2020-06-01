@@ -16,6 +16,8 @@
       <div class="d-none d-md-block">
         <a href="{{Route('permohonanCetak')}}" class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5" target="_blank"><i data-feather="printer"
             class="wd-10 mg-r-5"></i> Print</a>
+        <a href="{{Route('permohonanFilter')}}" class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5"><i data-feather="filter"
+            class="wd-10 mg-r-5"></i> Filter Status</a>
       </div>
     </div>
 

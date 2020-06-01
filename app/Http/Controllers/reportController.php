@@ -40,4 +40,13 @@ class reportController extends Controller
 
         return $pdf->stream('Laporan Data Penelitian.pdf');
     }
+
+    public function permohonanfilter(Request $request)
+    {
+        $data = Permohonan::where('status',$request->status)->orderBy('id', 'asc')->get();
+        $tgl= Carbon::now()->format('d-m-Y');
+        $pdf          = PDF::loadView('formCetak.dataPermohonanFilter', ['data'=>$data,'tgl'=>$tgl]);
+        $pdf->setPaper('a4', 'portrait');
+        return $pdf->stream('Laporan Data Penelitian.pdf');
+    }
 }
