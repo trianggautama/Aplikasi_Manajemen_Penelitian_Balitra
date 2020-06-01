@@ -84,6 +84,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     //CETAK REPORT
     Route::get('/objekPenelitian/cetak', 'reportController@objekPenelitianCetak')->name('objekPenelitianCetak');
+    Route::get('/fasilitas/cetak', 'reportController@fasilitasCetak')->name('fasilitasCetak');
+    Route::get('/permohonan/cetak', 'reportController@permohonanCetak')->name('permohonanCetak');
 
 
 });
