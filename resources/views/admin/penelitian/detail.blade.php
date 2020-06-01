@@ -69,6 +69,8 @@
             </div>
           </div>
           <div class="card-footer text-right">
+          <a href="{{Route('skPenelitian',['uuid'=>$data->uuid])}}" class="btn btn-sm pd-x-15 btn-primary btn-uppercase mg-l-5" id="verifikasi-btn" target="_blank"><i
+                data-feather="file-text" class="wd-10 mg-r-5"></i> Cetak SK Penelitian</a>
             <button class="btn btn-sm pd-x-15 btn-primary btn-uppercase mg-l-5" id="verifikasi-btn"><i
                 data-feather="file-text" class="wd-10 mg-r-5"></i> Kegiatan</button>
           </div>
