@@ -32,7 +32,7 @@
                       <textarea name="uraian" id="" class="form-control">{{$data->uraian}}</textarea>
                   </div>
                   <div class="card-footer text-right">
-                      <button type="button" class="btn btn-secondary tx-13" data-dismiss="modal">Close</button>
+                      <a href="{{route('objekPenelitianIndex')}}" type="button" class="btn btn-secondary tx-13" data-dismiss="modal">Batal</a>
                       <button type="submit" class="btn btn-primary tx-13"><i data-feather="save" class="wd-10 mg-r-5"></i> Simpan</button>
                   </div>
                 </form>

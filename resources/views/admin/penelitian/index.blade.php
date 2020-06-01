@@ -41,7 +41,7 @@
                   <td>{{$loop->iteration}}</td>
                   <td>{{$d->peneliti->user->nama}}</td>
                   <td>{{$d->user->nama}}</td>
-                  <td>{{$d->estimasi}}</td>
+                  <td>{{$d->estimasi}} Hari Kerja</td>
                   <td>
                     <a href="{{Route('penelitianShow',['uuid' => $d->uuid])}}" class="btn btn-default btn-secondary btn-sm
                     p-2">
@@ -50,9 +50,9 @@
                     <a href="{{Route('penelitianEdit',['uuid' => $d->uuid])}}" class="btn btn-primary btn-icon">
                       <i data-feather="edit"></i>
                     </a>
-                    <a href="{{Route('penelitianDestroy',['uuid' => $d->uuid])}}" class="btn btn-danger
-                    btn-icon">
+                    <button type="button" class="btn btn-danger btn-icon"  onclick="Hapus('{{$d->uuid}}','{{$d->peneliti->user->nama}}')">
                       <i data-feather="delete"></i>
+                    </button> 
                     </a>
                   </td>
                 </tr>
@@ -103,7 +103,7 @@
             <select name="objek_penelitian_id" id="" class="form-control">
               <option value="">-- Pilih Objek Penelitian --</option>
               @foreach($permohonan as $d)
-              <option value="{{$d->id}}">{{$d->objek_penelitian->nama}}</option>
+              <option value="{{$d->objek_penelitian_id}}">{{$d->objek_penelitian->nama}}</option>
               @endforeach
             </select>
           </div>
@@ -139,5 +139,23 @@
           }
         });
       });
+
+      function Hapus(uuid, nama) {
+        Swal.fire({
+        title: 'Anda Yakin?',
+        text: " Menghapus data Penelitian '" + nama ,        
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Hapus',
+        cancelButtonText: 'Batal'
+      }).then((result) => {
+        if (result.value) {
+          url = '{{route("penelitianDestroy",'')}}';
+          window.location.href =  url+'/'+uuid ;
+        }
+      })
+        }
 </script>
 @endsection

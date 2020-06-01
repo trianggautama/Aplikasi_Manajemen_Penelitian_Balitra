@@ -82,4 +82,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/penelitian/edit/{uuid}', 'penelitianController@update')->name('penelitianUpdate');
     Route::get('/penelitian/delete/{uuid}', 'penelitianController@destroy')->name('penelitianDestroy');
 
+    //CETAK REPORT
+    Route::get('/objekPenelitian/cetak', 'reportController@objekPenelitianCetak')->name('objekPenelitianCetak');
+
+
 });

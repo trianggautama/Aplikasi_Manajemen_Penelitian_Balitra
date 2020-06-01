@@ -51,10 +51,9 @@
                     <a href="{{Route('penelitiEdit',['uuid' => $d->uuid])}}" class="btn btn-primary btn-icon">
                       <i data-feather="edit"></i>
                     </a>
-                    <a href="{{Route('penelitiDestroy',['uuid' => $d->uuid])}}" type="button"
-                      class="btn btn-danger btn-icon">
+                    <button type="button" class="btn btn-danger btn-icon"  onclick="Hapus('{{$d->uuid}}','{{$d->user->nama}}')">
                       <i data-feather="delete"></i>
-                    </a>
+                    </button> 
                   </td>
                 </tr>
                 @endforeach
@@ -126,5 +125,23 @@
           }
         });
       });
+
+      function Hapus(uuid, nama) {
+        Swal.fire({
+        title: 'Anda Yakin?',
+        text: " Menghapus data Peneliti '" + nama ,        
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Hapus',
+        cancelButtonText: 'Batal'
+      }).then((result) => {
+        if (result.value) {
+          url = '{{route("penelitiDestroy",'')}}';
+          window.location.href =  url+'/'+uuid ;
+        }
+      })
+        }
 </script>
 @endsection
