@@ -91,5 +91,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/pembimbing/biodata/cetak/{uuid}', 'reportController@pembimbingCetakBiodata')->name('pembimbingCetakBiodata');
     Route::get('/penelitian/cetak', 'reportController@penelitianCetak')->name('penelitianCetak');
     Route::get('/penelitian/sk/{uuid}', 'reportController@skPenelitian')->name('skPenelitian');
+    Route::get('/peneliti/cetak', 'reportController@penelitiCetak')->name('penelitiCetak');
 
 });

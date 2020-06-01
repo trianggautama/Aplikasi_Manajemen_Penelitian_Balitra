@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Objek_penelitian;
 use App\Fasilitas;
+use App\Peneliti;
 use App\Permohonan;
 use App\Penelitian;
 use App\User;
@@ -77,6 +78,16 @@ class reportController extends Controller
         $data = Penelitian::where('uuid',$uuid)->first();
         $tgl= Carbon::now()->format('d-m-Y');
         $pdf          = PDF::loadView('formCetak.skPenelitian', ['data'=>$data,'tgl'=>$tgl]);
+        $pdf->setPaper('a4', 'portrait');
+
+        return $pdf->stream('Laporan Data Penelitian.pdf');
+    }
+
+    public function penelitiCetak()
+    {
+        $data = Peneliti::all();
+        $tgl= Carbon::now()->format('d-m-Y');
+        $pdf          = PDF::loadView('formCetak.dataPeneliti', ['data'=>$data,'tgl'=>$tgl]);
         $pdf->setPaper('a4', 'portrait');
 
         return $pdf->stream('Laporan Data Penelitian.pdf');
