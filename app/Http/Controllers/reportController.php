@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Objek_penelitian;
 use App\Fasilitas;
 use App\Permohonan;
+use App\User;
 use PDF;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -46,6 +47,15 @@ class reportController extends Controller
         $data = Permohonan::where('status',$request->status)->orderBy('id', 'asc')->get();
         $tgl= Carbon::now()->format('d-m-Y');
         $pdf          = PDF::loadView('formCetak.dataPermohonanFilter', ['data'=>$data,'tgl'=>$tgl]);
+        $pdf->setPaper('a4', 'portrait');
+        return $pdf->stream('Laporan Data Penelitian.pdf');
+    }
+
+    public function pembimbingCetakBiodata($uuid)
+    {
+        $data         = User::OrderBy('id', 'Desc')->where('uuid', $uuid)->first();
+        $tgl          = Carbon::now()->format('d-m-Y');
+        $pdf          = PDF::loadView('formCetak.bioadataPembimbing', ['data'=>$data,'tgl'=>$tgl]);
         $pdf->setPaper('a4', 'portrait');
         return $pdf->stream('Laporan Data Penelitian.pdf');
     }

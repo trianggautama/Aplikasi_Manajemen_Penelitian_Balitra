@@ -88,4 +88,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/fasilitas/cetak', 'reportController@fasilitasCetak')->name('fasilitasCetak');
     Route::get('/permohonan/cetak', 'reportController@permohonanCetak')->name('permohonanCetak');
     Route::post('/permohonan/filter', 'reportController@permohonanFilter')->name('permohonanFilterCetak');
+    Route::get('/pembimbing/biodata/cetak/{uuid}', 'reportController@pembimbingCetakBiodata')->name('pembimbingCetakBiodata');
+
 });

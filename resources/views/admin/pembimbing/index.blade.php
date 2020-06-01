@@ -45,6 +45,9 @@
                   <td>{{$d->data_personal->jabatan}}</td>
                   <td>{{$d->username}}</td>
                   <td>
+                  <a href="{{Route('pembimbingCetakBiodata',['uuid'=>$d->uuid])}}" class="btn btn-primary btn-icon">
+                      <i data-feather="printer"></i>
+                    </a>
                     <a href="{{Route('pembimbingEdit',['uuid'=>$d->uuid])}}" class="btn btn-primary btn-icon">
                       <i data-feather="edit"></i>
                     </a>
