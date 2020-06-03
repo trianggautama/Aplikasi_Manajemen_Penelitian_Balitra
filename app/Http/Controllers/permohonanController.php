@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Peneliti;
 use App\Permohonan;
+use App\User;
 use Illuminate\Http\Request;
 
 class permohonanController extends Controller
@@ -32,7 +34,23 @@ class permohonanController extends Controller
         $data = Permohonan::where('uuid', $request->uuid)->first();
         $data->status = $request->status;
         if ($request->status == 2) {
+            $user = User::findOrFail($data->user_id);
             $data->tanggal_pemanggilan = $request->tanggal_pemanggilan;
+
+            $user->status = 1;
+            $user->update();
+
+            $peneliti = new Peneliti;
+            $peneliti->user_id = $user->id;
+            $peneliti->NIK = $data->NIK;
+            $peneliti->alamat = $data->alamat;
+            $peneliti->no_hp = $data->no_hp;
+            $peneliti->tempat_lahir = $data->tempat_lahir;
+            $peneliti->tanggal_lahir = $data->tanggal_lahir;
+            $peneliti->pendidikan_terakhir = $data->pendidikan_terakhir;
+
+            $peneliti->save();
+
         }
         $data->update();
 
