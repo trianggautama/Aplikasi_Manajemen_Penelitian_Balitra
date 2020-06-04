@@ -105,4 +105,10 @@ class penelitiController extends Controller
 
         return redirect()->back()->with('success', 'Data berhasil dihapus');
     }
+
+    public function pembimbingPenelitiIndex()
+    {
+        $data = Peneliti::orderBy('id', 'desc')->get();
+        return view('pembimbing.peneliti.index',compact('data'));
+    }
 }

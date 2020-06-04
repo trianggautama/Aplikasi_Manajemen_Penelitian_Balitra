@@ -26,6 +26,11 @@
                     <label for="">NIK</label>
                     <input type="text" name="NIK" class="form-control">
                 </div>
+
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="email" name="email" class="form-control">
+                </div>
                 <div class="form-group">
                     <label for="">Alamat</label>
                     <textarea name="alamat" name="alamat" id="" class="form-control"></textarea>

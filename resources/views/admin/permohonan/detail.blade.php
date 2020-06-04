@@ -126,6 +126,12 @@
               <input type="date" name="tanggal_pemanggilan" class="form-control">
             </div>
           </div>
+          <div class="" id="catatanform">
+            <div class="form-group">
+              <label for="Nama">Catatan</label>
+             <textarea name="catatan" id="catatan" class="form-control"></textarea>
+            </div>
+          </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary tx-13" data-dismiss="modal">Close</button>
@@ -142,6 +148,7 @@
   $("#verifikasi-btn").click(function(){
             $('.modal-title').text('Verifikasi');
             $('#tanggalform').hide();
+            $('#catatanform').hide();
             $('#modal2').modal('show');
         });
 
@@ -149,9 +156,15 @@
             let status = $('#status').val();
             if(status == 2){
                 $('#tanggalform').show();
+                $('#catatanform').hide();
+            }else if(status == 3){
+                $('#tanggalform').hide();
+                $('#catatanform').show();
             }else{
                 $('#tanggalform').hide();
+                $('#catatanform').hide();
             }
+
       });
 </script>
 @endsection

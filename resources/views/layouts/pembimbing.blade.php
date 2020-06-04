@@ -54,9 +54,9 @@
        <li class="nav-label mg-t-25">Akun</li>
         <li class="nav-item"><a href="{{Route('userProfil')}}" class="nav-link"><i data-feather="user"></i> <span>Profil</span></a></li>
           <li class="nav-label mg-t-25">Penelitian</li>
-          <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="users"></i> <span>Peneliti</span></a></li>
-          <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="sunrise"></i> <span>Data Penelitian</span></a></li>
-          <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="edit-3"></i> <span>Kegiatan Penelitian</span></a></li>
+          <li class="nav-item"><a href="{{Route('pembimbingPenelitiIndex')}}" class="nav-link"><i data-feather="users"></i> <span>Peneliti</span></a></li>
+          <li class="nav-item"><a href="{{Route('pembimbingPenelitianIndex')}}" class="nav-link"><i data-feather="sunrise"></i> <span>Data Penelitian</span></a></li>
+          <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="edit-3"></i> <span>Konsultasi Penelitian</span></a></li>
           <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="file"></i> <span>Laporan Akhir Penelitian</span></a></li>
         </ul>
       </div>

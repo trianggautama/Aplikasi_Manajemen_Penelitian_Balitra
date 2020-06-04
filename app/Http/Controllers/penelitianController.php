@@ -70,4 +70,16 @@ class penelitianController extends Controller
 
         return redirect()->back()->with('success', 'Data berhasil dihapus');
     }
+
+    public function pembimbingPenelitianIndex()
+    {
+        $data = Penelitian::orderBy('id', 'desc')->get();
+        return view('pembimbing.penelitian.index', compact('data'));
+    }
+
+    public function jobdesk($uuid)
+    {
+        $data = Penelitian::where('uuid', $uuid)->first();
+        return view('pembimbing.penelitian.jobdesk', compact('data'));
+    }
 }
