@@ -33,12 +33,23 @@
                   <th>No</th>
                   <th>judul</th>
                   <th>Foto</th>
-                  <th>Isi</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
               <tbody>
-
+                  <tr>
+                    <td>1</td>
+                    <td>Judul 1</td>
+                    <td> <img src="https://via.placeholder.com/500" class="rounded-circle" alt="" width="40"></td>
+                    <td>  
+                    <a href="{{Route('beritaEdit')}}" class="btn btn-primary btn-icon">
+                                <i data-feather="edit"></i>
+                            </a>
+                            <button type="button" class="btn btn-danger btn-icon"  onclick="Hapus('')">
+                                <i data-feather="delete"></i>
+                            </button>
+                    </td>
+                  </tr>
               </tbody>
             </table>
           </div><!-- df-example -->

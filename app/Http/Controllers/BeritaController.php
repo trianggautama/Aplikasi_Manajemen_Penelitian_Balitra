@@ -10,4 +10,9 @@ class BeritaController extends Controller
 
         return view('admin.berita.index');
     }
+
+    public function edit(){
+
+        return view('admin.berita.edit');
+    }
 }

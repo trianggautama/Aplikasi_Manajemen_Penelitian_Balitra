@@ -56,7 +56,7 @@ Route::group(['middleware' => ['auth']], function () {
     //berita
     Route::get('/berita', 'beritaController@index')->name('beritaIndex');
     Route::post('/berita', 'beritaController@store')->name('beritaStore');
-    Route::get('/berita/edit/{uuid}', 'beritaController@edit')->name('beritaEdit');
+    Route::get('/berita/edit/', 'beritaController@edit')->name('beritaEdit');
     Route::put('/berita/edit/{uuid}', 'beritaController@update')->name('beritaUpdate');
     Route::get('/berita/delete/{uuid}', 'beritaController@destroy')->name('beritaDestroy');
 

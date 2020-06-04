@@ -44,12 +44,12 @@
                         <td>Thermometer</td>
                         <td>4 Hari</td>
                         <td>
-                        <a href="{{Route('peminjamanEdit')}}" class="btn btn-primary btn-icon">
-                            <i data-feather="edit"></i>
-                        </a>
-                        <button type="button" class="btn btn-danger btn-icon"  onclick="Hapus('')">
-                            <i data-feather="delete"></i>
-                        </button>
+                            <a href="{{Route('peminjamanEdit')}}" class="btn btn-primary btn-icon">
+                                <i data-feather="edit"></i>
+                            </a>
+                            <button type="button" class="btn btn-danger btn-icon"  onclick="Hapus('')">
+                                <i data-feather="delete"></i>
+                            </button>
                         </td>
                     </tr>
               </tbody>
