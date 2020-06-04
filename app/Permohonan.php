@@ -13,4 +13,9 @@ class Permohonan extends Model
     {
         return $this->belongsTo(Objek_penelitian::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

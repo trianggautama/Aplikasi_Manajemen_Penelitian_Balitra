@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Objek_penelitian;
 use App\Permohonan;
+use App\User;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class adminController extends Controller
 {
@@ -23,9 +25,18 @@ class adminController extends Controller
 
     public function permohonanStore(Request $request)
     {
+        $user = new User;
+        $user->nama = $request->nama;
+        $user->username = $request->NIK;
+        $user->password = Hash::make($request->NIK);
+        $user->role = 4;
+        $user->status = 0;
+        $user->save();
+
         $data = new Permohonan;
+        $data->user_id = $user->id;
         $data->objek_penelitian_id = $request->objek_penelitian_id;
-        $data->nama = $request->nama;
+        $data->email = $request->email;
         $data->NIK = $request->NIK;
         $data->alamat = $request->alamat;
         $data->no_hp = $request->no_hp;
@@ -33,7 +44,6 @@ class adminController extends Controller
         $data->tanggal_lahir = $request->tanggal_lahir;
         $data->pendidikan_terakhir = $request->pendidikan_terakhir;
         $data->keperluan = $request->keperluan;
-        $data->tanggal_pemanggilan = $request->tanggal_pemanggilan;
 
         $data->save();
 

@@ -43,6 +43,11 @@ class User extends Authenticatable
         return $this->hasOne(Data_personal::class);
     }
 
+    public function permohonan()
+    {
+        return $this->hasOne(Permohonan::class);
+    }
+
     public function peneliti()
     {
         return $this->hasOne(Peneliti::class);
