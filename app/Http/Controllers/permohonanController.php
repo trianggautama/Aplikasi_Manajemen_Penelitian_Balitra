@@ -48,9 +48,12 @@ class permohonanController extends Controller
             $peneliti->tempat_lahir = $data->tempat_lahir;
             $peneliti->tanggal_lahir = $data->tanggal_lahir;
             $peneliti->pendidikan_terakhir = $data->pendidikan_terakhir;
-
+            $data->catatan = null;
             $peneliti->save();
-
+        }elseif($request->status == 3){
+            $data->catatan = $request->catatan;
+        }else{
+            return redirect()->back()->with('success', 'Tidak Ada Aksi');
         }
         $data->update();
 

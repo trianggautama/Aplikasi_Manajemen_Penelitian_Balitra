@@ -83,6 +83,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/penelitian/edit/{uuid}', 'penelitianController@update')->name('penelitianUpdate');
     Route::get('/penelitian/delete/{uuid}', 'penelitianController@destroy')->name('penelitianDestroy');
 
+       //penelitian
+       Route::get('/peminjaman', 'peminjamanController@index')->name('peminjamanIndex');
+       Route::post('/peminjaman', 'peminjamanController@store')->name('peminjamanStore');
+       Route::get('/peminjaman/edit/', 'peminjamanController@edit')->name('peminjamanEdit');
+       Route::put('/peminjaman/edit/{uuid}', 'peminjamanController@update')->name('peminjamanUpdate');
+       Route::get('/peminjaman/delete/{uuid}', 'peminjamanController@destroy')->name('peminjamanDestroy');
+
     //CETAK REPORT
     Route::get('/objekPenelitian/cetak', 'reportController@objekPenelitianCetak')->name('objekPenelitianCetak');
     Route::get('/fasilitas/cetak', 'reportController@fasilitasCetak')->name('fasilitasCetak');
@@ -93,11 +100,19 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/penelitian/sk/{uuid}', 'reportController@skPenelitian')->name('skPenelitian');
     Route::get('/peneliti/cetak', 'reportController@penelitiCetak')->name('penelitiCetak');
 
-    //PEMBIMBING - PENELITI
+
+
+    //HALAMAN PEMBIMBING - MENU PENELITI
     Route::get('pembimbing/peneliti', 'penelitiController@pembimbingPenelitiIndex')->name('pembimbingPenelitiIndex');
 
-    //PEMBIMBING - PENELITIAN
+    //HALAMAN PEMBIMBING - MENU PENELITIAN
     Route::get('pembimbing/penelitian', 'penelitianController@pembimbingPenelitianIndex')->name('pembimbingPenelitianIndex');
     Route::get('/penelitian/jobdesk/{uuid}', 'penelitianController@jobdesk')->name('penelitianJobdesk');
+
+    //HALMAAN PENELITI - MENU PEMBIMBING
+    Route::get('peneliti/pembimbing', 'pembimbingController@penelitiPembimbingIndex')->name('penelitiPembimbingIndex');
+    
+    //HALAMAN PENELITI - MENU PENELITIAN
+    Route::get('peneliti/penelitian', 'penelitianController@penelitiPenelitianIndex')->name('penelitiPenelitianIndex'); 
 });
 

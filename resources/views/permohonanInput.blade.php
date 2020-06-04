@@ -36,10 +36,6 @@
                     <textarea name="alamat" name="alamat" id="" class="form-control"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="">Email</label>
-                    <input type="text" name="email" class="form-control">
-                </div>
-                <div class="form-group">
                     <label for="">No Telepon</label>
                     <input type="text" name="no_hp" class="form-control">
                 </div>

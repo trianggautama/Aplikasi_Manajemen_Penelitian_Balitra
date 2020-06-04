@@ -71,6 +71,12 @@
                     <span class="badge badge-danger">Ditolak</span>
                     @endif                
                   </div>
+                  @if($data->catatan)
+                  <div class="form-group">
+                    <p class="tx-medium mg-b-2"><a href="" class="link-01">Catatan Ditolak</a></p>
+                    <span class="tx-12 tx-color-03">{{$data->catatan}}</span>
+                </div>
+                @endif
                   @if($data->tanggal_pemanggilan)
                   <div class="form-group">
                     <p class="tx-medium mg-b-2"><a href="" class="link-01">Tanggal Panggilan</a></p>

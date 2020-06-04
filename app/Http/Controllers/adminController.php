@@ -72,7 +72,7 @@ class adminController extends Controller
         } elseif (Auth::user()->role == 3) {
             return view('pejabat.index');
         } else {
-            return view('pejabat.index');
+            return view('peneliti.index');
         }
     }
 

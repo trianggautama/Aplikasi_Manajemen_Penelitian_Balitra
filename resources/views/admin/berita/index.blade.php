@@ -59,7 +59,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="{{Route('fasilitasStore')}}" method="POST">
+        <form action="#" method="POST">
           @csrf
           <div class="form-group">
             <label for="Nama">Judul Berita</label>

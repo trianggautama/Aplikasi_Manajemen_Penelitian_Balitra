@@ -101,4 +101,11 @@ class pembimbingController extends Controller
         return redirect()->route('pembimbingIndex')->with('success', 'Berhasil menghapus data');
 
     }
+
+    public function penelitiPembimbingIndex()
+    {
+
+        $data = User::OrderBy('id', 'Desc')->where('role', 2)->get();
+        return view('peneliti.pembimbing.index', compact('data'));
+    }
 }

@@ -82,4 +82,10 @@ class penelitianController extends Controller
         $data = Penelitian::where('uuid', $uuid)->first();
         return view('pembimbing.penelitian.jobdesk', compact('data'));
     }
+
+    public function penelitiPenelitianIndex()
+    {
+        $data = Penelitian::orderBy('id', 'desc')->get();
+        return view('peneliti.penelitian.index', compact('data'));
+    }
 }
