@@ -100,6 +100,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/penelitian/sk/{uuid}', 'reportController@skPenelitian')->name('skPenelitian');
     Route::get('/peneliti/cetak', 'reportController@penelitiCetak')->name('penelitiCetak');
 
+    Route::get('/pembimbing/profil', 'adminController@pembimbingProfil')->name('pembimbingProfil');
 
 
     //HALAMAN PEMBIMBING - MENU PENELITI

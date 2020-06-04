@@ -17,6 +17,11 @@ class adminController extends Controller
         return view('welcome', compact('objekPenelitian'));
     }
 
+    public function pembimbingProfil()
+    {
+        return view('pembimbing.profil');
+    }
+
     public function permohonanInput()
     {
         $objekPenelitian = Objek_penelitian::all();

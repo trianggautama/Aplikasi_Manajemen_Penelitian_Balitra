@@ -1,5 +1,4 @@
 @extends('layouts.main')
-
 @section('content')
 @push('styles')
     <link href="{{asset('admin/lib/summernote/summernote.min.css')}}" rel="stylesheet">

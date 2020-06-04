@@ -52,7 +52,7 @@
         </div><!-- aside-loggedin -->
        <ul class="nav nav-aside">
        <li class="nav-label mg-t-25">Akun</li>
-        <li class="nav-item"><a href="{{Route('userProfil')}}" class="nav-link"><i data-feather="user"></i> <span>Profil</span></a></li>
+        <li class="nav-item"><a href="{{Route('pembimbingProfil')}}" class="nav-link"><i data-feather="user"></i> <span>Profil</span></a></li>
           <li class="nav-label mg-t-25">Penelitian</li>
           <li class="nav-item"><a href="{{Route('pembimbingPenelitiIndex')}}" class="nav-link"><i data-feather="users"></i> <span>Peneliti</span></a></li>
           <li class="nav-item"><a href="{{Route('pembimbingPenelitianIndex')}}" class="nav-link"><i data-feather="sunrise"></i> <span>Data Penelitian</span></a></li>
