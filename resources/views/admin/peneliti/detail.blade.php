@@ -30,8 +30,8 @@
                   <span class="tx-12 tx-color-03">{{$data->user->nama}}</span>
                 </div>
                 <div class="form-group">
-                  <p class="tx-medium mg-b-2"><a href="" class="link-01">{{$data->NIK}}</a></p>
-                  <span class="tx-12 tx-color-03">123241431</span>
+                  <p class="tx-medium mg-b-2"><a href="" class="link-01">NIK</a></p>
+                  <span class="tx-12 tx-color-03">{{$data->NIK}}</span>
                 </div>
                 <div class="form-group">
                   <p class="tx-medium mg-b-2"><a href="" class="link-01">Telepon</a></p>
