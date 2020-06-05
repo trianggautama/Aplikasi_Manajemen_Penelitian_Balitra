@@ -13,8 +13,8 @@
         <h4 class="mg-b-0 tx-spacing--1">Peneliti</h4>
       </div>
       <div class="d-none d-md-block">
-        <a class="btn btn-sm pd-x-15 btn-dark btn-uppercase mg-l-5" href="#modal2" data-toggle="modal"><i
-            data-feather="plus" class="wd-10 mg-r-5"></i> tambah Data</a>
+        <!-- <a class="btn btn-sm pd-x-15 btn-dark btn-uppercase mg-l-5" href="#modal2" data-toggle="modal"><i
+            data-feather="plus" class="wd-10 mg-r-5"></i> tambah Data</a> -->
         <a class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5" href="{{Route('penelitiCetak')}}"><i data-feather="printer"
             class="wd-10 mg-r-5"></i> Print</a>
       </div>
