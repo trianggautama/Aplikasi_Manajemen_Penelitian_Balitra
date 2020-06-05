@@ -7,11 +7,11 @@
       <div>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb breadcrumb-style1 mg-b-10">
-            <li class="breadcrumb-item"><a href="#">Penelitian (hlaman Peneliti)</a></li>
+            <li class="breadcrumb-item"><a href="#">Penelitian (halaman Peneliti)</a></li>
             <li class="breadcrumb-item active" aria-current="page">Data</li>
           </ol>
         </nav>
-        <h4 class="mg-b-0 tx-spacing--1">Data Penelitian (Belum di filter)</h4>
+        <h4 class="mg-b-0 tx-spacing--1">Data Penelitian </h4>
       </div>
       <div class="d-none d-md-block">
       </div>

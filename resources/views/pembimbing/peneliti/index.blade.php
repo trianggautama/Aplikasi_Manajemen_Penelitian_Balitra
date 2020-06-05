@@ -10,7 +10,7 @@
             <li class="breadcrumb-item"><a href="#">Peneliti yang di bimbing</a></li>
           </ol>
         </nav>
-        <h4 class="mg-b-0 tx-spacing--1">Peneliti yang di bimbing (belum di filter)</h4>
+        <h4 class="mg-b-0 tx-spacing--1">Peneliti yang di bimbing </h4>
       </div>
       <div class="d-none d-md-block">
         <a class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5" href="{{Route('penelitiCetak')}}"><i data-feather="printer"

@@ -11,7 +11,7 @@
             <li class="breadcrumb-item active" aria-current="page">Data</li>
           </ol>
         </nav>
-        <h4 class="mg-b-0 tx-spacing--1">Data Penelitian yang dibimbing (Belum difilter)</h4>
+        <h4 class="mg-b-0 tx-spacing--1">Data Penelitian yang dibimbing</h4>
       </div>
       <div class="d-none d-md-block">
         <a href="{{Route('penelitianCetak')}}" class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5" target="_blank"><i data-feather="printer"
