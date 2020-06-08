@@ -109,6 +109,6 @@ class penelitiController extends Controller
     public function pembimbingPenelitiIndex()
     {
         $data = Peneliti::orderBy('id', 'desc')->get();
-        return view('pembimbing.peneliti.index',compact('data'));
+        return view('pembimbing.peneliti.index', compact('data'));
     }
 }

@@ -56,7 +56,7 @@ Route::group(['middleware' => ['auth']], function () {
     //berita
     Route::get('/berita', 'beritaController@index')->name('beritaIndex');
     Route::post('/berita', 'beritaController@store')->name('beritaStore');
-    Route::get('/berita/edit/', 'beritaController@edit')->name('beritaEdit');
+    Route::get('/berita/edit/{uuid}', 'beritaController@edit')->name('beritaEdit');
     Route::put('/berita/edit/{uuid}', 'beritaController@update')->name('beritaUpdate');
     Route::get('/berita/delete/{uuid}', 'beritaController@destroy')->name('beritaDestroy');
 
@@ -83,12 +83,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/penelitian/edit/{uuid}', 'penelitianController@update')->name('penelitianUpdate');
     Route::get('/penelitian/delete/{uuid}', 'penelitianController@destroy')->name('penelitianDestroy');
 
-       //penelitian
-       Route::get('/peminjaman', 'peminjamanController@index')->name('peminjamanIndex');
-       Route::post('/peminjaman', 'peminjamanController@store')->name('peminjamanStore');
-       Route::get('/peminjaman/edit/', 'peminjamanController@edit')->name('peminjamanEdit');
-       Route::put('/peminjaman/edit/{uuid}', 'peminjamanController@update')->name('peminjamanUpdate');
-       Route::get('/peminjaman/delete/{uuid}', 'peminjamanController@destroy')->name('peminjamanDestroy');
+    //penelitian
+    Route::get('/peminjaman', 'peminjamanController@index')->name('peminjamanIndex');
+    Route::post('/peminjaman', 'peminjamanController@store')->name('peminjamanStore');
+    Route::get('/peminjaman/edit/{uuid}', 'peminjamanController@edit')->name('peminjamanEdit');
+    Route::put('/peminjaman/edit/{uuid}', 'peminjamanController@update')->name('peminjamanUpdate');
+    Route::get('/peminjaman/delete/{uuid}', 'peminjamanController@destroy')->name('peminjamanDestroy');
 
     //CETAK REPORT
     Route::get('/objekPenelitian/cetak', 'reportController@objekPenelitianCetak')->name('objekPenelitianCetak');
@@ -102,7 +102,6 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/pembimbing/profil', 'adminController@pembimbingProfil')->name('pembimbingProfil');
 
-
     //HALAMAN PEMBIMBING - MENU PENELITI
     Route::get('pembimbing/peneliti', 'penelitiController@pembimbingPenelitiIndex')->name('pembimbingPenelitiIndex');
 
@@ -112,8 +111,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     //HALMAAN PENELITI - MENU PEMBIMBING
     Route::get('peneliti/pembimbing', 'pembimbingController@penelitiPembimbingIndex')->name('penelitiPembimbingIndex');
-    
-    //HALAMAN PENELITI - MENU PENELITIAN
-    Route::get('peneliti/penelitian', 'penelitianController@penelitiPenelitianIndex')->name('penelitiPenelitianIndex'); 
-});
 
+    //HALAMAN PENELITI - MENU PENELITIAN
+    Route::get('peneliti/penelitian', 'penelitianController@penelitiPenelitianIndex')->name('penelitiPenelitianIndex');
+});

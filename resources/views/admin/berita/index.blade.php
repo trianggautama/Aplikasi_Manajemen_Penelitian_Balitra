@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
 @push('styles')
-    <link href="{{asset('admin/lib/summernote/summernote.min.css')}}" rel="stylesheet">
+<link href="{{asset('admin/lib/summernote/summernote.min.css')}}" rel="stylesheet">
 @endpush
 <div class="content-body">
   <div class="container pd-x-0">
@@ -36,19 +36,21 @@
                 </tr>
               </thead>
               <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Judul 1</td>
-                    <td> <img src="https://via.placeholder.com/500" class="rounded-circle" alt="" width="40"></td>
-                    <td>  
-                    <a href="{{Route('beritaEdit')}}" class="btn btn-primary btn-icon">
-                                <i data-feather="edit"></i>
-                            </a>
-                            <button type="button" class="btn btn-danger btn-icon"  onclick="Hapus('')">
-                                <i data-feather="delete"></i>
-                            </button>
-                    </td>
-                  </tr>
+                @foreach($data as $d)
+                <tr>
+                  <td>{{$loop->iteration}}</td>
+                  <td>{{$d->judul}}</td>
+                  <td> <img src="https://via.placeholder.com/500" class="rounded-circle" alt="" width="40"></td>
+                  <td>
+                    <a href="{{Route('beritaEdit',['uuid' => $d->uuid])}}" class="btn btn-primary btn-icon">
+                      <i data-feather="edit"></i>
+                    </a>
+                    <button type="button" class="btn btn-danger btn-icon" onclick="Hapus('')">
+                      <i data-feather="delete"></i>
+                    </button>
+                  </td>
+                </tr>
+                @endforeach
               </tbody>
             </table>
           </div><!-- df-example -->
@@ -59,7 +61,8 @@
 </div>
 
 <!-- modal -->
-<div class="modal fade bd-example-modal-lg" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+<div class="modal fade bd-example-modal-lg" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
+  aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content tx-14">
       <div class="modal-header">
@@ -69,7 +72,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="#" method="POST">
+        <form action="{{Route('beritaStore')}}" method="POST" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
             <label for="Nama">Judul Berita</label>
