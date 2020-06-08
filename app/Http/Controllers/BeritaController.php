@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Berita;
+use File;
 use Illuminate\Http\Request;
 
 class BeritaController extends Controller
@@ -19,7 +20,7 @@ class BeritaController extends Controller
         if ($req->foto != null) {
             $img = $req->file('foto');
             $FotoExt = $img->getClientOriginalExtension();
-            $FotoName = $data->id . '-' . $req->judul;
+            $FotoName = $data->id;
             $foto = $FotoName . '.' . $FotoExt;
             $img->move('images/berita', $foto);
             $data->foto = $foto;
@@ -45,21 +46,23 @@ class BeritaController extends Controller
         if ($req->foto != null) {
             $img = $req->file('foto');
             $FotoExt = $img->getClientOriginalExtension();
-            $FotoName = $data->id . '-' . $req->judul;
+            $FotoName = $berita->id;
             $foto = $FotoName . '.' . $FotoExt;
             $img->move('images/berita', $foto);
-            $data->foto = $foto;
+            $berita->foto = $foto;
         } else {
-            $data->foto = $data->foto;
+            $berita->foto = $berita->foto;
         }
-        $data->update();
+        $berita->update();
 
         return redirect()->route('beritaIndex')->withSuccess('Data berhasil diubah');
     }
 
     public function destroy($uuid)
     {
-        $data = Berita::where('uuid', $uuid)->first()->delete();
+        $data = Berita::where('uuid', $uuid)->first();
+        File::delete('images/berita/' . $data->foto);
+        $data->delete();
 
         return redirect()->back()->withSuccess('Data berhasil dihapus');
     }
