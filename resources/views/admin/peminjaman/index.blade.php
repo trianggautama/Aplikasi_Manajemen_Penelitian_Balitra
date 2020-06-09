@@ -47,13 +47,14 @@
                   <td>{{$d->lama_peminjaman}} Hari</td>
                   <td>Disetujui</td>
                   <td>
-                  <a href="#" class="btn btn-success btn-icon">
+                    <a href="{{Route('peminjamanUpdateStatus',['uuid' => $d->uuid])}}" class="btn btn-success btn-icon">
                       <i data-feather="check"></i>
                     </a>
                     <a href="{{Route('peminjamanEdit',['uuid' => $d->uuid])}}" class="btn btn-primary btn-icon">
                       <i data-feather="edit"></i>
                     </a>
-                    <button type="button" class="btn btn-danger btn-icon"  onclick="Hapus('{{$d->uuid}}','{{$d->fasilitas->nama}}')">
+                    <button type="button" class="btn btn-danger btn-icon"
+                      onclick="Hapus('{{$d->uuid}}','{{$d->fasilitas->nama}}')">
                       <i data-feather="delete"></i>
                     </button>
                   </td>

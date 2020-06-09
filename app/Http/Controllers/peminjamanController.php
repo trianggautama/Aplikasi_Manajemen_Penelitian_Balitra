@@ -13,7 +13,7 @@ class peminjamanController extends Controller
     public function index()
     {
         $data = Peminjaman_fasilitas::orderBy('id', 'Desc')->get();
-        $peneliti = User::where('role', 4)->where('status',1)->orderBy('nama', 'Desc')->get();
+        $peneliti = User::where('role', 4)->where('status', 1)->orderBy('nama', 'Desc')->get();
         $fasilitas = Fasilitas::orderBy('id', 'Desc')->get();
         return view('admin.peminjaman.index', compact('data', 'peneliti', 'fasilitas'));
     }
@@ -41,6 +41,23 @@ class peminjamanController extends Controller
         return redirect()->route('peminjamanIndex')->withSuccess('Data berhasil diubah');
     }
 
+    public function updateStatus($uuid)
+    {
+        $data = Peminjaman_fasilitas::where('uuid', $uuid)->first();
+        if ($data->status == 0) {
+            $status = 1;
+        } else {
+            $status = 0;
+        }
+
+        $data->status = $status;
+
+        $data->update();
+
+        return redirect()->back()->withSuccess('Berhasil verifikasi');
+
+    }
+
     public function destroy($uuid)
     {
         $data = Peminjaman_fasilitas::where('uuid', $uuid)->first()->delete();
@@ -50,7 +67,7 @@ class peminjamanController extends Controller
 
     public function penelitiIndex()
     {
-        $data = Peminjaman_fasilitas::where('peneliti_id',Auth::user()->peneliti->id)->orderBy('id', 'Desc')->get();
+        $data = Peminjaman_fasilitas::where('peneliti_id', Auth::user()->peneliti->id)->orderBy('id', 'Desc')->get();
         $fasilitas = Fasilitas::orderBy('id', 'Desc')->get();
         return view('peneliti.peminjaman.index', compact('data', 'fasilitas'));
     }

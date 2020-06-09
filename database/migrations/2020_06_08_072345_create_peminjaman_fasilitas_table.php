@@ -19,6 +19,7 @@ class CreatePeminjamanFasilitasTable extends Migration
             $table->foreignId('peneliti_id')->onDelete('cascade');
             $table->foreignId('fasilitas_id')->onDelete('cascade');
             $table->string('lama_peminjaman', 50);
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
     }
