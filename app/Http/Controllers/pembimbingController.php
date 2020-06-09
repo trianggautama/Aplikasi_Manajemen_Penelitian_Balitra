@@ -33,7 +33,7 @@ class pembimbingController extends Controller
         if ($request->foto != null) {
             $img = $request->file('foto');
             $FotoExt = $img->getClientOriginalExtension();
-            $FotoName = $request->nama;
+            $FotoName = $data->id;
             $foto = $FotoName . '.' . $FotoExt;
             $img->move('images/pembimbing', $foto);
             $data->foto = $foto;
@@ -56,7 +56,7 @@ class pembimbingController extends Controller
         if ($request->foto != null) {
             $img = $request->file('foto');
             $FotoExt = $img->getClientOriginalExtension();
-            $FotoName = $request->nama;
+            $FotoName = $data->id;
             $foto = $FotoName . '.' . $FotoExt;
             $img->move('images/pembimbing', $foto);
             $user->foto = $foto;
@@ -99,7 +99,7 @@ class pembimbingController extends Controller
         if ($request->foto != null) {
             $img = $request->file('foto');
             $FotoExt = $img->getClientOriginalExtension();
-            $FotoName = $request->nama;
+            $FotoName = $user->id;
             $foto = $FotoName . '.' . $FotoExt;
             $img->move('images/pembimbing', $foto);
             $user->foto = $foto;

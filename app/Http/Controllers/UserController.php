@@ -33,7 +33,7 @@ class UserController extends Controller
         if ($request->foto != null) {
             $img = $request->file('foto');
             $FotoExt = $img->getClientOriginalExtension();
-            $FotoName = $request->nama;
+            $FotoName = $data->id;
             $foto = $FotoName . '.' . $FotoExt;
             $img->move('images/user', $foto);
             $data->foto = $foto;
@@ -51,17 +51,17 @@ class UserController extends Controller
         $user->nama = $request->nama;
         $user->username = $request->username;
         $user->password = Hash::make($request->password);
+        $user->save();
         if ($request->foto != null) {
             $img = $request->file('foto');
             $FotoExt = $img->getClientOriginalExtension();
-            $FotoName = $request->nama;
+            $FotoName = $user->id;
             $foto = $FotoName . '.' . $FotoExt;
             $img->move('images/user', $foto);
             $user->foto = $foto;
         } else {
             $user->foto = 'default.png';
         }
-        $user->save();
 
         $personal = new Data_personal;
         $personal->user_id = $user->id;
@@ -96,14 +96,13 @@ class UserController extends Controller
         if ($request->foto != null) {
             $img = $request->file('foto');
             $FotoExt = $img->getClientOriginalExtension();
-            $FotoName = $request->nama;
+            $FotoName = $user->id;
             $foto = $FotoName . '.' . $FotoExt;
             $img->move('images/user', $foto);
             $user->foto = $foto;
         } else {
             $user->foto = $user->foto;
         }
-
         $user->update();
 
         $personal = Data_personal::where('user_id', $user->id)->first();
@@ -129,8 +128,6 @@ class UserController extends Controller
         return redirect()->route('userIndex')->with('success', 'Berhasil menghapus data');
 
     }
-
-
 
     public function penelitiProfil()
     {
