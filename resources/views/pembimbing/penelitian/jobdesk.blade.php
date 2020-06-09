@@ -14,22 +14,27 @@
         <h4 class="mg-b-0 tx-spacing--1">Data Penelitian </h4>
       </div>
       <div class="d-none d-md-block">
-        <button class="btn btn-sm pd-x-15 btn-dark btn-uppercase mg-l-5"  data-toggle="modal" id="tambahJob"><i
+        <button class="btn btn-sm pd-x-15 btn-dark btn-uppercase mg-l-5" data-toggle="modal" id="tambahJob"><i
             data-feather="plus" class="wd-10 mg-r-5"></i> tambah Data</button>
-        <a href="{{Route('penelitianCetak')}}" class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5" target="_blank"><i data-feather="printer"
-            class="wd-10 mg-r-5"></i> Print</a>
+        <a href="{{Route('penelitianCetak')}}" class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5"
+          target="_blank"><i data-feather="printer" class="wd-10 mg-r-5"></i> Print</a>
       </div>
     </div>
     <div class="row row-xs">
+      @foreach($data->jobdesk as $d)
       <div class="col-md-12 col-xl-12 mg-t-10">
         <div class="card card-body mg-b-10">
           <p>
-            <a class="btn btn-secondary" data-toggle="collapse" href="#collapseExample"  aria-controls="collapseExample">
+            <a class="btn btn-secondary" data-toggle="collapse" href="#collapseExample" aria-controls="collapseExample">
               Buat Silabus Penelitian
             </a>
-              <a href="{{Route('jobdeskEdit')}}" class="btn btn-primary btn-icon"><i data-feather="edit"></i></a>
-              <button type="button" class="btn btn-danger btn-icon"  onclick="Hapus()"><i data-feather="delete"></i></button>
-              <button id="tambahVerif" class="btn btn-success btn-icon" data-toggle="tooltip" data-placement="top" title="Verifikasi"  data-toggle="modal"><i data-feather="check"></i></button>  
+            <a href="{{Route('jobdeskEdit',['uuid' => $d->uuid])}}" class="btn btn-primary btn-icon"><i
+                data-feather="edit"></i></a>
+            <button type="button" class="btn btn-danger btn-icon" onclick="Hapus()"><i
+                data-feather="delete"></i></button>
+            <button id="tambahVerif" data-status="{{$d->status}}" data-id="{{$d->uuid}}"
+              class="btn btn-success btn-icon" data-toggle="tooltip" data-placement="top" title="Verifikasi"
+              data-toggle="modal"><i data-feather="check"></i></button>
           </p>
           <div class="collapse" id="collapseExample">
             <div class="card card-body">
@@ -37,50 +42,53 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <p class="tx-medium mg-b-2"><a href="" class="link-01">Uraian Tugas</a></p>
-                    <span class="tx-12 tx-color-03">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur labore possimus id modi aspernatur aliquam? Officiis earum beatae dicta tempore dolor, at voluptatem ipsa debitis, modi cumque illo voluptates placeat.</span>
+                    <span class="tx-12 tx-color-03">{{$d->uraian}}</span>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <p class="tx-medium mg-b-2"><a href="" class="link-01">Pembimbing</a></p>
-                    <span class="tx-12 tx-color-03">Nama Pembimbing</span>
+                    <span class="tx-12 tx-color-03">{{$d->penelitian->user->nama}}</span>
                   </div>
                   <div class="form-group">
                     <p class="tx-medium mg-b-2"><a href="" class="link-01">Batas Waktu</a></p>
-                    <span class="tx-12 tx-color-03">20 Juni 2020</span>
+                    <span
+                      class="tx-12 tx-color-03">{{carbon\carbon::parse($d->batas_pengerjaan)->translatedFormat('d F Y')}}</span>
                   </div>
                 </div>
               </div>
             </div>
-          </div>  
+          </div>
         </div>
       </div>
+      @endforeach
     </div>
   </div>
 </div>
 
 <!-- Modal Nilai Revisi-->
-<div class="modal fade bd-example-modal-lg" id="modalJob" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade bd-example-modal-lg" id="modalJob" tabindex="-1" role="dialog"
+  aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-    <div class="modal-header">
+      <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Tambah Jobdesk</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form action="" method="post" enctype="multipart/form-data" id="formRevisi">
-        <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-        <input type="hidden" name="id" id="id" value="">
-        <div class="form-group">
+        <form action="{{Route('penelitianJobdeskStore')}}" method="post" enctype="multipart/form-data" id="formRevisi">
+          <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+          <input type="hidden" name="penelitian_id" id="penelitian_id" value="{{$data->id}}">
+          <div class="form-group">
             <label for="">Uraian </label>
-            <textarea  class="form-control" name="uraian" id="uraian" ></textarea>
-        </div> 
-        <div class="form-group">
-            <label for="">Batas Pngerjaan </label>
-            <input type="date" name="batas_waktu" id="batas_waktu" class="form-control">
-        </div>
+            <textarea class="form-control" name="uraian" id="uraian"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="">Batas Pengerjaan </label>
+            <input type="date" name="batas_pengerjaan" id="batas_pengerjaan" class="form-control">
+          </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn " data-dismiss="modal">Batal</button>
@@ -92,28 +100,34 @@
 </div>
 
 <!-- Modal Nilai Perbaikan-->
-<div class="modal fade bd-example-modal-lg" id="modalVerif" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade bd-example-modal-lg" id="modalVerif" tabindex="-1" role="dialog"
+  aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-    <div class="modal-header">
+      <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Modal Verif</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form action="" method="post" enctype="multipart/form-data" id="formPerbaikan">
-        <div class="form-group">
+        <form action="{{Route('penelitianJobdeskUpdate')}}" method="post" enctype="multipart/form-data"
+          id="formPerbaikan">
+          @csrf
+          @method('PUT')
+          <input type="hidden" name="uuid" id="uuid">
+          <div class="form-group">
             <label for="Nama">Status</label>
             <select name="status" id="status" class="form-control">
-              <option value="2" >Disetujui</option>
-              <option value="3" >Revisi</option>
+              <option value="0">Pending</option>
+              <option value="1">Disetujui</option>
+              <option value="2">Revisi</option>
             </select>
           </div>
           <div class="" id="catatanform">
             <div class="form-group">
               <label for="Nama">Catatan</label>
-             <textarea name="catatan" id="catatan" class="form-control"></textarea>
+              <textarea name="catatan" id="catatan" class="form-control"></textarea>
             </div>
           </div>
 
@@ -130,14 +144,17 @@
 @endsection
 @section('scripts')
 <script>
-
   $("#tambahJob").click(function(){
     $('#modalJob').modal('show');
   });
 
   $("#tambahVerif").click(function(){
     $('#catatanform').hide();
+    var uuid = $(this).data("id");
+    var status = $(this).data("status");
     $('#modalVerif').modal('show');
+    $('#status').val(status);
+    $('#uuid').val(uuid);
   });
 
   $(function(){
@@ -154,10 +171,10 @@
 
       $('#status').on('change',function(){
             let status = $('#status').val();
-            if(status == 2){
+            if(status == 1){
                 $('#tanggalform').show();
                 $('#catatanform').hide();
-            }else if(status == 3){
+            }else if(status == 2){
                 $('#tanggalform').hide();
                 $('#catatanform').show();
             }else{

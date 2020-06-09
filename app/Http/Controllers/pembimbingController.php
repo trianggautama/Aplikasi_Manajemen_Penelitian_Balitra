@@ -6,6 +6,7 @@ use App\Data_personal;
 use App\User;
 use Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class pembimbingController extends Controller
 {
@@ -14,6 +15,36 @@ class pembimbingController extends Controller
         $data = User::OrderBy('id', 'Desc')->where('role', 2)->get();
 
         return view('admin.pembimbing.index', compact('data'));
+    }
+
+    public function profil()
+    {
+        $data = User::findOrFail(Auth::id());
+        return view('pembimbing.profil', compact('data'));
+    }
+
+    public function profileUpdate(Request $request)
+    {
+        $data = User::findOrFail(Auth::id());
+        $data->fill($request->all())->save();
+        if (isset($request->password)) {
+            $data->password = Hash::make($request->password);
+        }
+        if ($request->foto != null) {
+            $img = $request->file('foto');
+            $FotoExt = $img->getClientOriginalExtension();
+            $FotoName = $request->nama;
+            $foto = $FotoName . '.' . $FotoExt;
+            $img->move('images/pembimbing', $foto);
+            $data->foto = $foto;
+        } else {
+            $data->foto = $data->foto;
+        }
+        $data->update();
+        $data_personal = Data_personal::findOrFail($data->data_personal->id);
+        $data_personal->fill($request->all())->save();
+
+        return redirect()->back()->withSuccess('Profile berhasil diubah');
     }
 
     public function store(Request $request)
