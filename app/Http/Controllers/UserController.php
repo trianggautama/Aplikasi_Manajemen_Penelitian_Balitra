@@ -7,6 +7,7 @@ use App\User;
 use Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -47,6 +48,14 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'username' => 'required|unique:users',
+        ]);
+    
+        if ($validator->fails()) {
+            return back()->with('warning', 'Username sudah digunakan');
+        }
+
         $user = new User;
         $user->nama = $request->nama;
         $user->username = $request->username;
