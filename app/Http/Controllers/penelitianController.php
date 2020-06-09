@@ -132,9 +132,44 @@ class penelitianController extends Controller
 
     }
 
+    public function jobdeskDestroy(Request $request, $uuid)
+    {
+        $data = Jobdesk::where('uuid', $uuid)->first();
+
+        return redirect()->back()->withSuccess('Data berhasil dihapus');
+
+    }
+
     public function penelitiJobdeskIndex($uuid)
     {
         $data = Penelitian::where('uuid', $uuid)->first();
         return view('peneliti.penelitian.jobdesk', compact('data'));
+    }
+
+    public function penelitiJobdeskStore(Request $request)
+    {
+        $jobdesk = Jobdesk::findOrFail($request->id);
+        $data = $jobdesk->jobdesk_peneliti()->create($request->all());
+        if ($request->file != null) {
+            $img = $request->file('file');
+            $FotoExt = $img->getClientOriginalExtension();
+            $FotoName = $data->id;
+            $file = $FotoName . '.' . $FotoExt;
+            $img->move('lampiran/jobdesk', $file);
+            $data->file = $file;
+        } else {
+            $data->file = $data->file;
+        }
+        $data->update();
+
+        return redirect()->back()->withSuccess('Data berhasil disimpan');
+    }
+
+    public function penelitiJobdeskDestroy(Request $request, $uuid)
+    {
+        $data = Jobdesk_peneliti::where('uuid', $uuid)->first();
+
+        return redirect()->back()->withSuccess('Data berhasil dihapus');
+
     }
 }

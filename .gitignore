@@ -3,6 +3,7 @@
 /public/images/berita
 /public/lampiran/permohonan
 /public/storage
+/public/lampiran/jobdesk
 /storage/*.key
 /vendor
 .env
