@@ -55,10 +55,6 @@
           <li class="nav-label mg-t-25">Akun</li>
           <li class="nav-item"><a href="{{Route('penelitiProfil')}}" class="nav-link"><i data-feather="user"></i>
               <span>Profil</span></a></li>
-
-          <li class="nav-item"><a href="{{Route('penelitiFasilitasIndex')}}" class="nav-link"><i
-                data-feather="thermometer"></i>
-              <span>Peminjaman Fasilitas</span></a></li>
           <li class="nav-label mg-t-25">Penelitian</li>
           <li class="nav-item"><a class="nav-link" href="{{Route('penelitiPembimbingIndex')}}"><i
                 data-feather="user"></i>pembimbing</a></li>
