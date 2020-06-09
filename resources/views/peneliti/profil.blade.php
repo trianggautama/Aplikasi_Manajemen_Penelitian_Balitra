@@ -64,7 +64,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <form action="{{Route('profileUpdate')}}" method="POST">
+            <form action="{{Route('profileUpdate')}}" method="POST" enctype="multipart/form-data">
               @csrf
               @method('PUT')
               <div class="form-group">

@@ -72,7 +72,7 @@
             data-feather="bell"></i></a>
             <a class="nav-link" data-toggle="tooltip" title="Sign out" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i data-feather="log-out"></i>
              {{ __('Logout') }}
-        </a>
+          </a>
 
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
           @csrf
