@@ -35,17 +35,17 @@
                   <th>Aksi</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody> 
                 @foreach($data as $d)
                 <tr>
                   <td>{{$loop->iteration}}</td>
-                  <td>{{$d->judul}}</td>
-                  <td> <img src="https://via.placeholder.com/500" class="rounded-circle" alt="" width="40"></td>
+                  <td>{{$d->judul}}</td> 
+                  <td> <img src="{{asset('images/berita/'. $d->foto)}}" class="rounded-circle" alt="" width="40"></td>
                   <td>
                     <a href="{{Route('beritaEdit',['uuid' => $d->uuid])}}" class="btn btn-primary btn-icon">
                       <i data-feather="edit"></i>
                     </a>
-                    <button type="button" class="btn btn-danger btn-icon" onclick="Hapus('')">
+                    <button type="button" class="btn btn-danger btn-icon"  onclick="Hapus('{{$d->uuid}}','{{$d->judul}}')">
                       <i data-feather="delete"></i>
                     </button>
                   </td>
@@ -76,15 +76,15 @@
           @csrf
           <div class="form-group">
             <label for="Nama">Judul Berita</label>
-            <input type="text" name="judul" class="form-control" placeholder="Judul Berita">
+            <input type="text" name="judul" class="form-control" placeholder="Judul Berita" required>
           </div>
           <div class="form-group">
             <label for="Nama">foto</label>
-            <input type="file" name="foto" class="form-control">
+            <input type="file" name="foto" class="form-control" required>
           </div>
           <div class="form-group">
             <label for="Nama">isi</label>
-            <textarea name="isi" id="isi" name="isi" class="form-control"></textarea>
+            <textarea name="isi" id="isi" name="isi" class="form-control" required></textarea>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary tx-13" data-dismiss="modal">Close</button>
@@ -116,10 +116,10 @@
         $('#isi').summernote();
     });
 
-      function Hapus(uuid, nama) {
+      function Hapus(uuid, judul) {
         Swal.fire({
         title: 'Anda Yakin?',
-        text: " Menghapus data fasilitas " + nama ,        
+        text: " Menghapus data berita " + judul ,        
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -128,7 +128,7 @@
         cancelButtonText: 'Batal'
       }).then((result) => {
         if (result.value) {
-          url = '{{route("fasilitasDestroy",'')}}';
+          url = '{{route("beritaDestroy",'')}}';
           window.location.href =  url+'/'+uuid ;
         }
       })
