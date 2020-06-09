@@ -14,8 +14,6 @@
         <h4 class="mg-b-0 tx-spacing--1">Data Penelitian </h4>
       </div>
       <div class="d-none d-md-block">
-        <button class="btn btn-sm pd-x-15 btn-dark btn-uppercase mg-l-5"  data-toggle="modal" id="tambahJob"><i
-            data-feather="plus" class="wd-10 mg-r-5"></i> tambah Data</button>
         <a href="{{Route('penelitianCetak')}}" class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5" target="_blank"><i data-feather="printer"
             class="wd-10 mg-r-5"></i> Print</a>
       </div>
@@ -27,9 +25,7 @@
             <a class="btn btn-secondary" data-toggle="collapse" href="#collapseExample"  aria-controls="collapseExample">
               Buat Silabus Penelitian
             </a>
-              <a href="{{Route('jobdeskEdit')}}" class="btn btn-primary btn-icon"><i data-feather="edit"></i></a>
-              <button type="button" class="btn btn-danger btn-icon"  onclick="Hapus()"><i data-feather="delete"></i></button>
-              <button id="tambahVerif" class="btn btn-success btn-icon" data-toggle="tooltip" data-placement="top" title="Verifikasi"  data-toggle="modal"><i data-feather="check"></i></button>  
+              <button id="tambahVerif" class="btn btn-success btn-icon" data-toggle="tooltip" data-placement="top" title="Upload Berkas Kegiatan"  data-toggle="modal"><i data-feather="upload"></i></button>  
           </p>
           <div class="collapse" id="collapseExample">
             <div class="card card-body">
@@ -52,40 +48,16 @@
                 </div>
               </div>
             </div>
+            <div class="card card-body mg-t-10">
+              file upload
+              <p>
+              <button  class="btn btn-success btn-icon" ><i data-feather="paperclip"></i> File </button>  
+              </p>
+            </div>
           </div>  
         </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- Modal Nilai Revisi-->
-<div class="modal fade bd-example-modal-lg" id="modalJob" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-    <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Tambah Jobdesk</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="" method="post" enctype="multipart/form-data" id="formRevisi">
-        <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-        <input type="hidden" name="id" id="id" value="">
-        <div class="form-group">
-            <label for="">Uraian </label>
-            <textarea  class="form-control" name="uraian" id="uraian" ></textarea>
-        </div> 
-        <div class="form-group">
-            <label for="">Batas Pngerjaan </label>
-            <input type="date" name="batas_waktu" id="batas_waktu" class="form-control">
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn " data-dismiss="modal">Batal</button>
-        <button type="submit" class="btn btn-secondary"> <i class="far fa-save"></i> Simpan</button>
-        </form>
+        
       </div>
     </div>
   </div>
