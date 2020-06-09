@@ -10,11 +10,11 @@
       <div>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb breadcrumb-style1 mg-b-10">
-            <li class="breadcrumb-item"><a href="#">Profil user</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Profil User </li>
+            <li class="breadcrumb-item"><a href="#">Profil User</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Profil Peneliti </li>
           </ol>
         </nav>
-        <h4 class="mg-b-0 tx-spacing--1">Profil User </h4>
+        <h4 class="mg-b-0 tx-spacing--1">Profil Peneliti </h4>
       </div>
       <div class="d-none d-md-block">
         <a class="btn btn-sm pd-x-15 btn-dark btn-uppercase mg-l-5" href="#modal2" data-toggle="modal"><i
