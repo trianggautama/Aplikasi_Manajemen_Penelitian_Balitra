@@ -129,6 +129,7 @@ Route::group(['middleware' => ['auth']], function () {
     //HALAMAN PENELITI - MENU PENELITIAN
     Route::get('peneliti/penelitian', 'penelitianController@penelitiPenelitianIndex')->name('penelitiPenelitianIndex');
     Route::post('/peneliti/jobdesk/create', 'penelitianController@penelitiJobdeskStore')->name('penelitiJobdeskStore');
+    Route::get('/peneliti/jobdesk/delete', 'penelitianController@penelitiJobdeskDestroy')->name('penelitiJobdeskDestroy');
 
     //HALAMAN PENELITI - MENU jobdesk
     Route::get('peneliti/jobdesk/{uuid}', 'penelitianController@penelitiJobdeskIndex')->name('penelitiJobdeskIndex');
