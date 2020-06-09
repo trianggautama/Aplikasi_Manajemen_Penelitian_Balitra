@@ -12,7 +12,7 @@ class peminjamanController extends Controller
     public function index()
     {
         $data = Peminjaman_fasilitas::orderBy('id', 'Desc')->get();
-        $peneliti = User::where('role', 4)->orderBy('nama', 'Desc')->get();
+        $peneliti = User::where('role', 4)->where('status',1)->orderBy('nama', 'Desc')->get();
         $fasilitas = Fasilitas::orderBy('id', 'Desc')->get();
         return view('admin.peminjaman.index', compact('data', 'peneliti', 'fasilitas'));
     }

@@ -84,6 +84,14 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/penelitian/edit/{uuid}', 'penelitianController@edit')->name('penelitianEdit');
     Route::put('/penelitian/edit/{uuid}', 'penelitianController@update')->name('penelitianUpdate');
     Route::get('/penelitian/delete/{uuid}', 'penelitianController@destroy')->name('penelitianDestroy');
+    Route::get('/jobdesk/edit/', 'penelitianController@jobdeskEdit')->name('jobdeskEdit');
+
+    //penelitian
+    Route::get('/peminjaman', 'peminjamanController@index')->name('peminjamanIndex');
+    Route::post('/peminjaman', 'peminjamanController@store')->name('peminjamanStore');
+    Route::get('/peminjaman/edit/', 'peminjamanController@edit')->name('peminjamanEdit');
+    Route::put('/peminjaman/edit/{uuid}', 'peminjamanController@update')->name('peminjamanUpdate');
+    Route::get('/peminjaman/delete/{uuid}', 'peminjamanController@destroy')->name('peminjamanDestroy');
 
     //penelitian
     Route::get('/peminjaman', 'peminjamanController@index')->name('peminjamanIndex');
@@ -108,6 +116,9 @@ Route::group(['middleware' => ['auth']], function () {
     //HALAMAN PEMBIMBING - MENU PENELITIAN
     Route::get('pembimbing/penelitian', 'penelitianController@pembimbingPenelitianIndex')->name('pembimbingPenelitianIndex');
     Route::get('/penelitian/jobdesk/{uuid}', 'penelitianController@jobdesk')->name('penelitianJobdesk');
+
+
+    //PENELITI 
 
     //HALMAAN PENELITI - MENU PEMBIMBING
     Route::get('peneliti/pembimbing', 'pembimbingController@penelitiPembimbingIndex')->name('penelitiPembimbingIndex');

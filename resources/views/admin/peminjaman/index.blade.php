@@ -48,7 +48,7 @@
                     <a href="{{Route('peminjamanEdit',['uuid' => $d->uuid])}}" class="btn btn-primary btn-icon">
                       <i data-feather="edit"></i>
                     </a>
-                    <button type="button" class="btn btn-danger btn-icon" onclick="Hapus('')">
+                    <button type="button" class="btn btn-danger btn-icon"  onclick="Hapus('{{$d->uuid}}','{{$d->fasilitas->nama}}')">
                       <i data-feather="delete"></i>
                     </button>
                   </td>
@@ -132,7 +132,7 @@
       function Hapus(uuid, nama) {
         Swal.fire({
         title: 'Anda Yakin?',
-        text: " Menghapus data fasilitas " + nama ,        
+        text: " Menghapus data Peminjaman " + nama ,        
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -141,7 +141,7 @@
         cancelButtonText: 'Batal'
       }).then((result) => {
         if (result.value) {
-          url = '{{route("fasilitasDestroy",'')}}';
+          url = '{{route("peminjamanDestroy",'')}}';
           window.location.href =  url+'/'+uuid ;
         }
       })

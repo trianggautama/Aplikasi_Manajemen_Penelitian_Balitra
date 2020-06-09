@@ -39,8 +39,7 @@
                   <td>{{$d->user->nama}}</td>
                   <td>{{$d->estimasi}} Hari Kerja</td>
                   <td>
-                    <a href="{{Route('penelitianShow',['uuid' => $d->uuid])}}" class="btn btn-default btn-secondary btn-sm
-                    p-2">
+                    <a href="{{Route('penelitiJobdeskIndex',['uuid'=>$d->uuid])}}" class="btn btn-default btn-secondary btn-sm p-2">
                       <i data-feather="info"></i>
                     </a>
                   </td>
