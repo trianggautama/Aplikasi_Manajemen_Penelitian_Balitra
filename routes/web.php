@@ -90,7 +90,7 @@ Route::group(['middleware' => ['auth']], function () {
     //penelitian
     Route::get('/peminjaman', 'peminjamanController@index')->name('peminjamanIndex');
     Route::post('/peminjaman', 'peminjamanController@store')->name('peminjamanStore');
-    Route::get('/peminjaman/edit/', 'peminjamanController@edit')->name('peminjamanEdit');
+    Route::get('/peminjaman/edit/{uuid}', 'peminjamanController@edit')->name('peminjamanEdit');
     Route::put('/peminjaman/edit/{uuid}', 'peminjamanController@update')->name('peminjamanUpdate');
     Route::get('/peminjaman/update/{uuid}', 'peminjamanController@updateStatus')->name('peminjamanUpdateStatus');
     Route::get('/peminjaman/delete/{uuid}', 'peminjamanController@destroy')->name('peminjamanDestroy');
