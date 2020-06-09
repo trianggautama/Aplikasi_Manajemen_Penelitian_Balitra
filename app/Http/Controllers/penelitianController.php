@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Jobdesk;
+use App\Jobdesk_peneliti;
 use App\Objek_penelitian;
 use App\Peneliti;
 use App\Penelitian;
 use App\Permohonan;
 use App\User;
+use File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -165,9 +167,11 @@ class penelitianController extends Controller
         return redirect()->back()->withSuccess('Data berhasil disimpan');
     }
 
-    public function penelitiJobdeskDestroy(Request $request, $uuid)
+    public function penelitiJobdeskDestroy($uuid)
     {
         $data = Jobdesk_peneliti::where('uuid', $uuid)->first();
+        File::delete('lampiran/jobdesk/' . $data->file);
+        $data->delete();
 
         return redirect()->back()->withSuccess('Data berhasil dihapus');
 

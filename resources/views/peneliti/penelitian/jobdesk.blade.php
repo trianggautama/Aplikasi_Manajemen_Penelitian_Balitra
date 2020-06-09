@@ -55,29 +55,38 @@
               </div>
             </div>
             @if($d->jobdesk_peneliti)
-              <div class="card card-body mg-t-10">
-                <div class="row">
-                  <div class="col-md-6">
-                  <p> <b>file upload:</b> </p>              
-                    <p>Uraian  : {{$d->jobdesk_peneliti->uraian}}</p>
-                    <p>Tanggal Upload: {{carbon\carbon::parse($d->jobdesk_peneliti->created_at)->translatedFormat('d F Y')}} @if(carbon\carbon::parse($d->jobdesk_peneliti->created_at)->translatedFormat('d F Y') <= carbon\carbon::parse($d->batas_waktu)->translatedFormat('d F Y')) <span class="text-primary"> (Tepat Waktu)</span> @else  <span class="text-danger"> (Terlambat)</span> @endif</p>
-                  </div>
-                  <div class="col-md-6">
-                  <p>Status : @if($d->status == 0 ) Belum di Verifikasi @elseif($d->status == 1) Telah di Verifikasi @else  Revisi @endif</p>
+            <div class="card card-body mg-t-10">
+              <div class="row">
+                <div class="col-md-6">
+                  <p> <b>file upload:</b> </p>
+                  <p>Uraian : {{$d->jobdesk_peneliti->uraian}}</p>
+                  <p>Tanggal Upload:
+                    {{carbon\carbon::parse($d->jobdesk_peneliti->created_at)->translatedFormat('d F Y')}}
+                    @if(carbon\carbon::parse($d->jobdesk_peneliti->created_at)->translatedFormat('d F Y') <=
+                      carbon\carbon::parse($d->batas_waktu)->translatedFormat('d F Y')) <span class="text-primary">
+                        (Tepat Waktu)</span> @else <span class="text-danger"> (Terlambat)</span> @endif</p>
+                </div>
+                <div class="col-md-6">
+                  <p>Status : @if($d->status == 0 ) Belum di Verifikasi @elseif($d->status == 1) Telah di Verifikasi
+                    @else Revisi @endif</p>
                   <br>
                   @if($d->catatan)
-                    <div class="alert alert-danger">
+                  <div class="alert alert-danger">
                     <p>Catatan : </p>
                     <p>{{$d->catatan}}</p>
-                    </div>
-                  @endif
                   </div>
+                  @endif
                 </div>
-               <div class="btn-group" role="group" aria-label="Basic example">
-               <p>
-               <a href="{{asset('lampiran/jobdesk/'. $d->jobdesk_peneliti->file)}}" class="btn btn-success btn-icon text-white" target="_blank"><i data-feather="paperclip"></i> File </a>
-               <button class="btn btn-danger btn-icon"><i data-feather="delete"></i></button>
-               </p>
+              </div>
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <p>
+                  <a href="{{asset('lampiran/jobdesk/'. $d->jobdesk_peneliti->file)}}"
+                    class="btn btn-success btn-icon text-white" target="_blank"><i data-feather="paperclip"></i> File
+                  </a>
+                  <a class="btn btn-danger btn-icon"
+                    href="{{Route('penelitiJobdeskDestroy',['uuid' => $d->jobdesk_peneliti->uuid])}}"><i
+                      data-feather="delete"></i></a>
+                </p>
               </div>
             </div>
             @endif
