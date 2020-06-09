@@ -129,4 +129,12 @@ class UserController extends Controller
         return redirect()->route('userIndex')->with('success', 'Berhasil menghapus data');
 
     }
+
+
+
+    public function penelitiProfil()
+    {
+        $data = User::findOrFail(Auth::id());
+        return view('peneliti.profil', compact('data'));
+    }
 }

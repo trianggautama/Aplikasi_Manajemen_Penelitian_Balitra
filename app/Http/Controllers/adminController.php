@@ -91,4 +91,5 @@ class adminController extends Controller
         return view('admin.pejabat.index');
     }
 
+
 }

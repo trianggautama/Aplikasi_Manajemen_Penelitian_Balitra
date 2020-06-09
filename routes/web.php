@@ -125,6 +125,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     //HALMAAN PENELITI - MENU PEMBIMBING
     Route::get('peneliti/pembimbing', 'pembimbingController@penelitiPembimbingIndex')->name('penelitiPembimbingIndex');
+    Route::get('peneliti/user/profil', 'UserController@penelitiProfil')->name('penelitiProfil');
 
     //HALAMAN PENELITI - MENU PENELITIAN
     Route::get('peneliti/penelitian', 'penelitianController@penelitiPenelitianIndex')->name('penelitiPenelitianIndex');

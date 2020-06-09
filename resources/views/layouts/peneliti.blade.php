@@ -53,7 +53,7 @@
        <ul class="nav nav-aside">
        @if(Auth::user()->status == 1)
        <li class="nav-label mg-t-25">Akun</li>
-        <li class="nav-item"><a href="{{Route('userProfil')}}" class="nav-link"><i data-feather="user"></i> <span>Profil</span></a></li>
+        <li class="nav-item"><a href="{{Route('penelitiProfil')}}" class="nav-link"><i data-feather="user"></i> <span>Profil</span></a></li>
         
           <li class="nav-item"><a href="{{Route('fasilitasIndex')}}" class="nav-link"><i data-feather="thermometer"></i> <span>Peminjaman Fasilitas</span></a></li>
           <li class="nav-label mg-t-25">Penelitian</li>
