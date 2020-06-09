@@ -92,13 +92,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/peminjaman', 'peminjamanController@store')->name('peminjamanStore');
     Route::get('/peminjaman/edit/', 'peminjamanController@edit')->name('peminjamanEdit');
     Route::put('/peminjaman/edit/{uuid}', 'peminjamanController@update')->name('peminjamanUpdate');
-    Route::get('/peminjaman/delete/{uuid}', 'peminjamanController@destroy')->name('peminjamanDestroy');
-
-    //penelitian
-    Route::get('/peminjaman', 'peminjamanController@index')->name('peminjamanIndex');
-    Route::post('/peminjaman', 'peminjamanController@store')->name('peminjamanStore');
-    Route::get('/peminjaman/edit/{uuid}', 'peminjamanController@edit')->name('peminjamanEdit');
-    Route::put('/peminjaman/edit/{uuid}', 'peminjamanController@update')->name('peminjamanUpdate');
+    Route::get('/peminjaman/update/{uuid}', 'peminjamanController@updateStatus')->name('peminjamanUpdateStatus');
     Route::get('/peminjaman/delete/{uuid}', 'peminjamanController@destroy')->name('peminjamanDestroy');
 
     //CETAK REPORT
@@ -132,7 +126,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/peneliti/jobdesk/create', 'penelitianController@penelitiJobdeskStore')->name('penelitiJobdeskStore');
     Route::get('/peneliti/jobdesk/delete', 'penelitianController@penelitiJobdeskDestroy')->name('penelitiJobdeskDestroy');
 
-     //HALAMAN PENELITI - MENU jobdesk
-     Route::get('peneliti/jobdesk/{uuid}', 'penelitianController@penelitiJobdeskIndex')->name('penelitiJobdeskIndex'); 
-     Route::get('peneliti/peminjaman', 'peminjamanController@penelitiIndex')->name('penelitiPeminjamanIndex');
+    //HALAMAN PENELITI - MENU jobdesk
+    Route::get('peneliti/jobdesk/{uuid}', 'penelitianController@penelitiJobdeskIndex')->name('penelitiJobdeskIndex');
+    Route::get('peneliti/peminjaman', 'peminjamanController@penelitiIndex')->name('penelitiPeminjamanIndex');
 });
