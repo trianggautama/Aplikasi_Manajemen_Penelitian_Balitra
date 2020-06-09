@@ -30,7 +30,7 @@
             </a>
             <a href="{{Route('jobdeskEdit',['uuid' => $d->uuid])}}" class="btn btn-primary btn-icon"><i
                 data-feather="edit"></i></a>
-            <button type="button" class="btn btn-danger btn-icon" onclick="Hapus()"><i
+            <button type="button" class="btn btn-danger btn-icon" onclick="Hapus('{{$d->uuid}}','{{$d->uraian}}')"><i
                 data-feather="delete"></i></button>
             <button id="tambahVerif" data-status="{{$d->status}}" data-id="{{$d->uuid}}"
               class="btn btn-success btn-icon" data-toggle="tooltip" data-placement="top" title="Verifikasi"
@@ -187,7 +187,7 @@
       function Hapus(uuid, nama) {
         Swal.fire({
         title: 'Anda Yakin?',
-        text: " Menghapus data Penelitian '" + nama ,        
+        text: " Menghapus Jobdesk '" + nama ,        
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',

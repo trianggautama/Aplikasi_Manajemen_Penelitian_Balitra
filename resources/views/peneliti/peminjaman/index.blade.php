@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.peneliti')
 
 @section('content')
 @push('styles')
@@ -17,8 +17,6 @@
         <h4 class="mg-b-0 tx-spacing--1">Peminjaman Fasilitas </h4>
       </div>
       <div class="d-none d-md-block">
-        <button class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5"><i data-feather="printer"
-            class="wd-10 mg-r-5"></i> Print</button>
         <a class="btn btn-sm pd-x-15 btn-dark btn-uppercase mg-l-5" href="#modal2" data-toggle="modal"><i
             data-feather="plus" class="wd-10 mg-r-5"></i> tambah Data</a>
       </div>
@@ -34,7 +32,6 @@
                   <th>Peminjam</th>
                   <th>Fasilitas</th>
                   <th>Lama</th>
-                  <th>Status</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
@@ -45,11 +42,7 @@
                   <td>{{$d->peneliti->user->nama}}</td>
                   <td>{{$d->fasilitas->nama}}</td>
                   <td>{{$d->lama_peminjaman}} Hari</td>
-                  <td>Disetujui</td>
                   <td>
-                  <a href="#" class="btn btn-success btn-icon">
-                      <i data-feather="check"></i>
-                    </a>
                     <a href="{{Route('peminjamanEdit',['uuid' => $d->uuid])}}" class="btn btn-primary btn-icon">
                       <i data-feather="edit"></i>
                     </a>
@@ -82,15 +75,7 @@
       <div class="modal-body">
         <form action="{{Route('peminjamanStore')}}" method="POST">
           @csrf
-          <div class="form-group">
-            <label for="Nama">Peminjam</label>
-            <select name="peneliti_id" id="peneliti_id" class="form-control">
-              <option value="">-- Pilih Peneliti --</option>
-              @foreach($peneliti as $d)
-              <option value="{{$d->peneliti->id}}">{{$d->nama}}</option>
-              @endforeach
-            </select>
-          </div>
+            <input type="hidden" name="peneliti_id" value="{{Auth::user()->peneliti->id}}">
           <div class="form-group">
             <label for="Nama">Fasilitas</label>
             <select name="fasilitas_id" id="fasilitas_id" class="form-control">

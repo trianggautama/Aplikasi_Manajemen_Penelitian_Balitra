@@ -59,12 +59,12 @@
           <li class="nav-label mg-t-25">Penelitian</li>
           <li class="nav-item"><a class="nav-link" href="{{Route('penelitiPembimbingIndex')}}"><i data-feather="user"></i>pembimbing</a></li>
           <li class="nav-item"><a href="{{Route('penelitiPenelitianIndex')}}" class="nav-link"><i data-feather="sunrise"></i> <span>Data Penelitian</span></a></li>
-          <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="edit-3"></i> <span>Kegiatan Penelitian</span></a></li>
           <li class="nav-label mg-t-25">Lain lain</li>
+          <li class="nav-item"><a href="{{Route('penelitiPeminjamanIndex')}}" class="nav-link"><i data-feather="box"></i> <span>Peminjaman Fasilitas</span></a></li>
         @else
         <li class="nav-label mg-t-25"></li>
         <li class="nav-item"><a href="#" class="nav-link"><i data-feather="info"></i> <span>Akun Anda Belum Aktif <br> Silahkan hubungi admin</span></a></li>
-        @endif
+        @endif 
         </ul>
       </div>
     </aside>
