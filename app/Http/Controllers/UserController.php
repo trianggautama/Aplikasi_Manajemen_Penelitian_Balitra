@@ -6,6 +6,7 @@ use App\Data_personal;
 use App\User;
 use Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -18,8 +19,30 @@ class UserController extends Controller
 
     public function profil()
     {
+        $data = User::findOrFail(Auth::id());
+        return view('admin.user.profil', compact('data'));
+    }
 
-        return view('admin.user.profil');
+    public function profileUpdate(Request $request)
+    {
+        $data = User::findOrFail(Auth::id());
+        $data->fill($request->all())->save();
+        if (isset($request->password)) {
+            $data->password = Hash::make($request->password);
+        }
+        if ($request->foto != null) {
+            $img = $request->file('foto');
+            $FotoExt = $img->getClientOriginalExtension();
+            $FotoName = $request->nama;
+            $foto = $FotoName . '.' . $FotoExt;
+            $img->move('images/user', $foto);
+            $data->foto = $foto;
+        } else {
+            $data->foto = $data->foto;
+        }
+        $data->update();
+
+        return redirect()->back()->withSuccess('Profile berhasil diubah');
     }
 
     public function store(Request $request)

@@ -8,6 +8,7 @@ use App\Penelitian;
 use App\Permohonan;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class penelitianController extends Controller
 {
@@ -73,7 +74,8 @@ class penelitianController extends Controller
 
     public function pembimbingPenelitianIndex()
     {
-        $data = Penelitian::orderBy('id', 'desc')->get();
+        $user_id = Auth::id();
+        $data = Penelitian::where('user_id', $user_id)->orderBy('id', 'desc')->get();
         return view('pembimbing.penelitian.index', compact('data'));
     }
 

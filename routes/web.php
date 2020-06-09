@@ -19,6 +19,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/user', 'UserController@index')->name('userIndex');
     Route::post('/user', 'UserController@store')->name('userStore');
     Route::get('/user/profil', 'UserController@profil')->name('userProfil');
+    Route::put('/user/profil/update', 'UserController@profileUpdate')->name('profileUpdate');
     Route::get('/user/edit/{uuid}', 'UserController@edit')->name('userEdit');
     Route::put('/user/edit/{uuid}', 'UserController@update')->name('userUpdate');
     Route::get('/user/delete/{uuid}', 'UserController@destroy')->name('userDestroy');
@@ -27,6 +28,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/pembimbing', 'pembimbingController@index')->name('pembimbingIndex');
     Route::post('/pembimbing', 'PembimbingController@store')->name('pembimbingStore');
     Route::get('/pembimbing/profil', 'PembimbingController@profil')->name('pembimbingProfil');
+    Route::put('/pembimbing/profil/update', 'PembimbingController@profileUpdate')->name('profilePembimbingUpdate');
     Route::get('/pembimbing/edit/{uuid}', 'PembimbingController@edit')->name('pembimbingEdit');
     Route::put('/pembimbing/edit/{uuid}', 'PembimbingController@update')->name('pembimbingUpdate');
     Route::get('/pembimbing/delete/{uuid}', 'PembimbingController@destroy')->name('pembimbingDestroy');
@@ -99,8 +101,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/penelitian/cetak', 'reportController@penelitianCetak')->name('penelitianCetak');
     Route::get('/penelitian/sk/{uuid}', 'reportController@skPenelitian')->name('skPenelitian');
     Route::get('/peneliti/cetak', 'reportController@penelitiCetak')->name('penelitiCetak');
-
-    Route::get('/pembimbing/profil', 'adminController@pembimbingProfil')->name('pembimbingProfil');
 
     //HALAMAN PEMBIMBING - MENU PENELITI
     Route::get('pembimbing/peneliti', 'penelitiController@pembimbingPenelitiIndex')->name('pembimbingPenelitiIndex');
