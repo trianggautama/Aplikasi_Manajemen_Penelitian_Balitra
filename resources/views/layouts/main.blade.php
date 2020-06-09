@@ -59,7 +59,7 @@
             <a href="" class="nav-link"><i data-feather="user"></i> <span>Pegawai</span></a>
             <ul>
               <li><a href="{{Route('userIndex')}}">Admin</a></li>
-              <li><a href="{{Route('pembimbingIndex')}}">pembimbing</a></li>
+              <li><a href="{{Route('pembimbingIndex')}}">Pembimbing</a></li>
               <li><a href="{{Route('pejabatIndex')}}">Pejabat Struktural</a></li>
             </ul>
           </li>
