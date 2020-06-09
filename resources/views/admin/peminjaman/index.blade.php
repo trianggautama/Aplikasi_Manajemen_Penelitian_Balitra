@@ -45,7 +45,13 @@
                   <td>{{$d->peneliti->user->nama}}</td>
                   <td>{{$d->fasilitas->nama}}</td>
                   <td>{{$d->lama_peminjaman}} Hari</td>
-                  <td>Disetujui</td>
+                  <td>
+                    @if($d->status == 0 )
+                      Belum di verifikasi
+                    @else
+                      Sudah Di Verif
+                    @endif
+                  </td>
                   <td>
                   <a href="#" class="btn btn-success btn-icon">
                       <i data-feather="check"></i>

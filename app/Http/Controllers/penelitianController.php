@@ -18,8 +18,8 @@ class penelitianController extends Controller
         $data = Penelitian::orderBy('id', 'desc')->get();
         $peneliti = Peneliti::orderBy('id', 'desc')->get();
         $pembimbing = User::where('role', 2)->orderBy('id', 'desc')->get();
-        $permohonan = Permohonan::where('status', 2)->orderBy('id', 'desc')->get();
-        return view('admin.penelitian.index', compact('data', 'peneliti', 'pembimbing', 'permohonan'));
+        $objekPenelitian = Objek_penelitian::orderBy('id', 'desc')->get();
+        return view('admin.penelitian.index', compact('data', 'peneliti', 'pembimbing', 'objekPenelitian'));
     }
 
     public function store(Request $request)
