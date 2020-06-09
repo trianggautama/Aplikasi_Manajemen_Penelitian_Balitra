@@ -2,7 +2,7 @@
 
 @section('content')
 @push('styles')
-    <link href="{{asset('admin/lib/summernote/summernote.min.css')}}" rel="stylesheet">
+<link href="{{asset('admin/lib/summernote/summernote.min.css')}}" rel="stylesheet">
 @endpush
 <div class="content-body">
   <div class="container pd-x-0">
@@ -38,20 +38,22 @@
                 </tr>
               </thead>
               <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Nama Peneliti</td>
-                        <td>Thermometer</td>
-                        <td>4 Hari</td>
-                        <td>
-                            <a href="{{Route('peminjamanEdit')}}" class="btn btn-primary btn-icon">
-                                <i data-feather="edit"></i>
-                            </a>
-                            <button type="button" class="btn btn-danger btn-icon"  onclick="Hapus('')">
-                                <i data-feather="delete"></i>
-                            </button>
-                        </td>
-                    </tr>
+                @foreach($data as $d)
+                <tr>
+                  <td>{{$loop->iteration}}</td>
+                  <td>{{$d->peneliti->user->nama}}</td>
+                  <td>{{$d->fasilitas->nama}}</td>
+                  <td>{{$d->lama_peminjaman}} Hari</td>
+                  <td>
+                    <a href="{{Route('peminjamanEdit',['uuid' => $d->uuid])}}" class="btn btn-primary btn-icon">
+                      <i data-feather="edit"></i>
+                    </a>
+                    <button type="button" class="btn btn-danger btn-icon" onclick="Hapus('')">
+                      <i data-feather="delete"></i>
+                    </button>
+                  </td>
+                </tr>
+                @endforeach
               </tbody>
             </table>
           </div><!-- df-example -->
@@ -62,7 +64,8 @@
 </div>
 
 <!-- modal -->
-<div class="modal fade bd-example-modal-lg" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+<div class="modal fade bd-example-modal-lg" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
+  aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content tx-14">
       <div class="modal-header">
@@ -72,23 +75,29 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="#" method="POST">
+        <form action="{{Route('peminjamanStore')}}" method="POST">
           @csrf
           <div class="form-group">
             <label for="Nama">Peminjam</label>
             <select name="peneliti_id" id="peneliti_id" class="form-control">
-                <option value="">-- ambil dari data peneliti</option>
+              <option value="">-- Pilih Peneliti --</option>
+              @foreach($peneliti as $d)
+              <option value="{{$d->peneliti->id}}">{{$d->nama}}</option>
+              @endforeach
             </select>
           </div>
           <div class="form-group">
             <label for="Nama">Fasilitas</label>
-            <select name="peneliti_id" id="peneliti_id" class="form-control">
-                <option value="">-- ambil dari data fasilitas</option>
+            <select name="fasilitas_id" id="fasilitas_id" class="form-control">
+              <option value="">-- Pilih fasilitas --</option>
+              @foreach($fasilitas as $d)
+              <option value="{{$d->id}}">{{$d->nama}}</option>
+              @endforeach
             </select>
           </div>
           <div class="form-group">
             <label for="Nama">Lama Peminjaman</label>
-            <input type="number" name="lama" placeholder="" class="form-control">
+            <input type="number" name="lama_peminjaman" placeholder="" class="form-control">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary tx-13" data-dismiss="modal">Close</button>
