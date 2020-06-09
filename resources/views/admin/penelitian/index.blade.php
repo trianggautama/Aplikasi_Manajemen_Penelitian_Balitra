@@ -102,8 +102,8 @@
             <label for="Nama">Permohonan</label>
             <select name="objek_penelitian_id" id="" class="form-control" required>
               <option value="">-- Pilih Objek Penelitian --</option>
-              @foreach($permohonan as $d)
-              <option value="{{$d->objek_penelitian_id}}">{{$d->objek_penelitian->nama}}</option>
+              @foreach($objekPenelitian as $d)
+              <option value="{{$d->id}}">{{$d->nama}}</option>
               @endforeach
             </select>
           </div>

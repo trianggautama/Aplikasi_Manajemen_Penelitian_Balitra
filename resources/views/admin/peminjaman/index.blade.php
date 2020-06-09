@@ -45,11 +45,24 @@
                   <td>{{$d->peneliti->user->nama}}</td>
                   <td>{{$d->fasilitas->nama}}</td>
                   <td>{{$d->lama_peminjaman}} Hari</td>
-                  <td>Disetujui</td>
                   <td>
-                    <a href="{{Route('peminjamanUpdateStatus',['uuid' => $d->uuid])}}" class="btn btn-success btn-icon">
+                    @if($d->status == 0 )
+                      Belum di verifikasi
+                    @else
+                      Sudah Di Verif
+                    @endif
+                  </td>
+                  <td>
+                  @if($d->status == 0 )
+                   <a href="{{Route('peminjamanUpdateStatus',['uuid' => $d->uuid])}}" class="btn btn-success btn-icon">
                       <i data-feather="check"></i>
-                    </a>
+                    </a>                   
+                     @else
+                     <a href="{{Route('peminjamanUpdateStatus',['uuid' => $d->uuid])}}" class="btn btn-danger btn-icon">
+                      <i data-feather="alert-octagon"></i>
+                    </a>                       
+                    @endif
+
                     <a href="{{Route('peminjamanEdit',['uuid' => $d->uuid])}}" class="btn btn-primary btn-icon">
                       <i data-feather="edit"></i>
                     </a>

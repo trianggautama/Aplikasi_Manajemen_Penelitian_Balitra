@@ -20,42 +20,42 @@
                 @csrf
                 <div class="form-group">
                     <label for="">Nama Lengkap</label>
-                    <input type="text" name="nama" class="form-control">
+                    <input type="text" name="nama" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="">NIK</label>
-                    <input type="text" name="NIK" class="form-control">
+                    <input type="text" name="NIK" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                     <label for="">Email</label>
-                    <input type="email" name="email" class="form-control">
+                    <input type="email" name="email" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="">Alamat</label>
-                    <textarea name="alamat" name="alamat" id="" class="form-control"></textarea>
+                    <textarea name="alamat" name="alamat" id="" class="form-control" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="">No Telepon</label>
-                    <input type="text" name="no_hp" class="form-control">
+                    <input type="text" name="no_hp" class="form-control" required>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Tempat Lahir</label>
-                            <input type="text" name="tempat_lahir" class="form-control">
+                            <input type="text" name="tempat_lahir" class="form-control" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Tanggal Lahir</label>
-                            <input type="date" name="tanggal_lahir" class="form-control">
+                            <input type="date" name="tanggal_lahir" class="form-control" required>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="">Pendidikan Terakhir</label>
-                    <select name="pendidikan_terakhir" id="" class="form-control">
+                    <select name="pendidikan_terakhir" id="" class="form-control" required>
                         <option value="">-- pilih pendidikan terakhir --</option>
                         <option value="SD">SD</option>
                         <option value="SMP">SMP</option>
@@ -72,7 +72,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">Objek Penelitian</label>
-                    <select name="objek_penelitian_id" id="objek_penelitian_id" class="form-control">
+                    <select name="objek_penelitian_id" id="objek_penelitian_id" class="form-control" required>
                         <option value="">-- pilih Objek Penelitian</option>
                         @foreach($objekPenelitian as $o)
                         <option value="{{$o->id}}">{{$o->nama}}</option>
@@ -81,7 +81,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">Keperluan</label>
-                    <textarea name="keperluan" id="" class="form-control"></textarea>
+                    <textarea name="keperluan" id="" class="form-control" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="">Lampiran File (Surat Pengantar dll)</label>
