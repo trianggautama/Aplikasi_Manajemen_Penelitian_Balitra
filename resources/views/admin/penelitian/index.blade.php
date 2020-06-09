@@ -82,7 +82,7 @@
           @csrf
           <div class="form-group">
             <label for="Nama">Peneliti</label>
-            <select name="peneliti_id" id="" class="form-control">
+            <select name="peneliti_id" id="" class="form-control" required>
               <option value="">-- Pilih Nama Peneliti --</option>
               @foreach($peneliti as $d)
               <option value="{{$d->id}}">{{$d->user->nama}}</option>
@@ -91,7 +91,7 @@
           </div>
           <div class="form-group">
             <label for="Nama">Pembimbing</label>
-            <select name="user_id" id="" class="form-control">
+            <select name="user_id" id="" class="form-control" required>
               <option value="">-- Pilih Nama Pembimbing --</option>
               @foreach($pembimbing as $d)
               <option value="{{$d->id}}">{{$d->nama}}</option>
@@ -100,7 +100,7 @@
           </div>
           <div class="form-group">
             <label for="Nama">Permohonan</label>
-            <select name="objek_penelitian_id" id="" class="form-control">
+            <select name="objek_penelitian_id" id="" class="form-control" required>
               <option value="">-- Pilih Objek Penelitian --</option>
               @foreach($permohonan as $d)
               <option value="{{$d->objek_penelitian_id}}">{{$d->objek_penelitian->nama}}</option>
@@ -109,11 +109,11 @@
           </div>
           <div class="form-group">
             <label for="Nama">Uraian</label>
-            <textarea name="uraian" id="" class="form-control"></textarea>
+            <textarea name="uraian" id="" class="form-control" required></textarea>
           </div>
           <div class="form-group">
             <label for="Nama">Estimasi (Hari Kerja)</label>
-            <input type="number" name="estimasi" class="form-control">
+            <input type="number" name="estimasi" class="form-control" required>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary tx-13" data-dismiss="modal">Close</button>

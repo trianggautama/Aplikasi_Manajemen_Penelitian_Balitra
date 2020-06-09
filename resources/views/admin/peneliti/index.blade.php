@@ -82,7 +82,7 @@
           @csrf
           <div class="form-group">
             <label for="Nama">Pemohon</label>
-            <select name="permohonan_id" id="" class="form-control">
+            <select name="permohonan_id" id="" class="form-control" required>
               <option value="">-- Pilih Nama Peneliti --</option>
               @foreach($permohonan as $d)
               <option value="{{$d->id}}">{{$d->nama}} - {{$d->objek_penelitian->nama}}</option>
@@ -91,11 +91,11 @@
           </div>
           <div class="form-group">
             <label for="Nama">Username</label>
-            <input type="text" name="username" class="form-control" placeholder="Username">
+            <input type="text" name="username" class="form-control" placeholder="Username" required>
           </div>
           <div class="form-group">
             <label for="Nama">Password</label>
-            <input type="password" name="password" class="form-control" placeholder="username">
+            <input type="password" name="password" class="form-control" placeholder="username" required>
           </div>
           <div class="form-group">
             <label for="foto">Foto</label>

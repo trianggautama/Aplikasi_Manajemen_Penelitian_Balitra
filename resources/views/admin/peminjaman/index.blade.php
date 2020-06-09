@@ -84,7 +84,7 @@
           @csrf
           <div class="form-group">
             <label for="Nama">Peminjam</label>
-            <select name="peneliti_id" id="peneliti_id" class="form-control">
+            <select name="peneliti_id" id="peneliti_id" class="form-control" required>
               <option value="">-- Pilih Peneliti --</option>
               @foreach($peneliti as $d)
               <option value="{{$d->peneliti->id}}">{{$d->nama}}</option>
@@ -93,7 +93,7 @@
           </div>
           <div class="form-group">
             <label for="Nama">Fasilitas</label>
-            <select name="fasilitas_id" id="fasilitas_id" class="form-control">
+            <select name="fasilitas_id" id="fasilitas_id" class="form-control" required>
               <option value="">-- Pilih fasilitas --</option>
               @foreach($fasilitas as $d)
               <option value="{{$d->id}}">{{$d->nama}}</option>
@@ -102,7 +102,7 @@
           </div>
           <div class="form-group">
             <label for="Nama">Lama Peminjaman</label>
-            <input type="number" name="lama_peminjaman" placeholder="" class="form-control">
+            <input type="number" name="lama_peminjaman" placeholder="" class="form-control" required>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary tx-13" data-dismiss="modal">Close</button>

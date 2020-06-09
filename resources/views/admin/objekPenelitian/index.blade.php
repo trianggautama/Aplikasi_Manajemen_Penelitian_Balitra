@@ -74,11 +74,11 @@
           @csrf
           <div class="form-group">
             <label for="Nama">Nama</label>
-            <input type="text" name="nama" class="form-control" placeholder="Nama">
+            <input type="text" name="nama" class="form-control" placeholder="Nama" required>
           </div>
           <div class="form-group">
             <label for="Nama">uraian</label>
-            <textarea name="uraian" id="" class="form-control"></textarea>
+            <textarea name="uraian" id="" class="form-control" required></textarea>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary tx-13" data-dismiss="modal">Close</button>

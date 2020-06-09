@@ -21,7 +21,6 @@ class peminjamanController extends Controller
     public function store(Request $req)
     {
         $data = Peminjaman_fasilitas::create($req->all());
-
         return redirect()->back()->withSuccess('Data berhasil disimpan');
     }
 
