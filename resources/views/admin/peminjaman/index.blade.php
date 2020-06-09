@@ -53,9 +53,16 @@
                     @endif
                   </td>
                   <td>
-                    <a href="{{Route('peminjamanUpdateStatus',['uuid' => $d->uuid])}}" class="btn btn-success btn-icon">
+                  @if($d->status == 0 )
+                   <a href="{{Route('peminjamanUpdateStatus',['uuid' => $d->uuid])}}" class="btn btn-success btn-icon">
                       <i data-feather="check"></i>
-                    </a>
+                    </a>                   
+                     @else
+                     <a href="{{Route('peminjamanUpdateStatus',['uuid' => $d->uuid])}}" class="btn btn-danger btn-icon">
+                      <i data-feather="alert-octagon"></i>
+                    </a>                       
+                    @endif
+
                     <a href="{{Route('peminjamanEdit',['uuid' => $d->uuid])}}" class="btn btn-primary btn-icon">
                       <i data-feather="edit"></i>
                     </a>
