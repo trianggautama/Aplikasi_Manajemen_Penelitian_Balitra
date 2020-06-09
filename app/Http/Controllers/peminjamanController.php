@@ -27,7 +27,7 @@ class peminjamanController extends Controller
     public function edit($uuid)
     {
         $data = Peminjaman_fasilitas::where('uuid', $uuid)->first();
-        $peneliti = User::where('role', 4)->where('status',1)->orderBy('nama', 'Desc')->get();
+        $peneliti = User::where('role', 4)->where('status', 1)->orderBy('nama', 'Desc')->get();
         $fasilitas = Fasilitas::orderBy('id', 'Desc')->get();
         return view('admin.peminjaman.edit', compact('data', 'peneliti', 'fasilitas'));
     }

@@ -1,4 +1,4 @@
-@extends('layouts.pembimbing')
+@extends('layouts.peneliti')
 
 @section('content')
 <div class="content-body">

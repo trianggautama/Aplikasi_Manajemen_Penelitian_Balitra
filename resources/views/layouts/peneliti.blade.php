@@ -50,36 +50,45 @@
             <a href="" data-toggle="tooltip" title="Sign out"><i data-feather="log-out"></i></a>
           </div>
         </div><!-- aside-loggedin -->
-       <ul class="nav nav-aside">
-       @if(Auth::user()->status == 1)
-       <li class="nav-label mg-t-25">Akun</li>
-        <li class="nav-item"><a href="{{Route('penelitiProfil')}}" class="nav-link"><i data-feather="user"></i> <span>Profil</span></a></li>
-        
-          <li class="nav-item"><a href="{{Route('fasilitasIndex')}}" class="nav-link"><i data-feather="thermometer"></i> <span>Peminjaman Fasilitas</span></a></li>
+        <ul class="nav nav-aside">
+          @if(Auth::user()->status == 1)
+          <li class="nav-label mg-t-25">Akun</li>
+          <li class="nav-item"><a href="{{Route('penelitiProfil')}}" class="nav-link"><i data-feather="user"></i>
+              <span>Profil</span></a></li>
+
+          <li class="nav-item"><a href="{{Route('penelitiFasilitasIndex')}}" class="nav-link"><i
+                data-feather="thermometer"></i>
+              <span>Peminjaman Fasilitas</span></a></li>
           <li class="nav-label mg-t-25">Penelitian</li>
-          <li class="nav-item"><a class="nav-link" href="{{Route('penelitiPembimbingIndex')}}"><i data-feather="user"></i>pembimbing</a></li>
-          <li class="nav-item"><a href="{{Route('penelitiPenelitianIndex')}}" class="nav-link"><i data-feather="sunrise"></i> <span>Data Penelitian</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="{{Route('penelitiPembimbingIndex')}}"><i
+                data-feather="user"></i>pembimbing</a></li>
+          <li class="nav-item"><a href="{{Route('penelitiPenelitianIndex')}}" class="nav-link"><i
+                data-feather="sunrise"></i> <span>Data Penelitian</span></a></li>
           <li class="nav-label mg-t-25">Lain lain</li>
-          <li class="nav-item"><a href="{{Route('penelitiPeminjamanIndex')}}" class="nav-link"><i data-feather="box"></i> <span>Peminjaman Fasilitas</span></a></li>
-        @else
-        <li class="nav-label mg-t-25"></li>
-        <li class="nav-item"><a href="#" class="nav-link"><i data-feather="info"></i> <span>Akun Anda Belum Aktif <br> Silahkan hubungi admin</span></a></li>
-        @endif 
+          <li class="nav-item"><a href="{{Route('penelitiPeminjamanIndex')}}" class="nav-link"><i
+                data-feather="box"></i> <span>Peminjaman Fasilitas</span></a></li>
+          @else
+          <li class="nav-label mg-t-25"></li>
+          <li class="nav-item"><a href="#" class="nav-link"><i data-feather="info"></i> <span>Akun Anda Belum Aktif <br>
+                Silahkan hubungi admin</span></a></li>
+          @endif
         </ul>
       </div>
-    </aside>
+  </aside>
 
   <div class="content ht-100v pd-0">
     <div class="content-header">
-        Aplikasi Pelayanan Kegiatan Penelitian pada BALITTRA Kota Banjarbaru
+      Aplikasi Pelayanan Kegiatan Penelitian pada BALITTRA Kota Banjarbaru
       <nav class="nav">
         @guest
         <a class="nav-link" href="{{ route('login') }}"><i data-feather="log-in"></i>{{ __('Login') }}</a>
         @else
         <a href="" class="nav-link  " data-toggle="tooltip" title="You have 4 new notifications"><i
             data-feather="bell"></i></a>
-            <a class="nav-link" data-toggle="tooltip" title="Sign out" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i data-feather="log-out"></i>
-             {{ __('Logout') }}
+        <a class="nav-link" data-toggle="tooltip" title="Sign out" href="{{ route('logout') }}"
+          onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i
+            data-feather="log-out"></i>
+          {{ __('Logout') }}
         </a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
           @csrf
