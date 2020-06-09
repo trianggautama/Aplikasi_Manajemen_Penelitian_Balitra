@@ -20,7 +20,7 @@ class Jobdesk extends Model
 
     public function jobdesk_peneliti()
     {
-        return $this->hasMany(Jobdesk_peneliti::class);
+        return $this->hasOne(Jobdesk_peneliti::class);
     }
 
 }

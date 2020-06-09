@@ -28,11 +28,11 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <p class="tx-medium mg-b-2"><a href="" class="link-01">Nama</a></p>
-                  <span class="tx-12 tx-color-03">{{$data->peneliti->usernama}}</span>
+                  <span class="tx-12 tx-color-03">{{$data->peneliti->user->nama}}</span>
                 </div>
                 <div class="form-group">
                   <p class="tx-medium mg-b-2"><a href="" class="link-01">NIK</a></p>
-                  <span class="tx-12 tx-color-03">{{$data->peneliti->user->NIK}}</span>
+                  <span class="tx-12 tx-color-03">{{$data->peneliti->NIK}}</span>
                 </div>
                 <div class="form-group">
                   <p class="tx-medium mg-b-2"><a href="" class="link-01">Telepon</a></p>
