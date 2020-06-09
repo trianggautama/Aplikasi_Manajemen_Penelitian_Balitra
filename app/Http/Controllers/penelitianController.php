@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobdesk;
 use App\Objek_penelitian;
 use App\Peneliti;
 use App\Penelitian;
@@ -85,15 +86,50 @@ class penelitianController extends Controller
         return view('pembimbing.penelitian.jobdesk', compact('data'));
     }
 
+    public function jobdeskStore(Request $request)
+    {
+        $data = Jobdesk::create($request->all());
+
+        return redirect()->back()->withSuccess('Data berhasil disimpan');
+    }
+
+    public function jobdeskStatusUpdate(Request $request)
+    {
+        $data = Jobdesk::where('uuid', $request->uuid)->first();
+        $data->status = $request->status;
+        if (isset($request->catatan)) {
+            $data->catatan = $request->catatan;
+        } else {
+            $data->catatan = null;
+
+        }
+
+        $data->update();
+
+        return redirect()->back()->withSuccess('Status berhasil diubah');
+
+    }
+
     public function penelitiPenelitianIndex()
     {
         $data = Penelitian::orderBy('id', 'desc')->get();
         return view('peneliti.penelitian.index', compact('data'));
     }
 
-    public function jobdeskEdit()
+    public function jobdeskEdit($uuid)
     {
-        return view('pembimbing.penelitian.jobdeskEdit');
+        $data = Jobdesk::where('uuid', $uuid)->first();
+
+        return view('pembimbing.penelitian.jobdeskEdit', compact('data'));
+    }
+
+    public function jobdeskUpdate(Request $request, $uuid)
+    {
+        $data = Jobdesk::where('uuid', $uuid)->first();
+        $data->fill($request->all())->save();
+
+        return redirect()->route('penelitianJobdesk', ['uuid' => $data->penelitian->uuid])->withSuccess('Data berhasil diubah');
+
     }
 
     public function penelitiJobdeskIndex($uuid)

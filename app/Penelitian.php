@@ -23,4 +23,9 @@ class Penelitian extends Model
     {
         return $this->belongsTo(Objek_penelitian::class);
     }
+
+    public function jobdesk()
+    {
+        return $this->HasMany(Jobdesk::class);
+    }
 }
