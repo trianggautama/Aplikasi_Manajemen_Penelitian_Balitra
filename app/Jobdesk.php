@@ -18,4 +18,9 @@ class Jobdesk extends Model
         return $this->belongsTo(Penelitian::class);
     }
 
+    public function jobdesk_peneliti()
+    {
+        return $this->hasMany(Jobdesk_peneliti::class);
+    }
+
 }
