@@ -68,7 +68,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
     <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal Verif</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Upload berkas</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -76,17 +76,12 @@
       <div class="modal-body">
         <form action="" method="post" enctype="multipart/form-data" id="formPerbaikan">
         <div class="form-group">
-            <label for="Nama">Status</label>
-            <select name="status" id="status" class="form-control">
-              <option value="2" >Disetujui</option>
-              <option value="3" >Revisi</option>
-            </select>
+            <label for="Nama">Uraian</label>
+           <input type="text" name="uraian" id ="uraian" class="form-control">
           </div>
-          <div class="" id="catatanform">
-            <div class="form-group">
-              <label for="Nama">Catatan</label>
-             <textarea name="catatan" id="catatan" class="form-control"></textarea>
-            </div>
+          <div class="form-group">
+            <label for="Nama">File</label>
+           <input type="file" name="file" id ="file" class="form-control">
           </div>
 
       </div>

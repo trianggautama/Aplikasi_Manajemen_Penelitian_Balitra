@@ -125,4 +125,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     //HALAMAN PENELITI - MENU PENELITIAN
     Route::get('peneliti/penelitian', 'penelitianController@penelitiPenelitianIndex')->name('penelitiPenelitianIndex');
+
+     //HALAMAN PENELITI - MENU jobdesk
+     Route::get('peneliti/jobdesk/{uuid}', 'penelitianController@penelitiJobdeskIndex')->name('penelitiJobdeskIndex'); 
 });
