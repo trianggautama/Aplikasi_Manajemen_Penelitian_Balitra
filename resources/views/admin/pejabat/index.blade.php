@@ -76,49 +76,49 @@
           @csrf
           <div class="form-group">
             <label for="Nama">Nama</label>
-            <input type="text" name="nama" class="form-control" placeholder="Nama">
+            <input type="text" name="nama" class="form-control" placeholder="Nama" required>
           </div>
           <div class="form-group">
             <label for="Nama">NIP</label>
-            <input type="text" name="NIP" class="form-control" placeholder="NIP">
+            <input type="text" name="NIP" class="form-control" placeholder="NIP" required>
           </div>
           <div class="form-group">
             <label for="Nama">Jabatan</label>
-            <input type="text" name="jabatan" class="form-control" placeholder="Jabatan">
+            <input type="text" name="jabatan" class="form-control" placeholder="Jabatan" required>
           </div>
           <div class="form-group">
             <label for="Nama">No Hp</label>
-            <input type="text" name="no_hp" class="form-control" placeholder="No Hp">
+            <input type="text" name="no_hp" class="form-control" placeholder="No Hp" required>
           </div>
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
                 <label for="Nama">Tempat Lahir</label>
-                <input type="text" name="tempat_lahir" class="form-control" placeholder="Tempat Lahir">
+                <input type="text" name="tempat_lahir" class="form-control" placeholder="Tempat Lahir" required>
             </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label for="Nama">Tanggal Lahir</label>
-                <input type="date" name="tanggal_lahir" class="form-control" placeholder="Tanggal Lahir">
+                <input type="date" name="tanggal_lahir" class="form-control" placeholder="Tanggal Lahir" required>
             </div>
             </div>
           </div>
           <div class="form-group">
             <label for="Nama">Alamat</label>
-            <input type="text" name="alamat" class="form-control" placeholder="ALamat">
+            <input type="text" name="alamat" class="form-control" placeholder="ALamat" required>
           </div>
           <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                   <label for="Nama">Username</label>
-                  <input type="text" name="username" class="form-control" placeholder="Username">
+                  <input type="text" name="username" class="form-control" placeholder="Username" required>
               </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                   <label for="Nama">Password</label>
-                  <input type="password" name="password" class="form-control" placeholder="username">
+                  <input type="password" name="password" class="form-control" placeholder="username" required>
               </div>
             </div>
           </div>

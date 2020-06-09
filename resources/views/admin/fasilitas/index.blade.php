@@ -78,11 +78,11 @@
           @csrf
           <div class="form-group">
             <label for="Nama">Nama Alat</label>
-            <input type="text" name="nama" class="form-control" placeholder="Nama">
+            <input type="text" name="nama" class="form-control" placeholder="Nama" required>
           </div>
           <div class="form-group">
             <label for="Nama">Kategori</label>
-            <select name="kategori" id="" class="form-control">
+            <select name="kategori" id="" class="form-control" required>
               <option value="">-- pilih Kategori --</option>
               <option value="Rumah Kaca">Rumah Kaca</option>
               <option value="Alat Lab">Alat Lab</option>
@@ -91,15 +91,15 @@
           </div>
           <div class="form-group">
             <label for="Nama">Jumlah</label>
-            <input type="number" name="jumlah" class="form-control" placeholder="Jumlah">
+            <input type="number" name="jumlah" class="form-control" placeholder="Jumlah" required>
           </div>
           <div class="form-group">
             <label for="Nama">Satuan</label>
-            <input type="text" name="satuan" class="form-control" placeholder="satuan">
+            <input type="text" name="satuan" class="form-control" placeholder="satuan" required>
           </div>
           <div class="form-group">
             <label for="Nama">keterangan</label>
-            <textarea name="keterangan" id="keterangan" name="keterangan" class="form-control"></textarea>
+            <textarea name="keterangan" id="keterangan" name="keterangan" class="form-control" required></textarea>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary tx-13" data-dismiss="modal">Close</button>

@@ -6,6 +6,7 @@ use App\Fasilitas;
 use App\Peminjaman_fasilitas;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class peminjamanController extends Controller
 {
@@ -20,7 +21,6 @@ class peminjamanController extends Controller
     public function store(Request $req)
     {
         $data = Peminjaman_fasilitas::create($req->all());
-
         return redirect()->back()->withSuccess('Data berhasil disimpan');
     }
 
@@ -46,6 +46,13 @@ class peminjamanController extends Controller
         $data = Peminjaman_fasilitas::where('uuid', $uuid)->first()->delete();
 
         return redirect()->back()->withSuccess('Data berhasil dihapus');
+    }
+
+    public function penelitiIndex()
+    {
+        $data = Peminjaman_fasilitas::where('peneliti_id',Auth::user()->peneliti->id)->orderBy('id', 'Desc')->get();
+        $fasilitas = Fasilitas::orderBy('id', 'Desc')->get();
+        return view('peneliti.peminjaman.index', compact('data', 'fasilitas'));
     }
 
 }
