@@ -25,13 +25,14 @@
       <div class="col-md-12 col-xl-12 mg-t-10">
         <div class="card card-body ">
           <div data-label="Example" class="df-example demo-table">
-            <table id="dataTable" class="table text-center">
+          <table id="dataTable" class="table text-center">
               <thead>
                 <tr>
                   <th>No</th>
                   <th>Peminjam</th>
                   <th>Fasilitas</th>
                   <th>Lama</th>
+                  <th>Status</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
@@ -43,10 +44,19 @@
                   <td>{{$d->fasilitas->nama}}</td>
                   <td>{{$d->lama_peminjaman}} Hari</td>
                   <td>
+                    @if($d->status == 0 )
+                      <p class="text-danger">Belum di verifikasi</p>
+                    @else
+                      <p class="text-success">Sudah Di Verif</p>
+                    @endif
+                  </td>
+                  <td>
+
                     <a href="{{Route('peminjamanEdit',['uuid' => $d->uuid])}}" class="btn btn-primary btn-icon">
                       <i data-feather="edit"></i>
                     </a>
-                    <button type="button" class="btn btn-danger btn-icon"  onclick="Hapus('{{$d->uuid}}','{{$d->fasilitas->nama}}')">
+                    <button type="button" class="btn btn-danger btn-icon"
+                      onclick="Hapus('{{$d->uuid}}','{{$d->fasilitas->nama}}')">
                       <i data-feather="delete"></i>
                     </button>
                   </td>
