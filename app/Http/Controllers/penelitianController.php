@@ -7,7 +7,6 @@ use App\Jobdesk_peneliti;
 use App\Objek_penelitian;
 use App\Peneliti;
 use App\Penelitian;
-use App\Permohonan;
 use App\User;
 use File;
 use Illuminate\Http\Request;
@@ -114,7 +113,8 @@ class penelitianController extends Controller
 
     public function penelitiPenelitianIndex()
     {
-        $data = Penelitian::orderBy('id', 'desc')->get();
+        $peneliti_id = Auth::user()->peneliti->id;
+        $data = Penelitian::where('peneliti_id', $peneliti_id)->orderBy('id', 'desc')->get();
         return view('peneliti.penelitian.index', compact('data'));
     }
 
