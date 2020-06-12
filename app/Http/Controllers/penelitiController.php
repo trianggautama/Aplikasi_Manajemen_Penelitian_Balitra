@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Peneliti;
+use App\Penelitian;
 use App\Permohonan;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class penelitiController extends Controller
@@ -108,7 +110,9 @@ class penelitiController extends Controller
 
     public function pembimbingPenelitiIndex()
     {
-        $data = Peneliti::orderBy('id', 'desc')->get();
+        $user_id = Auth::id();
+        $penelitian = Penelitian::where('user_id', $user_id)->first();
+        $data = Peneliti::where('id', $penelitian->peneliti_id)->orderBy('id', 'desc')->get();
         return view('pembimbing.peneliti.index', compact('data'));
     }
 }

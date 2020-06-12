@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Data_personal;
+use App\Penelitian;
 use App\User;
 use Hash;
 use Illuminate\Http\Request;
@@ -135,8 +136,9 @@ class pembimbingController extends Controller
 
     public function penelitiPembimbingIndex()
     {
-
-        $data = User::OrderBy('id', 'Desc')->where('role', 2)->get();
+        $peneliti_id = Auth::user()->peneliti->id;
+        $penelitian = Penelitian::findOrFail($peneliti_id);
+        $data = User::where('id', $penelitian->user_id)->OrderBy('id', 'Desc')->where('role', 2)->get();
         return view('peneliti.pembimbing.index', compact('data'));
     }
 }
