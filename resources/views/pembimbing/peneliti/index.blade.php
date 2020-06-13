@@ -41,12 +41,6 @@
                   <td>{{$d->alamat}}</td>
                   <td>{{$d->no_hp}}</td>
                   <td>{{$d->tempat_lahir}}, {{carbon\carbon::parse($d->tanggal_lahir)->translatedFormat('d F Y')}}</td>
-                  <td>
-                    <a href="{{Route('penelitiShow',['uuid' => $d->uuid])}}"
-                      class="btn btn-default btn-secondary btn-sm p-2">
-                      <i data-feather="info"></i>
-                    </a>
-                  </td>
                 </tr>
                 @endforeach
               </tbody>
