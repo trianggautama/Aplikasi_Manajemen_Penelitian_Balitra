@@ -21,7 +21,7 @@
             <div class="col-md-12 col-xl-12 mg-t-10">
             <div class="card card-body ht-lg-100">
                 <div class="media">
-                  <span class="tx-color-04"><i data-feather="download" class="wd-60 ht-60"></i></span>
+                  <span class="tx-color-04"><i data-feather="message-circle" class="wd-60 ht-60"></i></span>
                   <div class="media-body mg-l-20">
                     <h6 class="mg-b-10">Selamat Datang</h6>
                     <p class="tx-color-03 mg-b-0">Peneliti</p>

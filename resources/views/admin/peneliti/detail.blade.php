@@ -62,37 +62,6 @@
     </div><!-- row -->
   </div><!-- container -->
 
-  <div class="row row-xs">
-    <div class="col-md-12 col-xl-12 mg-t-10">
-      <div class="card ">
-        <div class="card-body">
-          <div data-label="Example" class="df-example demo-table">
-            <h5>Data Penelitian</h5>
-            <hr>
-            <table id="dataTable" class="table text-center">
-              <thead>
-                <tr>
-                  <th>No</th>
-                  <th>Nama</th>
-                  <th>Nomor Telepon</th>
-                  <th>Objek Penelitian</th>
-                  <th>Keperluan</th>
-                  <th>Aksi</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-
-                </tr>
-              </tbody>
-            </table>
-          </div><!-- df-example -->
-        </div>
-        <div class="card-footer text-right">
-        </div>
-      </div>
-    </div>
-  </div><!-- row -->
 </div><!-- container -->
 </div>
 

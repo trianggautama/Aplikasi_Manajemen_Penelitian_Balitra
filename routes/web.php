@@ -115,6 +115,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/penelitian/jobdesk/update', 'penelitianController@jobdeskStatusUpdate')->name('penelitianJobdeskUpdate');
     Route::get('/penelitian/jobdesk/delete', 'penelitianController@jobdeskDestroy')->name('penelitianJobdeskDestroy');
 
+    Route::get('pembimbing/hasilPenelitian', 'hasilPenelitianController@pembimbingIndex')->name('pembimbingLaporanPenelitian');
+    Route::get('pembimbing/hasilPenelitian/detail/{uuid}', 'hasilPenelitianController@pembimbingDetail')->name('PembimbingLaporanPenelitianDetail');
+
+
     //PENELITI
 
     //HALMAAN PENELITI - MENU PEMBIMBING
@@ -129,4 +133,12 @@ Route::group(['middleware' => ['auth']], function () {
     //HALAMAN PENELITI - MENU jobdesk
     Route::get('peneliti/jobdesk/{uuid}', 'penelitianController@penelitiJobdeskIndex')->name('penelitiJobdeskIndex');
     Route::get('peneliti/peminjaman', 'peminjamanController@penelitiIndex')->name('penelitiPeminjamanIndex');
+
+   // hasil penelitian
+   Route::get('/hasilPenelitian', 'hasilPenelitianController@index')->name('hasilPenelitianIndex');
+   Route::post('/hasilPenelitian', 'hasilPenelitianController@store')->name('hasilPenelitianStore');
+   Route::get('/hasilPenelitian/edit/', 'hasilPenelitianController@edit')->name('hasilPenelitianEdit');
+   Route::put('/hasilPenelitian/edit/{uuid}', 'hasilPenelitianController@update')->name('hasilPenelitianUpdate');
+   Route::get('/hasilPenelitian/update/{uuid}', 'hasilPenelitianController@updateStatus')->name('hasilPenelitianUpdateStatus');
+   Route::get('/hasilPenelitian/delete/{uuid}', 'hasilPenelitianController@destroy')->name('hasilPenelitianDestroy');
 });

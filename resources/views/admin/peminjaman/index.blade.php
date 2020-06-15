@@ -33,7 +33,8 @@
                   <th>No</th>
                   <th>Peminjam</th>
                   <th>Fasilitas</th>
-                  <th>Lama</th>
+                  <th>Tujuan Peminjaman</th>
+                  <th>Lama Peminjaman</th>
                   <th>Status</th>
                   <th>Aksi</th>
                 </tr>
@@ -44,12 +45,13 @@
                   <td>{{$loop->iteration}}</td>
                   <td>{{$d->peneliti->user->nama}}</td>
                   <td>{{$d->fasilitas->nama}}</td>
-                  <td>{{$d->lama_peminjaman}} Hari</td>
+                  <td>isi tujuan peminjaman</td>
+                  <td>1 Juni 2020 - 4 Juni 2020</td>
                   <td>
                     @if($d->status == 0 )
-                      Belum di verifikasi
+                      <p class="text-danger">Belum di verifikasi</p>
                     @else
-                      Sudah Di Verif
+                      <p class="text-success">Sudah Di Verif</p>
                     @endif
                   </td>
                   <td>
@@ -115,8 +117,22 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="Nama">Lama Peminjaman</label>
-            <input type="number" name="lama_peminjaman" placeholder="" class="form-control" required>
+            <label for="Nama">Tujuan Penggunaan</label>
+            <input type="number" name="tujuan_penggunaan" placeholder="" class="form-control" required>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="Nama">Tanggal Mulai Peminjaman</label>
+                <input type="date" name="tanggal_pinjam" placeholder="" class="form-control" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                  <label for="Nama">Tanggal Pengembalian</label>
+                  <input type="date" name="tanggal_pengembalian" placeholder="" class="form-control" required>
+                </div>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary tx-13" data-dismiss="modal">Close</button>
