@@ -8,12 +8,23 @@ use Illuminate\Support\Facades\Auth;
 
 class hasilPenelitianController extends Controller
 {
+
     public function index(){
+        $data = Penelitian::all();
+        return view('admin.hasilPenelitian.index',compact('data'));
+    }
+
+    public function penelitiIndex(){
 
         $peneliti_id = Auth::user()->peneliti->id;
         $data = Penelitian::where('peneliti_id', $peneliti_id)->first();
         
         return view('peneliti.hasilPenelitian.index',compact('data'));
+    }
+
+    public function penelitiEdit(){
+        
+        return view('peneliti.hasilPenelitian.edit');
     }
 
     public function pembimbingIndex(){

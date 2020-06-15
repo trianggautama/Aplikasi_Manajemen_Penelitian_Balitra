@@ -95,6 +95,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/peminjaman/update/{uuid}', 'peminjamanController@updateStatus')->name('peminjamanUpdateStatus');
     Route::get('/peminjaman/delete/{uuid}', 'peminjamanController@destroy')->name('peminjamanDestroy');
 
+    Route::get('/hasilPenelitian', 'hasilPenelitianController@index')->name('hasilPenelitianIndex');
+    Route::post('/hasilPenelitian', 'hasilPenelitianController@store')->name('hasilPenelitianStore');
+    Route::get('/hasilPenelitian/edit/', 'hasilPenelitianController@edit')->name('hasilPenelitianEdit');
+    Route::put('/hasilPenelitian/edit/{uuid}', 'hasilPenelitianController@update')->name('hasilPenelitianUpdate');
+    Route::get('/hasilPenelitian/update/{uuid}', 'hasilPenelitianController@updateStatus')->name('hasilPenelitianUpdateStatus');
+    Route::get('/hasilPenelitian/delete/{uuid}', 'hasilPenelitianController@destroy')->name('hasilPenelitianDestroy');
+
     //CETAK REPORT
     Route::get('/objekPenelitian/cetak', 'reportController@objekPenelitianCetak')->name('objekPenelitianCetak');
     Route::get('/fasilitas/cetak', 'reportController@fasilitasCetak')->name('fasilitasCetak');
@@ -135,10 +142,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('peneliti/peminjaman', 'peminjamanController@penelitiIndex')->name('penelitiPeminjamanIndex');
 
    // hasil penelitian
-   Route::get('/hasilPenelitian', 'hasilPenelitianController@index')->name('hasilPenelitianIndex');
-   Route::post('/hasilPenelitian', 'hasilPenelitianController@store')->name('hasilPenelitianStore');
-   Route::get('/hasilPenelitian/edit/', 'hasilPenelitianController@edit')->name('hasilPenelitianEdit');
-   Route::put('/hasilPenelitian/edit/{uuid}', 'hasilPenelitianController@update')->name('hasilPenelitianUpdate');
-   Route::get('/hasilPenelitian/update/{uuid}', 'hasilPenelitianController@updateStatus')->name('hasilPenelitianUpdateStatus');
-   Route::get('/hasilPenelitian/delete/{uuid}', 'hasilPenelitianController@destroy')->name('hasilPenelitianDestroy');
+   Route::get('peneliti/hasilPenelitian', 'hasilPenelitianController@penelitiIndex')->name('penelitiLaporanPenelitian');
+   Route::get('peneliti/hasilPenelitian/edit', 'hasilPenelitianController@penelitiEdit')->name('laporanPenelitianEdit');
+
 });

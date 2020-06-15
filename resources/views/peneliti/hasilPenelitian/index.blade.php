@@ -15,7 +15,7 @@
         </nav>
       </div>
       <div class="d-none d-md-block">
-      <a class="btn btn-sm pd-x-10 btn-primary btn-uppercase mg-l-5" href="#"><i   data-feather="edit-3" class="wd-10 mg-r-5"></i> Edit</a>
+      <a class="btn btn-sm pd-x-10 btn-primary btn-uppercase mg-l-5" href="{{Route('laporanPenelitianEdit')}}"><i   data-feather="edit-3" class="wd-10 mg-r-5"></i> Edit</a>
         <a class="btn btn-sm pd-x-15 btn-dark btn-uppercase mg-l-5" href="#modal2" data-toggle="modal"><i
             data-feather="plus" class="wd-10 mg-r-5"></i> tambah Laporan penelitian</a>
       </div>
@@ -119,14 +119,14 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="{{Route('beritaStore')}}" method="POST" enctype="multipart/form-data">
+        <form action="" method="POST" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
-            <label for="Nama">Judul Berita</label>
+            <label for="Nama">Judul Laporan Akhir</label>
             <input type="text" name="judul" class="form-control" placeholder="Judul Berita" required>
           </div>
           <div class="form-group">
-            <label for="Nama">foto</label>
+            <label for="Nama">file</label>
             <input type="file" name="foto" class="form-control" required>
           </div>
           <div class="modal-footer">

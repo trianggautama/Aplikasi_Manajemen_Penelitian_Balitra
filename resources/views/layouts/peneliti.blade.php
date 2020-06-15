@@ -60,7 +60,7 @@
                 data-feather="user"></i>pembimbing</a></li>
           <li class="nav-item"><a href="{{Route('penelitiPenelitianIndex')}}" class="nav-link"><i
                 data-feather="sunrise"></i> <span>Data Penelitian</span></a></li>
-          <li class="nav-item"><a href="{{Route('hasilPenelitianIndex')}}" class="nav-link"><i
+          <li class="nav-item"><a href="{{Route('penelitiLaporanPenelitian')}}" class="nav-link"><i
                 data-feather="file-text"></i> <span>Laporan Penelitian</span></a></li>
           <li class="nav-label mg-t-25">Lain lain</li>
           <li class="nav-item"><a href="{{Route('penelitiPeminjamanIndex')}}" class="nav-link"><i
