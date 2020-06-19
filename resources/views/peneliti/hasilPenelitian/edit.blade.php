@@ -24,15 +24,16 @@
               {{method_field('PUT') }}
               @csrf
               <div class="form-group">
-                    <label for="Nama">Judul Laporan Akhir</label>
-                    <input type="text" name="judul" class="form-control" placeholder="Judul Berita" required>
-                </div>
-                <div class="form-group">
-                    <label for="Nama">file</label>
-                    <input type="file" name="foto" class="form-control" required>
-                </div>
+                <label for="Nama">Judul Laporan Akhir</label>
+                <input type="text" name="judul" class="form-control" value="{{$data->judul}}"
+                  placeholder="Judul Laporan Akhir" required>
+              </div>
+              <div class="form-group">
+                <label for="Nama">file</label>
+                <input type="file" name="file" class="form-control">
+              </div>
               <div class="card-footer text-right">
-                <a href="{{route('beritaIndex')}}" type="button" class="btn btn-secondary tx-13"
+                <a href="{{route('penelitiLaporanPenelitian')}}" type="button" class="btn btn-secondary tx-13"
                   data-dismiss="modal">Batal</a>
                 <button type="submit" class="btn btn-primary tx-13"><i data-feather="save" class="wd-10 mg-r-5"></i>
                   Simpan</button>

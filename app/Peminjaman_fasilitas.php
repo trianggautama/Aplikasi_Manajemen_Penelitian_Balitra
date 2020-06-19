@@ -10,7 +10,7 @@ class Peminjaman_fasilitas extends Model
     use Uuid;
 
     protected $fillable = [
-        'peneliti_id', 'fasilitas_id', 'lama_peminjaman',
+        'peneliti_id', 'fasilitas_id', 'tujuan_peminjaman', 'tanggal_mulai', 'tanggal_selesai',
     ];
 
     public function peneliti()

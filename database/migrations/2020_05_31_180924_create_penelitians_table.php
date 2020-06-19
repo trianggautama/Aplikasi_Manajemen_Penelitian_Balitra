@@ -21,6 +21,7 @@ class CreatePenelitiansTable extends Migration
             $table->unsignedBigInteger('objek_penelitian_id');
             $table->text('uraian');
             $table->string('estimasi', 20);
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
             $table->foreign('peneliti_id')->references('id')->on('penelitis')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

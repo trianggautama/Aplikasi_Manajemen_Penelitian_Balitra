@@ -28,6 +28,7 @@
                   <th>Peneliti</th>
                   <th>Pembimbing</th>
                   <th>Estimasi</th>
+                  <th>Status Penelitian</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
@@ -39,7 +40,17 @@
                   <td>{{$d->user->nama}}</td>
                   <td>{{$d->estimasi}} Hari Kerja</td>
                   <td>
-                    <a href="{{Route('penelitiJobdeskIndex',['uuid'=>$d->uuid])}}" class="btn btn-default btn-secondary btn-sm p-2">
+                    @if($d->status == 0)
+                    <p class="text-primary">On Progress</p>
+                    @elseif($d->status == 1)
+                    <p class="text-pending">Ditunda</p>
+                    @else
+                    <p class="text-success">Selesai</p>
+                    @endif
+                  </td>
+                  <td>
+                    <a href="{{Route('penelitiJobdeskIndex',['uuid'=>$d->uuid])}}"
+                      class="btn btn-default btn-secondary btn-sm p-2">
                       <i data-feather="info"></i>
                     </a>
                   </td>

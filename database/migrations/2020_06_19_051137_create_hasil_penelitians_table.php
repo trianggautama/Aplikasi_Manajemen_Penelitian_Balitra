@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePeminjamanFasilitasTable extends Migration
+class CreateHasilPenelitiansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreatePeminjamanFasilitasTable extends Migration
      */
     public function up()
     {
-        Schema::create('peminjaman_fasilitas', function (Blueprint $table) {
+        Schema::create('hasil_penelitians', function (Blueprint $table) {
             $table->id();
             $table->string('uuid', 36);
-            $table->foreignId('peneliti_id')->onDelete('cascade');
-            $table->foreignId('fasilitas_id')->onDelete('cascade');
-            $table->string('tujuan_peminjaman', 100);
-            $table->date('tanggal_mulai');
-            $table->date('tanggal_selesai');
+            $table->foreignId('penelitian_id')->onDelete('cascade');
+            $table->string('judul', 100);
             $table->tinyInteger('status')->default(0);
+            $table->string('file')->nullable();
             $table->timestamps();
         });
     }
@@ -33,6 +31,6 @@ class CreatePeminjamanFasilitasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('peminjaman_fasilitas');
+        Schema::dropIfExists('hasil_penelitians');
     }
 }

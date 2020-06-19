@@ -45,24 +45,26 @@
                   <td>{{$loop->iteration}}</td>
                   <td>{{$d->peneliti->user->nama}}</td>
                   <td>{{$d->fasilitas->nama}}</td>
-                  <td>isi tujuan peminjaman</td>
-                  <td>1 Juni 2020 - 4 Juni 2020</td>
+                  <td>{{$d->tujuan_peminjaman}}</td>
+                  <td>{{carbon\carbon::parse($d->tanggal_mulai)->translatedFormat('d F Y')}} -
+                    {{carbon\carbon::parse($d->tanggal_selesai)->translatedFormat('d F Y')}}
+                  </td>
                   <td>
                     @if($d->status == 0 )
-                      <p class="text-danger">Belum di verifikasi</p>
+                    <p class="text-danger">Belum di verifikasi</p>
                     @else
-                      <p class="text-success">Sudah Di Verif</p>
+                    <p class="text-success">Sudah Di Verif</p>
                     @endif
                   </td>
                   <td>
-                  @if($d->status == 0 )
-                   <a href="{{Route('peminjamanUpdateStatus',['uuid' => $d->uuid])}}" class="btn btn-success btn-icon">
+                    @if($d->status == 0 )
+                    <a href="{{Route('peminjamanUpdateStatus',['uuid' => $d->uuid])}}" class="btn btn-success btn-icon">
                       <i data-feather="check"></i>
-                    </a>                   
-                     @else
-                     <a href="{{Route('peminjamanUpdateStatus',['uuid' => $d->uuid])}}" class="btn btn-danger btn-icon">
+                    </a>
+                    @else
+                    <a href="{{Route('peminjamanUpdateStatus',['uuid' => $d->uuid])}}" class="btn btn-danger btn-icon">
                       <i data-feather="alert-octagon"></i>
-                    </a>                       
+                    </a>
                     @endif
 
                     <a href="{{Route('peminjamanEdit',['uuid' => $d->uuid])}}" class="btn btn-primary btn-icon">
@@ -128,10 +130,10 @@
               </div>
             </div>
             <div class="col-md-6">
-                <div class="form-group">
-                  <label for="Nama">Tanggal Pengembalian</label>
-                  <input type="date" name="tanggal_pengembalian" placeholder="" class="form-control" required>
-                </div>
+              <div class="form-group">
+                <label for="Nama">Tanggal Pengembalian</label>
+                <input type="date" name="tanggal_pengembalian" placeholder="" class="form-control" required>
+              </div>
             </div>
           </div>
           <div class="modal-footer">

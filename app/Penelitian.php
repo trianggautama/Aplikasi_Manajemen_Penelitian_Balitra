@@ -28,4 +28,9 @@ class Penelitian extends Model
     {
         return $this->HasMany(Jobdesk::class);
     }
+
+    public function hasil_penelitian()
+    {
+        return $this->HasOne(Hasil_penelitian::class);
+    }
 }

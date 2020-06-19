@@ -25,7 +25,7 @@
       <div class="col-md-12 col-xl-12 mg-t-10">
         <div class="card card-body ">
           <div data-label="Example" class="df-example demo-table">
-          <table id="dataTable" class="table text-center">
+            <table id="dataTable" class="table text-center">
               <thead>
                 <tr>
                   <th>No</th>
@@ -43,13 +43,15 @@
                   <td>{{$loop->iteration}}</td>
                   <td>{{$d->peneliti->user->nama}}</td>
                   <td>{{$d->fasilitas->nama}}</td>
-                  <td>isi tujuan peminjaman</td>
-                  <td>1 Juni 2020 - 4 Juni 2020</td>
+                  <td>{{$d->tujuan_peminjaman}}</td>
+                  <td>{{carbon\carbon::parse($d->tanggal_mulai)->translatedFormat('d F Y')}} -
+                    {{carbon\carbon::parse($d->tanggal_selesai)->translatedFormat('d F Y')}}
+                  </td>
                   <td>
                     @if($d->status == 0 )
-                      <p class="text-danger">Belum di verifikasi</p>
+                    <p class="text-danger">Belum di verifikasi</p>
                     @else
-                      <p class="text-success">Sudah Di Verif</p>
+                    <p class="text-success">Sudah Di Verif</p>
                     @endif
                   </td>
                   <td>
@@ -87,7 +89,7 @@
       <div class="modal-body">
         <form action="{{Route('peminjamanStore')}}" method="POST">
           @csrf
-            <input type="hidden" name="peneliti_id" value="{{Auth::user()->peneliti->id}}">
+          <input type="hidden" name="peneliti_id" value="{{Auth::user()->peneliti->id}}">
           <div class="form-group">
             <label for="Nama">Fasilitas</label>
             <select name="fasilitas_id" id="fasilitas_id" class="form-control">
@@ -99,20 +101,20 @@
           </div>
           <div class="form-group">
             <label for="Nama">Tujuan Penggunaan</label>
-            <input type="number" name="tujuan_penggunaan" placeholder="" class="form-control" required>
+            <input type="text" name="tujuan_peminjaman" placeholder="" class="form-control" required>
           </div>
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
                 <label for="Nama">Tanggal Mulai Peminjaman</label>
-                <input type="date" name="tanggal_pinjam" placeholder="" class="form-control" required>
+                <input type="date" name="tanggal_mulai" placeholder="" class="form-control" required>
               </div>
             </div>
             <div class="col-md-6">
-                <div class="form-group">
-                  <label for="Nama">Tanggal Pengembalian</label>
-                  <input type="date" name="tanggal_pengembalian" placeholder="" class="form-control" required>
-                </div>
+              <div class="form-group">
+                <label for="Nama">Tanggal Pengembalian</label>
+                <input type="date" name="tanggal_selesai" placeholder="" class="form-control" required>
+              </div>
             </div>
           </div>
           <div class="modal-footer">

@@ -49,6 +49,15 @@
                 <label for="Nama">Estimasi (Hari Kerja)</label>
                 <input type="number" name="estimasi" value="{{$data->estimasi}}" class="form-control">
               </div>
+              <div class="form-group">
+                <label for="Nama">Status Penelitian</label>
+                <select name="status" id="" class="form-control">
+                  <option value="">-- Pilih Status Penelitian --</option>
+                  <option value="0" {{$data->status == 0 ? 'selected' : ''}}>On Progress</option>
+                  <option value="1" {{$data->status == 1 ? 'selected' : ''}}>Ditunda</option>
+                  <option value="2" {{$data->status == 2 ? 'selected' : ''}}>Selesai</option>
+                </select>
+              </div>
           </div>
           <div class="card-footer text-right">
             <button type="button" class="btn btn-secondary tx-13" data-dismiss="modal">Close</button>

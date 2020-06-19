@@ -14,8 +14,8 @@
         <h4 class="mg-b-0 tx-spacing--1">Data Penelitian yang dibimbing</h4>
       </div>
       <div class="d-none d-md-block">
-        <a href="{{Route('penelitianCetak')}}" class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5" target="_blank"><i data-feather="printer"
-            class="wd-10 mg-r-5"></i> Print</a>
+        <a href="{{Route('penelitianCetak')}}" class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5"
+          target="_blank"><i data-feather="printer" class="wd-10 mg-r-5"></i> Print</a>
       </div>
     </div>
 
@@ -30,6 +30,7 @@
                   <th>Peneliti</th>
                   <th>Pembimbing</th>
                   <th>Estimasi</th>
+                  <th>Status Penelitian</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
@@ -40,6 +41,15 @@
                   <td>{{$d->peneliti->user->nama}}</td>
                   <td>{{$d->user->nama}}</td>
                   <td>{{$d->estimasi}} Hari Kerja</td>
+                  <td>
+                    @if($d->status == 0)
+                    <p class="text-primary">On Progress</p>
+                    @elseif($d->status == 1)
+                    <p class="text-pending">Ditunda</p>
+                    @else
+                    <p class="text-success">Selesai</p>
+                    @endif
+                  </td>
                   <td>
                     <a href="{{Route('penelitianJobdesk',['uuid' => $d->uuid])}}" class="btn btn-default btn-warning btn-sm
                     p-2">

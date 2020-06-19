@@ -96,7 +96,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/peminjaman/delete/{uuid}', 'peminjamanController@destroy')->name('peminjamanDestroy');
 
     Route::get('/hasilPenelitian', 'hasilPenelitianController@index')->name('hasilPenelitianIndex');
-    Route::post('/hasilPenelitian', 'hasilPenelitianController@store')->name('hasilPenelitianStore');
     Route::get('/hasilPenelitian/edit/', 'hasilPenelitianController@edit')->name('hasilPenelitianEdit');
     Route::put('/hasilPenelitian/edit/{uuid}', 'hasilPenelitianController@update')->name('hasilPenelitianUpdate');
     Route::get('/hasilPenelitian/update/{uuid}', 'hasilPenelitianController@updateStatus')->name('hasilPenelitianUpdateStatus');
@@ -125,7 +124,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('pembimbing/hasilPenelitian', 'hasilPenelitianController@pembimbingIndex')->name('pembimbingLaporanPenelitian');
     Route::get('pembimbing/hasilPenelitian/detail/{uuid}', 'hasilPenelitianController@pembimbingDetail')->name('PembimbingLaporanPenelitianDetail');
 
-
     //PENELITI
 
     //HALMAAN PENELITI - MENU PEMBIMBING
@@ -141,8 +139,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('peneliti/jobdesk/{uuid}', 'penelitianController@penelitiJobdeskIndex')->name('penelitiJobdeskIndex');
     Route::get('peneliti/peminjaman', 'peminjamanController@penelitiIndex')->name('penelitiPeminjamanIndex');
 
-   // hasil penelitian
-   Route::get('peneliti/hasilPenelitian', 'hasilPenelitianController@penelitiIndex')->name('penelitiLaporanPenelitian');
-   Route::get('peneliti/hasilPenelitian/edit', 'hasilPenelitianController@penelitiEdit')->name('laporanPenelitianEdit');
+    // hasil penelitian
+    Route::get('peneliti/hasilPenelitian', 'hasilPenelitianController@penelitiIndex')->name('penelitiLaporanPenelitian');
+    Route::post('peneliti//hasilPenelitian', 'hasilPenelitianController@store')->name('hasilPenelitianStore');
+    Route::get('peneliti/hasilPenelitian/edit/{uuid}', 'hasilPenelitianController@penelitiEdit')->name('laporanPenelitianEdit');
+    Route::put('peneliti/hasilPenelitian/edit/{uuid}', 'hasilPenelitianController@penelitiUpdate')->name('laporanPenelitianUpdate');
 
 });

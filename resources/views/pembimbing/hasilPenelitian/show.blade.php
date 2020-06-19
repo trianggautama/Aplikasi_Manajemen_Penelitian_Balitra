@@ -12,62 +12,62 @@
             <li class="breadcrumb-item"><a href="#">Hasil Penelitian</a></li>
             <li class="breadcrumb-item active" aria-current="page">Hasil Penelitian </li>
           </ol>
-        </nav> 
+        </nav>
       </div>
-      <div class="d-none d-md-block"> 
-      <button id="tambahVerif" data-status="{{$data->status}}" data-id="{{$data->uuid}}"
-              class="btn btn-success btn-icon" data-toggle="tooltip" data-placement="top" title="Verifikasi"
-              data-toggle="modal"><i data-feather="check"></i> Verifikasi Laporan Akhir Penelitian  </button>
+      <div class="d-none d-md-block">
+        <button id="tambahVerif" data-status="{{$data->status}}" data-id="{{$data->id}}"
+          class="btn btn-success btn-icon" data-toggle="tooltip" data-placement="top" title="Verifikasi"
+          data-toggle="modal"><i data-feather="check"></i> Verifikasi Laporan Akhir Penelitian </button>
       </div>
     </div>
     <div class="row row-xs">
       <div class="col-md-12 col-xl-12 mg-t-10">
         <div class="card card-body ">
-            <h4>Rincian Penelitian</h4>
-            <hr>
-        <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <p class="tx-medium mg-b-2"><a href="" class="link-01">Nama</a></p>
-                  <span class="tx-12 tx-color-03">{{$data->peneliti->user->nama}}</span>
-                </div>
-                <div class="form-group">
-                  <p class="tx-medium mg-b-2"><a href="" class="link-01">NIK</a></p>
-                  <span class="tx-12 tx-color-03">{{$data->peneliti->NIK}}</span>
-                </div>
-                <div class="form-group">
-                  <p class="tx-medium mg-b-2"><a href="" class="link-01">Telepon</a></p>
-                  <span class="tx-12 tx-color-03">{{$data->peneliti->no_hp}}</span>
-                </div>
-                <div class="form-group">
-                  <p class="tx-medium mg-b-2"><a href="" class="link-01">Alamat</a></p>
-                  <span class="tx-12 tx-color-03">{{$data->peneliti->alamat}}</span>
-                </div>
-                <div class="form-group">
-                  <p class="tx-medium mg-b-2"><a href="" class="link-01">Tempat, tanggal lahir</a></p>
-                  <span class="tx-12 tx-color-03">{{$data->peneliti->tempat_lahir}},
-                    {{carbon\carbon::parse($data->peneliti->tanggal_lahir)->translatedFormat('d F Y')}}</span>
-                </div>
+          <h4>Rincian Penelitian</h4>
+          <hr>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <p class="tx-medium mg-b-2"><a href="" class="link-01">Nama</a></p>
+                <span class="tx-12 tx-color-03">{{$data->peneliti->user->nama}}</span>
               </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <p class="tx-medium mg-b-2"><a href="" class="link-01">Pembimbing penelitian</a></p>
-                  <span class="tx-12 tx-color-03">{{$data->user->nama}}</span>
-                </div>
-                <div class="form-group">
-                  <p class="tx-medium mg-b-2"><a href="" class="link-01">Objek Penelitian</a></p>
-                  <span class="tx-12 tx-color-03">{{$data->objek_penelitian->uraian}}</span>
-                </div>
-                  <div class="form-group">
-                    <p class="tx-medium mg-b-2"><a href="" class="link-01">Uraian Penelitian</a></p>
-                    <span class="tx-12 tx-color-03">{{$data->uraian}}</span>
-                </div>
-                <div class="form-group">
-                    <p class="tx-medium mg-b-2"><a href="" class="link-01">Estimasi</a></p>
-                    <span class="tx-12 tx-color-03">{{$data->estimasi}} Hari Kerja</span>
-                </div>
+              <div class="form-group">
+                <p class="tx-medium mg-b-2"><a href="" class="link-01">NIK</a></p>
+                <span class="tx-12 tx-color-03">{{$data->peneliti->NIK}}</span>
+              </div>
+              <div class="form-group">
+                <p class="tx-medium mg-b-2"><a href="" class="link-01">Telepon</a></p>
+                <span class="tx-12 tx-color-03">{{$data->peneliti->no_hp}}</span>
+              </div>
+              <div class="form-group">
+                <p class="tx-medium mg-b-2"><a href="" class="link-01">Alamat</a></p>
+                <span class="tx-12 tx-color-03">{{$data->peneliti->alamat}}</span>
+              </div>
+              <div class="form-group">
+                <p class="tx-medium mg-b-2"><a href="" class="link-01">Tempat, tanggal lahir</a></p>
+                <span class="tx-12 tx-color-03">{{$data->peneliti->tempat_lahir}},
+                  {{carbon\carbon::parse($data->peneliti->tanggal_lahir)->translatedFormat('d F Y')}}</span>
               </div>
             </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <p class="tx-medium mg-b-2"><a href="" class="link-01">Pembimbing penelitian</a></p>
+                <span class="tx-12 tx-color-03">{{$data->user->nama}}</span>
+              </div>
+              <div class="form-group">
+                <p class="tx-medium mg-b-2"><a href="" class="link-01">Objek Penelitian</a></p>
+                <span class="tx-12 tx-color-03">{{$data->objek_penelitian->uraian}}</span>
+              </div>
+              <div class="form-group">
+                <p class="tx-medium mg-b-2"><a href="" class="link-01">Uraian Penelitian</a></p>
+                <span class="tx-12 tx-color-03">{{$data->uraian}}</span>
+              </div>
+              <div class="form-group">
+                <p class="tx-medium mg-b-2"><a href="" class="link-01">Estimasi</a></p>
+                <span class="tx-12 tx-color-03">{{$data->estimasi}} Hari Kerja</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div><!-- row -->
@@ -75,32 +75,45 @@
     <div class="row row-xs">
       <div class="col-md-12 col-xl-12 mg-t-10">
         <div class="card card-body ">
-            <h4>Laporan Hasil Penelitian</h4>
-            <hr>
-        <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <p class="tx-medium mg-b-2"><a href="" class="link-01">Judul Laporan</a></p>
-                  <span class="tx-12 tx-color-03">Judul Laporan</span>
-                </div>
-                <div class="form-group">
-                  <p class="tx-medium mg-b-2"><a href="" class="link-01">Waktu Upload</a></p>
-                  <span class="tx-12 tx-color-03">1 juli 2020</span>
-                </div>
+          <h4>Laporan Hasil Penelitian</h4>
+          <hr>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <p class="tx-medium mg-b-2"><a href="" class="link-01">Judul Laporan</a></p>
+                <span class="tx-12 tx-color-03">{{$data->hasil_penelitian->judul}}</span>
               </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <p class="tx-medium mg-b-2"><a href="" class="link-01">file</a></p>
-                  <span class="tx-12 tx-color-03"><a href="#"
-                      class="btn btn-xs btn-secondary pd-y-5 pd-x-7" target="_blank"><i data-feather="paperclip"></i>
-                      File  </a></span>
-                </div>
-                <div class="alert alert-warning">
-                    <h5>Status</h5>
-                    <p>Menunggu Persetujuan Pembimbing</p>
-                </div>
+              <div class="form-group">
+                <p class="tx-medium mg-b-2"><a href="" class="link-01">Waktu Upload</a></p>
+                <span
+                  class="tx-12 tx-color-03">{{carbon\carbon::parse($data->hasil_penelitian->created_at)->translatedFormat('d F Y')}}</span>
               </div>
             </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <p class="tx-medium mg-b-2"><a href="" class="link-01">file</a></p>
+                <span class="tx-12 tx-color-03"><a href="#" class="btn btn-xs btn-secondary pd-y-5 pd-x-7"
+                    target="_blank"><i data-feather="paperclip"></i>
+                    File </a></span>
+              </div>
+              @if($data->hasil_penelitian->status == 0)
+              <div class="alert alert-warning">
+                <h5>Status</h5>
+                <p>Menunggu Persetujuan Pembimbing</p>
+              </div>
+              @elseif($data->hasil_penelitian->status == 1)
+              <div class="alert alert-success">
+                <h5>Status</h5>
+                <p>Disetujui Pembimbing</p>
+              </div>
+              @else
+              <div class="alert alert-primary">
+                <h5>Status</h5>
+                <p>Revisi Pembimbing</p>
+              </div>
+              @endif
+            </div>
+          </div>
         </div>
       </div>
     </div><!-- row -->
@@ -128,9 +141,9 @@
           <div class="form-group">
             <label for="Nama">Status</label>
             <select name="status" id="status" class="form-control">
-              <option value="0">Pending</option>
-              <option value="1">Disetujui</option>
-              <option value="2">Revisi</option>
+              <option value="0" {{$data->hasil_penelitian->status == 0 ? 'selected' : ''}}>Pending</option>
+              <option value="1" {{$data->hasil_penelitian->status == 1 ? 'selected' : ''}}>Disetujui</option>
+              <option value="2" {{$data->hasil_penelitian->status == 2 ? 'selected' : ''}}>Revisi</option>
             </select>
           </div>
           <div class="" id="catatanform">

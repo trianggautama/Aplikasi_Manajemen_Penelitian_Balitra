@@ -16,8 +16,8 @@
       <div class="d-none d-md-block">
         <a class="btn btn-sm pd-x-15 btn-dark btn-uppercase mg-l-5" href="#modal2" data-toggle="modal"><i
             data-feather="plus" class="wd-10 mg-r-5"></i> tambah Data</a>
-        <a href="{{Route('penelitianCetak')}}" class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5" target="_blank"><i data-feather="printer"
-            class="wd-10 mg-r-5"></i> Print</a>
+        <a href="{{Route('penelitianCetak')}}" class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5"
+          target="_blank"><i data-feather="printer" class="wd-10 mg-r-5"></i> Print</a>
       </div>
     </div>
 
@@ -32,6 +32,7 @@
                   <th>Peneliti</th>
                   <th>Pembimbing</th>
                   <th>Estimasi</th>
+                  <th>Status Penelitian</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
@@ -43,6 +44,15 @@
                   <td>{{$d->user->nama}}</td>
                   <td>{{$d->estimasi}} Hari Kerja</td>
                   <td>
+                    @if($d->status == 0)
+                    <p class="text-primary">On Progress</p>
+                    @elseif($d->status == 1)
+                    <p class="text-pending">Ditunda</p>
+                    @else
+                    <p class="text-success">Selesai</p>
+                    @endif
+                  </td>
+                  <td>
                     <a href="{{Route('penelitianShow',['uuid' => $d->uuid])}}" class="btn btn-default btn-secondary btn-sm
                     p-2">
                       <i data-feather="info"></i>
@@ -50,9 +60,10 @@
                     <a href="{{Route('penelitianEdit',['uuid' => $d->uuid])}}" class="btn btn-primary btn-icon">
                       <i data-feather="edit"></i>
                     </a>
-                    <button type="button" class="btn btn-danger btn-icon"  onclick="Hapus('{{$d->uuid}}','{{$d->peneliti->user->nama}}')">
+                    <button type="button" class="btn btn-danger btn-icon"
+                      onclick="Hapus('{{$d->uuid}}','{{$d->peneliti->user->nama}}')">
                       <i data-feather="delete"></i>
-                    </button> 
+                    </button>
                     </a>
                   </td>
                 </tr>
