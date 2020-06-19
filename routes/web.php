@@ -100,6 +100,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/hasilPenelitian/edit/{uuid}', 'hasilPenelitianController@update')->name('hasilPenelitianUpdate');
     Route::get('/hasilPenelitian/update/{uuid}', 'hasilPenelitianController@updateStatus')->name('hasilPenelitianUpdateStatus');
     Route::get('/hasilPenelitian/delete/{uuid}', 'hasilPenelitianController@destroy')->name('hasilPenelitianDestroy');
+    Route::get('/jobdesk/{uuid}', 'penelitianController@jobdeskIndex')->name('jobdeskIndex');
+
 
     //CETAK REPORT
     Route::get('/objekPenelitian/cetak', 'reportController@objekPenelitianCetak')->name('objekPenelitianCetak');
@@ -110,6 +112,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/penelitian/cetak', 'reportController@penelitianCetak')->name('penelitianCetak');
     Route::get('/penelitian/sk/{uuid}', 'reportController@skPenelitian')->name('skPenelitian');
     Route::get('/peneliti/cetak', 'reportController@penelitiCetak')->name('penelitiCetak');
+    Route::get('/jobdesk/cetak/{uuid}', 'reportController@jobdeskCetak')->name('jobdeskCetak'); 
+
 
     //HALAMAN PEMBIMBING - MENU PENELITI
     Route::get('pembimbing/peneliti', 'penelitiController@pembimbingPenelitiIndex')->name('pembimbingPenelitiIndex');

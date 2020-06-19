@@ -84,41 +84,47 @@
           <h4>Laporan Hasil Penelitian</h4>
           <hr>
           <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <p class="tx-medium mg-b-2"><a href="" class="link-01">Judul Laporan</a></p>
-                <span class="tx-12 tx-color-03">{{$data->hasil_penelitian->judul}}</span>
+            @if($data->hasil_penelitian)
+              <div class="col-md-6">
+                <div class="form-group">
+                  <p class="tx-medium mg-b-2"><a href="" class="link-01">Judul Laporan</a></p>
+                  <span class="tx-12 tx-color-03">{{$data->hasil_penelitian->judul}}</span>
+                </div>
+                <div class="form-group">
+                  <p class="tx-medium mg-b-2"><a href="" class="link-01">Waktu Upload</a></p>
+                  <span
+                    class="tx-12 tx-color-03">{{carbon\carbon::parse($data->hasil_penelitian->created_at)->translatedFormat('d F Y')}}</span>
+                </div>
               </div>
-              <div class="form-group">
-                <p class="tx-medium mg-b-2"><a href="" class="link-01">Waktu Upload</a></p>
-                <span
-                  class="tx-12 tx-color-03">{{carbon\carbon::parse($data->hasil_penelitian->created_at)->translatedFormat('d F Y')}}</span>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <p class="tx-medium mg-b-2">File</p>
+                  <span class="tx-12 tx-color-03"><a href="{{asset('lampiran/hasilPenelitian/'.$data->hasil_penelitian->file)}}" class="btn btn-xs btn-secondary pd-y-5 pd-x-7"
+                      target="_blank"><i data-feather="paperclip"></i>
+                      {{$data->hasil_penelitian->judul}}</a></span>
+                </div>
+                @if($data->hasil_penelitian->status == 0)
+                <div class="alert alert-warning">
+                  <h5>Status</h5>
+                  <p>Menunggu Persetujuan Pembimbing</p>
+                </div>
+                @elseif($data->hasil_penelitian->status == 1)
+                <div class="alert alert-success">
+                  <h5>Status</h5>
+                  <p>Disetujui Pembimbing</p>
+                </div>
+                @else
+                <div class="alert alert-primary">
+                  <h5>Status</h5>
+                  <p>Revisi Pembimbing</p>
+                  <p>Catatan : {{$data->hasil_penelitian->catatan}}</p>
+                </div>
+                @endif
               </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <p class="tx-medium mg-b-2"><a href="" class="link-01">file</a></p>
-                <span class="tx-12 tx-color-03"><a href="#" class="btn btn-xs btn-secondary pd-y-5 pd-x-7"
-                    target="_blank"><i data-feather="paperclip"></i>
-                    File </a></span>
-              </div>
-              @if($data->hasil_penelitian->status == 0)
-              <div class="alert alert-warning">
-                <h5>Status</h5>
-                <p>Menunggu Persetujuan Pembimbing</p>
-              </div>
-              @elseif($data->hasil_penelitian->status == 1)
-              <div class="alert alert-success">
-                <h5>Status</h5>
-                <p>Disetujui Pembimbing</p>
-              </div>
-              @else
-              <div class="alert alert-primary">
-                <h5>Status</h5>
-                <p>Revisi Pembimbing</p>
-              </div>
-              @endif
-            </div>
+            @else
+              <p class="pd-l-15">
+              Belum ada Laporan Penelitian</p>
+            @endif
           </div>
         </div>
       </div>
@@ -140,7 +146,7 @@
       <div class="modal-body">
         <form action="{{Route('hasilPenelitianStore')}}" method="POST" enctype="multipart/form-data">
           @csrf
-          <input type="text" value="{{$data->id}}" name="penelitian_id" id="">
+          <input type="hidden" value="{{$data->id}}" name="penelitian_id" id="">
           <div class="form-group">
             <label for="Nama">Judul Laporan Akhir</label>
             <input type="text" name="judul" class="form-control" placeholder="Judul Laporan Akhir" required>

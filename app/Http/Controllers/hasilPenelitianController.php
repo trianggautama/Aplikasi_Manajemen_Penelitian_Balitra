@@ -21,7 +21,6 @@ class hasilPenelitianController extends Controller
 
         $peneliti_id = Auth::user()->peneliti->id;
         $data = Penelitian::where('peneliti_id', $peneliti_id)->first();
-
         return view('peneliti.hasilPenelitian.index', compact('data'));
     }
 

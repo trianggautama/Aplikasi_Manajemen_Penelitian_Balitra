@@ -110,6 +110,7 @@
               <div class="alert alert-primary">
                 <h5>Status</h5>
                 <p>Revisi Pembimbing</p>
+                <p>Catatan : {{$data->hasil_penelitian->catatan}}</p>
               </div>
               @endif
             </div>

@@ -145,6 +145,12 @@ class penelitianController extends Controller
 
     }
 
+    public function jobdeskIndex($uuid)
+    {
+        $data = Penelitian::where('uuid', $uuid)->first();
+        return view('admin.penelitian.jobdesk', compact('data'));
+    }
+
     public function penelitiJobdeskIndex($uuid)
     {
         $data = Penelitian::where('uuid', $uuid)->first();

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Fasilitas;
+use App\Hasil_penelitian;
 use App\Objek_penelitian;
+use App\Penelitian;
 use App\Permohonan;
 use App\User;
 use Auth;
@@ -69,7 +72,14 @@ class adminController extends Controller
     public function index()
     {
         if (Auth::user()->role == 1) {
-            return view('admin.index');
+
+            $permohonan = Permohonan::where('status','!=', 2)->get();
+            $penelitian  = Penelitian::all();
+            $pembimbing  = User::where('role',2)->get();
+            $objek       = Objek_penelitian::all();
+            $fasilitas   = Fasilitas::all();
+            $laporanPenelitian = Hasil_penelitian::all();
+            return view('admin.index',compact('permohonan','penelitian','pembimbing','objek','fasilitas','laporanPenelitian'));
 
         } elseif (Auth::user()->role == 2) {
             return view('pembimbing.index');

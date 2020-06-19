@@ -92,4 +92,14 @@ class reportController extends Controller
 
         return $pdf->stream('Laporan Data Penelitian.pdf');
     }
+
+    public function jobdeskCetak($uuid)
+    {
+        $data = Penelitian::where('uuid', $uuid)->first();
+        $tgl= Carbon::now()->format('d-m-Y');
+        $pdf          = PDF::loadView('formCetak.jobdesk', ['data'=>$data,'tgl'=>$tgl]);
+        $pdf->setPaper('a4', 'portrait');
+
+        return $pdf->stream('Laporan Kegiatan Penelitian.pdf');
+    }
 }

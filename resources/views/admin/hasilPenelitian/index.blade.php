@@ -35,7 +35,11 @@
                   <td>{{$d->peneliti->user->nama}}</td>
                   <td>{{$d->user->nama}}</td>
                   <td>
-                  <a  class="btn btn-success btn-icon text-white" data-toggle="tooltip" data-placement="top" title="Download Laporan Hasil Penelitian "  ><i data-feather="printer"></i> </a>
+                    @if($d->hasil_penelitian)
+                      <a href="{{asset('lampiran/hasilPenelitian/'.$d->hasil_penelitian->file)}}" class="btn btn-success btn-icon text-white" data-toggle="tooltip" data-placement="top" title="Download Laporan Hasil Penelitian "  ><i data-feather="printer"></i> </a>
+                    @else
+                      Belum ada Laporan Penelitian
+                    @endif
                   </td>
                 </tr>
                 @endforeach
