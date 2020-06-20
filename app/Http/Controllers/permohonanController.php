@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\VerifEmail;
 use App\Peneliti;
 use App\Permohonan;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class permohonanController extends Controller
 {
@@ -50,9 +52,11 @@ class permohonanController extends Controller
             $peneliti->pendidikan_terakhir = $data->pendidikan_terakhir;
             $data->catatan = null;
             $peneliti->save();
-        }elseif($request->status == 3){
+            Mail::to($data->email)->send(new VerifEmail($data));
+        } elseif ($request->status == 3) {
             $data->catatan = $request->catatan;
-        }else{
+            Mail::to($data->email)->send(new VerifEmail($data));
+        } else {
             return redirect()->back()->with('success', 'Tidak Ada Aksi');
         }
         $data->update();
