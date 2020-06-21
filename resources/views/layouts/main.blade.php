@@ -45,10 +45,11 @@
         <div class="d-flex align-items-center justify-content-start">
           <a href="" class="avatar"><img src="https://via.placeholder.com/500" class="rounded-circle" alt=""></a>
           <div class="aside-alert-link">
-            <a href="" class="new" data-toggle="tooltip" title="You have 4 new notifications"><i
-                data-feather="bell"></i></a>
-            <a href="" data-toggle="tooltip" title="Sign out"><i data-feather="log-out"></i></a>
-          </div>
+          <a class="nav-link" data-toggle="tooltip" title="Log out" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i data-feather="log-out"></i> </a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+          </form>          
+      </div>
         </div><!-- aside-loggedin -->
        <ul class="nav nav-aside">
        <li class="nav-label mg-t-25">Akun</li>
@@ -84,8 +85,6 @@
         @guest
         <a class="nav-link" href="{{ route('login') }}"><i data-feather="log-in"></i>{{ __('Login') }}</a>
         @else
-        <a href="" class="nav-link  " data-toggle="tooltip" title="You have 4 new notifications"><i
-            data-feather="bell"></i></a>
         <a class="nav-link" data-toggle="tooltip" title="Sign out" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i data-feather="log-out"></i>
              {{ __('Logout') }}
         </a>

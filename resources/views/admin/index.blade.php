@@ -98,7 +98,7 @@
                   <span class="tx-color-04"><i data-feather="message-circle" class="wd-60 ht-60"></i></span>
                   <div class="media-body mg-l-20">
                     <h6 class="mg-b-10">Selamat Datang Admin {{Auth::user()->nama}}</h6>
-                    <p class="tx-color-03 mg-b-0">Open it in a spreadsheet and perform your own calculations, graphing etc.</p>
+                    <p class="tx-color-03 mg-b-0">Selamat datang di apliaksi pengelolaan kegiatan penelitian Balittra Kota Banjarbaru</p>
                   </div>
                 </div><!-- media -->
               </div>

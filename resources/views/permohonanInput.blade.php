@@ -4,8 +4,6 @@
 <section id="cta2">
     <div class="container">
         <div class="text-center">
-            <h2 class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms"><span>MULTI</span> IS A CREATIVE
-                HTML TEMPLATE</h2>
             <img class="img-responsive wow fadeIn" src="{{asset('depan/images/cta2/cta2-img.png')}}" alt=""
                 data-wow-duration="300ms" data-wow-delay="300ms">
         </div>

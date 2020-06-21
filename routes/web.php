@@ -9,6 +9,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/permohonan/input', 'adminController@permohonanInput')->name('permohonanInput');
 Route::post('/permohonan/input', 'adminController@permohonanStore')->name('permohonanStore');
+Route::get('/berita/detail/{uuid}', 'adminController@beritaShow')->name('beritaShow');
 
 Route::group(['middleware' => ['auth']], function () {
 
@@ -113,6 +114,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/penelitian/sk/{uuid}', 'reportController@skPenelitian')->name('skPenelitian');
     Route::get('/peneliti/cetak', 'reportController@penelitiCetak')->name('penelitiCetak');
     Route::get('/jobdesk/cetak/{uuid}', 'reportController@jobdeskCetak')->name('jobdeskCetak'); 
+    Route::get('/peminjaman/cetak', 'reportController@peminjamanCetak')->name('peminjamanCetak');
 
 
     //HALAMAN PEMBIMBING - MENU PENELITI

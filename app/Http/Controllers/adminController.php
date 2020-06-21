@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Berita;
 use App\Fasilitas;
 use App\Hasil_penelitian;
 use App\Objek_penelitian;
@@ -17,7 +18,8 @@ class adminController extends Controller
     public function depan()
     {
         $objekPenelitian = Objek_penelitian::all();
-        return view('welcome', compact('objekPenelitian'));
+        $berita          = Berita::paginate(6);
+        return view('welcome', compact('objekPenelitian','berita'));
     }
 
     public function pembimbingProfil()
@@ -29,6 +31,12 @@ class adminController extends Controller
     {
         $objekPenelitian = Objek_penelitian::all();
         return view('permohonanInput', compact('objekPenelitian'));
+    }
+
+    public function beritaShow($uuid)
+    {
+        $data = Berita::where('uuid',$uuid)->first();
+        return view('beritaShow', compact('data'));
     }
 
     public function permohonanStore(Request $request)

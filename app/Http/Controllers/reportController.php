@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Objek_penelitian;
 use App\Fasilitas;
+use App\Peminjaman_fasilitas;
 use App\Peneliti;
 use App\Permohonan;
 use App\Penelitian;
@@ -101,5 +102,15 @@ class reportController extends Controller
         $pdf->setPaper('a4', 'portrait');
 
         return $pdf->stream('Laporan Kegiatan Penelitian.pdf');
+    }
+
+    public function peminjamanCetak()
+    {
+        $data = Peminjaman_fasilitas::all();
+        $tgl= Carbon::now()->format('d-m-Y');
+        $pdf          = PDF::loadView('formCetak.dataPeminjaman', ['data'=>$data,'tgl'=>$tgl]);
+        $pdf->setPaper('a4', 'portrait');
+
+        return $pdf->stream('Laporan Data Peminjaman.pdf');
     }
 }

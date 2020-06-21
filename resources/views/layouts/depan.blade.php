@@ -50,11 +50,11 @@
 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="scroll active"><a href="#home">Home</a></li>
-                        <li class="scroll"><a href="#features">Features</a></li>
-                        <li class="scroll"><a href="#services">Services</a></li>
-                        <li class="scroll"><a href="#about">About</a></li>
-                        <li class="scroll"><a href="#blog">Blog</a></li>
+                        <li class="scroll active"><a href="/">Header</a></li>
+                        <li class="scroll"><a href="#features">Fungsi Balitra</a></li>
+                        <li class="scroll"><a href="#services">Objek Penelitian</a></li>
+                        <li class="scroll"><a href="#about">Tentang Kami</a></li>
+                        <li class="scroll"><a href="#blog">berita</a></li>
                         <li class="scroll"><a href="{{Route('index')}}">Login</a></li>
                     </ul>
                 </div>
@@ -71,23 +71,8 @@
     <footer id="footer">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
-                    &copy; 2014 Your Company. Designed by <a target="_blank" href="http://shapebootstrap.net/"
-                        title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>
-                </div>
-                <div class="col-sm-6">
-                    <ul class="social-icons">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                        <li><a href="#"><i class="fa fa-flickr"></i></a></li>
-                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-github"></i></a></li>
-                    </ul>
+                <div class="col-sm-12 text-center">
+                    &copy; 2020 Balittra</a>
                 </div>
             </div>
         </div>

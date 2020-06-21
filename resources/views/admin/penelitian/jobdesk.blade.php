@@ -1,4 +1,4 @@
-@extends('layouts.pembimbing')
+@extends('layouts.main')
 
 @section('content')
 <div class="content-body">
