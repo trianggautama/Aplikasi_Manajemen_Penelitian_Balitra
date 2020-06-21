@@ -1,4 +1,4 @@
-@extends('layouts.peneliti')
+@extends('layouts.pejabat')
 
 @section('content')
 <div class="content-body">
@@ -7,16 +7,19 @@
       <div>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb breadcrumb-style1 mg-b-10">
-            <li class="breadcrumb-item"><a href="#">Pegawai</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Pembimbing Lapangan</li>
+            <li class="breadcrumb-item"><a href="#">Peneliti</a></li>
           </ol>
         </nav>
-        <h4 class="mg-b-0 tx-spacing--1">Pembimbing Lapangan </h4>
+        <h4 class="mg-b-0 tx-spacing--1">Peneliti</h4>
       </div>
       <div class="d-none d-md-block">
+        <!-- <a class="btn btn-sm pd-x-15 btn-dark btn-uppercase mg-l-5" href="#modal2" data-toggle="modal"><i
+            data-feather="plus" class="wd-10 mg-r-5"></i> tambah Data</a> -->
+        <a class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5" href="{{Route('penelitiCetak')}}"><i data-feather="printer"
+            class="wd-10 mg-r-5"></i> Print</a>
       </div>
     </div>
- 
+
     <div class="row row-xs">
       <div class="col-md-12 col-xl-12 mg-t-10">
         <div class="card card-body ">
@@ -25,20 +28,20 @@
               <thead>
                 <tr>
                   <th>No</th>
-                  <th>NIP</th>
                   <th>Nama</th>
                   <th>Alamat</th>
-                  <th>No Hp</th>
+                  <th>Nomor Telepon</th>
+                  <th>Tempat, Tanggal Lahir</th>
                 </tr>
               </thead>
               <tbody>
                 @foreach($data as $d)
                 <tr>
                   <td>{{$loop->iteration}}</td>
-                  <td>{{$d->data_personal->NIP}}</td>
-                  <td>{{$d->nama}}</td>
-                  <td>{{$d->data_personal->alamat}}</td>
-                  <td>{{$d->data_personal->no_hp}}</td>
+                  <td>{{$d->user->nama}}</td>
+                  <td>{{$d->alamat}}</td>
+                  <td>{{$d->no_hp}}</td>
+                  <td>{{$d->tempat_lahir}}, {{carbon\carbon::parse($d->tanggal_lahir)->translatedFormat('d F Y')}}</td>
                 </tr>
                 @endforeach
               </tbody>
@@ -50,10 +53,10 @@
   </div><!-- container -->
 </div>
 
-  @endsection
-  @section('scripts')
-  <script>
-    $(function(){
+@endsection
+@section('scripts')
+<script>
+  $(function(){
         'use strict'
 
         $('#dataTable').DataTable({
@@ -64,23 +67,5 @@
           }
         });
       });
-
-      function Hapus(uuid, nama) {
-        Swal.fire({
-        title: 'Anda Yakin?',
-        text: " Menghapus data user '" + nama ,        
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Hapus',
-        cancelButtonText: 'Batal'
-      }).then((result) => {
-        if (result.value) {
-          url = '{{route("pembimbingDestroy",'')}}';
-          window.location.href =  url+'/'+uuid ;
-        }
-      })
-        }
-  </script>
-  @endsection
+</script>
+@endsection

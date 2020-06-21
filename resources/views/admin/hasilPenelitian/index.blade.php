@@ -25,7 +25,7 @@
                   <th>No</th>
                   <th>Peneliti</th>
                   <th>Pembimbing</th>
-                  <th>Aksi</th>
+                  <th>File Laporan</th>
                 </tr>
               </thead>
               <tbody>

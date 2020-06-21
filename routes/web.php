@@ -151,4 +151,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('peneliti/hasilPenelitian/edit/{uuid}', 'hasilPenelitianController@penelitiEdit')->name('laporanPenelitianEdit');
     Route::put('peneliti/hasilPenelitian/edit/{uuid}', 'hasilPenelitianController@penelitiUpdate')->name('laporanPenelitianUpdate');
 
+    //HALAMAN PEJABAT
+    Route::get('pejabat/fasilitas', 'fasilitasController@pejabatIndex')->name('pejabatFasilitasIndex');
+    Route::get('pejabat/peneliti', 'penelitiController@pejabatIndex')->name('pejabatPenelitiIndex');
+
 });

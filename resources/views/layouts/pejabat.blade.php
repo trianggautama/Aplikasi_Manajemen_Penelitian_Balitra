@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+ 
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -51,12 +51,12 @@
           </div>
         </div><!-- aside-loggedin -->
        <ul class="nav nav-aside">
-       <li class="nav-label mg-t-25">Akun</li>
-        <li class="nav-item"><a href="{{Route('userProfil')}}" class="nav-link"><i data-feather="user"></i> <span>Profil</span></a></li>
+       <li class="nav-label mg-t-25">Fasilitas</li>
+          <li class="nav-item"><a href="{{Route('pejabatFasilitasIndex')}}" class="nav-link"><i data-feather="thermometer"></i> <span>Fasilitas Ballitra</span></a></li>
           <li class="nav-label mg-t-25">Penelitian</li>
-          <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="users"></i> <span>Peneliti</span></a></li>
-          <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="sunrise"></i> <span>Data Penelitian</span></a></li>
-          <li class="nav-item"><a href="../../components" class="nav-link"><i data-feather="file"></i> <span>Laporan Akhir Penelitian</span></a></li>
+          <li class="nav-item"><a href="{{Route('pejabatPenelitiIndex')}}" class="nav-link"><i data-feather="users"></i> <span>Peneliti</span></a></li>
+          <li class="nav-item"><a href="{{Route('penelitianIndex')}}" class="nav-link"><i data-feather="sunrise"></i> <span>Data Penelitian</span></a></li>
+          <li class="nav-item"><a href="{{Route('hasilPenelitianIndex')}}" class="nav-link"><i data-feather="file"></i> <span>Laporan Akhir Penelitian</span></a></li>
         </ul>
       </div>
     </aside>

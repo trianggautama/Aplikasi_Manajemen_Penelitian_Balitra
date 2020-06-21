@@ -14,6 +14,13 @@ class fasilitasController extends Controller
         return view('admin.fasilitas.index', compact('data'));
     }
 
+    public function pejabatIndex()
+    {
+        $data = Fasilitas::orderBy('id', 'Desc')->get();
+
+        return view('pejabat.fasilitas.index', compact('data'));
+    }
+
     public function store(Request $request)
     {
         $data = new Fasilitas;

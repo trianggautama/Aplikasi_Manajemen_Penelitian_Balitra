@@ -14,10 +14,10 @@
         <h4 class="mg-b-0 tx-spacing--1">Data Penelitian </h4>
       </div>
       <div class="d-none d-md-block">
-        <a href="{{Route('penelitianCetak')}}" class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5"
+      <a href="{{Route('jobdeskCetak',['uuid'=>$data->uuid])}}" class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5"
           target="_blank"><i data-feather="printer" class="wd-10 mg-r-5"></i> Print</a>
       </div>
-    </div>
+    </div> 
     <div class="row row-xs">
       <div class="col-md-12 col-xl-12 mg-t-10">
         @foreach($data->jobdesk as $d)

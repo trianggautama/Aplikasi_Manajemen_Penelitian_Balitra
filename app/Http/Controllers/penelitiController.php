@@ -19,6 +19,13 @@ class penelitiController extends Controller
         return view('admin.peneliti.index', compact('data', 'permohonan'));
     }
 
+    public function pejabatIndex()
+    {
+        $data = Peneliti::orderBy('id', 'desc')->get();
+        $permohonan = Permohonan::where('status', 2)->orderBy('id', 'desc')->get();
+        return view('pejabat.peneliti.index', compact('data', 'permohonan'));
+    }
+
     public function store(Request $request)
     {
         $permohonan = Permohonan::findOrFail($request->permohonan_id);
