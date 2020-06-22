@@ -154,5 +154,8 @@ Route::group(['middleware' => ['auth']], function () {
     //HALAMAN PEJABAT
     Route::get('pejabat/fasilitas', 'fasilitasController@pejabatIndex')->name('pejabatFasilitasIndex');
     Route::get('pejabat/peneliti', 'penelitiController@pejabatIndex')->name('pejabatPenelitiIndex');
+    Route::get('pejabat/penelitian', 'penelitianController@pejabatIndex')->name('pejabatPenelitianIndex');
+    Route::get('pejabat/penelitian/detail/{uuid}', 'penelitianController@pejabatShow')->name('pejabatPenelitianShow');
+    Route::get('pejabat/hasilPenelitian/', 'hasilPenelitianController@pejabatIndex')->name('pejabatHasilPenelitianIndex');
 
 });

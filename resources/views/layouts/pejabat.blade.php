@@ -45,8 +45,6 @@
         <div class="d-flex align-items-center justify-content-start">
           <a href="" class="avatar"><img src="https://via.placeholder.com/500" class="rounded-circle" alt=""></a>
           <div class="aside-alert-link">
-            <a href="" class="new" data-toggle="tooltip" title="You have 4 new notifications"><i
-                data-feather="bell"></i></a>
             <a href="" data-toggle="tooltip" title="Sign out"><i data-feather="log-out"></i></a>
           </div>
         </div><!-- aside-loggedin -->
@@ -55,8 +53,8 @@
           <li class="nav-item"><a href="{{Route('pejabatFasilitasIndex')}}" class="nav-link"><i data-feather="thermometer"></i> <span>Fasilitas Ballitra</span></a></li>
           <li class="nav-label mg-t-25">Penelitian</li>
           <li class="nav-item"><a href="{{Route('pejabatPenelitiIndex')}}" class="nav-link"><i data-feather="users"></i> <span>Peneliti</span></a></li>
-          <li class="nav-item"><a href="{{Route('penelitianIndex')}}" class="nav-link"><i data-feather="sunrise"></i> <span>Data Penelitian</span></a></li>
-          <li class="nav-item"><a href="{{Route('hasilPenelitianIndex')}}" class="nav-link"><i data-feather="file"></i> <span>Laporan Akhir Penelitian</span></a></li>
+          <li class="nav-item"><a href="{{Route('pejabatPenelitianIndex')}}" class="nav-link"><i data-feather="sunrise"></i> <span>Data Penelitian</span></a></li>
+          <li class="nav-item"><a href="{{Route('pejabatHasilPenelitianIndex')}}" class="nav-link"><i data-feather="file"></i> <span>Laporan Akhir Penelitian</span></a></li>
         </ul>
       </div>
     </aside>
@@ -68,8 +66,6 @@
         @guest
         <a class="nav-link" href="{{ route('login') }}"><i data-feather="log-in"></i>{{ __('Login') }}</a>
         @else
-        <a href="" class="nav-link  " data-toggle="tooltip" title="You have 4 new notifications"><i
-            data-feather="bell"></i></a>
             <a class="nav-link" data-toggle="tooltip" title="Sign out" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i data-feather="log-out"></i>
              {{ __('Logout') }}
         </a>

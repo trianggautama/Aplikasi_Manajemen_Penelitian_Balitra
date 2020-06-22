@@ -24,6 +24,13 @@ class hasilPenelitianController extends Controller
         return view('peneliti.hasilPenelitian.index', compact('data'));
     }
 
+    public function pejabatIndex()
+    {
+
+        $data = Penelitian::all();
+        return view('pejabat.hasilPenelitian.index', compact('data'));
+    }
+
     //peneliti store
     public function store(Request $req)
     {

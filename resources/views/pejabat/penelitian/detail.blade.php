@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.pejabat')
 
 @section('content')
 <div class="content-body">
@@ -7,12 +7,12 @@
       <div>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb breadcrumb-style1 mg-b-10">
-            <li class="breadcrumb-item"><a href="#"></a></li>
-            <li class="breadcrumb-item " aria-current="page"> Penelitian</li>
+            <li class="breadcrumb-item"><a href="#">Permohonan</a></li>
+            <li class="breadcrumb-item " aria-current="page">Permohonan Penelitian</li>
             <li class="breadcrumb-item active" aria-current="page">Detail</li>
           </ol>
         </nav>
-        <h4 class="mg-b-0 tx-spacing--1">Detail  Penelitian</h4>
+        <h4 class="mg-b-0 tx-spacing--1">Detail Penelitian</h4>
       </div>
       <div class="d-none d-md-block">
       </div>
