@@ -32,9 +32,9 @@
                 data-feather="edit"></i></a>
             <button type="button" class="btn btn-danger btn-icon" onclick="Hapus('{{$d->uuid}}','{{$d->uraian}}')"><i
                 data-feather="delete"></i></button>
-            <button id="tambahVerif" data-status="{{$d->status}}" data-id="{{$d->uuid}}"
-              class="btn btn-success btn-icon" data-toggle="tooltip" data-placement="top" title="Verifikasi"
-              data-toggle="modal"><i data-feather="check"></i></button>
+            <button id="tambahVerif" data-status="{{$d->status}}" data-id="{{$d->id}}" class="btn btn-success btn-icon"
+              data-toggle="tooltip" data-placement="top" title="Verifikasi" data-toggle="modal"><i
+                data-feather="check"></i></button>
           </p>
           <div class="collapse" id="collapseExample">
             <div class="card card-body">
