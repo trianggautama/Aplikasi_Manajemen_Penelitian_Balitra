@@ -42,10 +42,23 @@
                 </select>
               </div>
               <div class="form-group">
-                <label for="Nama">Lama Peminjaman</label>
-                <input type="number" name="lama_peminjaman" value="{{$data->lama_peminjaman}}" placeholder=""
-                  class="form-control">
+            <label for="Nama">Tujuan Penggunaan</label>
+            <input type="number" name="tujuan_penggunaan" placeholder="" class="form-control" required>
+          </div>
+              <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="Nama">Tanggal Mulai Peminjaman</label>
+                <input type="date" name="tanggal_pinjam" placeholder="" class="form-control" required>
               </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="Nama">Tanggal Pengembalian</label>
+                <input type="date" name="tanggal_pengembalian" placeholder="" class="form-control" required>
+              </div>
+            </div>
+          </div>
               <div class="card-footer text-right">
                 <a href="{{route('objekPenelitianIndex')}}" type="button" class="btn btn-secondary tx-13"
                   data-dismiss="modal">Batal</a>
