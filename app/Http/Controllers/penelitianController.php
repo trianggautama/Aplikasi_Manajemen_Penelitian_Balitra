@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Hasil_penelitian;
 use App\Jobdesk;
 use App\Jobdesk_peneliti;
 use App\Objek_penelitian;
@@ -114,7 +113,7 @@ class penelitianController extends Controller
     public function jobdeskStatusUpdate(Request $request)
     {
         // dd($request->all());
-        $data = Hasil_penelitian::where('penelitian_id', $request->uuid)->first();
+        $data = Penelitian::where('penelitian_id', $request->uuid)->first();
         $data->status = $request->status;
         if (isset($request->catatan)) {
             $data->catatan = $request->catatan;
