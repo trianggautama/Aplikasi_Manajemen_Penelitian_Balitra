@@ -32,7 +32,7 @@
                 data-feather="edit"></i></a>
             <button type="button" class="btn btn-danger btn-icon" onclick="Hapus('{{$d->uuid}}','{{$d->uraian}}')"><i
                 data-feather="delete"></i></button>
-            <button id="tambahVerif" data-status="{{$d->status}}" data-id="{{$d->id}}" class="btn btn-success btn-icon"
+            <button id="tambahVerif" data-status="{{$d->status}}" data-id="{{$d->uuid}}" class="btn btn-success btn-icon"
               data-toggle="tooltip" data-placement="top" title="Verifikasi" data-toggle="modal"><i
                 data-feather="check"></i></button>
           </p>
@@ -207,11 +207,14 @@
             if(status == 1){
                 $('#tanggalform').show();
                 $('#catatanform').hide();
+                $('#catatanform').text("");
+
             }else if(status == 2){
                 $('#tanggalform').hide();
                 $('#catatanform').show();
             }else{
                 $('#tanggalform').hide();
+                $('#catatanform').text("");
                 $('#catatanform').hide();
             }
 
