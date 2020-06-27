@@ -118,8 +118,7 @@ class penelitiController extends Controller
     public function pembimbingPenelitiIndex()
     {
         $user_id = Auth::id();
-        $penelitian = Penelitian::where('user_id', $user_id)->first();
-        $data = Peneliti::where('id', $penelitian->peneliti_id)->orderBy('id', 'desc')->get();
+        $data = Penelitian::with('peneliti')->where('user_id', $user_id)->get();
         return view('pembimbing.peneliti.index', compact('data'));
     }
 }

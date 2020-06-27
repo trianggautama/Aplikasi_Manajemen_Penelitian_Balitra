@@ -13,8 +13,8 @@
         <h4 class="mg-b-0 tx-spacing--1">Peneliti yang di bimbing </h4>
       </div>
       <div class="d-none d-md-block">
-        <a class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5" href="{{Route('penelitiCetak')}}"><i data-feather="printer"
-            class="wd-10 mg-r-5"></i> Print</a>
+        <!-- <a class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5" href="{{Route('penelitiCetak')}}"><i data-feather="printer"
+            class="wd-10 mg-r-5"></i> Print</a> -->
       </div>
     </div>
 
@@ -37,10 +37,10 @@
                 @foreach($data as $d)
                 <tr>
                   <td>{{$loop->iteration}}</td>
-                  <td>{{$d->user->nama}}</td>
-                  <td>{{$d->alamat}}</td>
-                  <td>{{$d->no_hp}}</td>
-                  <td>{{$d->tempat_lahir}}, {{carbon\carbon::parse($d->tanggal_lahir)->translatedFormat('d F Y')}}</td>
+                  <td>{{$d->peneliti->user->nama}}</td>
+                  <td>{{$d->peneliti->alamat}}</td>
+                  <td>{{$d->peneliti->no_hp}}</td>
+                  <td>{{$d->peneliti->tempat_lahir}}, {{carbon\carbon::parse($d->tanggal_lahir)->translatedFormat('d F Y')}}</td>
                 </tr>
                 @endforeach
               </tbody>

@@ -62,7 +62,7 @@
               </div>
               <div class="form-group">
                 <p class="tx-medium mg-b-2"><a href="" class="link-01">Objek Penelitian</a></p>
-                <span class="tx-12 tx-color-03">{{$data->objek_penelitian->uraian}}</span>
+                <span class="tx-12 tx-color-03">{{$data->objek_penelitian->nama}}</span>
               </div>
               <div class="form-group">
                 <p class="tx-medium mg-b-2"><a href="" class="link-01">Uraian Penelitian</a></p>
