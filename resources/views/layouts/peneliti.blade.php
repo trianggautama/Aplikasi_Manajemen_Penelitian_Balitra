@@ -55,7 +55,7 @@
         </div><!-- aside-loggedin -->
         <ul class="nav nav-aside">
           @if(Auth::user()->status == 1)
-            @if(Auth::user()->penelitian->count() != 0)
+            @if(Auth::user()->peneliti->penelitian->count() != 0)
               <li class="nav-label mg-t-25">Akun</li>
               <li class="nav-item"><a href="{{Route('penelitiProfil')}}" class="nav-link"><i data-feather="user"></i>
                   <span>Profil</span></a></li>
