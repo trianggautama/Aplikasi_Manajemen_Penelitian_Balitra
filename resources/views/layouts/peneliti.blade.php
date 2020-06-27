@@ -43,7 +43,7 @@
     <div class="aside-body">
       <div class="aside-loggedin">
         <div class="d-flex align-items-center justify-content-start">
-          <a href="" class="avatar"><img src="https://via.placeholder.com/500" class="rounded-circle" alt=""></a>
+        <a href="" class="avatar"><img src="{{asset('images/user/'. Auth::user()->foto)}}" class="rounded-circle" alt=""></a>
           <div class="aside-alert-link">
           <a class="nav-link" data-toggle="tooltip" title="Sign out" href="{{ route('logout') }}"
           onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i
