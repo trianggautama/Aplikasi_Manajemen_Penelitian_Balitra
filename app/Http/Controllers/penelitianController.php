@@ -117,6 +117,7 @@ class penelitianController extends Controller
         if ($request->status == 1) {
             $data->status = $request->status;
         } else {
+            $data->status = $request->status;
 
             if (isset($request->catatan)) {
                 $data->catatan = $request->catatan;
