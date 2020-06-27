@@ -57,8 +57,7 @@
                         <option value="">-- pilih pendidikan terakhir --</option>
                         <option value="SD">SD</option>
                         <option value="SMP">SMP</option>
-                        <option value="SMA">SMA</option>
-                        <option value="SMA">SMA</option>
+                        <option value="SMA/SMK">SMA/SMK</option>
                         <option value="D1">D1</option>
                         <option value="D2">D2</option>
                         <option value="D3">D3</option>
