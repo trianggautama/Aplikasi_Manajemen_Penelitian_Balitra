@@ -114,12 +114,16 @@ class penelitianController extends Controller
     {
         // dd($request->all());
         $data = Penelitian::where('penelitian_id', $request->uuid)->first();
-        $data->status = $request->status;
-        if (isset($request->catatan)) {
-            $data->catatan = $request->catatan;
+        if ($request->status == 1) {
+            $data->status = $request->status;
         } else {
-            $data->catatan = null;
 
+            if (isset($request->catatan)) {
+                $data->catatan = $request->catatan;
+            } else {
+                $data->catatan = null;
+
+            }
         }
 
         $data->update();
