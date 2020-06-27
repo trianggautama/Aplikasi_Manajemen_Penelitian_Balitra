@@ -55,19 +55,23 @@
         </div><!-- aside-loggedin -->
         <ul class="nav nav-aside">
           @if(Auth::user()->status == 1)
-          <li class="nav-label mg-t-25">Akun</li>
-          <li class="nav-item"><a href="{{Route('penelitiProfil')}}" class="nav-link"><i data-feather="user"></i>
-              <span>Profil</span></a></li>
-          <li class="nav-label mg-t-25">Penelitian</li>
-          <li class="nav-item"><a class="nav-link" href="{{Route('penelitiPembimbingIndex')}}"><i
-                data-feather="user"></i>pembimbing</a></li>
-          <li class="nav-item"><a href="{{Route('penelitiPenelitianIndex')}}" class="nav-link"><i
-                data-feather="sunrise"></i> <span>Data Penelitian</span></a></li>
-          <li class="nav-item"><a href="{{Route('penelitiLaporanPenelitian')}}" class="nav-link"><i
-                data-feather="file-text"></i> <span>Laporan Penelitian</span></a></li>
-          <li class="nav-label mg-t-25">Lain lain</li>
-          <li class="nav-item"><a href="{{Route('penelitiPeminjamanIndex')}}" class="nav-link"><i
-                data-feather="box"></i> <span>Peminjaman Fasilitas</span></a></li>
+            @if(Auth::user()->penelitian->count() != 0)
+              <li class="nav-label mg-t-25">Akun</li>
+              <li class="nav-item"><a href="{{Route('penelitiProfil')}}" class="nav-link"><i data-feather="user"></i>
+                  <span>Profil</span></a></li>
+              <li class="nav-label mg-t-25">Penelitian</li>
+              <li class="nav-item"><a class="nav-link" href="{{Route('penelitiPembimbingIndex')}}"><i
+                    data-feather="user"></i>pembimbing</a></li>
+              <li class="nav-item"><a href="{{Route('penelitiPenelitianIndex')}}" class="nav-link"><i
+                    data-feather="sunrise"></i> <span>Data Penelitian</span></a></li>
+              <li class="nav-item"><a href="{{Route('penelitiLaporanPenelitian')}}" class="nav-link"><i
+                    data-feather="file-text"></i> <span>Laporan Penelitian</span></a></li>
+              <li class="nav-label mg-t-25">Lain lain</li>
+              <li class="nav-item"><a href="{{Route('penelitiPeminjamanIndex')}}" class="nav-link"><i
+                    data-feather="box"></i> <span>Peminjaman Fasilitas</span></a></li>
+            @else
+              Data Penelitian belum di input oleh admin
+            @endif
           @else
           <li class="nav-label mg-t-25"></li>
           <li class="nav-item"><a href="#" class="nav-link"><i data-feather="info"></i> <span>Akun Anda Belum Aktif <br>
