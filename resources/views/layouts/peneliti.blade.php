@@ -55,7 +55,9 @@
         </div><!-- aside-loggedin -->
         <ul class="nav nav-aside">
           @if(Auth::user()->status == 1)
-            @if(Auth::user()->peneliti->penelitian->count() != 0)
+            @if(Auth::user()->peneliti->penelitian->isEmpty())
+            <li class="nav-item"><a href="#" class="nav-link"><i data-feather="info"></i> <span>Data penelitian <br>belum diinput</span></a></li>
+            @else
               <li class="nav-label mg-t-25">Akun</li>
               <li class="nav-item"><a href="{{Route('penelitiProfil')}}" class="nav-link"><i data-feather="user"></i>
                   <span>Profil</span></a></li>
@@ -69,8 +71,6 @@
               <li class="nav-label mg-t-25">Lain lain</li>
               <li class="nav-item"><a href="{{Route('penelitiPeminjamanIndex')}}" class="nav-link"><i
                     data-feather="box"></i> <span>Peminjaman Fasilitas</span></a></li>
-            @else
-              Data Penelitian belum di input oleh admin
             @endif
           @else
           <li class="nav-label mg-t-25"></li>

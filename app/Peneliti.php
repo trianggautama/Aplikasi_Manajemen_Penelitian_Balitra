@@ -13,4 +13,9 @@ class Peneliti extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function penelitian()
+    {
+        return $this->hasMany(Penelitian::class);
+    }
 }
