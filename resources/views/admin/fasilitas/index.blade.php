@@ -85,8 +85,8 @@
             <select name="kategori" id="" class="form-control" required>
               <option value="">-- pilih Kategori --</option>
               <option value="Rumah Kaca">Rumah Kaca</option>
-              <option value="Alat Lab">Alat Lab</option>
               <option value="Peralatan Kebun">Peralatan Kebun</option>
+              <option value="Lahan">Lahan</option>
             </select>
           </div>
           <div class="form-group">
