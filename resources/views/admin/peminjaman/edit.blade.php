@@ -43,19 +43,19 @@
               </div>
               <div class="form-group">
             <label for="Nama">Tujuan Penggunaan</label>
-            <input type="number" name="tujuan_penggunaan" placeholder="" class="form-control" required>
+            <input type="number" name="tujuan_penggunaan" placeholder="" class="form-control" value="{{$data->tujuan_penggunaan}}" required>
           </div>
               <div class="row">
             <div class="col-md-6">
               <div class="form-group">
                 <label for="Nama">Tanggal Mulai Peminjaman</label>
-                <input type="date" name="tanggal_pinjam" placeholder="" class="form-control" required>
+                <input type="date" name="tanggal_pinjam" placeholder="" class="form-control" value="{{$data->tanggal_pinjam}}"  required>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label for="Nama">Tanggal Pengembalian</label>
-                <input type="date" name="tanggal_pengembalian" placeholder="" class="form-control" required>
+                <input type="date" name="tanggal_pengembalian" placeholder="" class="form-control" value="{{$data->tanggal_pengembalian}}" required>
               </div>
             </div>
           </div>
