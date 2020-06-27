@@ -26,7 +26,7 @@
         <div class="card card-body mg-b-10">
           <p>
             <a class="btn btn-secondary" data-toggle="collapse" href="#collapseExample" aria-controls="collapseExample">
-              Buat Silabus Penelitian
+            {{carbon\carbon::parse($d->created_at)->translatedFormat('d F Y')}}
             </a>
             <a href="{{Route('jobdeskEdit',['uuid' => $d->uuid])}}" class="btn btn-primary btn-icon"><i
                 data-feather="edit"></i></a>
