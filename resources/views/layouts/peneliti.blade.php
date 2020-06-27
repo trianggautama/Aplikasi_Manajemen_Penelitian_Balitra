@@ -55,7 +55,7 @@
         </div><!-- aside-loggedin -->
         <ul class="nav nav-aside">
           @if(Auth::user()->status == 1)
-            @if(Auth::user()->peneliti->penelitian->isEmpty())
+            @if(Auth::user()->peneliti->penelitian->count() == 0)
             <li class="nav-item"><a href="#" class="nav-link"><i data-feather="info"></i> <span>Data penelitian <br>belum diinput</span></a></li>
             @else
               <li class="nav-label mg-t-25">Akun</li>

@@ -137,7 +137,7 @@ class pembimbingController extends Controller
     public function penelitiPembimbingIndex()
     {
         $peneliti_id = Auth::user()->peneliti->id;
-        $penelitian = Penelitian::findOrFail($peneliti_id);
+        $penelitian = Penelitian::where('peneliti_id',$peneliti_id)->first();
         $data = User::where('id', $penelitian->user_id)->OrderBy('id', 'Desc')->where('role', 2)->get();
         return view('peneliti.pembimbing.index', compact('data'));
     }
