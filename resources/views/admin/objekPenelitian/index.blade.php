@@ -7,11 +7,11 @@
       <div>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb breadcrumb-style1 mg-b-10">
-            <li class="breadcrumb-item"><a href="#">Permohonan</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Permohonan Penelitian</li>
+            <li class="breadcrumb-item"><a href="#">Objek Penelitian</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Objek Penelitian Penelitian</li>
           </ol>
         </nav>
-        <h4 class="mg-b-0 tx-spacing--1">Permohonan Penelitian</h4>
+        <h4 class="mg-b-0 tx-spacing--1">Objek Penelitian Penelitian</h4>
       </div>
       <div class="d-none d-md-block">
         <a href="{{route('objekPenelitianCetak')}}" class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5" target="_blank"><i data-feather="printer"
