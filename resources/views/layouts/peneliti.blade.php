@@ -71,7 +71,7 @@
           @else
           <li class="nav-label mg-t-25"></li>
           <li class="nav-item"><a href="#" class="nav-link"><i data-feather="info"></i> <span>Akun Anda Belum Aktif <br>
-                Silahkan hubungi admin</span></a></li>
+                Silahkan tunggu verifikasi admin</span></a></li>
           @endif
         </ul>
       </div>

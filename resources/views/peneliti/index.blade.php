@@ -11,7 +11,7 @@
                   <li class="breadcrumb-item active" aria-current="page">Peneliti</li>
                 </ol>
               </nav>
-              <h4 class="mg-b-0 tx-spacing--1">beranda Peneliti</h4>
+              <h4 class="mg-b-0 tx-spacing--1">Beranda Peneliti</h4>
             </div>
             <div class="d-none d-md-block">
             </div>
