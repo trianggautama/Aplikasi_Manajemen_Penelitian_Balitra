@@ -35,11 +35,21 @@
                   <td>{{$loop->iteration}}</td>
                   <td>{{$d->peneliti->user->nama}}</td>
                   <td>{{$d->user->nama}}</td>
-                  <td>Sudah Di upload</td>
                   <td>
+                    @if($d->hasil_penelitian)
+                      <a href="{{asset('lampiran/hasilPenelitian/'.$d->hasil_penelitian->file)}}" class="btn btn-success btn-icon text-white" data-toggle="tooltip" data-placement="top" title="Download Laporan Hasil Penelitian "  ><i data-feather="printer"></i> </a>
+                    @else
+                      Belum ada Laporan Penelitian
+                    @endif
+                  </td>                  
+                  <td>
+                  @if($d->hasil_penelitian)
                     <a href="{{Route('PembimbingLaporanPenelitianDetail',['uuid'=>$d->uuid])}}" class="btn btn-default btn-warning btn-sm   p-2">
                       <i data-feather="info"></i>
                     </a>
+                  @else
+                  -
+                  @endif
                   </td>
                 </tr>
                 @endforeach

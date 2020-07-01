@@ -49,13 +49,13 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="Nama">Tanggal Mulai Peminjaman</label>
-                <input type="date" name="tanggal_pinjam" placeholder="" class="form-control" value="{{$data->tanggal_pinjam}}"  required>
+                <input type="date" name="tanggal_mulai" placeholder="" class="form-control" value="{{$data->tanggal_mulai}}"  required>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label for="Nama">Tanggal Pengembalian</label>
-                <input type="date" name="tanggal_pengembalian" placeholder="" class="form-control" value="{{$data->tanggal_pengembalian}}" required>
+                <input type="date" name="tanggal_selesai" placeholder="" class="form-control" value="{{$data->tanggal_selesai}}" required>
               </div>
             </div>
           </div>

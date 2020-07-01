@@ -32,7 +32,7 @@
                 data-feather="edit"></i></a>
             <button type="button" class="btn btn-danger btn-icon" onclick="Hapus('{{$d->uuid}}','{{$d->uraian}}')"><i
                 data-feather="delete"></i></button>
-            <button id="tambahVerif" data-status="{{$d->status}}" data-id="{{$d->uuid}}" class="btn btn-success btn-icon"
+            <button  data-status="{{$d->status}}" data-id="{{$d->uuid}}" class="btn btn-success btn-icon tambahVerif"
               data-toggle="tooltip" data-placement="top" title="Verifikasi" data-toggle="modal"><i
                 data-feather="check"></i></button>
           </p>
@@ -181,7 +181,7 @@
     $('#modalJob').modal('show');
   });
 
-  $("#tambahVerif").click(function(){
+  $(".tambahVerif").click(function(){
     $('#catatanform').hide();
     var uuid = $(this).data("id");
     var status = $(this).data("status");
