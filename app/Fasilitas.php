@@ -9,5 +9,10 @@ use Illuminate\Notifications\Notifiable;
 class Fasilitas extends Model
 {
     use Notifiable;
-    use Uuid;
+    use Uuid; 
+
+    public function peminjaman()
+    {
+        return $this->hasMany(Peminjaman_fasilitas::class);
+    }
 }

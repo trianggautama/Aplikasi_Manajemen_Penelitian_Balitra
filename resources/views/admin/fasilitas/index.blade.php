@@ -14,8 +14,10 @@
         <h4 class="mg-b-0 tx-spacing--1">Fasilitas Penelitian</h4>
       </div>
       <div class="d-none d-md-block">
+        <a href="{{Route('analisisFasilitasCetak')}}" class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5" target="_blank"><i data-feather="printer"
+            class="wd-10 mg-r-5"></i>Analisis Cetak</a>
         <a href="{{Route('fasilitasCetak')}}" class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5" target="_blank"><i data-feather="printer"
-            class="wd-10 mg-r-5"></i> Print</a>
+            class="wd-10 mg-r-5"></i> Cetak</a>
         <a class="btn btn-sm pd-x-15 btn-dark btn-uppercase mg-l-5" href="#modal2" data-toggle="modal"><i
             data-feather="plus" class="wd-10 mg-r-5"></i> tambah Data</a>
       </div>

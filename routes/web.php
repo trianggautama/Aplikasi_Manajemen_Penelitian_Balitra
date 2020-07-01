@@ -104,9 +104,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/jobdesk/{uuid}', 'penelitianController@jobdeskIndex')->name('jobdeskIndex');
 
 
-    //CETAK REPORT
+    //CETAK REPORT 
     Route::get('/objekPenelitian/cetak', 'reportController@objekPenelitianCetak')->name('objekPenelitianCetak');
+    Route::get('/objekPenelitian/analisis/cetak', 'reportController@analisisObjekPenelitianCetak')->name('analisisObjekPenelitianCetak');
     Route::get('/fasilitas/cetak', 'reportController@fasilitasCetak')->name('fasilitasCetak');
+    Route::get('/fasilitas/analisis/cetak', 'reportController@analisisFasilitasCetak')->name('analisisFasilitasCetak');
     Route::get('/permohonan/cetak', 'reportController@permohonanCetak')->name('permohonanCetak');
     Route::post('/permohonan/filter', 'reportController@permohonanFilter')->name('permohonanFilterCetak');
     Route::get('/pembimbing/biodata/cetak/{uuid}', 'reportController@pembimbingCetakBiodata')->name('pembimbingCetakBiodata');
@@ -115,6 +117,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/peneliti/cetak', 'reportController@penelitiCetak')->name('penelitiCetak');
     Route::get('/jobdesk/cetak/{uuid}', 'reportController@jobdeskCetak')->name('jobdeskCetak'); 
     Route::get('/peminjaman/cetak', 'reportController@peminjamanCetak')->name('peminjamanCetak');
+    Route::get('/pembimbing/cetak', 'reportController@pembimbingCetak')->name('pembimbingCetak');
+    Route::get('/peminjaman/surat/cetak/{uuid}', 'reportController@peminjamanSuratCetak')->name('peminjamanSuratCetak');
+
 
 
     //HALAMAN PEMBIMBING - MENU PENELITI

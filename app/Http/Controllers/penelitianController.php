@@ -112,17 +112,10 @@ class penelitianController extends Controller
 
     public function jobdeskStatusUpdate(Request $request)
     {
-<<<<<<< HEAD
         $data = Jobdesk::where('uuid', $request->uuid)->first();
         $data->status = $request->status;
         if (isset($request->catatan)) {
             $data->catatan = $request->catatan;
-=======
-        // dd($request->all());
-        $data = Penelitian::where('penelitian_id', $request->uuid)->first();
-        if ($request->status == 1) {
-            $data->status = $request->status;
->>>>>>> af521d8c9000dd1b94f09a282c3f85a012614dc6
         } else {
             $data->status = $request->status;
 

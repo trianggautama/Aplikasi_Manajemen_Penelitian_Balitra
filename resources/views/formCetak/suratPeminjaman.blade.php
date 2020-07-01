@@ -15,7 +15,6 @@
         table,
         th,
         td {
-            border: 1px solid #708090;
         }
         th {
             background-color: darkslategray;
@@ -32,7 +31,7 @@
         .header {
             margin-bottom: 0px;
             text-align: center;
-            height: 150px;
+            height: 100px;
             padding: 0px;
         }
         .pemko {
@@ -82,48 +81,60 @@
 
     <div class="container">
         <div class="isi">
-            <h2 style="text-align:center;">DATA PENELITIAN</h2>
-            <table id="dataTable" class="table text-center">
-              <thead>
+            <table>
                 <tr>
-                  <th>No</th>
-                  <th>Peneliti</th>
-                  <th>Pembimbing</th>
-                  <th>Estimasi</th>
-                  <th>Status Penelitian</th>
+                    <td width="70%"></td>
+                    <td><p>Banjarbaru, {{$tgl}}</p></td>
                 </tr>
-              </thead>
-              <tbody>
-                @foreach($data as $d)
-                <tr>
-                  <td>{{$loop->iteration}}</td>
-                  <td>{{$d->peneliti->user->nama}}</td>
-                  <td>{{$d->user->nama}}</td>
-                  <td>{{$d->estimasi}} Hari Kerja</td>
-                  <td>
-                    @if($d->status == 0)
-                    <p class="text-primary">On Progress</p>
-                    @elseif($d->status == 1)
-                    <p class="text-pending">Ditunda</p>
-                    @else
-                    <p class="text-success">Selesai</p>
-                    @endif
-                  </td>
-                </tr>
-                @endforeach
-              </tbody>
             </table>
+            <p>Perihal : Peminjaman Fasilitas penelitian</p>
             <br>
+            <p>Kepada Yth. <br>
+            Kaepala Laboratorium Balittra  <br>
+            di Tempat
+    </p>
             <br>
+            <p> Dengan Hormat, <br>
+            Dengan ini saya selaku yang melakukan penelitian.</p>
+            <table>
+                <tr>
+                    <td width="23%">Nama</td>
+                    <td>: {{$data->peneliti->user->nama}}</td>
+                </tr>
+                <tr>
+                    <td>NIK</td>
+                    <td>:{{$data->peneliti->NIK}}</td>
+                </tr>
+            </table>
+            <p>Bermaksud untuk meminjam fasilitas Balittra guna melancarkan kegiatan penelitian yang akan saya lakukan berikut adalah detail peminjaman :</p>
+            <table>
+                <tr>
+                    <td width="23%">Fasilitas</td>
+                    <td>: {{$data->fasilitas->nama}}</td>
+                </tr>
+                <!-- <tr>
+                    <td>Valume</td>
+                    <td>: </td>
+                </tr> -->
+                <tr>
+                    <td>Maksud peminjaman</td>
+                    <td>: {{$data->tujuan_peminjaman}}</td>
+                </tr>
+                <tr>
+                    <td>Durasi Peminjaman</td>
+                    <td>: {{carbon\carbon::parse($data->tanggal_mulai)->translatedFormat('d F Y')}} -
+                    {{carbon\carbon::parse($data->tanggal_selesai)->translatedFormat('d F Y')}}</td>
+                </tr>
+            </table>
+            <p>Dengan ini saya bertanggung jawab apabila ada kerusakan terhadap fasilitas yang digunakan,demikian permohonan dari sanya atas perhatiannya saya ucapkan terimakasih</p>
             <div class="ttd">
                 <h5>
                     <p>Banjarbaru, {{$tgl}}</p>
                 </h5>
-                <h5>Kepala Balitra</h5>
+                <h5>PENELITI</h5>
                 <br>
                 <br>
-                <h5 style="text-decoration:underline;">Nama</h5>
-                <h5>NIP.19810405 200612312 1 002</h5>
+                <h5 style="text-decoration:underline;">{{$data->peneliti->user->nama}}</h5>
             </div>
         </div>
     </div>

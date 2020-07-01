@@ -82,33 +82,25 @@
 
     <div class="container">
         <div class="isi">
-            <h2 style="text-align:center;">DATA PENELITIAN</h2>
+            <h2 style="text-align:center;">DATA PEMBIMBING LAPANGAN </h2>
             <table id="dataTable" class="table text-center">
               <thead>
                 <tr>
                   <th>No</th>
-                  <th>Peneliti</th>
-                  <th>Pembimbing</th>
-                  <th>Estimasi</th>
-                  <th>Status Penelitian</th>
+                  <th>NIP</th>
+                  <th>Nama</th>
+                  <th>Jabatan</th>
+                  <th>Username</th>
                 </tr>
               </thead>
               <tbody>
                 @foreach($data as $d)
                 <tr>
                   <td>{{$loop->iteration}}</td>
-                  <td>{{$d->peneliti->user->nama}}</td>
-                  <td>{{$d->user->nama}}</td>
-                  <td>{{$d->estimasi}} Hari Kerja</td>
-                  <td>
-                    @if($d->status == 0)
-                    <p class="text-primary">On Progress</p>
-                    @elseif($d->status == 1)
-                    <p class="text-pending">Ditunda</p>
-                    @else
-                    <p class="text-success">Selesai</p>
-                    @endif
-                  </td>
+                  <td>{{$d->data_personal->NIP}}</td>
+                  <td>{{$d->nama}}</td>
+                  <td>{{$d->data_personal->jabatan}}</td>
+                  <td>{{$d->username}}</td>
                 </tr>
                 @endforeach
               </tbody>
