@@ -18,6 +18,7 @@
         <button id="tambahVerif" data-status="{{$data->status}}" data-id="{{$data->id}}"
           class="btn btn-success btn-icon" data-toggle="tooltip" data-placement="top" title="Verifikasi"
           data-toggle="modal"><i data-feather="check"></i> Verifikasi Laporan Akhir Penelitian </button>
+          <a href="{{Route('inputPenilaian',['uuid'=> $data->uuid])}}" class="btn btn-primary btn-icon" data-toggle="tooltip" data-placement="top" title="Verifikasi" data-toggle="modal"><i data-feather="file-text"></i> Input Penilaian Penelitian</a>
       </div>
     </div>
     <div class="row row-xs">

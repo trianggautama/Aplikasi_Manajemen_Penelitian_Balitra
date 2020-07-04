@@ -88,6 +88,14 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/penelitian/jobdesk/edit/{uuid}', 'penelitianController@jobdeskEdit')->name('jobdeskEdit');
     Route::put('/penelitian/jobdesk/edit/{uuid}', 'penelitianController@jobdeskUpdate')->name('jobdeskUpdate');
 
+    //form penilaian
+    Route::get('/formPenilaian', 'formPenilaianController@index')->name('formPenilaianIndex');
+    Route::post('/formPenilaian', 'formPenilaianController@store')->name('formPenilaianStore');
+    Route::get('/formPenilaian/detail/{uuid}', 'formPenilaianController@show')->name('formPenilaianShow');
+    Route::get('/formPenilaian/edit/{uuid}', 'formPenilaianController@edit')->name('formPenilaianEdit');
+    Route::put('/formPenilaian/edit/{uuid}', 'formPenilaianController@update')->name('formPenilaianUpdate');
+    Route::get('/formPenilaian/delete/{uuid}', 'formPenilaianController@destroy')->name('formPenilaianDestroy');
+
     //penelitian
     Route::get('/peminjaman', 'peminjamanController@index')->name('peminjamanIndex');
     Route::post('/peminjaman', 'peminjamanController@store')->name('peminjamanStore');
@@ -120,8 +128,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/pembimbing/cetak', 'reportController@pembimbingCetak')->name('pembimbingCetak');
     Route::get('/peminjaman/surat/cetak/{uuid}', 'reportController@peminjamanSuratCetak')->name('peminjamanSuratCetak');
 
-
-
     //HALAMAN PEMBIMBING - MENU PENELITI
     Route::get('pembimbing/peneliti', 'penelitiController@pembimbingPenelitiIndex')->name('pembimbingPenelitiIndex');
 
@@ -140,6 +146,7 @@ Route::group(['middleware' => ['auth']], function () {
     //HALMAAN PENELITI - MENU PEMBIMBING
     Route::get('peneliti/pembimbing', 'pembimbingController@penelitiPembimbingIndex')->name('penelitiPembimbingIndex');
     Route::get('peneliti/peneliti/profil', 'UserController@penelitiProfil')->name('penelitiProfil');
+    Route::get('input/penilaian/{uuid}', 'hasilPenelitianController@inputPenilaian')->name('inputPenilaian'); 
 
     //HALAMAN PENELITI - MENU PENELITIAN
     Route::get('peneliti/penelitian', 'penelitianController@penelitiPenelitianIndex')->name('penelitiPenelitianIndex');

@@ -85,4 +85,10 @@ class hasilPenelitianController extends Controller
         $data = Penelitian::where('uuid', $uuid)->first();
         return view('pembimbing.hasilPenelitian.show', compact('data'));
     }
+
+    public function inputPenilaian($uuid)
+    {
+        $penelitian = Penelitian::where('uuid',$uuid)->first();
+        return view('pembimbing.Penilaian.index',compact('penelitian'));
+    }
 }
