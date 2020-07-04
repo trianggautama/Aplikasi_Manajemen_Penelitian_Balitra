@@ -105,4 +105,21 @@ class hasilPenelitianController extends Controller
 
         return back()->withSuccess('Data berhasil disimpan');
     }
+
+    public function HasilPeneltianStatusUpdate(Request $request)
+    {
+        $data = Hasil_penelitian::findOrFail($request->uuid)->first();
+        if ($request->status == 1 || $request->status == 0) {
+            $data->status = $request->status;
+            $data->catatan = null;
+        } else {
+            $data->status = $request->status;
+            $data->catatan = $request->catatan;
+        }
+
+        $data->update();
+
+        return redirect()->back()->withSuccess('Status berhasil diubah');
+
+    }
 }

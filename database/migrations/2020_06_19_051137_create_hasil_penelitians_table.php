@@ -19,6 +19,7 @@ class CreateHasilPenelitiansTable extends Migration
             $table->foreignId('penelitian_id')->onDelete('cascade');
             $table->string('judul', 100);
             $table->tinyInteger('status')->default(0);
+            $table->string('catatan', 100)->nullable();
             $table->string('file')->nullable();
             $table->timestamps();
         });

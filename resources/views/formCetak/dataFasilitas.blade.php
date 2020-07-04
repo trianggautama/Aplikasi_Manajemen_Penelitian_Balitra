@@ -74,8 +74,8 @@
             <img class="pemko" src="depan/images/logo.png">
         </div>
         <div class="headtext">
-            <h2 style="margin:0px;">Balai Penelitian Pertanian Lahan Rawa (BALITTRA)</h2>
-            <p style="margin:0px;">Alamat : Jalan Kebun Karet,Loktabat Utara,Banjarbaru,Kalimantan Selatan. Telp: 0511-4772534,4773034 Kode Pos: 70712</p>
+            <h3 style="margin:0px;">BALAI PENELITIAN PERTANIAN LAHAN RAWA</h3>
+            <p style="margin:0px;">Alamat : Jl.Kebun Karet,Loktabat Utara,Kotak Pos 31,Banjarbaru 70712,Kalimantan Selatan. Telepon :(0511) 4772534, 4773034</p>
         </div>
         <hr>
     </div>
@@ -110,7 +110,7 @@
                 <h5>
                     <p>Banjarbaru, {{$tgl}}</p>
                 </h5>
-                <h5>Kepala Balitra</h5>
+                <h5>Kepala BALITTRA</h5>
                 <br>
                 <br>
                 <h5 style="text-decoration:underline;">{{$pejabat->nama}}</h5>

@@ -15,10 +15,13 @@
         </nav>
       </div>
       <div class="d-none d-md-block">
-        <button id="tambahVerif" data-status="{{$data->status}}" data-id="{{$data->id}}"
-          class="btn btn-success btn-icon" data-toggle="tooltip" data-placement="top" title="Verifikasi"
-          data-toggle="modal"><i data-feather="check"></i> Verifikasi Laporan Akhir Penelitian </button>
-          <a href="{{Route('inputPenilaian',['uuid'=> $data->uuid])}}" class="btn btn-primary btn-icon" data-toggle="tooltip" data-placement="top" title="Verifikasi" data-toggle="modal"><i data-feather="file-text"></i> Input Penilaian Penelitian</a>
+        <button id="tambahVerif" data-status="{{$data->hasil_penelitian->status}}"
+          data-id="{{$data->hasil_penelitian->id}}" class="btn btn-success btn-icon" data-toggle="tooltip"
+          data-placement="top" title="Verifikasi" data-toggle="modal"><i data-feather="check"></i> Verifikasi Laporan
+          Akhir Penelitian </button>
+        <a href="{{Route('inputPenilaian',['uuid'=> $data->uuid])}}" class="btn btn-primary btn-icon"
+          data-toggle="tooltip" data-placement="top" title="Verifikasi" data-toggle="modal"><i
+            data-feather="file-text"></i> Input Penilaian Penelitian</a>
       </div>
     </div>
     <div class="row row-xs">
@@ -31,7 +34,7 @@
               <div class="form-group">
                 <p class="tx-medium mg-b-2"><a href="" class="link-01">Nama</a></p>
                 <span class="tx-12 tx-color-03">{{$data->peneliti->user->nama}}</span>
-              </div> 
+              </div>
               <div class="form-group">
                 <p class="tx-medium mg-b-2"><a href="" class="link-01">NIK</a></p>
                 <span class="tx-12 tx-color-03">{{$data->peneliti->NIK}}</span>
@@ -69,7 +72,9 @@
               </div>
               <div class="form-group">
                 <p class="tx-medium mg-b-2"><a href="" class="link-01">File Lampiran</a></p>
-                <a href="{{Route('lampiranPreview',['uuid' => $data->uuid])}}"  class="btn btn-xs btn-secondary pd-y-5 pd-x-7" target="_blank"><i data-feather="paperclip"></i>  Lampiran  File</a>
+                <a href="{{Route('lampiranPreview',['uuid' => $data->uuid])}}"
+                  class="btn btn-xs btn-secondary pd-y-5 pd-x-7" target="_blank"><i data-feather="paperclip"></i>
+                  Lampiran File</a>
               </div>
             </div>
           </div>
@@ -139,7 +144,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="{{Route('penelitianJobdeskUpdate')}}" method="post" enctype="multipart/form-data"
+        <form action="{{Route('HasilPeneltianStatusUpdate')}}" method="post" enctype="multipart/form-data"
           id="formPerbaikan">
           @csrf
           @method('PUT')

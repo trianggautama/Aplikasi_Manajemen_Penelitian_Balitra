@@ -127,8 +127,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/pembimbing/cetak', 'reportController@pembimbingCetak')->name('pembimbingCetak');
     Route::get('/peminjaman/surat/cetak/{uuid}', 'reportController@peminjamanSuratCetak')->name('peminjamanSuratCetak');
     Route::get('/penilaianPenelitian/cetak/{uuid}', 'reportController@penilaianCetak')->name('penilaianCetak');
-    Route::get('/biodataPemohon/cetak/{uuid}', 'reportController@biodataPemohon')->name('biodataPemohonCetak'); 
-
+    Route::get('/biodataPemohon/cetak/{uuid}', 'reportController@biodataPemohon')->name('biodataPemohonCetak');
 
     //HALAMAN PEMBIMBING - MENU PENELITI
     Route::get('pembimbing/peneliti', 'penelitiController@pembimbingPenelitiIndex')->name('pembimbingPenelitiIndex');
@@ -138,6 +137,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/penelitian/jobdesk/{uuid}', 'penelitianController@jobdesk')->name('penelitianJobdesk');
     Route::post('/penelitian/jobdesk/create', 'penelitianController@jobdeskStore')->name('penelitianJobdeskStore');
     Route::put('/penelitian/jobdesk/update', 'penelitianController@jobdeskStatusUpdate')->name('penelitianJobdeskUpdate');
+    Route::put('/penelitian/jobdesk/updateHasil', 'hasilPenelitianController@HasilPeneltianStatusUpdate')->name('HasilPeneltianStatusUpdate');
     Route::get('/penelitian/jobdesk/delete', 'penelitianController@jobdeskDestroy')->name('penelitianJobdeskDestroy');
 
     Route::get('pembimbing/hasilPenelitian', 'hasilPenelitianController@pembimbingIndex')->name('pembimbingLaporanPenelitian');
