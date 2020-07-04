@@ -11,7 +11,7 @@
             <li class="breadcrumb-item active" aria-current="page">Filter</li>
           </ol>
         </nav>
-        <h4 class="mg-b-0 tx-spacing--1">filter Cetak </h4>
+        <h4 class="mg-b-0 tx-spacing--1">Filter Cetak </h4>
       </div>
     </div>
 
@@ -22,9 +22,9 @@
             <form action="" method="post">
               @csrf
               <div class="form-group">
-                <label for="">Select</label>
+                <label for="">Pilih Status</label>
                 <select name="status" id="status" class="form-control">
-                    <option value=""> -- pilih status --</option>
+                    <option value=""> -- Pilih Status --</option>
                     <option value="2">Disetujui</option>
                     <option value="1">Pending</option>
                     <option value="3">Ditolak</option>
@@ -35,7 +35,7 @@
           <div class="card-footer text-right">
             <button type="button" class="btn btn-secondary tx-13" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary tx-13"><i data-feather="save" class="wd-10 mg-r-5"></i>
-              Simpan</button>
+              Cetak</button>
           </div>
           </form>
         </div>
