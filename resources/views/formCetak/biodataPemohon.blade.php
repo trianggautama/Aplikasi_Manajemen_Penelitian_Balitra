@@ -89,7 +89,7 @@
             <table>
                 <tr>
                     <td width="25%">Nama</td>
-                    <td>: {{$data->nama}}</td>
+                    <td>: {{$data->user->nama}}</td>
                 </tr>
                 <tr>
                     <td width="20%">NIP</td>
