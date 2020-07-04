@@ -43,7 +43,7 @@
                       <i data-feather="delete"></i>
                     </button>
                   </td>
-                </tr>
+                </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
                 @endforeach
               </tbody>
             </table>

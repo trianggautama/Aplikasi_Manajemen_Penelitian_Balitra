@@ -83,7 +83,7 @@
         <div class="isi">
             <h2 style="text-align:center;">DATA PENILAIAN PENELITIAN</h2>
             <br>
-            <p>Nama Penilaian :{{$penelitian->uraian}}</p>
+            <p>Nama Penelitian :{{$penelitian->objek_penelitian->nama}}</p>
             <p>Nama Peneliti  : {{$penelitian->peneliti->user->nama}}</p>
             <table id="dataTable" class="table text-center">
               <thead>
