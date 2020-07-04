@@ -23,10 +23,11 @@
             <form action="" method="post">
               {{method_field('PUT') }}
               @csrf
-          <div class="form-group">
-            <label for="Nama">uraian Objek Penilaian</label>
-            <textarea name="uraian" id="" class="form-control" required></textarea>
-          </div>
+              <div class="form-group">
+                <label for="Nama">uraian Objek Penilaian</label>
+                <textarea name="objek_penilaian" id="" class="form-control"
+                  required>{{$data->objek_penilaian}}</textarea>
+              </div>
               <div class="card-footer text-right">
                 <a href="{{route('objekPenelitianIndex')}}" type="button" class="btn btn-secondary tx-13"
                   data-dismiss="modal">Batal</a>

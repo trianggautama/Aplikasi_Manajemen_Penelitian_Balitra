@@ -2,38 +2,41 @@
 
 namespace App\Http\Controllers;
 
+use App\Penilaian;
 use Illuminate\Http\Request;
 
 class formPenilaianController extends Controller
 {
     public function index()
     {
-
-        return view('admin.formPenilaian.index');
+        $data = Penilaian::latest()->get();
+        return view('admin.formPenilaian.index', compact('data'));
     }
 
-    public function store(Request $request)
+    public function store(Request $req)
     {
-
+        $data = Penilaian::create($req->all());
         return redirect()->route('formPenilaianIndex')->with('success', 'Data Berhasil Disimpan');
     }
 
     public function edit($uuid)
     {
-        return view('admin.formPenilaian.edit');
+        $data = Penilaian::where('uuid', $uuid)->first();
+        return view('admin.formPenilaian.edit', compact('data'));
     }
 
+    public function update(Request $req, $uuid)
+    {
+        $data = Penilaian::where('uuid', $uuid)->first();
+        $data->fill($req->all())->save();
 
-    // public function update(Request $request, $uuid)
-    // {
-      
+        return redirect()->route('formPenilaianIndex')->with('success', 'Data Berhasil Diubah');
+    }
 
-    //     return redirect()->route('objekPenelitianIndex')->with('success', 'Data Berhasil Diubah');
-    // }
+    public function destroy($uuid)
+    {
+        $data = Penilaian::where('uuid', $uuid)->first()->delete();
 
-    // public function destroy($uuid)
-    // {
-
-    //     return redirect()->route('objekPenelitianIndex')->with('success', 'Data Berhasil Dihapus');
-    // }
+        return back();
+    }
 }

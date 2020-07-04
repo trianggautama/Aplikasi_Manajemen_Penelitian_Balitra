@@ -33,16 +33,25 @@
                 </tr>
               </thead>
               <tbody>
+                @foreach($data as $d)
                 <tr>
-                  <td>1</td>
-                  <td>uraian Penilaian A ?</td>
-                  <td>0</td>
+                  <td>{{$loop->iteration}}</td>
+                  <td>{{$d->objek_penilaian}}</td>
                   <td>
-                    <button id="tambahVerif" data-status="" data-id=""
-                        class="btn btn-success btn-icon" data-toggle="tooltip" data-placement="top" title="Verifikasi"
-                        data-toggle="modal"><i data-feather="check"></i> input Nilai</button>
+                    @php
+                    $nilai =
+                    $d->hasil_penilaian()->where('penelitian_id',$penelitian->id)->where('penilaian_id',$d->id)->pluck('nilai')
+                    @endphp
+
+                    {{preg_replace('/[^\p{L}\p{N}\s]/u', '', $nilai)}}
+                  </td>
+                  <td>
+                    <button data-status="" data-id="{{$d->id}}" class="btn btn-success tambahVerif btn-icon"
+                      data-toggle="tooltip" data-placement="top" title="Verifikasi" data-toggle="modal"><i
+                        data-feather="check"></i> input Nilai</button>
                   </td>
                 </tr>
+                @endforeach
               </tbody>
             </table>
           </div><!-- df-example -->
@@ -64,12 +73,13 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="{{Route('penelitianJobdeskUpdate')}}" method="post" enctype="multipart/form-data"
-          id="formPerbaikan">
+        <form action="{{Route('penilaianStore')}}" method="post" enctype="multipart/form-data" id="formPerbaikan">
           @csrf
           <div class="" id="catatanform">
             <div class="form-group">
               <label for="Nama">Nilai</label>
+              <input type="hidden" name="id" id="id">
+              <input type="hidden" name="penelitian_id" value="{{$penelitian->id}}">
               <input type="number" class="form-control" name="nilai">
             </div>
           </div>
@@ -98,8 +108,10 @@
         });
       });
 
-  $("#tambahVerif").click(function(){
+  $(".tambahVerif").click(function(){
+    var id = $(this).data("id");
     $('#modalVerif').modal('show');
+    $('#id').val(id);
   });
 
 </script>

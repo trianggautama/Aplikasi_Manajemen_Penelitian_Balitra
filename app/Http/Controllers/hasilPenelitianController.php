@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Hasil_penelitian;
+use App\Hasil_penilaian;
 use App\Penelitian;
+use App\Penilaian;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -88,7 +90,19 @@ class hasilPenelitianController extends Controller
 
     public function inputPenilaian($uuid)
     {
-        $penelitian = Penelitian::where('uuid',$uuid)->first();
-        return view('pembimbing.Penilaian.index',compact('penelitian'));
+        $penelitian = Penelitian::where('uuid', $uuid)->first();
+        $data = Penilaian::latest()->get();
+        return view('pembimbing.Penilaian.index', compact('penelitian', 'data'));
+    }
+
+    public function penilaianStore(Request $req)
+    {
+        $data = new Hasil_penilaian;
+        $data->penelitian_id = $req->penelitian_id;
+        $data->penilaian_id = $req->id;
+        $data->nilai = $req->nilai;
+        $data->save();
+
+        return back()->withSuccess('Data berhasil disimpan');
     }
 }

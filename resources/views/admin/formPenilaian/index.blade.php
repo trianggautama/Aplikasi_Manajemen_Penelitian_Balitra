@@ -31,18 +31,20 @@
                 </tr>
               </thead>
               <tbody>
+                @foreach($data as $d)
                 <tr>
-                  <td>1</td>
-                  <td>Apakah Proses Pelaksanaan Tugas Harian dikerjakan tepat waktu ?</td>
+                  <td>{{$loop->iteration}}</td>
+                  <td>{{$d->objek_penilaian}}</td>
                   <td>
-                    <a href="{{Route('formPenilaianEdit','kjbb')}}" class="btn btn-primary btn-icon">
+                    <a href="{{Route('formPenilaianEdit',['uuid' => $d->uuid])}}" class="btn btn-primary btn-icon">
                       <i data-feather="edit"></i>
                     </a>
-                    <button type="button" class="btn btn-danger btn-icon"  onclick="Hapus()">
+                    <button type="button" class="btn btn-danger btn-icon" onclick="Hapus()">
                       <i data-feather="delete"></i>
                     </button>
                   </td>
                 </tr>
+                @endforeach
               </tbody>
             </table>
           </div><!-- df-example -->
@@ -64,16 +66,16 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="{{Route('objekPenelitianStore')}}" method="POST">
+        <form action="{{Route('formPenilaianStore')}}" method="POST">
           @csrf
           <div class="form-group">
             <label for="Nama">form Penialian</label>
-            <textarea name="uraian" id="" class="form-control" required></textarea>
+            <textarea name="objek_penilaian" id="" class="form-control" required></textarea>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary tx-13" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary tx-13"><i data-feather="save" class="wd-10 mg-r-5"></i>
-              Simpan</button> 
+              Simpan</button>
           </div>
         </form>
       </div>

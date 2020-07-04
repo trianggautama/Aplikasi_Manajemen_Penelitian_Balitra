@@ -111,8 +111,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/hasilPenelitian/delete/{uuid}', 'hasilPenelitianController@destroy')->name('hasilPenelitianDestroy');
     Route::get('/jobdesk/{uuid}', 'penelitianController@jobdeskIndex')->name('jobdeskIndex');
 
-
-    //CETAK REPORT 
+    //CETAK REPORT
     Route::get('/objekPenelitian/cetak', 'reportController@objekPenelitianCetak')->name('objekPenelitianCetak');
     Route::get('/objekPenelitian/analisis/cetak', 'reportController@analisisObjekPenelitianCetak')->name('analisisObjekPenelitianCetak');
     Route::get('/fasilitas/cetak', 'reportController@fasilitasCetak')->name('fasilitasCetak');
@@ -123,7 +122,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/penelitian/cetak', 'reportController@penelitianCetak')->name('penelitianCetak');
     Route::get('/penelitian/sk/{uuid}', 'reportController@skPenelitian')->name('skPenelitian');
     Route::get('/peneliti/cetak', 'reportController@penelitiCetak')->name('penelitiCetak');
-    Route::get('/jobdesk/cetak/{uuid}', 'reportController@jobdeskCetak')->name('jobdeskCetak'); 
+    Route::get('/jobdesk/cetak/{uuid}', 'reportController@jobdeskCetak')->name('jobdeskCetak');
     Route::get('/peminjaman/cetak', 'reportController@peminjamanCetak')->name('peminjamanCetak');
     Route::get('/pembimbing/cetak', 'reportController@pembimbingCetak')->name('pembimbingCetak');
     Route::get('/peminjaman/surat/cetak/{uuid}', 'reportController@peminjamanSuratCetak')->name('peminjamanSuratCetak');
@@ -146,7 +145,8 @@ Route::group(['middleware' => ['auth']], function () {
     //HALMAAN PENELITI - MENU PEMBIMBING
     Route::get('peneliti/pembimbing', 'pembimbingController@penelitiPembimbingIndex')->name('penelitiPembimbingIndex');
     Route::get('peneliti/peneliti/profil', 'UserController@penelitiProfil')->name('penelitiProfil');
-    Route::get('input/penilaian/{uuid}', 'hasilPenelitianController@inputPenilaian')->name('inputPenilaian'); 
+    Route::get('input/penilaian/{uuid}', 'hasilPenelitianController@inputPenilaian')->name('inputPenilaian');
+    Route::post('input/penilaian/create', 'hasilPenelitianController@penilaianStore')->name('penilaianStore');
 
     //HALAMAN PENELITI - MENU PENELITIAN
     Route::get('peneliti/penelitian', 'penelitianController@penelitiPenelitianIndex')->name('penelitiPenelitianIndex');
