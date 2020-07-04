@@ -43,7 +43,7 @@
               </div>
               <div class="form-group">
             <label for="Nama">Tujuan Penggunaan</label>
-            <input type="text" name="tujuan_peminjaman" placeholder="" class="form-control" value="{{$data->tujuan_peminjaman}}" required>
+            <input type="text" name="tujuan_penggunaan" placeholder="" class="form-control" value="{{$data->tujuan_peminjaman}}" required>
           </div>
               <div class="row">
             <div class="col-md-6">

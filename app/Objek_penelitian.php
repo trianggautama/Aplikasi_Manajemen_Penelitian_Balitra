@@ -10,4 +10,10 @@ class Objek_penelitian extends Model
 {
     use Notifiable;
     use Uuid;
+
+
+    public function penelitian()
+    {
+        return $this->hasMany(Penelitian::class);
+    }
 }

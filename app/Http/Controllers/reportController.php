@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Objek_penelitian;
 use App\Fasilitas;
+use App\Hasil_penelitian;
+use App\Hasil_penilaian;
 use App\Peminjaman_fasilitas;
 use App\Peneliti;
 use App\Permohonan;
 use App\Penelitian;
+use App\Penilaian;
 use App\User;
 use PDF;
 use Carbon\Carbon;
@@ -25,6 +28,16 @@ class reportController extends Controller
         return $pdf->stream('Laporan Data Penelitian.pdf');
     }
 
+    public function analisisObjekPenelitianCetak()
+    {
+        $data         = Objek_penelitian::all();
+        $tgl= Carbon::now()->format('d-m-Y');
+        $pdf          = PDF::loadView('formCetak.analisisObjekPenelitian', ['data'=>$data,'tgl'=>$tgl]);
+        $pdf->setPaper('a4', 'portrait');
+
+        return $pdf->stream('Laporan Data Analisis Objek Penelitian.pdf');
+    }
+
     public function fasilitasCetak()
     {
         $data         = Fasilitas::all();
@@ -33,6 +46,16 @@ class reportController extends Controller
         $pdf->setPaper('a4', 'portrait');
 
         return $pdf->stream('Laporan Data Penelitian.pdf');
+    }
+
+    public function analisisFasilitasCetak()
+    {
+        $data         = Fasilitas::all();
+        $tgl= Carbon::now()->format('d-m-Y');
+        $pdf          = PDF::loadView('formCetak.analisisFasilitas', ['data'=>$data,'tgl'=>$tgl]);
+        $pdf->setPaper('a4', 'portrait');
+
+        return $pdf->stream('Laporan Data Analisis Peminjaman Fasilitas.pdf');
     }
 
     public function permohonanCetak()
@@ -112,5 +135,36 @@ class reportController extends Controller
         $pdf->setPaper('a4', 'portrait');
 
         return $pdf->stream('Laporan Data Peminjaman.pdf');
+    }
+
+    public function peminjamanSuratCetak($uuid)
+    {
+        $data = Peminjaman_fasilitas::where('uuid',$uuid)->first();
+        $tgl= Carbon::now()->format('d-m-Y');
+        $pdf          = PDF::loadView('formCetak.suratPeminjaman', ['data'=>$data,'tgl'=>$tgl]);
+        $pdf->setPaper('a4', 'portrait');
+
+        return $pdf->stream('Laporan Surat Peminjaman.pdf');
+    }
+
+    public function pembimbingCetak()
+    {
+        $data = User::where('role',2)->get(); 
+        $tgl  = Carbon::now()->format('d-m-Y');
+        $pdf          = PDF::loadView('formCetak.dataPembimbing', ['data'=>$data,'tgl'=>$tgl]);
+        $pdf->setPaper('a4', 'portrait');
+
+        return $pdf->stream('Laporan Data Pembimbing.pdf');
+    }
+
+    public function penilaianCetak($uuid)
+    {
+        $penelitian = Penelitian::where('uuid',$uuid)->first(); 
+        $data = Hasil_penilaian::with('penilaian')->where('penelitian_id',$penelitian->id)->get(); 
+        $tgl  = Carbon::now()->format('d-m-Y');
+        $pdf          = PDF::loadView('formCetak.dataPenilaian', ['data'=>$data,'tgl'=>$tgl,'penelitian'=>$penelitian]);
+        $pdf->setPaper('a4', 'portrait');
+
+        return $pdf->stream('Laporan Data Penilaian.pdf');
     }
 }

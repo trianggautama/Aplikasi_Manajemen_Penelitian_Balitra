@@ -7,22 +7,17 @@
       <div>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb breadcrumb-style1 mg-b-10">
-            <li class="breadcrumb-item"><a href="#">Fasilitas</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Fasilitas Penelitian</li>
+            <li class="breadcrumb-item"><a href="#">Form Penilaian Penelitian</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Form Penilaian Penelitian</li>
           </ol>
         </nav>
-        <h4 class="mg-b-0 tx-spacing--1">Fasilitas Penelitian</h4>
+        <h4 class="mg-b-0 tx-spacing--1">Form Penilaian Penelitian</h4>
       </div>
       <div class="d-none d-md-block">
-        <a href="{{Route('analisisFasilitasCetak')}}" class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5" target="_blank"><i data-feather="printer"
-            class="wd-10 mg-r-5"></i>Analisis Cetak</a>
-        <a href="{{Route('fasilitasCetak')}}" class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5" target="_blank"><i data-feather="printer"
-            class="wd-10 mg-r-5"></i> Cetak</a>
         <a class="btn btn-sm pd-x-15 btn-dark btn-uppercase mg-l-5" href="#modal2" data-toggle="modal"><i
             data-feather="plus" class="wd-10 mg-r-5"></i> tambah Data</a>
       </div>
     </div>
-
     <div class="row row-xs">
       <div class="col-md-12 col-xl-12 mg-t-10">
         <div class="card card-body ">
@@ -31,10 +26,7 @@
               <thead>
                 <tr>
                   <th>No</th>
-                  <th>Nama</th>
-                  <th>Kategori</th>
-                  <th>Jumlah</th>
-                  <th>Keterangan</th>
+                  <th>Objek Penilaian</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
@@ -42,15 +34,12 @@
                 @foreach($data as $d)
                 <tr>
                   <td>{{$loop->iteration}}</td>
-                  <td>{{$d->nama}}</td>
-                  <td>{{$d->kategori}}</td>
-                  <td>{{$d->jumlah}} {{$d->satuan}}</td>
-                  <td>{{$d->keterangan}}</td>
+                  <td>{{$d->objek_penilaian}}</td>
                   <td>
-                    <a href="{{Route('fasilitasEdit',['uuid'=>$d->uuid])}}" class="btn btn-primary btn-icon">
+                    <a href="{{Route('formPenilaianEdit',['uuid' => $d->uuid])}}" class="btn btn-primary btn-icon">
                       <i data-feather="edit"></i>
                     </a>
-                    <button type="button" class="btn btn-danger btn-icon"  onclick="Hapus('{{$d->uuid}}','{{$d->nama}}')">
+                    <button type="button" class="btn btn-danger btn-icon" onclick="Hapus()">
                       <i data-feather="delete"></i>
                     </button>
                   </td>
@@ -65,6 +54,7 @@
   </div><!-- container -->
 </div>
 
+
 <!-- modal -->
 <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -76,32 +66,11 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="{{Route('fasilitasStore')}}" method="POST">
+        <form action="{{Route('formPenilaianStore')}}" method="POST">
           @csrf
           <div class="form-group">
-            <label for="Nama">Nama Alat</label>
-            <input type="text" name="nama" class="form-control" placeholder="Nama" required>
-          </div>
-          <div class="form-group">
-            <label for="Nama">Kategori</label>
-            <select name="kategori" id="" class="form-control" required>
-              <option value="">-- pilih Kategori --</option>
-              <option value="Rumah Kaca">Rumah Kaca</option>
-              <option value="Peralatan Kebun">Peralatan Kebun</option>
-              <option value="Lahan">Lahan</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="Nama">Jumlah</label>
-            <input type="number" name="jumlah" class="form-control" placeholder="Jumlah" required>
-          </div>
-          <div class="form-group">
-            <label for="Nama">Satuan</label>
-            <input type="text" name="satuan" class="form-control" placeholder="satuan" required>
-          </div>
-          <div class="form-group">
-            <label for="Nama">keterangan</label>
-            <textarea name="keterangan" id="keterangan" name="keterangan" class="form-control" required></textarea>
+            <label for="Nama">form Penialian</label>
+            <textarea name="objek_penilaian" id="" class="form-control" required></textarea>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary tx-13" data-dismiss="modal">Close</button>
@@ -131,7 +100,7 @@
       function Hapus(uuid, nama) {
         Swal.fire({
         title: 'Anda Yakin?',
-        text: " Menghapus data fasilitas " + nama ,        
+        text: " Menghapus data objek Penelitian '" + nama ,        
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -140,7 +109,7 @@
         cancelButtonText: 'Batal'
       }).then((result) => {
         if (result.value) {
-          url = '{{route("fasilitasDestroy",'')}}';
+          url = '{{route("objekPenelitianDestroy",'')}}';
           window.location.href =  url+'/'+uuid ;
         }
       })
