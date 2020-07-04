@@ -87,7 +87,7 @@
             <p style="text-align:center; margin:0px;padding:0px;">Nomor : {{$data->id}} /BALITTRA/.2000/{{$data->created_at->format('Y')}}</p>
             
             <br>
-            <p>Yang bertandatangan dibawah ini Kepala Kasil Balai Penelitian Pertanian Lahan Rawa Kota Banjarbaru menerangkan bahwa :</p>
+            <p>Yang bertandatangan dibawah ini Kepala Kasil Balai Penelitian Pertanian Lahan Rawa (BALITTRA) menerangkan bahwa :</p>
             <table>
                 <tr>
                     <td width="25%">Nama</td>
@@ -114,7 +114,7 @@
                 <h5>
                     <p>Banjarbaru, {{$tgl}}</p>
                 </h5>
-                <h5>Kepala Balitra</h5>
+                <h5>Kepala BALITTRA</h5>
                 <br>
                 <br>
                 <h5 style="text-decoration:underline;">{{$pejabat->nama}}</h5>

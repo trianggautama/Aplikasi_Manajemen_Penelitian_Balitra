@@ -111,7 +111,7 @@
                 <h5>
                     <p>Banjarbaru, {{$tgl}}</p>
                 </h5>
-                <h5>Kepala Balitra</h5>
+                <h5>Kepala BALITTRA</h5>
                 <br>
                 <br>
                 <h5 style="text-decoration:underline;">{{$pejabat->nama}}</h5>

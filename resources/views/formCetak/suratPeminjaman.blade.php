@@ -90,7 +90,7 @@
             <p>Perihal : Peminjaman Fasilitas penelitian</p>
             <br>
             <p>Kepada Yth. <br>
-            Kaepala Laboratorium Balittra  <br>
+            Kepala BALITTRA  <br>
             di Tempat
     </p>
             <br>
@@ -106,14 +106,14 @@
                     <td>:{{$data->peneliti->NIK}}</td>
                 </tr>
             </table>
-            <p>Bermaksud untuk meminjam fasilitas Balittra guna melancarkan kegiatan penelitian yang akan saya lakukan berikut adalah detail peminjaman :</p>
+            <p>Bermaksud untuk meminjam fasilitas BALITTRA guna melancarkan kegiatan penelitian yang akan saya lakukan berikut adalah detail peminjaman :</p>
             <table>
                 <tr>
                     <td width="23%">Fasilitas</td>
                     <td>: {{$data->fasilitas->nama}}</td>
                 </tr>
                 <tr>
-                    <td>Maksud peminjaman</td>
+                    <td>Maksud Peminjaman</td>
                     <td>: {{$data->tujuan_peminjaman}}</td>
                 </tr>
                 <tr>
@@ -139,7 +139,7 @@
                         <h5>
                             <p>Banjarbaru, {{$tgl}}</p>
                         </h5>
-                        <h5>Kepala Balitra</h5>
+                        <h5>Kepala BALITTRA</h5>
                         <br>
                         <br>
                         <h5 style="text-decoration:underline;">{{$pejabat->nama}}</h5>

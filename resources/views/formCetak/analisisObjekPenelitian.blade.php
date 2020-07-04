@@ -74,7 +74,7 @@
             <img class="pemko" src="depan/images/logo.png">
         </div>
         <div class="headtext">
-            <h2 style="margin:0px;">BALITRA BANJARBARU</h2>
+            <h2 style="margin:0px;">BALITTRA BANJARBARU</h2>
             <p style="margin:0px;">Alamat : Guntung Payung, Landasan Ulin, Guntung Payung, Banjar Baru, Kota Banjar Baru, Kalimantan Selatan 70714</p>
         </div>
         <hr>
@@ -110,7 +110,7 @@
                 <h5>
                     <p>Banjarbaru, {{$tgl}}</p>
                 </h5>
-                <h5>Kepala Balitra</h5>
+                <h5>Kepala BALITTRA</h5>
                 <br>
                 <br>
                 <h5 style="text-decoration:underline;">{{$pejabat->nama}}</h5>
