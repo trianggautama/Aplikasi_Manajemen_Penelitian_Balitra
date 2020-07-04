@@ -74,8 +74,8 @@
             <img class="pemko" src="depan/images/logo.png">
         </div>
         <div class="headtext">
-            <h2 style="margin:0px;">BALITTRA BANJARBARU</h2>
-            <p style="margin:0px;">Alamat : Guntung Payung, Landasan Ulin, Guntung Payung, Banjar Baru, Kota Banjar Baru, Kalimantan Selatan 70714</p>
+            <h3 style="margin:0px;">BALAI PENELITIAN PERTANIAN LAHAN RAWA</h3>
+            <p style="margin:0px;">Alamat : Jl.Kebun Karet,Loktabat Utara,Kotak Pos 31,Banjarbaru 70712,Kalimantan Selatan. Telepon :(0511) 4772534, 4773034</p>
         </div>
         <hr>
     </div>
