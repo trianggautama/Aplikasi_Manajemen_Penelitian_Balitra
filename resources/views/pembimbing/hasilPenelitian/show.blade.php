@@ -31,7 +31,7 @@
               <div class="form-group">
                 <p class="tx-medium mg-b-2"><a href="" class="link-01">Nama</a></p>
                 <span class="tx-12 tx-color-03">{{$data->peneliti->user->nama}}</span>
-              </div>
+              </div> 
               <div class="form-group">
                 <p class="tx-medium mg-b-2"><a href="" class="link-01">NIK</a></p>
                 <span class="tx-12 tx-color-03">{{$data->peneliti->NIK}}</span>
@@ -66,6 +66,10 @@
               <div class="form-group">
                 <p class="tx-medium mg-b-2"><a href="" class="link-01">Estimasi</a></p>
                 <span class="tx-12 tx-color-03">{{$data->estimasi}} Hari Kerja</span>
+              </div>
+              <div class="form-group">
+                <p class="tx-medium mg-b-2"><a href="" class="link-01">File Lampiran</a></p>
+                <a href="{{Route('lampiranPreview',['uuid' => $data->uuid])}}"  class="btn btn-xs btn-secondary pd-y-5 pd-x-7" target="_blank"><i data-feather="paperclip"></i>  Lampiran  File</a>
               </div>
             </div>
           </div>

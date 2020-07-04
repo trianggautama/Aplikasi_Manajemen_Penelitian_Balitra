@@ -182,4 +182,15 @@ class reportController extends Controller
 
         return $pdf->stream('Laporan Data Penilaian.pdf');
     }
+
+    public function biodataPemohon($uuid)
+    {
+        $data = Permohonan::where('uuid',$uuid)->first(); 
+        $tgl  = Carbon::now()->format('d-m-Y');
+        $pejabat      = User::where('role',3)->first();
+        $pdf          = PDF::loadView('formCetak.biodataPemohon', ['tgl'=>$tgl,'data'=>$data,'pejabat'=>$pejabat]);
+        $pdf->setPaper('a4', 'portrait');
+
+        return $pdf->stream('Biodata Pemohon.pdf');
+    }
 }

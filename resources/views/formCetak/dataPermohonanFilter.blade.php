@@ -97,7 +97,7 @@
                 @foreach($data as $d)
                 <tr>
                   <td>{{$loop->iteration}}</td>
-                  <td>{{$d->nama}}</td>
+                  <td>{{$d->user->nama}}</td>
                   <td>{{$d->no_hp}}</td>
                   <td>{{$d->objek_penelitian->nama}}</td>
                   <td>{{$d->keperluan}}</td>

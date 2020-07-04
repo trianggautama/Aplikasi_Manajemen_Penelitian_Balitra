@@ -127,6 +127,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/pembimbing/cetak', 'reportController@pembimbingCetak')->name('pembimbingCetak');
     Route::get('/peminjaman/surat/cetak/{uuid}', 'reportController@peminjamanSuratCetak')->name('peminjamanSuratCetak');
     Route::get('/penilaianPenelitian/cetak/{uuid}', 'reportController@penilaianCetak')->name('penilaianCetak');
+    Route::get('/biodataPemohon/cetak/{uuid}', 'reportController@biodataPemohon')->name('biodataPemohonCetak'); 
 
 
     //HALAMAN PEMBIMBING - MENU PENELITI

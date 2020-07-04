@@ -85,7 +85,7 @@
 
     <div class="container">
         <div class="isi">
-            <h2 style="text-align:center;">BIOADATA PEMBIMBING</h2>
+            <h2 style="text-align:center;">BIOADATA PEMOHON</h2>
             <table>
                 <tr>
                     <td width="25%">Nama</td>
@@ -93,36 +93,50 @@
                 </tr>
                 <tr>
                     <td width="20%">NIP</td>
-                    <td>: {{$data->data_personal->NIP}}</td>
-                </tr>
-                <tr>
-                    <td width="20%">Jabatan</td>
-                    <td>:  {{$data->data_personal->jabatan}}</td>
+                    <td>: {{$data->NIK}}</td>
                 </tr>
                 <tr>
                     <td width="20%">Nomor Hp</td>
-                    <td>:  {{$data->data_personal->no_hp}}</td>
+                    <td>:  {{$data->no_hp}}</td>
                 </tr>
                 <tr>
                     <td width="20%">Alamat</td>
-                    <td>:  {{$data->data_personal->alamat}}</td>
+                    <td>: {{$data->alamat}}</td>
                 </tr>
                 <tr>
                     <td width="20%">Tempat, Tanggal lahir</td>
-                    <td>:  {{$data->data_personal->tempat_lahir}}, {{\carbon\carbon::parse($data->data_personal->tanggal_lahir)->format('d-m-Y')}}</td>
+                    <td>: {{$data->tempat_lahir}},
+                    {{carbon\carbon::parse($data->tanggal_lahir)->translatedFormat('d F Y')}}</td>
+                </tr>
+                <tr>
+                    <td width="20%">Pendidikan Terakhir</td>
+                    <td>:{{$data->pendidikan_terakhir}}</td>
+                </tr>
+                <tr>
+                    <td width="20%">objek Penelitian</td>
+                    <td>: {{$data->objek_penelitian->nama}}</td>
+                </tr>
+                <tr>
+                    <td width="20%">Keperluan</td>
+                    <td>: {{$data->keperluan}}</td>
+                </tr>
+                <tr>
+                    <td width="20%">Tanggal Permohonan</td>
+                    <td>: {{carbon\carbon::parse($data->created_at)->translatedFormat('d F Y')}}</td>
                 </tr>
             </table>
             <br>
             <br>
+            <br>
             <div class="ttd">
                 <h5>
-                    <p>Banjarbaru, {{$tgl}}</p>
+                    <p style="margin:0px">Banjarbaru, {{$tgl}}</p>
                 </h5>
-                <h5>Kepala Balitra</h5>
+                <h5 style="margin:0px;">Kepala Balitra</h5>
                 <br>
                 <br>
-                <h5 style="text-decoration:underline;">{{$pejabat->nama}}</h5>
-                <h5>NIP.{{$pejabat->data_personal->NIP}}</h5>
+                <h5 style="text-decoration:underline; margin:0px;">{{$pejabat->nama}}</h5>
+                <h5 style="margin:0px">NIP.{{$pejabat->data_personal->NIP}}</h5>
             </div>
         </div>
     </div>
