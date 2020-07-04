@@ -127,15 +127,31 @@
                 </tr>
             </table>
             <p>Dengan ini saya bertanggung jawab apabila ada kerusakan terhadap fasilitas yang digunakan,demikian permohonan dari sanya atas perhatiannya saya ucapkan terimakasih</p>
-            <div class="ttd">
-                <h5>
-                    <p>Banjarbaru, {{$tgl}}</p>
-                </h5>
-                <h5>PENELITI</h5>
-                <br>
-                <br>
-                <h5 style="text-decoration:underline;">{{$data->peneliti->user->nama}}</h5>
-            </div>
+            <br>
+            <br>
+            <br>
+            <table>
+                <tr>
+                    <td style="text-align:center"> <h5>
+                    </h5>
+                    <br>
+                    <h5>PENELITI</h5>
+                    <br>
+                    <br>
+                    <h5 style="text-decoration:underline;">{{$data->peneliti->user->nama}}</h5></td>
+                    <td style="text-align:center">
+                    <p style="margin:0px;">Banjarbaru, {{$tgl}}</p>
+                    <h5 style="margin:0px;">KEPALA BALITTRA</h5>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h5 style="text-decoration:underline;margin:0px;">Nama</h5>
+                    <h5 style="margin:0px;">NIP.1213123</h5>
+                </td>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 </body>
