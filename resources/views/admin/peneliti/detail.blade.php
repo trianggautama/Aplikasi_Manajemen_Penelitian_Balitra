@@ -13,10 +13,6 @@
         </nav>
         <h4 class="mg-b-0 tx-spacing--1">Detail Peneliti</h4>
       </div>
-      <div class="d-none d-md-block">
-        <button class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5"><i data-feather="printer"
-            class="wd-10 mg-r-5"></i> Print</button>
-      </div>
     </div>
 
     <div class="row row-xs">

@@ -7,11 +7,11 @@
       <div>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb breadcrumb-style1 mg-b-10">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Sales Monitoring</li>
+            <li class="breadcrumb-item"><a href="#"> User</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Edit</li>
           </ol>
         </nav>
-        <h4 class="mg-b-0 tx-spacing--1">Welcome to Dashboard</h4>
+        <h4 class="mg-b-0 tx-spacing--1">edit user</h4>
       </div>
     </div>
 
@@ -25,42 +25,6 @@
               <label for="Nama">Nama</label>
               <input type="text" name="nama" class="form-control" placeholder="Nama" value="{{$data->nama}}">
             </div>
-            <div class="form-group">
-              <label for="Nama">NIP</label>
-              <input type="text" name="NIP" class="form-control" placeholder="NIP"
-                value="{{$data->data_personal->NIP}}">
-            </div>
-            <div class="form-group">
-              <label for="Nama">Jabatan</label>
-              <input type="text" name="jabatan" class="form-control" placeholder="Jabatan"
-                value="{{$data->data_personal->jabatan}}">
-            </div>
-            <div class="form-group">
-              <label for="Nama">No Hp</label>
-              <input type="text" name="no_hp" class="form-control" placeholder="No Hp"
-                value="{{$data->data_personal->no_hp}}">
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="Nama">Tempat Lahir</label>
-                  <input type="text" name="tempat_lahir" class="form-control" placeholder="Tempat Lahir"
-                    value="{{$data->data_personal->tempat_lahir}}">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="Nama">Tanggal Lahir</label>
-                  <input type="date" name="tanggal_lahir" class="form-control" placeholder="Tanggal Lahir"
-                    value="{{$data->data_personal->tanggal_lahir}}">
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="Nama">Alamat</label>
-              <input type="text" name="alamat" class="form-control" placeholder="ALamat"
-                value="{{$data->data_personal->tanggal_lahir}}">
-            </div>
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
@@ -73,6 +37,7 @@
                 <div class="form-group">
                   <label for="Nama">Password</label>
                   <input type="password" name="password" class="form-control">
+                  <p class="text-danger">Isi Jika ingin merubah password</p>
                 </div>
               </div>
             </div>
