@@ -76,11 +76,15 @@ class reportController extends Controller
     public function permohonanfilter(Request $request)
     {
         $data = Permohonan::where('status',$request->status)->orderBy('id', 'asc')->get();
+        if($data->isEmpty()){
+            return redirect()->route('permohonanFilter')->withErrors('Data tidak ada');
+        }else{
         $tgl= Carbon::now()->format('d-m-Y');
         $pejabat      = User::where('role',3)->first();
         $pdf          = PDF::loadView('formCetak.dataPermohonanFilter', ['data'=>$data,'tgl'=>$tgl,'pejabat'=>$pejabat]);
         $pdf->setPaper('a4', 'portrait');
         return $pdf->stream('Laporan Data Penelitian.pdf');
+        }
     }
 
     public function pembimbingCetakBiodata($uuid)
