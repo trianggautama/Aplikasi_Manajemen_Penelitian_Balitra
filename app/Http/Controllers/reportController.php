@@ -21,8 +21,9 @@ class reportController extends Controller
     public function objekPenelitianCetak()
     {
         $data         = Objek_penelitian::all();
+        $pejabat      = User::where('role',3)->first();
         $tgl= Carbon::now()->format('d-m-Y');
-        $pdf          = PDF::loadView('formCetak.dataObjekPenelitian', ['data'=>$data,'tgl'=>$tgl]);
+        $pdf          = PDF::loadView('formCetak.dataObjekPenelitian', ['data'=>$data,'tgl'=>$tgl,'pejabat'=>$pejabat]);
         $pdf->setPaper('a4', 'portrait');
 
         return $pdf->stream('Laporan Data Penelitian.pdf');
@@ -31,8 +32,9 @@ class reportController extends Controller
     public function analisisObjekPenelitianCetak()
     {
         $data         = Objek_penelitian::all();
+        $pejabat      = User::where('role',3)->first();
         $tgl= Carbon::now()->format('d-m-Y');
-        $pdf          = PDF::loadView('formCetak.analisisObjekPenelitian', ['data'=>$data,'tgl'=>$tgl]);
+        $pdf          = PDF::loadView('formCetak.analisisObjekPenelitian', ['data'=>$data,'tgl'=>$tgl,'pejabat'=>$pejabat]);
         $pdf->setPaper('a4', 'portrait');
 
         return $pdf->stream('Laporan Data Analisis Objek Penelitian.pdf');
@@ -41,8 +43,9 @@ class reportController extends Controller
     public function fasilitasCetak()
     {
         $data         = Fasilitas::all();
+        $pejabat      = User::where('role',3)->first();
         $tgl= Carbon::now()->format('d-m-Y');
-        $pdf          = PDF::loadView('formCetak.dataFasilitas', ['data'=>$data,'tgl'=>$tgl]);
+        $pdf          = PDF::loadView('formCetak.dataFasilitas', ['data'=>$data,'tgl'=>$tgl,'pejabat'=>$pejabat]);
         $pdf->setPaper('a4', 'portrait');
 
         return $pdf->stream('Laporan Data Penelitian.pdf');
@@ -51,8 +54,9 @@ class reportController extends Controller
     public function analisisFasilitasCetak()
     {
         $data         = Fasilitas::all();
+        $pejabat      = User::where('role',3)->first();
         $tgl= Carbon::now()->format('d-m-Y');
-        $pdf          = PDF::loadView('formCetak.analisisFasilitas', ['data'=>$data,'tgl'=>$tgl]);
+        $pdf          = PDF::loadView('formCetak.analisisFasilitas', ['data'=>$data,'tgl'=>$tgl,'pejabat'=>$pejabat]);
         $pdf->setPaper('a4', 'portrait');
 
         return $pdf->stream('Laporan Data Analisis Peminjaman Fasilitas.pdf');
@@ -62,7 +66,8 @@ class reportController extends Controller
     {
         $data = Permohonan::whereIn('status', [1, 3])->orderBy('status', 'asc')->get();
         $tgl= Carbon::now()->format('d-m-Y');
-        $pdf          = PDF::loadView('formCetak.dataPermohonan', ['data'=>$data,'tgl'=>$tgl]);
+        $pejabat      = User::where('role',3)->first();
+        $pdf          = PDF::loadView('formCetak.dataPermohonan', ['data'=>$data,'tgl'=>$tgl,'pejabat'=>$pejabat]);
         $pdf->setPaper('a4', 'portrait');
 
         return $pdf->stream('Laporan Data Penelitian.pdf');
@@ -72,7 +77,8 @@ class reportController extends Controller
     {
         $data = Permohonan::where('status',$request->status)->orderBy('id', 'asc')->get();
         $tgl= Carbon::now()->format('d-m-Y');
-        $pdf          = PDF::loadView('formCetak.dataPermohonanFilter', ['data'=>$data,'tgl'=>$tgl]);
+        $pejabat      = User::where('role',3)->first();
+        $pdf          = PDF::loadView('formCetak.dataPermohonanFilter', ['data'=>$data,'tgl'=>$tgl,'pejabat'=>$pejabat]);
         $pdf->setPaper('a4', 'portrait');
         return $pdf->stream('Laporan Data Penelitian.pdf');
     }
@@ -81,7 +87,8 @@ class reportController extends Controller
     {
         $data         = User::OrderBy('id', 'Desc')->where('uuid', $uuid)->first();
         $tgl          = Carbon::now()->format('d-m-Y');
-        $pdf          = PDF::loadView('formCetak.bioadataPembimbing', ['data'=>$data,'tgl'=>$tgl]);
+        $pejabat      = User::where('role',3)->first();
+        $pdf          = PDF::loadView('formCetak.bioadataPembimbing', ['data'=>$data,'tgl'=>$tgl,'pejabat'=>$pejabat]);
         $pdf->setPaper('a4', 'portrait');
         return $pdf->stream('Laporan Data Penelitian.pdf');
     }
@@ -90,7 +97,8 @@ class reportController extends Controller
     {
         $data = Penelitian::all();
         $tgl= Carbon::now()->format('d-m-Y');
-        $pdf          = PDF::loadView('formCetak.dataPenelitian', ['data'=>$data,'tgl'=>$tgl]);
+        $pejabat      = User::where('role',3)->first();
+        $pdf          = PDF::loadView('formCetak.dataPenelitian', ['data'=>$data,'tgl'=>$tgl,'pejabat'=>$pejabat]);
         $pdf->setPaper('a4', 'portrait');
 
         return $pdf->stream('Laporan Data Penelitian.pdf');
@@ -101,7 +109,8 @@ class reportController extends Controller
     {
         $data = Penelitian::where('uuid',$uuid)->first();
         $tgl= Carbon::now()->format('d-m-Y');
-        $pdf          = PDF::loadView('formCetak.skPenelitian', ['data'=>$data,'tgl'=>$tgl]);
+        $pejabat      = User::where('role',3)->first();
+        $pdf          = PDF::loadView('formCetak.skPenelitian', ['data'=>$data,'tgl'=>$tgl,'pejabat'=>$pejabat]);
         $pdf->setPaper('a4', 'portrait');
 
         return $pdf->stream('Laporan Data Penelitian.pdf');
@@ -111,7 +120,8 @@ class reportController extends Controller
     {
         $data = Peneliti::all();
         $tgl= Carbon::now()->format('d-m-Y');
-        $pdf          = PDF::loadView('formCetak.dataPeneliti', ['data'=>$data,'tgl'=>$tgl]);
+        $pejabat      = User::where('role',3)->first();
+        $pdf          = PDF::loadView('formCetak.dataPeneliti', ['data'=>$data,'tgl'=>$tgl,'pejabat'=>$pejabat]);
         $pdf->setPaper('a4', 'portrait');
 
         return $pdf->stream('Laporan Data Penelitian.pdf');
@@ -121,7 +131,8 @@ class reportController extends Controller
     {
         $data = Penelitian::where('uuid', $uuid)->first();
         $tgl= Carbon::now()->format('d-m-Y');
-        $pdf          = PDF::loadView('formCetak.jobdesk', ['data'=>$data,'tgl'=>$tgl]);
+        $pejabat      = User::where('role',3)->first();
+        $pdf          = PDF::loadView('formCetak.jobdesk', ['data'=>$data,'tgl'=>$tgl,'pejabat'=>$pejabat]);
         $pdf->setPaper('a4', 'portrait');
 
         return $pdf->stream('Laporan Kegiatan Penelitian.pdf');
@@ -131,7 +142,8 @@ class reportController extends Controller
     {
         $data = Peminjaman_fasilitas::all();
         $tgl= Carbon::now()->format('d-m-Y');
-        $pdf          = PDF::loadView('formCetak.dataPeminjaman', ['data'=>$data,'tgl'=>$tgl]);
+        $pejabat      = User::where('role',3)->first();
+        $pdf          = PDF::loadView('formCetak.dataPeminjaman', ['data'=>$data,'tgl'=>$tgl,'pejabat'=>$pejabat]);
         $pdf->setPaper('a4', 'portrait');
 
         return $pdf->stream('Laporan Data Peminjaman.pdf');
@@ -141,7 +153,8 @@ class reportController extends Controller
     {
         $data = Peminjaman_fasilitas::where('uuid',$uuid)->first();
         $tgl= Carbon::now()->format('d-m-Y');
-        $pdf          = PDF::loadView('formCetak.suratPeminjaman', ['data'=>$data,'tgl'=>$tgl]);
+        $pejabat      = User::where('role',3)->first();
+        $pdf          = PDF::loadView('formCetak.suratPeminjaman', ['data'=>$data,'tgl'=>$tgl,'pejabat'=>$pejabat]);
         $pdf->setPaper('a4', 'portrait');
 
         return $pdf->stream('Laporan Surat Peminjaman.pdf');
@@ -151,7 +164,8 @@ class reportController extends Controller
     {
         $data = User::where('role',2)->get(); 
         $tgl  = Carbon::now()->format('d-m-Y');
-        $pdf          = PDF::loadView('formCetak.dataPembimbing', ['data'=>$data,'tgl'=>$tgl]);
+        $pejabat      = User::where('role',3)->first();
+        $pdf          = PDF::loadView('formCetak.dataPembimbing', ['data'=>$data,'tgl'=>$tgl,'pejabat'=>$pejabat]);
         $pdf->setPaper('a4', 'portrait');
 
         return $pdf->stream('Laporan Data Pembimbing.pdf');
@@ -162,7 +176,8 @@ class reportController extends Controller
         $penelitian = Penelitian::where('uuid',$uuid)->first(); 
         $data = Hasil_penilaian::with('penilaian')->where('penelitian_id',$penelitian->id)->get(); 
         $tgl  = Carbon::now()->format('d-m-Y');
-        $pdf          = PDF::loadView('formCetak.dataPenilaian', ['data'=>$data,'tgl'=>$tgl,'penelitian'=>$penelitian]);
+        $pejabat      = User::where('role',3)->first();
+        $pdf          = PDF::loadView('formCetak.dataPenilaian', ['data'=>$data,'tgl'=>$tgl,'penelitian'=>$penelitian,'pejabat'=>$pejabat]);
         $pdf->setPaper('a4', 'portrait');
 
         return $pdf->stream('Laporan Data Penilaian.pdf');

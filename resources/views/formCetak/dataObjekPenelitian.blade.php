@@ -111,8 +111,8 @@
                 <h5>Kepala Balitra</h5>
                 <br>
                 <br>
-                <h5 style="text-decoration:underline;">Nama</h5>
-                <h5>NIP.19810405 200612312 1 002</h5>
+                <h5 style="text-decoration:underline;">{{$pejabat->nama}}</h5>
+                <h5>NIP.{{$pejabat->data_personal->NIP}}</h5>
             </div>
         </div>
     </div>

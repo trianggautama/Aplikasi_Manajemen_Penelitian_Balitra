@@ -112,10 +112,6 @@
                     <td width="23%">Fasilitas</td>
                     <td>: {{$data->fasilitas->nama}}</td>
                 </tr>
-                <!-- <tr>
-                    <td>Valume</td>
-                    <td>: </td>
-                </tr> -->
                 <tr>
                     <td>Maksud peminjaman</td>
                     <td>: {{$data->tujuan_peminjaman}}</td>
@@ -140,15 +136,15 @@
                     <br>
                     <h5 style="text-decoration:underline;">{{$data->peneliti->user->nama}}</h5></td>
                     <td style="text-align:center">
-                    <p style="margin:0px;">Banjarbaru, {{$tgl}}</p>
-                    <h5 style="margin:0px;">KEPALA BALITTRA</h5>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <h5 style="text-decoration:underline;margin:0px;">Nama</h5>
-                    <h5 style="margin:0px;">NIP.1213123</h5>
-                </td>
+                        <h5>
+                            <p>Banjarbaru, {{$tgl}}</p>
+                        </h5>
+                        <h5>Kepala Balitra</h5>
+                        <br>
+                        <br>
+                        <h5 style="text-decoration:underline;">{{$pejabat->nama}}</h5>
+                        <h5>NIP.{{$pejabat->data_personal->NIP}}</h5>
+                        </td>
                     </td>
                 </tr>
             </table>

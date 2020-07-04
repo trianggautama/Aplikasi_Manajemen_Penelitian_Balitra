@@ -98,7 +98,7 @@
                 @foreach($data as $d)
                 <tr>
                   <td>{{$loop->iteration}}</td>
-                  <td>{{$d->nama}}</td>
+                  <td>{{$d->user->nama}}</td>
                   <td>{{$d->no_hp}}</td>
                   <td>{{$d->objek_penelitian->nama}}</td>
                   <td>{{$d->keperluan}}</td>
@@ -124,8 +124,8 @@
                 <h5>Kepala Balitra</h5>
                 <br>
                 <br>
-                <h5 style="text-decoration:underline;">Nama</h5>
-                <h5>NIP.19810405 200612312 1 002</h5>
+                <h5 style="text-decoration:underline;">{{$pejabat->nama}}</h5>
+                <h5>NIP.{{$pejabat->data_personal->NIP}}</h5>
             </div>
         </div>
     </div>

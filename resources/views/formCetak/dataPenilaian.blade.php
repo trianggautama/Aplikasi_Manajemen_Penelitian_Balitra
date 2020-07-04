@@ -109,11 +109,11 @@
                 <h5>
                     <p>Banjarbaru, {{$tgl}}</p>
                 </h5>
-                <h5>Pembimbing</h5>
+                <h5>Kepala Balitra</h5>
                 <br>
                 <br>
-                <h5 style="text-decoration:underline;">{{$penelitian->user->nama}}</h5>
-                <h5>NIP.{{$penelitian->user->data_personal->NIP}}</h5>
+                <h5 style="text-decoration:underline;">{{$pejabat->nama}}</h5>
+                <h5>NIP.{{$pejabat->data_personal->NIP}}</h5>
             </div>
         </div>
     </div>

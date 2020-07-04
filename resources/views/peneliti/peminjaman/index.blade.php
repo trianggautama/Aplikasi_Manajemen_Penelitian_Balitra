@@ -55,7 +55,7 @@
                     @endif
                   </td>
                   <td>
-                    <a href="{{Route('peminjamanSuratCetak',['uuid' => $d->uuid])}}" class="btn btn-primary btn-icon">
+                    <a href="{{Route('peminjamanSuratCetak',['uuid' => $d->uuid])}}" class="btn btn-primary btn-icon" target="_blank">
                       <i data-feather="printer"></i>
                     </a>
                     <a href="{{Route('peminjamanEdit',['uuid' => $d->uuid])}}" class="btn btn-primary btn-icon">
