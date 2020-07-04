@@ -14,7 +14,7 @@
         <h4 class="mg-b-0 tx-spacing--1">Data Penilaian Penelitian A</h4>
       </div>
       <div class="d-none d-md-block">
-        <a href="{{Route('penelitianCetak')}}" class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5"
+        <a href="{{Route('penilaianCetak',['uuid'=>$penelitian->uuid])}}" class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5"
           target="_blank"><i data-feather="printer" class="wd-10 mg-r-5"></i> Cetak</a>
       </div>
     </div>
@@ -46,9 +46,13 @@
                     {{preg_replace('/[^\p{L}\p{N}\s]/u', '', $nilai)}}
                   </td>
                   <td>
+                    @if(!$d->hasil_penilaian()->where('penelitian_id',$penelitian->id)->first())
                     <button data-status="" data-id="{{$d->id}}" class="btn btn-success tambahVerif btn-icon"
                       data-toggle="tooltip" data-placement="top" title="Verifikasi" data-toggle="modal"><i
                         data-feather="check"></i> input Nilai</button>
+                    @else
+                    -
+                    @endif
                   </td>
                 </tr>
                 @endforeach

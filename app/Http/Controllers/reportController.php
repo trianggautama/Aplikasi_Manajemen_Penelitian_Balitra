@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Objek_penelitian;
 use App\Fasilitas;
+use App\Hasil_penelitian;
+use App\Hasil_penilaian;
 use App\Peminjaman_fasilitas;
 use App\Peneliti;
 use App\Permohonan;
 use App\Penelitian;
+use App\Penilaian;
 use App\User;
 use PDF;
 use Carbon\Carbon;
@@ -152,5 +155,16 @@ class reportController extends Controller
         $pdf->setPaper('a4', 'portrait');
 
         return $pdf->stream('Laporan Data Pembimbing.pdf');
+    }
+
+    public function penilaianCetak($uuid)
+    {
+        $penelitian = Penelitian::where('uuid',$uuid)->first(); 
+        $data = Hasil_penilaian::with('penilaian')->where('penelitian_id',$penelitian->id)->get(); 
+        $tgl  = Carbon::now()->format('d-m-Y');
+        $pdf          = PDF::loadView('formCetak.dataPenilaian', ['data'=>$data,'tgl'=>$tgl,'penelitian'=>$penelitian]);
+        $pdf->setPaper('a4', 'portrait');
+
+        return $pdf->stream('Laporan Data Penilaian.pdf');
     }
 }

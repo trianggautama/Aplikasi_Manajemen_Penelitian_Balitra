@@ -11,7 +11,6 @@ class Hasil_penilaian extends Model
 
     public function penilaian()
     {
-        return $this->belongsToMany(Penilaian::class);
+        return $this->belongsTo(Penilaian::class);
     }
-
 }

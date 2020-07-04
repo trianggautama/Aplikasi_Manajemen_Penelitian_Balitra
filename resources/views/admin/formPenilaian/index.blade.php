@@ -7,11 +7,11 @@
       <div>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb breadcrumb-style1 mg-b-10">
-            <li class="breadcrumb-item"><a href="#">Form Penelitian</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Form Penelitian</li>
+            <li class="breadcrumb-item"><a href="#">Form Penilaian Penelitian</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Form Penilaian Penelitian</li>
           </ol>
         </nav>
-        <h4 class="mg-b-0 tx-spacing--1">Form Penelitian</h4>
+        <h4 class="mg-b-0 tx-spacing--1">Form Penilaian Penelitian</h4>
       </div>
       <div class="d-none d-md-block">
         <a class="btn btn-sm pd-x-15 btn-dark btn-uppercase mg-l-5" href="#modal2" data-toggle="modal"><i

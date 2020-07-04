@@ -17,4 +17,6 @@ class Hasil_penelitian extends Model
     {
         return $this->belongsTo(Penelitian::class);
     }
+
+
 }

@@ -126,6 +126,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/peminjaman/cetak', 'reportController@peminjamanCetak')->name('peminjamanCetak');
     Route::get('/pembimbing/cetak', 'reportController@pembimbingCetak')->name('pembimbingCetak');
     Route::get('/peminjaman/surat/cetak/{uuid}', 'reportController@peminjamanSuratCetak')->name('peminjamanSuratCetak');
+    Route::get('/penilaianPenelitian/cetak/{uuid}', 'reportController@penilaianCetak')->name('penilaianCetak');
+
 
     //HALAMAN PEMBIMBING - MENU PENELITI
     Route::get('pembimbing/peneliti', 'penelitiController@pembimbingPenelitiIndex')->name('pembimbingPenelitiIndex');
