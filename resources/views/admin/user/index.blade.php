@@ -14,7 +14,7 @@
       </div>
       <div class="d-none d-md-block">
         <button class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5"><i data-feather="printer"
-            class="wd-10 mg-r-5"></i> Print</button>
+            class="wd-10 mg-r-5"></i> Cetak</button>
         <a class="btn btn-sm pd-x-15 btn-dark btn-uppercase mg-l-5" href="#modal2" data-toggle="modal"><i
             data-feather="plus" class="wd-10 mg-r-5"></i> tambah Data</a>
       </div>

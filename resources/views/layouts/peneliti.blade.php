@@ -63,7 +63,7 @@
                   <span>Profil</span></a></li>
               <li class="nav-label mg-t-25">Penelitian</li>
               <li class="nav-item"><a class="nav-link" href="{{Route('penelitiPembimbingIndex')}}"><i
-                    data-feather="user"></i>pembimbing</a></li>
+                    data-feather="user"></i>Pembimbing</a></li>
               <li class="nav-item"><a href="{{Route('penelitiPenelitianIndex')}}" class="nav-link"><i
                     data-feather="sunrise"></i> <span>Data Penelitian</span></a></li>
               <li class="nav-item"><a href="{{Route('penelitiLaporanPenelitian')}}" class="nav-link"><i

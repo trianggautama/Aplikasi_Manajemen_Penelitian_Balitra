@@ -75,8 +75,8 @@
             <img class="pemko" src="depan/images/logo.png">
         </div>
         <div class="headtext">
-            <h2 style="margin:0px;">BALITRA BANJARBARU</h2>
-            <p style="margin:0px;">Alamat : Guntung Payung, Landasan Ulin, Guntung Payung, Banjar Baru, Kota Banjar Baru, Kalimantan Selatan 70714</p>
+            <h2 style="margin:0px;">Balai Penelitian Pertanian Lahan Rawa (BALITTRA)</h2>
+            <p style="margin:0px;">Alamat : Jalan Kebun Karet,Loktabat Utara,Banjarbaru,Kalimantan Selatan. Telp: 0511-4772534,4773034 Kode Pos: 70712</p>
         </div>
         <hr>
     </div>
@@ -106,7 +106,7 @@
                     <td>:{{$data->peneliti->pendidikan_terakhir}}</td>
                 </tr>
             </table>
-            <p>Yang tersebut diatas benar benar telah melakukan penelitian pada BALITTRA Kota Banjarbaru, selama {{$data->estimasi}} hari kerja dengan objek penelitian {{$data->objek_penelitian->nama}},terlebih khusus {{$data->uraian}}</p>
+            <p>Yang tersebut diatas benar benar telah melakukan penelitian pada Balai Penelitian Pertanian Lahan Rawa (BALITTRA), selama {{$data->estimasi}} hari kerja dengan objek penelitian {{$data->objek_penelitian->nama}},terlebih khusus {{$data->uraian}}</p>
             <br>
             <p>Demikian surat keterangan ini disampaikan, agar dapat digunakan sebagaimana mestinya</p>
             <br>
@@ -114,7 +114,7 @@
                 <h5>
                     <p>Banjarbaru, {{$tgl}}</p>
                 </h5>
-                <h5>Kepala Balitra</h5>
+                <h5>Kepala Balai</h5>
                 <br>
                 <br>
                 <h5 style="text-decoration:underline;">Nama</h5>

@@ -45,16 +45,16 @@
                     </button>
                     <a class="navbar-brand" href="/"><img src="{{asset('depan/images/logo.png')}}" alt="logo"
                             width="60px"> </a>
-                    <a class="navbar-brand" href="/" style="margin-top:18px !important;">BALITTRA BANJARBARU</a>
+                    <a class="navbar-brand" href="/" style="margin-top:18px !important;">Balai Penelitian Pertanian Lahan Rawa (BALITTRA)</a>
                 </div>
 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="scroll active"><a href="/">Header</a></li>
-                        <li class="scroll"><a href="#features">Fungsi Balitra</a></li>
+                        <li class="scroll"><a href="#features">Fungsi BALITTRA</a></li>
                         <li class="scroll"><a href="#services">Objek Penelitian</a></li>
                         <li class="scroll"><a href="#about">Tentang Kami</a></li>
-                        <li class="scroll"><a href="#blog">berita</a></li>
+                        <li class="scroll"><a href="#blog">Berita</a></li>
                         <li class="scroll"><a href="{{Route('index')}}">Login</a></li>
                     </ul>
                 </div>
@@ -72,7 +72,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    &copy; 2020 Balittra</a>
+                    &copy; 2020 BALITTRA</a>
                 </div>
             </div>
         </div>

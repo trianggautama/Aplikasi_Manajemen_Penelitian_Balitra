@@ -54,7 +54,7 @@
                 <div class="form-group">
                     <label for="">Pendidikan Terakhir</label>
                     <select name="pendidikan_terakhir" id="" class="form-control" required>
-                        <option value="">-- pilih pendidikan terakhir --</option>
+                        <option value="">-- Pilih Pendidikan Terakhir --</option>
                         <option value="SD">SD</option>
                         <option value="SMP">SMP</option>
                         <option value="SMA/SMK">SMA/SMK</option>

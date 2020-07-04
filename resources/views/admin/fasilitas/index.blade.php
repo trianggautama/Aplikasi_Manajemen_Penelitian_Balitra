@@ -7,7 +7,7 @@
       <div>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb breadcrumb-style1 mg-b-10">
-            <li class="breadcrumb-item"><a href="#">fasilitas</a></li>
+            <li class="breadcrumb-item"><a href="#">Fasilitas</a></li>
             <li class="breadcrumb-item active" aria-current="page">Fasilitas Penelitian</li>
           </ol>
         </nav>
@@ -15,7 +15,7 @@
       </div>
       <div class="d-none d-md-block">
         <a href="{{Route('fasilitasCetak')}}" class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5" target="_blank"><i data-feather="printer"
-            class="wd-10 mg-r-5"></i> Print</a>
+            class="wd-10 mg-r-5"></i> Cetak</a>
         <a class="btn btn-sm pd-x-15 btn-dark btn-uppercase mg-l-5" href="#modal2" data-toggle="modal"><i
             data-feather="plus" class="wd-10 mg-r-5"></i> tambah Data</a>
       </div>
@@ -31,7 +31,7 @@
                   <th>No</th>
                   <th>Nama</th>
                   <th>Kategori</th>
-                  <th>jumlah</th>
+                  <th>Jumlah</th>
                   <th>Keterangan</th>
                   <th>Aksi</th>
                 </tr>

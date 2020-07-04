@@ -7,11 +7,11 @@
       <div>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb breadcrumb-style1 mg-b-10">
-            <li class="breadcrumb-item"><a href="#">Laporan HasilPenelitian</a></li>
+            <li class="breadcrumb-item"><a href="#">Laporan Hasil Penelitian</a></li>
             <li class="breadcrumb-item active" aria-current="page">Data</li>
           </ol>
         </nav>
-        <h4 class="mg-b-0 tx-spacing--1">Laporan HasilPenelitian</h4>
+        <h4 class="mg-b-0 tx-spacing--1">Laporan Hasil Penelitian</h4>
       </div>
     </div>
 
