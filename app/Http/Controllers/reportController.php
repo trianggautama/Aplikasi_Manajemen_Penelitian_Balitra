@@ -77,7 +77,7 @@ class reportController extends Controller
     {
         $data = Permohonan::where('status',$request->status)->orderBy('id', 'asc')->get();
         if($data->isEmpty()){
-            return redirect()->route('permohonanFilter')->withErrors('Data tidak ada');
+            return redirect()->route('permohonanFilter')->with('warning', 'Data tidak ada');
         }else{
         $tgl= Carbon::now()->format('d-m-Y');
         $pejabat      = User::where('role',3)->first();
