@@ -8,7 +8,7 @@
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="{{asset('admin/assets/img/favicon.png')}}">
 
-  <title>Aplikasi Penelitian Balitra</title>
+  <title>Aplikasi Penelitian BALITTRA</title>
 
   <!-- vendor css -->
   <link href="{{asset('admin/lib/@fortawesome/fontawesome-free/css/all.min.css')}}" rel="stylesheet">

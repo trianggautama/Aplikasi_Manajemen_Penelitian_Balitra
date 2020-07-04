@@ -10,7 +10,7 @@
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="{{asset('admin/assets/img/favicon.png')}}">
 
-  <title>Aplikasi Penelitian Balitra</title>
+  <title>Aplikasi Penelitian BALITTRA</title>
 
   <!-- vendor css -->
   <link href="{{asset('admin/lib/@fortawesome/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
@@ -34,7 +34,7 @@
 
   <aside class="aside aside-fixed">
     <div class="aside-header">
-      <a href="{{Route('index')}}" class="aside-logo">Balittra </span></a>
+      <a href="{{Route('index')}}" class="aside-logo">BALITTRA </span></a>
       <a href="" class="aside-menu-link">
         <i data-feather="menu"></i>
         <i data-feather="x"></i>
@@ -65,7 +65,7 @@
             </ul>
           </li>
           <li class="nav-item"><a href="{{Route('objekPenelitianIndex')}}" class="nav-link"><i data-feather="box"></i> <span>Objek Penelitian</span></a></li>
-          <li class="nav-item"><a href="{{Route('fasilitasIndex')}}" class="nav-link"><i data-feather="thermometer"></i> <span>Fasilitas Ballitra</span></a></li>
+          <li class="nav-item"><a href="{{Route('fasilitasIndex')}}" class="nav-link"><i data-feather="thermometer"></i> <span>Fasilitas BALITTRA</span></a></li>
           <li class="nav-label mg-t-25">Penelitian</li>
           <li class="nav-item"><a href="{{Route('permohonanIndex')}}" class="nav-link"><i data-feather="file-text"></i> <span>Data Permohonan</span></a></li>
           <li class="nav-item"><a href="{{Route('penelitiIndex')}}" class="nav-link"><i data-feather="users"></i> <span>Peneliti</span></a></li>
@@ -81,7 +81,7 @@
 
   <div class="content ht-100v pd-0">
     <div class="content-header">
-        Aplikasi Pelayanan Kegiatan Penelitian pada BALITTRA Kota Banjarbaru
+        Aplikasi Pelayanan Kegiatan Penelitian pada Balai Penelitian Pertanian Lahan Rawa (BALITTRA)
       <nav class="nav">
         @guest
         <a class="nav-link" href="{{ route('login') }}"><i data-feather="log-in"></i>{{ __('Login') }}</a>

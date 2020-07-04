@@ -10,7 +10,7 @@
                             <div class="col-sm-6">
                                 <div class="carousel-content">
                                     <h2><span>Pelayanan</span> Kegiatan Penelitian</h2>
-                                    <p>Memudahkan Masyarakat dalam melakukan penelitian di Balittra </p>
+                                    <p>Memudahkan Masyarakat dalam melakukan penelitian di Balai Penelitian Pertanian Lahan Rawa (BALITTRA) </p>
                                     <a class="btn btn-primary btn-lg" href="{{Route('permohonanInput')}}">Ajukan Permohonan</a>
                                 </div>
                             </div>
@@ -26,7 +26,7 @@
                             <div class="col-sm-6">
                                 <div class="carousel-content">
                                     <h2><span>Pelayanan</span> Kegiatan Penelitian</h2>
-                                    <p>Memudahkan Masyarakat dalam melakukan penelitian di Balittra </p>
+                                    <p>Memudahkan Masyarakat dalam melakukan penelitian di Balai Penelitian Pertanian Lahan Rawa (BALITTRA) </p>
                                     <a class="btn btn-primary btn-lg" href="{{Route('permohonanInput')}}">Ajukan Permohonan</a>
                                 </div>
                             </div>
@@ -48,7 +48,7 @@
 
             <div class="row">
                 <div class="col-sm-6 wow fadeInLeft">
-                    <h3 class="column-title">Kantor Balittra Banjarbaru</h3>
+                    <h3 class="column-title">Balai Penelitian Pertanian Lahan Rawa</h3>
                     <!-- 16:9 aspect ratio -->
                     <div class="embed-responsive embed-responsive-16by9">
                         <img src="{{asset('depan/images/kantor.png')}}" alt="" width="100%">
@@ -57,7 +57,7 @@
 
                 <div class="col-sm-6 wow fadeInRight">
                     <h3 class="column-title">Pengertian Umum</h3>
-                    <p class="text-justify"> Balai Penelitian Pertanian Lahan Rawa (BALLITRA) merupakan sebuah instansi pemerintah yang memiliki tugas pokok melaksanakan penelitian lahan rawa untuk pertanian, sebagai penyedia sarana penelitian pada pertanian dan lahan rawa ini kepada masyarakat umum yang ingin melakukan penelitian terhadap tanaman lahan rawa guna perkembangan teknologi agrikultural</p>
+                    <p class="text-justify"> Balai Penelitian Pertanian Lahan Rawa (BALITTRA) merupakan sebuah instansi pemerintah yang memiliki tugas pokok melaksanakan penelitian lahan rawa untuk pertanian, sebagai penyedia sarana penelitian pada pertanian dan lahan rawa ini kepada masyarakat umum yang ingin melakukan penelitian terhadap tanaman lahan rawa guna perkembangan teknologi agrikultural</p>
                     <br>
                     <a class="btn btn-primary" href="{{Route('permohonanInput')}}">Ajukan Permohonan</a>
 
@@ -78,8 +78,8 @@
     <section id="features">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title text-center wow fadeInDown">Fungsi ballitra </h2>
-                <p class="text-center wow fadeInDown">Adapun fungsi Balittra Banjarbaru secara keseluruhan adalah</p>
+                <h2 class="section-title text-center wow fadeInDown">Fungsi BALITTRA </h2>
+                <p class="text-center wow fadeInDown">Adapun fungsi Balai Penelitian Pertanian Lahan Rawa (BALITTRA) secara keseluruhan adalah:</p>
             </div>
             <div class="row">
                 <div class="col-sm-6 ">
@@ -140,7 +140,7 @@
                             <i class="fa fa-flask"></i>
                         </div>
                         <div class="media-body">
-                            <p>pendayagunaan hasil penelitian pertanian lahan rawa  </p>
+                            <p>Pendayagunaan hasil penelitian pertanian lahan rawa  </p>
                         </div>
                     </div>
 
@@ -149,7 +149,7 @@
                             <i class="fa fa-flask"></i>
                         </div>
                         <div class="media-body">
-                            <p>Pelaksanaan urusan tata usah dan rumah tangga Balai. </p>
+                            <p>Pelaksanaan urusan tata usaha dan rumah tangga Balai. </p>
                         </div>
                     </div>
 

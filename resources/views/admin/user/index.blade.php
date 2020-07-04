@@ -13,6 +13,11 @@
         <h4 class="mg-b-0 tx-spacing--1">Data User</h4>
       </div>
       <div class="d-none d-md-block">
+<<<<<<< HEAD
+        <button class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5"><i data-feather="printer"
+            class="wd-10 mg-r-5"></i> Cetak</button>
+=======
+>>>>>>> 23738c9a9b0c80422172c6e9f5a72319c63301c7
         <a class="btn btn-sm pd-x-15 btn-dark btn-uppercase mg-l-5" href="#modal2" data-toggle="modal"><i
             data-feather="plus" class="wd-10 mg-r-5"></i> tambah Data</a>
       </div>

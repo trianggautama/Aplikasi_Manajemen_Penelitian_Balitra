@@ -7,7 +7,7 @@
       <div>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb breadcrumb-style1 mg-b-10">
-            <li class="breadcrumb-item"><a href="#">fasilitas</a></li>
+            <li class="breadcrumb-item"><a href="#">Fasilitas</a></li>
             <li class="breadcrumb-item active" aria-current="page">Fasilitas Penelitian</li>
           </ol>
         </nav>
@@ -33,7 +33,7 @@
                   <th>No</th>
                   <th>Nama</th>
                   <th>Kategori</th>
-                  <th>jumlah</th>
+                  <th>Jumlah</th>
                   <th>Keterangan</th>
                   <th>Aksi</th>
                 </tr>
