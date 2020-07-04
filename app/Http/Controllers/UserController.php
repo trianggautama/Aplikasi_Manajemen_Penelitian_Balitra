@@ -51,7 +51,7 @@ class UserController extends Controller
         $validator = Validator::make($request->all(), [
             'username' => 'required|unique:users',
         ]);
-    
+
         if ($validator->fails()) {
             return back()->with('warning', 'Username sudah digunakan');
         }
@@ -115,16 +115,18 @@ class UserController extends Controller
         $user->update();
 
         $personal = Data_personal::where('user_id', $user->id)->first();
+        if (isset($personal)) {
 
-        $personal->user_id = $user->id;
-        $personal->NIP = $request->NIP;
-        $personal->jabatan = $request->jabatan;
-        $personal->no_hp = $request->no_hp;
-        $personal->tempat_lahir = $request->tempat_lahir;
-        $personal->tanggal_lahir = $request->tanggal_lahir;
-        $personal->alamat = $request->alamat;
+            $personal->user_id = $user->id;
+            $personal->NIP = $request->NIP;
+            $personal->jabatan = $request->jabatan;
+            $personal->no_hp = $request->no_hp;
+            $personal->tempat_lahir = $request->tempat_lahir;
+            $personal->tanggal_lahir = $request->tanggal_lahir;
+            $personal->alamat = $request->alamat;
 
-        $personal->update();
+            $personal->update();
+        }
 
         return redirect()->route('userIndex')->with('success', 'Berhasil mengubah data');
 
