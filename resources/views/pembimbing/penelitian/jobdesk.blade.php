@@ -26,13 +26,13 @@
         <div class="card card-body mg-b-10">
           <p>
             <a class="btn btn-secondary" data-toggle="collapse" href="#collapseExample" aria-controls="collapseExample">
-            {{carbon\carbon::parse($d->created_at)->translatedFormat('d F Y')}}
+              {{carbon\carbon::parse($d->created_at)->translatedFormat('d F Y')}}
             </a>
             <a href="{{Route('jobdeskEdit',['uuid' => $d->uuid])}}" class="btn btn-primary btn-icon"><i
                 data-feather="edit"></i></a>
             <button type="button" class="btn btn-danger btn-icon" onclick="Hapus('{{$d->uuid}}','{{$d->uraian}}')"><i
                 data-feather="delete"></i></button>
-            <button  data-status="{{$d->status}}" data-id="{{$d->uuid}}" class="btn btn-success btn-icon tambahVerif"
+            <button data-status="{{$d->status}}" data-id="{{$d->uuid}}" class="btn btn-success btn-icon tambahVerif"
               data-toggle="tooltip" data-placement="top" title="Verifikasi" data-toggle="modal"><i
                 data-feather="check"></i></button>
           </p>
@@ -148,7 +148,7 @@
           id="formPerbaikan">
           @csrf
           @method('PUT')
-          <input type="hidden" name="uuid" value="" id="uuid">
+          <input type="text" name="uuid" value="" id="uuid">
           <div class="form-group">
             <label for="Nama">Status</label>
             <select name="status" id="status" class="form-control">
