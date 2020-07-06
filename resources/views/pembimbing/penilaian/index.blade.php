@@ -27,7 +27,7 @@
               <thead>
                 <tr>
                   <th>No</th>
-                  <th>uraian</th>
+                  <th>Objek Penilaian</th>
                   <th>Nilai</th>
                   <th>Aksi</th>
                 </tr>
@@ -49,7 +49,7 @@
                     @if(!$d->hasil_penilaian()->where('penelitian_id',$penelitian->id)->first())
                     <button data-status="" data-id="{{$d->id}}" class="btn btn-success tambahVerif btn-icon"
                       data-toggle="tooltip" data-placement="top" title="Verifikasi" data-toggle="modal"><i
-                        data-feather="check"></i> input Nilai</button>
+                        data-feather="check"></i> Input Nilai</button>
                     @else
                     -
                     @endif
@@ -71,7 +71,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal Verif</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Input Nilai</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
