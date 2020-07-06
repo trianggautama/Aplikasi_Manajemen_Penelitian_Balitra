@@ -89,7 +89,7 @@
                         <th>No</th>
                         <th>Objek Penelitian</th>
                         <th>Uraian</th>
-                        <th>jumlah Penelitian</th>
+                        <th>Jumlah Penelitian</th>
                     </tr>
                 </thead>
                 <tbody>

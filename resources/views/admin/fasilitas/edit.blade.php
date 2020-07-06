@@ -41,7 +41,7 @@
                     </div>
                     <div class="form-group">
                       <label for="Nama">Satuan</label>
-                      <input type="text" name="satuan" class="form-control" placeholder="satuan" value="{{$data->satuan}}">
+                      <input type="text" name="satuan" class="form-control" placeholder="Satuan" value="{{$data->satuan}}">
                     </div>
                     <div class="form-group">
                       <label for="Nama">Keterangan</label>

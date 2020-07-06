@@ -90,7 +90,7 @@
                         <th>Nama</th>
                         <th>Kategori</th>
                         <th>Jumlah</th>
-                        <th>Jumlah yang dipinjam</th>
+                        <th>Jumlah Peminjaman</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -101,7 +101,7 @@
                         <td>{{$r->nama}}</td>
                         <td>{{$r->kategori}}</td>
                         <td>{{$r->jumlah}} {{$r->satuan}}</td>
-                        <td>{{$r->peminjaman->count()}} {{$r->satuan}}</td>
+                        <td>{{$r->peminjaman->count()}} x Peminjaman</td>
                     </tr>
                     @endforeach
                     </tfoot>
