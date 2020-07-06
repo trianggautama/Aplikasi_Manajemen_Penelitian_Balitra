@@ -27,7 +27,7 @@
               <thead>
                 <tr>
                   <th>No</th>
-                  <th>uraian</th>
+                  <th>Objek Penilaian</th>
                   <th>Nilai</th>
                   <th>Aksi</th>
                 </tr>

@@ -8,11 +8,11 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb breadcrumb-style1 mg-b-10">
             <li class="breadcrumb-item"><a href="#">Form Penilaian</a></li>
-            <li class="breadcrumb-item active" aria-current="page">form Penilaian</li>
+            <li class="breadcrumb-item active" aria-current="page">Form Penilaian</li>
             <li class="breadcrumb-item active" aria-current="page">Edit</li>
           </ol>
         </nav>
-        <h4 class="mg-b-0 tx-spacing--1">form Penilaian</h4>
+        <h4 class="mg-b-0 tx-spacing--1">Form Penilaian</h4>
       </div>
     </div>
 
@@ -24,7 +24,7 @@
               {{method_field('PUT') }}
               @csrf
               <div class="form-group">
-                <label for="Nama">uraian Objek Penilaian</label>
+                <label for="Nama">Edit Objek Penilaian</label>
                 <textarea name="objek_penilaian" id="" class="form-control"
                   required>{{$data->objek_penilaian}}</textarea>
               </div>

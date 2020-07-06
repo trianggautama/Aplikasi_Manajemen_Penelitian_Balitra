@@ -10,7 +10,7 @@
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="{{asset('admin/assets/img/favicon.png')}}">
 
-  <title>Aplikasi Penelitian Balitra</title>
+  <title>Aplikasi Penelitian BALITTRA</title>
 
   <!-- vendor css -->
   <link href="{{asset('admin/lib/@fortawesome/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
@@ -34,7 +34,7 @@
 
   <aside class="aside aside-fixed">
     <div class="aside-header">
-      <a href="{{Route('index')}}" class="aside-logo">Balittra </span></a>
+      <a href="{{Route('index')}}" class="aside-logo">BALITTRA </span></a>
       <a href="" class="aside-menu-link">
         <i data-feather="menu"></i>
         <i data-feather="x"></i>
