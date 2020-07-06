@@ -83,7 +83,7 @@
 
   <div class="content ht-100v pd-0">
     <div class="content-header">
-      Aplikasi Pelayanan Kegiatan Penelitian pada BALITTRA Kota Banjarbaru
+    Aplikasi Pelayanan Kegiatan Penelitian pada Balai Penelitian Pertanian Lahan Rawa (BALITTRA)
       <nav class="nav">
         @guest
         <a class="nav-link" href="{{ route('login') }}"><i data-feather="log-in"></i>{{ __('Login') }}</a>
