@@ -19,7 +19,7 @@
         <a href="{{Route('fasilitasCetak')}}" class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5" target="_blank"><i data-feather="printer"
             class="wd-10 mg-r-5"></i> Cetak</a>
         <a class="btn btn-sm pd-x-15 btn-dark btn-uppercase mg-l-5" href="#modal2" data-toggle="modal"><i
-            data-feather="plus" class="wd-10 mg-r-5"></i> tambah Data</a>
+            data-feather="plus" class="wd-10 mg-r-5"></i> Tambah Data</a>
       </div>
     </div>
 
@@ -70,7 +70,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content tx-14">
       <div class="modal-header">
-        <h6 class="modal-title" id="exampleModalLabel2">Modal Title</h6>
+        <h6 class="modal-title" id="exampleModalLabel2">Tambah Data Fasilitas</h6>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -85,8 +85,8 @@
           <div class="form-group">
             <label for="Nama">Kategori</label>
             <select name="kategori" id="" class="form-control" required>
-              <option value="">-- pilih Kategori --</option>
-              <option value="Rumah Kaca">Rumah Kaca</option>
+              <option value="">-- Pilih Kategori --</option>
+              <option value="Bangunan">Bangunan</option>
               <option value="Peralatan Kebun">Peralatan Kebun</option>
               <option value="Lahan">Lahan</option>
             </select>
@@ -97,10 +97,10 @@
           </div>
           <div class="form-group">
             <label for="Nama">Satuan</label>
-            <input type="text" name="satuan" class="form-control" placeholder="satuan" required>
+            <input type="text" name="satuan" class="form-control" placeholder="Satuan" required>
           </div>
           <div class="form-group">
-            <label for="Nama">keterangan</label>
+            <label for="Nama">Keterangan</label>
             <textarea name="keterangan" id="keterangan" name="keterangan" class="form-control" required></textarea>
           </div>
           <div class="modal-footer">

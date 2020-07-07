@@ -70,7 +70,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title text-center wow fadeInDown">Aplikasi Pelayanan Kegiatan Penelitian</h2>
-                <p class="text-center wow fadeInDown">Aplikasi ini Digunakan untuk Memudahkan Masyarakat yang ingin melakukan penelitian di kantor Balitra Kota Banjarbaru.</p>
+                <p class="text-center wow fadeInDown">Aplikasi ini Digunakan untuk Memudahkan Masyarakat yang ingin melakukan penelitian di Balai Penelitian Pertanian Lahan Rawa.</p>
             </div>
         </div>
     </section>

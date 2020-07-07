@@ -29,8 +29,10 @@
                     <div class="form-group">
                       <label for="Nama">Kategori</label>
                       <select name="kategori" id="" class="form-control">
-                        <option value="">-- pilih Kategori --</option>
-                        <option value="Alat Lab" {{  $data->kategori == "Alat Lab" ? 'selected' : ''}}>Alat Lab</option>
+                        <option value="">-- Pilih Kategori --</option>
+                        <option value="Bangunan" {{  $data->kategori == "Bangunan" ? 'selected' : ''}}>Bangunan</option>
+                        <option value="Peralatan Kebun" {{  $data->kategori == "Peralatan Kebun" ? 'selected' : ''}}>Peralatan Kebun</option>
+                        <option value="Lahan" {{  $data->kategori == "Lahan" ? 'selected' : ''}}>Lahan</option>
                       </select>
                     </div>
                     <div class="form-group">
@@ -39,10 +41,10 @@
                     </div>
                     <div class="form-group">
                       <label for="Nama">Satuan</label>
-                      <input type="text" name="satuan" class="form-control" placeholder="satuan" value="{{$data->satuan}}">
+                      <input type="text" name="satuan" class="form-control" placeholder="Satuan" value="{{$data->satuan}}">
                     </div>
                     <div class="form-group">
-                      <label for="Nama">keterangan</label>
+                      <label for="Nama">Keterangan</label>
                       <textarea name="keterangan" id="keterangan" name="keterangan" class="form-control">{{$data->keterangan}}</textarea>
                     </div>
                     </div>

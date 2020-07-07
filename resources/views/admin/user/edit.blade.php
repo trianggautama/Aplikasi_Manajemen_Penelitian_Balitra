@@ -11,7 +11,7 @@
             <li class="breadcrumb-item active" aria-current="page">Edit</li>
           </ol>
         </nav>
-        <h4 class="mg-b-0 tx-spacing--1">edit user</h4>
+        <h4 class="mg-b-0 tx-spacing--1">Edit User</h4>
       </div>
     </div>
 

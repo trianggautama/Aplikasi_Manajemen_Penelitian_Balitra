@@ -10,7 +10,7 @@
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="{{asset('admin/assets/img/favicon.png')}}">
 
-  <title>Aplikasi Penelitian Balitra</title>
+  <title>Aplikasi Penelitian BALITTRA</title>
 
   <!-- vendor css -->
   <link href="{{asset('admin/lib/@fortawesome/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
@@ -34,7 +34,7 @@
 
   <aside class="aside aside-fixed">
     <div class="aside-header">
-      <a href="{{Route('index')}}" class="aside-logo">Balittra </span></a>
+      <a href="{{Route('index')}}" class="aside-logo">BALITTRA </span></a>
       <a href="" class="aside-menu-link">
         <i data-feather="menu"></i>
         <i data-feather="x"></i>
@@ -56,7 +56,7 @@
         <ul class="nav nav-aside">
           @if(Auth::user()->status == 1)
             @if(Auth::user()->peneliti->penelitian->count() == 0)
-            <li class="nav-item"><a href="#" class="nav-link"><i data-feather="info"></i> <span>Data penelitian <br>belum diinput</span></a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><i data-feather="info"></i> <span>Data Penelitian <br>Belum diinput</span></a></li>
             @else
               <li class="nav-label mg-t-25">Akun</li>
               <li class="nav-item"><a href="{{Route('penelitiProfil')}}" class="nav-link"><i data-feather="user"></i>
@@ -83,7 +83,7 @@
 
   <div class="content ht-100v pd-0">
     <div class="content-header">
-      Aplikasi Pelayanan Kegiatan Penelitian pada BALITTRA Kota Banjarbaru
+    Aplikasi Pelayanan Kegiatan Penelitian pada Balai Penelitian Pertanian Lahan Rawa (BALITTRA)
       <nav class="nav">
         @guest
         <a class="nav-link" href="{{ route('login') }}"><i data-feather="log-in"></i>{{ __('Login') }}</a>
