@@ -39,8 +39,7 @@
                   <td>{{$d->objek_penilaian}}</td>
                   <td>
                     @php
-                    $nilai =
-                    $d->hasil_penilaian()->where('penelitian_id',$penelitian->id)->where('penilaian_id',$d->id)->pluck('nilai')
+                    $nilai =$d->hasil_penilaian()->where('penelitian_id',$penelitian->id)->where('penilaian_id',$d->id)->pluck('nilai')
                     @endphp
 
                     {{preg_replace('/[^\p{L}\p{N}\s]/u', '', $nilai)}}
@@ -51,7 +50,7 @@
                       data-toggle="tooltip" data-placement="top" title="Verifikasi" data-toggle="modal"><i
                         data-feather="check"></i> input Nilai</button>
                     @else
-                    -
+                    <a href="{{Route('resetPenilaian',['uuid'=>$d->hasil_penilaian()->where('penelitian_id',$penelitian->id)->first()->uuid])}}" class="btn btn-danger btn-icon"> <i data-feather="refresh-cw"></i> Reset Nilai</a>
                     @endif
                   </td>
                 </tr>

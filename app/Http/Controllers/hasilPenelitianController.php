@@ -122,4 +122,10 @@ class hasilPenelitianController extends Controller
         return redirect()->back()->withSuccess('Status berhasil diubah');
 
     }
+
+    public function resetNilai($uuid)
+    {
+        $data = Hasil_penilaian::where('uuid', $uuid)->first()->delete();
+        return redirect()->back()->withSuccess('Nilai Berhasil di Reset');
+    }
 }

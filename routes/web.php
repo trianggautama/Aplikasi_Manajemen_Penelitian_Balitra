@@ -150,6 +150,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('peneliti/peneliti/profil', 'UserController@penelitiProfil')->name('penelitiProfil');
     Route::get('input/penilaian/{uuid}', 'hasilPenelitianController@inputPenilaian')->name('inputPenilaian');
     Route::post('input/penilaian/create', 'hasilPenelitianController@penilaianStore')->name('penilaianStore');
+    Route::get('reset/penilaian/{uuid}', 'hasilPenelitianController@resetNilai')->name('resetPenilaian'); 
+
 
     //HALAMAN PENELITI - MENU PENELITIAN
     Route::get('peneliti/penelitian', 'penelitianController@penelitiPenelitianIndex')->name('penelitiPenelitianIndex');
