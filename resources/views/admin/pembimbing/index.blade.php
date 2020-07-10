@@ -14,6 +14,8 @@
         <h4 class="mg-b-0 tx-spacing--1">Pembimbing Lapangan</h4>
       </div>
       <div class="d-none d-md-block">
+        <a href="{{Route('analisisPembimbingCetak')}}" class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5" target="_blank"><i data-feather="printer"
+            class="wd-10 mg-r-5" ></i> Analisis Pembimbing</a>
         <a href="{{Route('pembimbingCetak')}}" class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5" target="_blank"><i data-feather="printer"
             class="wd-10 mg-r-5" ></i> Print</a>
         <a class="btn btn-sm pd-x-15 btn-dark btn-uppercase mg-l-5" href="#modal2" data-toggle="modal"><i

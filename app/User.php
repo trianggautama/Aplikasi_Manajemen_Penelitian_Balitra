@@ -52,4 +52,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Peneliti::class);
     }
+
+    public function penelitian()
+    {
+        return $this->hasMany(Penelitian::class);
+    }
 }
