@@ -48,7 +48,7 @@
 
             <div class="row">
                 <div class="col-sm-6 wow fadeInLeft">
-                    <h3 class="column-title">Balai Penelitian Pertanian Lahan Rawa</h3>
+                    <h3 class="column-title">Balai Penelitian Pertanian Lahan Rawa (BALITTRA)</h3>
                     <!-- 16:9 aspect ratio -->
                     <div class="embed-responsive embed-responsive-16by9">
                         <img src="{{asset('depan/images/kantor.png')}}" alt="" width="100%">
@@ -171,7 +171,7 @@
 
             <div class="section-header">
                 <h2 class="section-title text-center wow fadeInDown">Objek Penelitian</h2>
-                <p class="text-center wow fadeInDown">Fasilitas Objek Penelitian yang di sediakan pada Balittra</p>
+                <p class="text-center wow fadeInDown">Fasilitas Objek Penelitian yang di sediakan pada BALITTRA</p>
             </div>
 
             <div class="row">
@@ -238,7 +238,7 @@
     <section id="work-process">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title text-center wow fadeInDown">Berita Kegiatan Balittra</h2>
+                <h2 class="section-title text-center wow fadeInDown">Berita Kegiatan BALITTRA</h2>
             </div>
         </div>
     </section>
