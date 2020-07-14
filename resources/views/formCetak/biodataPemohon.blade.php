@@ -85,7 +85,7 @@
 
     <div class="container">
         <div class="isi">
-            <h2 style="text-align:center;">BIOADATA PEMOHON</h2>
+            <h2 style="text-align:center;">BIODATA PEMOHON</h2>
             <table>
                 <tr>
                     <td width="25%">Nama</td>
@@ -110,10 +110,10 @@
                 </tr>
                 <tr>
                     <td width="20%">Pendidikan Terakhir</td>
-                    <td>:{{$data->pendidikan_terakhir}}</td>
+                    <td>: {{$data->pendidikan_terakhir}}</td>
                 </tr>
                 <tr>
-                    <td width="20%">objek Penelitian</td>
+                    <td width="20%">Objek Penelitian</td>
                     <td>: {{$data->objek_penelitian->nama}}</td>
                 </tr>
                 <tr>
