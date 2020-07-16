@@ -53,7 +53,7 @@ class UserController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return back()->with('warning', 'Username sudah digunakan');
+            return back()->with('warning', 'Username Sudah Digunakan');
         }
 
         $user = new User;
@@ -82,7 +82,7 @@ class UserController extends Controller
         $personal->alamat = $request->alamat;
         $personal->save();
 
-        return redirect()->route('userIndex')->with('success', 'Berhasil menyimpan data');
+        return redirect()->route('userIndex')->with('success', 'Berhasil Menyimpan Data');
     }
 
     public function edit($uuid)
