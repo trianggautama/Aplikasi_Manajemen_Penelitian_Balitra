@@ -90,7 +90,7 @@
                   <th>NIP</th>
                   <th>Nama</th>
                   <th>Jabatan</th>
-                  <th>penelitian yang di bimbing</th>
+                  <th>Penelitian yang di Bimbing</th>
                 </tr>
               </thead>
               <tbody>
