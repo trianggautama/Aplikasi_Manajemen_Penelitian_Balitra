@@ -45,7 +45,7 @@ class PejabatController extends Controller
         $personal->alamat = $request->alamat;
         $personal->save();
 
-        return redirect()->route('pejabatIndex')->with('success', 'Berhasil menyimpan data');
+        return redirect()->route('pejabatIndex')->with('success', 'Berhasil Menyimpan Data');
     }
 
     public function edit($uuid)
@@ -90,7 +90,7 @@ class PejabatController extends Controller
 
         $personal->update();
 
-        return redirect()->route('pejabatIndex')->with('success', 'Berhasil mengubah data');
+        return redirect()->route('pejabatIndex')->with('success', 'Berhasil Mengubah Data');
 
     }
 
@@ -98,7 +98,7 @@ class PejabatController extends Controller
     {
         $user = User::where('uuid', $uuid)->first()->delete();
 
-        return redirect()->route('pejabatIndex')->with('success', 'Berhasil menghapus data');
+        return redirect()->route('pejabatIndex')->with('success', 'Berhasil Menghapus Data');
 
     }
 }

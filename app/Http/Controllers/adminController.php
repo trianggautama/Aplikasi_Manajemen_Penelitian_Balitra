@@ -74,7 +74,7 @@ class adminController extends Controller
 
         $data->update();
 
-        return redirect()->route('depan')->with('success', 'Berhasil mengajukan permohonan');
+        return redirect()->route('depan')->with('success', 'Berhasil Mengajukan Permohonan');
     }
 
     public function index()

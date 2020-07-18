@@ -43,7 +43,7 @@ class UserController extends Controller
         }
         $data->update();
 
-        return redirect()->back()->withSuccess('Profile berhasil diubah');
+        return redirect()->back()->withSuccess('Profil Berhasil Diubah');
     }
 
     public function store(Request $request)
@@ -128,7 +128,7 @@ class UserController extends Controller
             $personal->update();
         }
 
-        return redirect()->route('userIndex')->with('success', 'Berhasil mengubah data');
+        return redirect()->route('userIndex')->with('success', 'Berhasil Mengubah Data');
 
     }
 
@@ -136,7 +136,7 @@ class UserController extends Controller
     {
         $user = User::where('uuid', $uuid)->first()->delete();
 
-        return redirect()->route('userIndex')->with('success', 'Berhasil menghapus data');
+        return redirect()->route('userIndex')->with('success', 'Berhasil Menghapus Data');
 
     }
 

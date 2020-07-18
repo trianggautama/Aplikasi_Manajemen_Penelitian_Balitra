@@ -43,7 +43,7 @@ class penelitianController extends Controller
 
         $data->save();
 
-        return redirect()->back()->with('success', 'Data berhasil disimpan');
+        return redirect()->back()->with('success', 'Data Berhasil Disimpan');
     }
 
     public function show($uuid)
@@ -80,14 +80,14 @@ class penelitianController extends Controller
 
         $data->update();
 
-        return redirect()->route('penelitianIndex')->with('success', 'Data berhasil diubah');
+        return redirect()->route('penelitianIndex')->with('success', 'Data Berhasil Diubah');
     }
 
     public function destroy($uuid)
     {
         $data = Penelitian::where('uuid', $uuid)->first()->delete();
 
-        return redirect()->back()->with('success', 'Data berhasil dihapus');
+        return redirect()->back()->with('success', 'Data Berhasil Dihapus');
     }
 
     public function pembimbingPenelitianIndex()
