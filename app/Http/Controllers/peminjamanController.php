@@ -38,7 +38,7 @@ class peminjamanController extends Controller
 
         $data = $peminjaman->fill($req->all())->save();
 
-        return redirect()->route('peminjamanIndex')->withSuccess('Data berhasil diubah');
+        return redirect()->route('peminjamanIndex')->withSuccess('Data Berhasil Diubah');
     }
 
     public function updateStatus($uuid)
