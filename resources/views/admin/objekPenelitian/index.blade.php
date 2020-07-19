@@ -8,10 +8,10 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb breadcrumb-style1 mg-b-10">
             <li class="breadcrumb-item"><a href="#">Objek Penelitian</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Objek Penelitian Penelitian</li>
+            <li class="breadcrumb-item active" aria-current="page">Objek Penelitian</li>
           </ol>
         </nav>
-        <h4 class="mg-b-0 tx-spacing--1">Objek Penelitian Penelitian</h4>
+        <h4 class="mg-b-0 tx-spacing--1">Objek Penelitian</h4>
       </div>
       <div class="d-none d-md-block">
       <a href="{{route('analisisObjekPenelitianCetak')}}" class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5" target="_blank"><i data-feather="printer"
@@ -66,7 +66,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content tx-14">
       <div class="modal-header">
-        <h6 class="modal-title" id="exampleModalLabel2">Modal Title</h6>
+        <h6 class="modal-title" id="exampleModalLabel2">Tambah Objek Penelitian</h6>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -76,10 +76,10 @@
           @csrf
           <div class="form-group">
             <label for="Nama">Nama</label>
-            <input type="text" name="nama" class="form-control" placeholder="Nama" required>
+            <input type="text" name="nama" class="form-control" placeholder="" required>
           </div>
           <div class="form-group">
-            <label for="Nama">uraian</label>
+            <label for="Nama">Uraian</label>
             <textarea name="uraian" id="" class="form-control" required></textarea>
           </div>
           <div class="modal-footer">
@@ -110,7 +110,7 @@
       function Hapus(uuid, nama) {
         Swal.fire({
         title: 'Anda Yakin?',
-        text: " Menghapus data objek Penelitian '" + nama ,        
+        text: " Menghapus Data Objek Penelitian " + nama ,        
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
