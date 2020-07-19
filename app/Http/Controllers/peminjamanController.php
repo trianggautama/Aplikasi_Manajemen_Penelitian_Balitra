@@ -54,7 +54,7 @@ class peminjamanController extends Controller
 
         $data->update();
 
-        return redirect()->back()->withSuccess('Berhasil verifikasi');
+        return redirect()->back()->withSuccess('Berhasil Verifikasi');
 
     }
 
