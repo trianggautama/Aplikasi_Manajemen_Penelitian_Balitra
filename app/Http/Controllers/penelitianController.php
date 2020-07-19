@@ -150,7 +150,7 @@ class penelitianController extends Controller
 
     }
 
-    public function jobdeskDestroy(Request $request, $uuid)
+    public function jobdeskDestroy($uuid)
     {
         $data = Jobdesk::where('uuid', $uuid)->first()->delete();
 
