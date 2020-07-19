@@ -148,7 +148,7 @@
           id="formPerbaikan">
           @csrf
           @method('PUT')
-          <input type="text" name="uuid" value="" id="uuid">
+          <input type="hidden" name="uuid" value="" id="uuid">
           <div class="form-group">
             <label for="Nama">Status</label>
             <select name="status" id="status" class="form-control">

@@ -152,7 +152,7 @@ class penelitianController extends Controller
 
     public function jobdeskDestroy(Request $request, $uuid)
     {
-        $data = Jobdesk::where('uuid', $uuid)->first();
+        $data = Jobdesk::where('uuid', $uuid)->first()->delete();
 
         return redirect()->back()->withSuccess('Data Berhasil Dihapus');
 
