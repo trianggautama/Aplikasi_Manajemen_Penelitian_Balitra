@@ -45,7 +45,7 @@
                     {{carbon\carbon::parse($data->tanggal_lahir)->translatedFormat('d F Y')}}</span>
                 </div>
                 <div class="form-group">
-                  <p class="tx-medium mg-b-2"><a href="" class="link-01">pendidikan Terakhir</a></p>
+                  <p class="tx-medium mg-b-2"><a href="" class="link-01">Pendidikan Terakhir</a></p>
                   <span class="tx-12 tx-color-03">{{$data->pendidikan_terakhir}}</span>
                 </div>
               </div>
