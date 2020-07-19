@@ -37,6 +37,6 @@ class formPenilaianController extends Controller
     {
         $data = Penilaian::where('uuid', $uuid)->first()->delete();
 
-        return back();
+        return redirect()->back()->with('success', 'Data Berhasil Dihapus');
     }
 }

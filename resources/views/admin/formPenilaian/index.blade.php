@@ -39,11 +39,12 @@
                     <a href="{{Route('formPenilaianEdit',['uuid' => $d->uuid])}}" class="btn btn-primary btn-icon">
                       <i data-feather="edit"></i>
                     </a>
-                    <button type="button" class="btn btn-danger btn-icon" onclick="Hapus()">
+                    <button type="button" class="btn btn-danger btn-icon"
+                      onclick="Hapus('{{$d->uuid}}','{{$d->objek_penilaian}}')">
                       <i data-feather="delete"></i>
                     </button>
                   </td>
-                </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                </tr>
                 @endforeach
               </tbody>
             </table>
@@ -109,7 +110,7 @@
         cancelButtonText: 'Batal'
       }).then((result) => {
         if (result.value) {
-          url = '{{route("objekPenelitianDestroy",'')}}';
+          url = '{{route("formPenilaianDestroy",'')}}';
           window.location.href =  url+'/'+uuid ;
         }
       })
