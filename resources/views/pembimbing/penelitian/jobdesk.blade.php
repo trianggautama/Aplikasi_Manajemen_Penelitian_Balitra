@@ -66,8 +66,8 @@
                   <p>Uraian : {{$d->jobdesk_peneliti->uraian}}</p>
                   <p>Tanggal Upload:
                     {{carbon\carbon::parse($d->jobdesk_peneliti->created_at)->translatedFormat('d F Y')}}
-                    @if(carbon\carbon::parse($d->jobdesk_peneliti->created_at)->translatedFormat('d F Y') <=
-                      carbon\carbon::parse($d->batas_waktu)->translatedFormat('d F Y')) <span class="text-primary">
+                    @if(carbon\carbon::parse($d->jobdesk_peneliti->created_at)->translatedFormat('Ymd') <=
+                      carbon\carbon::parse($d->batas_waktu)->translatedFormat('Ymd')) <span class="text-primary">
                         (Tepat Waktu)</span> @else <span class="text-danger"> (Terlambat)</span> @endif</p>
                 </div>
                 <div class="col-md-6">
