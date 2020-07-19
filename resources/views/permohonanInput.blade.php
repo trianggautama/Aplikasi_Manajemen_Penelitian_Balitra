@@ -70,7 +70,7 @@
                 <div class="form-group">
                     <label for="">Objek Penelitian</label>
                     <select name="objek_penelitian_id" id="objek_penelitian_id" class="form-control" required>
-                        <option value="">-- pilih Objek Penelitian</option>
+                        <option value="">--Pilih Objek Penelitian--</option>
                         @foreach($objekPenelitian as $o)
                         <option value="{{$o->id}}">{{$o->nama}}</option>
                         @endforeach
