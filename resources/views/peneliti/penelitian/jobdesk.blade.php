@@ -58,7 +58,7 @@
             <div class="card card-body mg-t-10">
               <div class="row">
                 <div class="col-md-6">
-                  <p> <b>file upload:</b> </p>
+                  <p> <b>File Upload:</b> </p>
                   <p>Uraian : {{$d->jobdesk_peneliti->uraian}}</p>
                   <p>Tanggal Upload:
                     {{carbon\carbon::parse($d->jobdesk_peneliti->created_at)->translatedFormat('d F Y')}}
