@@ -101,7 +101,7 @@
                         <td>{{$r->nama}}</td>
                         <td>{{$r->kategori}}</td>
                         <td>{{$r->jumlah}} {{$r->satuan}}</td>
-                        <td>{{$r->peminjaman->count()}} x Peminjaman</td>
+                        <td>{{$r->peminjaman->where('status',1)->count()}} x Peminjaman</td>
                     </tr>
                     @endforeach
                     </tfoot>

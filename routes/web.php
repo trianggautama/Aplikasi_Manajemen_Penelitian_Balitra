@@ -88,7 +88,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/penelitian/jobdesk/edit/{uuid}', 'penelitianController@jobdeskEdit')->name('jobdeskEdit');
     Route::put('/penelitian/jobdesk/edit/{uuid}', 'penelitianController@jobdeskUpdate')->name('jobdeskUpdate');
 
-    //form penilaian
+    //form penilaianabal
     Route::get('/formPenilaian', 'formPenilaianController@index')->name('formPenilaianIndex');
     Route::post('/formPenilaian', 'formPenilaianController@store')->name('formPenilaianStore');
     Route::get('/formPenilaian/detail/{uuid}', 'formPenilaianController@show')->name('formPenilaianShow');
