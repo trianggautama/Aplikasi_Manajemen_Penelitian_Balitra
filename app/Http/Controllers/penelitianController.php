@@ -67,7 +67,7 @@ class penelitianController extends Controller
 
         return view('admin.penelitian.edit', compact('data', 'pembimbing', 'objek'));
     }
-
+    
     public function update(Request $request, $uuid)
     {
         $data = Penelitian::where('uuid', $uuid)->first();
@@ -189,6 +189,7 @@ class penelitianController extends Controller
         return redirect()->back()->withSuccess('Data berhasil disimpan');
     }
 
+    
     public function penelitiJobdeskDestroy($uuid)
     {
         $data = Jobdesk_peneliti::where('uuid', $uuid)->first();

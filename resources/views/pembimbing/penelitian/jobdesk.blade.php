@@ -120,7 +120,7 @@
           </div>
           <div class="form-group">
             <label for="">Batas Pengerjaan </label>
-            <input type="date" name="batas_pengerjaan" id="batas_pengerjaan" class="form-control">
+            <input type="date" name="batas_pengerjaan" id="batas_pengerjaan" class="form-control" min="{{carbon\carbon::now()->translatedFormat('Y-m-d')}}">
           </div>
       </div>
       <div class="modal-footer">
