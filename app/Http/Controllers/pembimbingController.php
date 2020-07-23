@@ -8,6 +8,7 @@ use App\User;
 use Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class pembimbingController extends Controller
 {
@@ -50,6 +51,15 @@ class pembimbingController extends Controller
 
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'username' => 'required|unique:users',
+            'NIP' => 'required|unique:data_personals',
+        ]);
+
+        if ($validator->fails()) {
+            return back()->with('warning', 'Username/NIP Sudah Digunakan');
+        }
+
         $user = new User;
         $user->nama = $request->nama;
         $user->username = $request->username;
@@ -137,7 +147,7 @@ class pembimbingController extends Controller
     public function penelitiPembimbingIndex()
     {
         $peneliti_id = Auth::user()->peneliti->id;
-        $penelitian = Penelitian::where('peneliti_id',$peneliti_id)->first();
+        $penelitian = Penelitian::where('peneliti_id', $peneliti_id)->first();
         $data = User::where('id', $penelitian->user_id)->OrderBy('id', 'Desc')->where('role', 2)->get();
         return view('peneliti.pembimbing.index', compact('data'));
     }

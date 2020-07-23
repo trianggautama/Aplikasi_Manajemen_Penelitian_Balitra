@@ -6,6 +6,7 @@ use App\Data_personal;
 use App\User;
 use Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PejabatController extends Controller
 {
@@ -18,6 +19,15 @@ class PejabatController extends Controller
 
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'username' => 'required|unique:users',
+            'NIP' => 'required|unique:data_personals',
+        ]);
+
+        if ($validator->fails()) {
+            return back()->with('warning', 'Username/NIP Sudah Digunakan');
+        }
+
         $user = new User;
         $user->nama = $request->nama;
         $user->username = $request->username;

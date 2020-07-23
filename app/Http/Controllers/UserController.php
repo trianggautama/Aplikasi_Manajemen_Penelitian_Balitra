@@ -50,10 +50,11 @@ class UserController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'username' => 'required|unique:users',
+            'NIP' => 'required|unique:data_personals',
         ]);
 
         if ($validator->fails()) {
-            return back()->with('warning', 'Username Sudah Digunakan');
+            return back()->with('warning', 'Username/NIP Sudah Digunakan');
         }
 
         $user = new User;
