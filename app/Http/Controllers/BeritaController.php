@@ -50,8 +50,6 @@ class BeritaController extends Controller
             $foto = $FotoName . '.' . $FotoExt;
             $img->move('images/berita', $foto);
             $berita->foto = $foto;
-        } else {
-            $berita->foto = $berita->foto;
         }
         $berita->update();
 
