@@ -14,17 +14,18 @@
         <h4 class="mg-b-0 tx-spacing--1">Data Penelitian </h4>
       </div>
       <div class="d-none d-md-block">
-      <a href="{{Route('jobdeskCetak',['uuid'=>$data->uuid])}}" class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5"
-          target="_blank"><i data-feather="printer" class="wd-10 mg-r-5"></i> Print</a>
+        <a href="{{Route('jobdeskCetak',['uuid'=>$data->uuid])}}"
+          class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5" target="_blank"><i data-feather="printer"
+            class="wd-10 mg-r-5"></i> Print</a>
       </div>
-    </div> 
+    </div>
     <div class="row row-xs">
       <div class="col-md-12 col-xl-12 mg-t-10">
         @foreach($data->jobdesk as $d)
         <div class="card card-body mg-b-10">
           <p>
             <a class="btn btn-secondary" data-toggle="collapse" href="#collapseExample" aria-controls="collapseExample">
-            {{carbon\carbon::parse($d->created_at)->translatedFormat('d F Y')}}
+              {{carbon\carbon::parse($d->created_at)->translatedFormat('d F Y')}}
             </a>
             @if(!$d->jobdesk_peneliti)
             <button id="tambahVerif" data-id="{{$d->id}}" class="btn btn-success btn-icon" data-toggle="tooltip"
@@ -58,12 +59,12 @@
             <div class="card card-body mg-t-10">
               <div class="row">
                 <div class="col-md-6">
-                  <p> <b>file upload:</b> </p>
+                  <p> <b>File Upload:</b> </p>
                   <p>Uraian : {{$d->jobdesk_peneliti->uraian}}</p>
                   <p>Tanggal Upload:
                     {{carbon\carbon::parse($d->jobdesk_peneliti->created_at)->translatedFormat('d F Y')}}
-                    @if(carbon\carbon::parse($d->jobdesk_peneliti->created_at)->translatedFormat('d F Y') <=
-                      carbon\carbon::parse($d->batas_waktu)->translatedFormat('d F Y')) <span class="text-primary">
+                    @if(carbon\carbon::parse($d->jobdesk_peneliti->created_at)->translatedFormat('Y-m-d') <=
+                      carbon\carbon::parse($d->batas_waktu)->translatedFormat('Y-m-d')) <span class="text-primary">
                         (Tepat Waktu)</span> @else <span class="text-danger"> (Terlambat)</span> @endif</p>
                 </div>
                 <div class="col-md-6">

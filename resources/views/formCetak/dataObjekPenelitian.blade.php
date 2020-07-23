@@ -97,7 +97,7 @@
                     <tr>
                         <td>{{$loop->iteration}}</td>
                         <td>{{$r->nama}}</td>
-                        <td style="padding:7px;"><p style="text-align:justify;">{{$r->uraian}}</p></td>
+                        <td style="padding:7px;"><p style="text-align:center;">{{$r->uraian}}</p></td>
                     </tr>
                     @endforeach
                     </tfoot>

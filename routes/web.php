@@ -139,7 +139,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/penelitian/jobdesk/create', 'penelitianController@jobdeskStore')->name('penelitianJobdeskStore');
     Route::put('/penelitian/jobdesk/update', 'penelitianController@jobdeskStatusUpdate')->name('penelitianJobdeskUpdate');
     Route::put('/penelitian/jobdesk/updateHasil', 'hasilPenelitianController@HasilPeneltianStatusUpdate')->name('HasilPeneltianStatusUpdate');
-    Route::get('/penelitian/jobdesk/delete', 'penelitianController@jobdeskDestroy')->name('penelitianJobdeskDestroy');
+    Route::get('/penelitian/jobdesk/delete/{uuid}', 'penelitianController@jobdeskDestroy')->name('penelitianJobdeskDestroy');
 
     Route::get('pembimbing/hasilPenelitian', 'hasilPenelitianController@pembimbingIndex')->name('pembimbingLaporanPenelitian');
     Route::get('pembimbing/hasilPenelitian/detail/{uuid}', 'hasilPenelitianController@pembimbingDetail')->name('PembimbingLaporanPenelitianDetail');
@@ -151,8 +151,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('peneliti/peneliti/profil', 'UserController@penelitiProfil')->name('penelitiProfil');
     Route::get('input/penilaian/{uuid}', 'hasilPenelitianController@inputPenilaian')->name('inputPenilaian');
     Route::post('input/penilaian/create', 'hasilPenelitianController@penilaianStore')->name('penilaianStore');
-    Route::get('reset/penilaian/{uuid}', 'hasilPenelitianController@resetNilai')->name('resetPenilaian'); 
-
+    Route::get('reset/penilaian/{uuid}', 'hasilPenelitianController@resetNilai')->name('resetPenilaian');
 
     //HALAMAN PENELITI - MENU PENELITIAN
     Route::get('peneliti/penelitian', 'penelitianController@penelitiPenelitianIndex')->name('penelitiPenelitianIndex');

@@ -87,7 +87,7 @@
                     <td><p>Banjarbaru, {{$tgl}}</p></td>
                 </tr>
             </table>
-            <p>Perihal : Peminjaman Fasilitas penelitian</p>
+            <p>Perihal : Peminjaman Fasilitas Penelitian</p>
             <br>
             <p>Kepada Yth. <br>
             Kepala BALITTRA  <br>
@@ -122,7 +122,7 @@
                     {{carbon\carbon::parse($data->tanggal_selesai)->translatedFormat('d F Y')}}</td>
                 </tr>
             </table>
-            <p>Dengan ini saya bertanggung jawab apabila ada kerusakan terhadap fasilitas yang digunakan,demikian permohonan dari sanya atas perhatiannya saya ucapkan terimakasih</p>
+            <p>Dengan ini saya bertanggung jawab apabila ada kerusakan terhadap fasilitas yang digunakan,demikian permohonan dari saya atas perhatiannya saya ucapkan terimakasih</p>
             <br>
             <br>
             <br>
@@ -131,7 +131,7 @@
                     <td style="text-align:center"> <h5>
                     </h5>
                     <br>
-                    <h5>PENELITI</h5>
+                    <h5>PEMOHON</h5>
                     <br>
                     <br>
                     <h5 style="text-decoration:underline;">{{$data->peneliti->user->nama}}</h5></td>

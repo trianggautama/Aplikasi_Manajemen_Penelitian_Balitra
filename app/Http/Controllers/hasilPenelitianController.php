@@ -47,7 +47,7 @@ class hasilPenelitianController extends Controller
         }
         $data->update();
 
-        return back()->withSuccess('Data berhasil disimpan');
+        return back()->withSuccess('Data Berhasil Disimpan');
 
     }
 
@@ -73,7 +73,7 @@ class hasilPenelitianController extends Controller
         }
         $data->update();
 
-        return redirect()->route('penelitiLaporanPenelitian')->withSuccess('Data berhasil diubah');
+        return redirect()->route('penelitiLaporanPenelitian')->withSuccess('Data Berhasil Diubah');
     }
 
     public function pembimbingIndex()
@@ -103,7 +103,7 @@ class hasilPenelitianController extends Controller
         $data->nilai = $req->nilai;
         $data->save();
 
-        return back()->withSuccess('Data berhasil disimpan');
+        return back()->withSuccess('Data Berhasil Disimpan');
     }
 
     public function HasilPeneltianStatusUpdate(Request $request)
@@ -119,7 +119,7 @@ class hasilPenelitianController extends Controller
 
         $data->update();
 
-        return redirect()->back()->withSuccess('Status berhasil diubah');
+        return redirect()->back()->withSuccess('Status Berhasil Diubah');
 
     }
 

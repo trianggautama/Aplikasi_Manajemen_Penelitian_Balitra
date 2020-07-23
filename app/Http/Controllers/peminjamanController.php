@@ -21,7 +21,7 @@ class peminjamanController extends Controller
     public function store(Request $req)
     {
         $data = Peminjaman_fasilitas::create($req->all());
-        return redirect()->back()->withSuccess('Data berhasil disimpan');
+        return redirect()->back()->withSuccess('Data Berhasil Disimpan');
     }
 
     public function edit($uuid)
@@ -38,7 +38,7 @@ class peminjamanController extends Controller
 
         $data = $peminjaman->fill($req->all())->save();
 
-        return redirect()->route('peminjamanIndex')->withSuccess('Data berhasil diubah');
+        return redirect()->route('peminjamanIndex')->withSuccess('Data Berhasil Diubah');
     }
 
     public function updateStatus($uuid)
@@ -54,7 +54,7 @@ class peminjamanController extends Controller
 
         $data->update();
 
-        return redirect()->back()->withSuccess('Berhasil verifikasi');
+        return redirect()->back()->withSuccess('Berhasil Verifikasi');
 
     }
 
@@ -62,7 +62,7 @@ class peminjamanController extends Controller
     {
         $data = Peminjaman_fasilitas::where('uuid', $uuid)->first()->delete();
 
-        return redirect()->back()->withSuccess('Data berhasil dihapus');
+        return redirect()->back()->withSuccess('Data Berhasil Dihapus');
     }
 
     public function penelitiIndex()

@@ -45,7 +45,7 @@ class pembimbingController extends Controller
         $data_personal = Data_personal::findOrFail($data->data_personal->id);
         $data_personal->fill($request->all())->save();
 
-        return redirect()->back()->withSuccess('Profile berhasil diubah');
+        return redirect()->back()->withSuccess('Profile Berhasil Diubah');
     }
 
     public function store(Request $request)
@@ -77,7 +77,7 @@ class pembimbingController extends Controller
         $personal->alamat = $request->alamat;
         $personal->save();
 
-        return redirect()->route('pembimbingIndex')->with('success', 'Berhasil menyimpan data');
+        return redirect()->route('pembimbingIndex')->with('success', 'Berhasil Menyimpan Data');
     }
 
     public function edit($uuid)
@@ -122,7 +122,7 @@ class pembimbingController extends Controller
 
         $personal->update();
 
-        return redirect()->route('pembimbingIndex')->with('success', 'Berhasil mengubah data');
+        return redirect()->route('pembimbingIndex')->with('success', 'Berhasil Mengubah Data');
 
     }
 
@@ -130,7 +130,7 @@ class pembimbingController extends Controller
     {
         $user = User::where('uuid', $uuid)->first()->delete();
 
-        return redirect()->route('pembimbingIndex')->with('success', 'Berhasil menghapus data');
+        return redirect()->route('pembimbingIndex')->with('success', 'Berhasil Menghapus Data');
 
     }
 

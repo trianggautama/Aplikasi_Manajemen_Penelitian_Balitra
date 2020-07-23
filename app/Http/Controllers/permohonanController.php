@@ -61,7 +61,7 @@ class permohonanController extends Controller
         }
         $data->update();
 
-        return redirect()->back()->with('success', 'Data berhasil diverifikasi');
+        return redirect()->back()->with('success', 'Data Berhasil Diverifikasi');
     }
 
     public function filter()

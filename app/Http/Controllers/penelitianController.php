@@ -43,7 +43,7 @@ class penelitianController extends Controller
 
         $data->save();
 
-        return redirect()->back()->with('success', 'Data berhasil disimpan');
+        return redirect()->back()->with('success', 'Data Berhasil Disimpan');
     }
 
     public function show($uuid)
@@ -80,14 +80,14 @@ class penelitianController extends Controller
 
         $data->update();
 
-        return redirect()->route('penelitianIndex')->with('success', 'Data berhasil diubah');
+        return redirect()->route('penelitianIndex')->with('success', 'Data Berhasil Diubah');
     }
 
     public function destroy($uuid)
     {
         $data = Penelitian::where('uuid', $uuid)->first()->delete();
 
-        return redirect()->back()->with('success', 'Data berhasil dihapus');
+        return redirect()->back()->with('success', 'Data Berhasil Dihapus');
     }
 
     public function pembimbingPenelitianIndex()
@@ -107,7 +107,7 @@ class penelitianController extends Controller
     {
         $data = Jobdesk::create($request->all());
 
-        return redirect()->back()->withSuccess('Data berhasil disimpan');
+        return redirect()->back()->withSuccess('Data Berhasil Disimpan');
     }
 
     public function jobdeskStatusUpdate(Request $request)
@@ -123,7 +123,7 @@ class penelitianController extends Controller
 
         $data->update();
 
-        return redirect()->back()->withSuccess('Status berhasil diubah');
+        return redirect()->back()->withSuccess('Status Berhasil Diubah');
 
     }
 
@@ -146,15 +146,15 @@ class penelitianController extends Controller
         $data = Jobdesk::where('uuid', $uuid)->first();
         $data->fill($request->all())->save();
 
-        return redirect()->route('penelitianJobdesk', ['uuid' => $data->penelitian->uuid])->withSuccess('Data berhasil diubah');
+        return redirect()->route('penelitianJobdesk', ['uuid' => $data->penelitian->uuid])->withSuccess('Data Berhasil Diubah');
 
     }
 
-    public function jobdeskDestroy(Request $request, $uuid)
+    public function jobdeskDestroy($uuid)
     {
-        $data = Jobdesk::where('uuid', $uuid)->first();
+        $data = Jobdesk::where('uuid', $uuid)->first()->delete();
 
-        return redirect()->back()->withSuccess('Data berhasil dihapus');
+        return redirect()->back()->withSuccess('Data Berhasil Dihapus');
 
     }
 
@@ -186,7 +186,7 @@ class penelitianController extends Controller
         }
         $data->update();
 
-        return redirect()->back()->withSuccess('Data berhasil disimpan');
+        return redirect()->back()->withSuccess('Data Berhasil Disimpan');
     }
 
     
@@ -196,7 +196,7 @@ class penelitianController extends Controller
         File::delete('lampiran/jobdesk/' . $data->file);
         $data->delete();
 
-        return redirect()->back()->withSuccess('Data berhasil dihapus');
+        return redirect()->back()->withSuccess('Data Berhasil Dihapus');
 
     }
 }

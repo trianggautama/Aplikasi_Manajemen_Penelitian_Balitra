@@ -59,7 +59,7 @@ class penelitiController extends Controller
 
         $data->save();
 
-        return redirect()->back()->with('success', 'Data berhasil disimpan');
+        return redirect()->back()->with('success', 'Data Berhasil Disimpan');
     }
 
     public function detail()
@@ -104,7 +104,7 @@ class penelitiController extends Controller
             $user->update();
         }
 
-        return redirect()->route('penelitiIndex')->with('success', 'Data berhasil diubah');
+        return redirect()->route('penelitiIndex')->with('success', 'Data Berhasil Diubah');
     }
 
     public function destroy($uuid)
@@ -112,7 +112,7 @@ class penelitiController extends Controller
         $data = Peneliti::where('uuid', $uuid)->first();
         $user = User::findOrFail($data->user_id)->delete();
 
-        return redirect()->back()->with('success', 'Data berhasil dihapus');
+        return redirect()->back()->with('success', 'Data Berhasil Dihapus');
     }
 
     public function pembimbingPenelitiIndex()

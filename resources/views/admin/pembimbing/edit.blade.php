@@ -58,8 +58,8 @@
             </div>
             <div class="form-group">
               <label for="Nama">Alamat</label>
-              <input type="text" name="alamat" class="form-control" placeholder="ALamat"
-                value="{{$data->data_personal->tanggal_lahir}}">
+              <input type="text" name="alamat" class="form-control" placeholder="Alamat"
+                value="{{$data->data_personal->alamat}}">
             </div>
             <div class="row">
               <div class="col-md-6">
