@@ -43,18 +43,22 @@
     <div class="aside-body">
       <div class="aside-loggedin">
         <div class="d-flex align-items-center justify-content-start">
-          <a href="" class="avatar"><img src="{{asset('images/user/'. Auth::user()->foto)}}" class="rounded-circle" alt=""></a>
+          <a href="" class="avatar"><img src="{{asset('images/user/'. Auth::user()->foto)}}" class="rounded-circle"
+              alt=""></a>
           <div class="aside-alert-link">
-          <a class="nav-link" data-toggle="tooltip" title="Log out" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i data-feather="log-out"></i> </a>
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            @csrf
-          </form>          
-      </div>
+            <a class="nav-link" data-toggle="tooltip" title="Log out" href="{{ route('logout') }}"
+              onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i
+                data-feather="log-out"></i> </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              @csrf
+            </form>
+          </div>
         </div><!-- aside-loggedin -->
-       <ul class="nav nav-aside">
-       <li class="nav-label mg-t-25">Akun</li>
-        <li class="nav-item"><a href="{{Route('userProfil')}}" class="nav-link"><i data-feather="user"></i> <span>Profil</span></a></li>
-        
+        <ul class="nav nav-aside">
+          <li class="nav-label mg-t-25">Akun</li>
+          <li class="nav-item"><a href="{{Route('userProfil')}}" class="nav-link"><i data-feather="user"></i>
+              <span>Profil</span></a></li>
+
           <li class="nav-label mg-t-25">Master Data</li>
           <li class="nav-item with-sub">
             <a href="" class="nav-link"><i data-feather="user"></i> <span>Pegawai</span></a>
@@ -64,30 +68,41 @@
               <li><a href="{{Route('pejabatIndex')}}">Pejabat Struktural</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a href="{{Route('objekPenelitianIndex')}}" class="nav-link"><i data-feather="box"></i> <span>Objek Penelitian</span></a></li>
-          <li class="nav-item"><a href="{{Route('fasilitasIndex')}}" class="nav-link"><i data-feather="thermometer"></i> <span>Fasilitas BALITTRA</span></a></li>
+          <li class="nav-item"><a href="{{Route('objekPenelitianIndex')}}" class="nav-link"><i data-feather="box"></i>
+              <span>Objek Penelitian</span></a></li>
+          <li class="nav-item"><a href="{{Route('fasilitasIndex')}}" class="nav-link"><i data-feather="thermometer"></i>
+              <span>Fasilitas BALITTRA</span></a></li>
           <li class="nav-label mg-t-25">Penelitian</li>
-          <li class="nav-item"><a href="{{Route('permohonanIndex')}}" class="nav-link"><i data-feather="file-text"></i> <span>Data Permohonan</span></a></li>
-          <li class="nav-item"><a href="{{Route('penelitiIndex')}}" class="nav-link"><i data-feather="users"></i> <span>Peneliti</span></a></li>
-          <li class="nav-item"><a href="{{Route('penelitianIndex')}}" class="nav-link"><i data-feather="sunrise"></i> <span>Data Penelitian</span></a></li>
-          <li class="nav-item"><a href="{{Route('hasilPenelitianIndex')}}" class="nav-link"><i data-feather="file"></i> <span>Laporan Akhir Penelitian</span></a></li>
-          <li class="nav-item"><a href="{{Route('formPenilaianIndex')}}" class="nav-link"><i data-feather="file"></i> <span>Form Penilaian Penelitian</span></a></li>
+          <li class="nav-item"><a href="{{Route('permohonanIndex')}}" class="nav-link"><i data-feather="file-text"></i>
+              <span>Data Permohonan</span></a></li>
+          <li class="nav-item"><a href="{{Route('penelitiIndex')}}" class="nav-link"><i data-feather="users"></i>
+              <span>Peneliti</span></a></li>
+          <li class="nav-item"><a href="{{Route('penelitianIndex')}}" class="nav-link"><i data-feather="sunrise"></i>
+              <span>Data Penelitian</span></a></li>
+          <li class="nav-item"><a href="{{Route('hasilPenelitianIndex')}}" class="nav-link"><i data-feather="file"></i>
+              <span>Laporan Akhir Penelitian</span></a></li>
+          <li class="nav-item"><a href="{{Route('formPenilaianIndex')}}" class="nav-link"><i data-feather="file"></i>
+              <span>Form Penilaian Penelitian</span></a></li>
           <li class="nav-label mg-t-25">Lain lain</li>
-          <li class="nav-item"><a href="{{Route('peminjamanIndex')}}" class="nav-link"><i data-feather="box"></i> <span>Peminjaman Fasilitas</span></a></li>
-          <li class="nav-item"><a href="{{Route('beritaIndex')}}" class="nav-link"><i data-feather="book-open"></i> <span>Berita</span></a></li>
+          <li class="nav-item"><a href="{{Route('peminjamanIndex')}}" class="nav-link"><i data-feather="box"></i>
+              <span>Peminjaman Fasilitas</span></a></li>
+          <li class="nav-item"><a href="{{Route('beritaIndex')}}" class="nav-link"><i data-feather="book-open"></i>
+              <span>Berita</span></a></li>
         </ul>
       </div>
-    </aside>
+  </aside>
 
   <div class="content ht-100v pd-0">
     <div class="content-header">
-        Aplikasi Pelayanan Kegiatan Penelitian pada Balai Penelitian Pertanian Lahan Rawa (BALITTRA)
+      Aplikasi Pelayanan Kegiatan Penelitian pada Balai Penelitian Pertanian Lahan Rawa (BALITTRA)
       <nav class="nav">
         @guest
         <a class="nav-link" href="{{ route('login') }}"><i data-feather="log-in"></i>{{ __('Login') }}</a>
         @else
-        <a class="nav-link" data-toggle="tooltip" title="Sign out" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i data-feather="log-out"></i>
-             {{ __('Logout') }}
+        <a class="nav-link" data-toggle="tooltip" title="Sign out" href="{{ route('logout') }}"
+          onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i
+            data-feather="log-out"></i>
+          {{ __('Logout') }}
         </a>
 
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
