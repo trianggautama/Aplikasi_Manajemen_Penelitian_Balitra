@@ -11,7 +11,7 @@
                   <li class="breadcrumb-item active" aria-current="page">Pembimbing</li>
                 </ol>
               </nav>
-              <h4 class="mg-b-0 tx-spacing--1">beranda Pembimbing Lapangan</h4>
+              <h4 class="mg-b-0 tx-spacing--1">Beranda Pembimbing Lapangan</h4>
             </div>
           </div>
 

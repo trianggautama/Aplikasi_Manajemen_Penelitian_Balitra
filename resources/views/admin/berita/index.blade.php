@@ -77,11 +77,11 @@
             <input type="text" name="judul" class="form-control" placeholder="Judul Berita" required>
           </div>
           <div class="form-group">
-            <label for="Nama">foto</label>
+            <label for="Nama">Foto</label>
             <input type="file" name="foto" class="form-control" required>
           </div>
           <div class="form-group">
-            <label for="Nama">isi</label>
+            <label for="Nama">Isi</label>
             <textarea name="isi" id="isi" name="isi" class="form-control" required></textarea>
           </div>
           <div class="modal-footer">
