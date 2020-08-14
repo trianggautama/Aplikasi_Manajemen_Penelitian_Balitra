@@ -29,7 +29,7 @@ class BeritaController extends Controller
         }
         $data->update();
 
-        return redirect()->back()->withSuccess('Data berhasil disimpan');
+        return redirect()->back()->withSuccess('Data Berhasil Disimpan');
     }
 
     public function edit($uuid)
@@ -53,7 +53,7 @@ class BeritaController extends Controller
         }
         $berita->update();
 
-        return redirect()->route('beritaIndex')->withSuccess('Data berhasil diubah');
+        return redirect()->route('beritaIndex')->withSuccess('Data Berhasil Diubah');
     }
 
     public function destroy($uuid)
@@ -62,6 +62,6 @@ class BeritaController extends Controller
         File::delete('images/berita/' . $data->foto);
         $data->delete();
 
-        return redirect()->back()->withSuccess('Data berhasil dihapus');
+        return redirect()->back()->withSuccess('Data Berhasil Dihapus');
     }
 }
