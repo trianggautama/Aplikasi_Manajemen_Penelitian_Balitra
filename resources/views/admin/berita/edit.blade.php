@@ -29,11 +29,11 @@
                   placeholder="Judul Berita">
               </div>
               <div class="form-group">
-                <label for="Nama">foto</label>
+                <label for="Nama">Foto</label>
                 <input type="file" name="foto" class="form-control">
               </div>
               <div class="form-group">
-                <label for="Nama">isi</label>
+                <label for="Nama">Isi</label>
                 <textarea name="isi" id="isi" name="isi" class="form-control">{{$data->isi}}</textarea>
               </div>
               <div class="card-footer text-right">
