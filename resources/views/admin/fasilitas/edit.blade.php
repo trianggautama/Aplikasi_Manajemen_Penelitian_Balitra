@@ -24,11 +24,11 @@
                     @csrf
                     <div class="form-group">
                       <label for="Nama">Nama Alat</label>
-                      <input type="text" name="nama" class="form-control" placeholder="Nama" value="{{$data->nama}}">
+                      <input type="text" name="nama" class="form-control" placeholder="Nama" value="{{$data->nama}}" required>
                     </div>
                     <div class="form-group">
                       <label for="Nama">Kategori</label>
-                      <select name="kategori" id="" class="form-control">
+                      <select name="kategori" id="" class="form-control" required>
                         <option value="">-- Pilih Kategori --</option>
                         <option value="Bangunan" {{  $data->kategori == "Bangunan" ? 'selected' : ''}}>Bangunan</option>
                         <option value="Peralatan Kebun" {{  $data->kategori == "Peralatan Kebun" ? 'selected' : ''}}>Peralatan Kebun</option>
@@ -37,15 +37,15 @@
                     </div>
                     <div class="form-group">
                       <label for="Nama">Jumlah</label>
-                      <input type="number" name="jumlah" class="form-control" placeholder="Jumlah" value="{{$data->jumlah}}">
+                      <input type="number" name="jumlah" class="form-control" placeholder="Jumlah" value="{{$data->jumlah}}" required>
                     </div>
                     <div class="form-group">
                       <label for="Nama">Satuan</label>
-                      <input type="text" name="satuan" class="form-control" placeholder="Satuan" value="{{$data->satuan}}">
+                      <input type="text" name="satuan" class="form-control" placeholder="Satuan" value="{{$data->satuan}}" required>
                     </div>
                     <div class="form-group">
                       <label for="Nama">Keterangan</label>
-                      <textarea name="keterangan" id="keterangan" name="keterangan" class="form-control">{{$data->keterangan}}</textarea>
+                      <textarea name="keterangan" id="keterangan" name="keterangan" class="form-control" required>{{$data->keterangan}}</textarea>
                     </div>
                     </div>
                     <div class="card-footer text-right">

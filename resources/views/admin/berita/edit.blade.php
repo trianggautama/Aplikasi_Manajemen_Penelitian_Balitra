@@ -34,7 +34,7 @@
               </div>
               <div class="form-group">
                 <label for="Nama">isi</label>
-                <textarea name="isi" id="isi" name="isi" class="form-control">{{$data->isi}}</textarea>
+                <textarea name="isi" id="isi" name="isi" class="form-control" required>{{$data->isi}}</textarea>
               </div>
               <div class="card-footer text-right">
                 <a href="{{route('beritaIndex')}}" type="button" class="btn btn-secondary tx-13"
