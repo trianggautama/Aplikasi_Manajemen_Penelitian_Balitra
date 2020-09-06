@@ -55,10 +55,10 @@
               <div class="form-group">
                 <label for="">Pendidikan Terakhir</label>
                 <select name="pendidikan_terakhir" id="" class="form-control">
-                  <option value="">-- pilih pendidikan terakhir --</option>
+                  <option value="">-- Pilih Pendidikan Terakhir --</option>
                   <option value="SD" {{$data->pendidikan_terakhir == 'SD' ? 'selected' : ''}}>SD</option>
                   <option value="SMP" {{$data->pendidikan_terakhir == 'SMP' ? 'selected' : ''}}>SMP</option>
-                  <option value="SMA" {{$data->pendidikan_terakhir == 'SMA' ? 'selected' : ''}}>SMA</option>
+                  <option value="SMA/SMK" {{$data->pendidikan_terakhir == 'SMA/SMK' ? 'selected' : ''}}>SMA/SMK</option>
                   <option value="D3" {{$data->pendidikan_terakhir == 'D3' ? 'selected' : ''}}>D3</option>
                   <option value="D4" {{$data->pendidikan_terakhir == 'D4' ? 'selected' : ''}}>D4</option>
                   <option value="S1" {{$data->pendidikan_terakhir == 'S1' ? 'selected' : ''}}>S1</option>

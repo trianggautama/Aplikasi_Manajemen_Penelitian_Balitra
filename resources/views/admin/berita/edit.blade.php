@@ -29,7 +29,7 @@
                   placeholder="Judul Berita">
               </div>
               <div class="form-group">
-                <label for="Nama">foto</label>
+                <label for="Nama">Foto</label>
                 <input type="file" name="foto" class="form-control">
               </div>
               <div class="form-group">

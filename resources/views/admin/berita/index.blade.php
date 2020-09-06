@@ -28,7 +28,7 @@
               <thead>
                 <tr>
                   <th>No</th>
-                  <th>judul</th>
+                  <th>Judul</th>
                   <th>Foto</th>
                   <th>Aksi</th>
                 </tr>
@@ -117,7 +117,7 @@
       function Hapus(uuid, judul) {
         Swal.fire({
         title: 'Anda Yakin?',
-        text: " Menghapus data berita " + judul ,        
+        text: " Menghapus Data Berita " + judul ,        
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
