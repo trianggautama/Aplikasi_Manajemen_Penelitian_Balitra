@@ -90,9 +90,12 @@ class penelitiController extends Controller
         $data->pendidikan_terakhir = $request->pendidikan_terakhir;
 
         $data->update();
+        $user = User::findOrFail($data->user_id);
+        $user->nama = $request->nama;
+        $user->update();
 
         if ($request->username != null || $request->password != null) {
-            $user = User::findOrFail($data->user_id);
+
             if (isset($request->username)) {
                 $user->username = $request->username;
             }
