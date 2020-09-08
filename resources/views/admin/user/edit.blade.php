@@ -22,24 +22,52 @@
             @csrf
             @method('PUT')
             <div class="form-group">
-              <label for="Nama">Nama</label>
-              <input type="text" name="nama" class="form-control" placeholder="Nama" value="{{$data->nama}}">
+            <label for="Nama">Nama</label>
+            <input type="text" name="nama" class="form-control" placeholder="Nama" required value="{{$data->nama}}">
+          </div>
+          <div class="form-group">
+            <label for="Nama">NIP</label>
+            <input type="text" name="NIP" class="form-control" placeholder="NIP" required value="{{$data->data_personal->NIP}}">
+          </div>
+          <div class="form-group">
+            <label for="Nama">Jabatan</label>
+            <input type="text" name="jabatan" class="form-control" placeholder="Jabatan" required value="{{$data->data_personal->jabatan}}">
+          </div>
+          <div class="form-group">
+            <label for="Nama">No Hp</label>
+            <input type="text" name="no_hp" class="form-control" placeholder="No Hp" required value="{{$data->data_personal->no_hp}}">
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="Nama">Tempat Lahir</label>
+                <input type="text" name="tempat_lahir" class="form-control" placeholder="Tempat Lahir" required value="{{$data->data_personal->tempat_lahir}}">
+              </div>
             </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="Nama">Username</label>
-                  <input type="text" name="username" class="form-control" placeholder="Username"
-                    value="{{$data->username}}">
-                </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="Nama">Tanggal Lahir</label>
+                <input type="date" name="tanggal_lahir" class="form-control" placeholder="Tanggal Lahir" required value="{{$data->data_personal->tanggal_lahir}}">
               </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="Nama">Password</label>
-                  <input type="password" name="password" class="form-control">
-                  <p class="text-danger">Isi Jika ingin merubah password</p>
-                </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Nama">Alamat</label>
+            <input type="text" name="alamat" class="form-control" placeholder="ALamat" required value="{{$data->data_personal->alamat}}">
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="Nama">Username</label>
+                <input type="text" name="username" class="form-control" placeholder="Username" required value="{{$data->username}}">
               </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="Nama">Password</label>
+                <input type="password" name="password" class="form-control" placeholder="password" >
+              </div>
+            </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary tx-13" data-dismiss="modal">Close</button>
