@@ -138,7 +138,9 @@ class pembimbingController extends Controller
 
     public function destroy($uuid)
     {
-        $user = User::where('uuid', $uuid)->first()->delete();
+        $user = User::where('uuid', $uuid)->first();
+        $user->data_personal->delete();
+        $user->delete();
 
         return redirect()->route('pembimbingIndex')->with('success', 'Berhasil Menghapus Data');
 
