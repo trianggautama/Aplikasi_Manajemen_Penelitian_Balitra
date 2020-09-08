@@ -83,7 +83,7 @@
               <label for="Nama">Nilai</label>
               <input type="hidden" name="id" id="id">
               <input type="hidden" name="penelitian_id" value="{{$penelitian->id}}">
-              <input type="number" class="form-control" name="nilai">
+              <input type="number" class="form-control" name="nilai" required>
             </div>
           </div>
 
